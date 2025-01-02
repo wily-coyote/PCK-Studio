@@ -377,6 +377,20 @@ void main(){
 								-glBox.Parent.Size.Y/2.0f,
 								0
 							);
+						} else if(skinBox.Type == "ARM0") {
+							// For arms, towards shoulder????
+							glBox.Transform.Position = new Vector3(
+								(glBox.Parent.Size.X/2.0f - 1.0f),
+								glBox.Parent.Size.Y/2.0f - 2.0f,
+								0
+							);
+						} else if(skinBox.Type == "ARM1") {
+							// For arms, towards shoulder????
+							glBox.Transform.Position = new Vector3(
+								-(glBox.Parent.Size.X/2.0f - 1.0f),
+								glBox.Parent.Size.Y/2.0f - 2.0f,
+								0
+							);
 						} else {
 							// Anywhere else, it's the top corner?
 							glBox.Transform.Position = new Vector3(
