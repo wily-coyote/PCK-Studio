@@ -221,7 +221,7 @@ void main(){
 			time = 0.0d;
 			glTimer = new Timer();
 			glTimer.Tick += (sender, e) => {
-				time += 1.0d/16.0d;
+				time += 0.0166f;
 				GLRender(sender, e);
 			};
 			glTimer.Interval = 16; // 60fps

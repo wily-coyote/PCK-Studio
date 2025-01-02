@@ -271,13 +271,13 @@ namespace PckStudio.Renderer {
 			model *= Matrix4.CreateRotationZ(Transform.Rotation.Z);
 			model *= Matrix4.CreateTranslation(Transform.Pivot);
 			model *= Matrix4.CreateTranslation(Transform.Position);
+			if(Parent != null)
+				model *= Parent.GetMatrix();
 			return model;
 		}
 
 		public void SetShader(GLShader shader) {
 			Matrix4 model = GetMatrix();
-			if(Parent != null)
-				model *= Parent.GetMatrix();
 			// Use texture
 			texture.Use();
 			// Use shader

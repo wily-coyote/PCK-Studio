@@ -27,64 +27,64 @@ namespace PckStudio.Forms {
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModelGeneratorForm));
-			this.boxContextMenu = new ContextMenuStrip(this.components);
-			this.createToolStripMenuItem = new ToolStripMenuItem();
-			this.cloneToolStripMenuItem = new ToolStripMenuItem();
-			this.deleteToolStripMenuItem = new ToolStripMenuItem();
-			this.changeColorToolStripMenuItem = new ToolStripMenuItem();
-			this.buttonDone = new Button();
-			this.offsetGroup = new GroupBox();
-			this.tabOffsets = new TabControl();
-			this.tabArmor = new TabPage();
-			this.tabBody = new TabPage();
-			this.bodyLayout = new TableLayoutPanel();
-			this.offsetArms = new TextBox();
-			this.armsLabel = new Label();
-			this.offsetBody = new TextBox();
-			this.offsetLegs = new TextBox();
-			this.headLabel = new Label();
-			this.legsLabel = new Label();
-			this.offsetHead = new TextBox();
-			this.bodylabel = new Label();
-			this.comboParent = new ComboBox();
-			this.exportButton = new Button();
-			this.importButton = new Button();
-			this.buttonTemplate = new Button();
-			this.generateTextureCheckBox = new CheckBox();
-			this.showGuidelinesCheckBox = new CheckBox();
-			this.showArmorCheckBox = new CheckBox();
-			this.SizeXUpDown = new NumericUpDown();
-			this.SizeYUpDown = new NumericUpDown();
-			this.SizeZUpDown = new NumericUpDown();
-			this.UVXUpDown = new NumericUpDown();
-			this.UVYUpDown = new NumericUpDown();
-			this.PosZUpDown = new NumericUpDown();
-			this.PosYUpDown = new NumericUpDown();
-			this.PosXUpDown = new NumericUpDown();
-			this.Part = ((ColumnHeader)(new ColumnHeader()));
-			this.X = ((ColumnHeader)(new ColumnHeader()));
-			this.Y = ((ColumnHeader)(new ColumnHeader()));
-			this.Z = ((ColumnHeader)(new ColumnHeader()));
-			this._Width = ((ColumnHeader)(new ColumnHeader()));
-			this._Height = ((ColumnHeader)(new ColumnHeader()));
-			this.Length = ((ColumnHeader)(new ColumnHeader()));
-			this.U = ((ColumnHeader)(new ColumnHeader()));
-			this.V = ((ColumnHeader)(new ColumnHeader()));
-			this.listViewBoxes = new ListView();
-			this.positionGroup = new GroupBox();
-			this.positionGroupLayout = new TableLayoutPanel();
-			this.sizeGroup = new GroupBox();
-			this.sizeGroupLayout = new TableLayoutPanel();
-			this.uvGroup = new GroupBox();
-			this.uvGroupLayout = new TableLayoutPanel();
-			this.optionsLayout = new FlowLayoutPanel();
-			this.layout = new TableLayoutPanel();
-			this.texturePreviewGroup = new GroupBox();
-			this.texturePreviewLayout = new TableLayoutPanel();
+			this.boxContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.buttonDone = new System.Windows.Forms.Button();
+			this.offsetGroup = new System.Windows.Forms.GroupBox();
+			this.tabOffsets = new System.Windows.Forms.TabControl();
+			this.tabArmor = new System.Windows.Forms.TabPage();
+			this.tabBody = new System.Windows.Forms.TabPage();
+			this.bodyLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.offsetArms = new System.Windows.Forms.TextBox();
+			this.armsLabel = new System.Windows.Forms.Label();
+			this.offsetBody = new System.Windows.Forms.TextBox();
+			this.offsetLegs = new System.Windows.Forms.TextBox();
+			this.headLabel = new System.Windows.Forms.Label();
+			this.legsLabel = new System.Windows.Forms.Label();
+			this.offsetHead = new System.Windows.Forms.TextBox();
+			this.bodylabel = new System.Windows.Forms.Label();
+			this.comboParent = new System.Windows.Forms.ComboBox();
+			this.exportButton = new System.Windows.Forms.Button();
+			this.importButton = new System.Windows.Forms.Button();
+			this.buttonTemplate = new System.Windows.Forms.Button();
+			this.generateTextureCheckBox = new System.Windows.Forms.CheckBox();
+			this.showGuidelinesCheckBox = new System.Windows.Forms.CheckBox();
+			this.showArmorCheckBox = new System.Windows.Forms.CheckBox();
+			this.SizeXUpDown = new System.Windows.Forms.NumericUpDown();
+			this.SizeYUpDown = new System.Windows.Forms.NumericUpDown();
+			this.SizeZUpDown = new System.Windows.Forms.NumericUpDown();
+			this.UVXUpDown = new System.Windows.Forms.NumericUpDown();
+			this.UVYUpDown = new System.Windows.Forms.NumericUpDown();
+			this.PosZUpDown = new System.Windows.Forms.NumericUpDown();
+			this.PosYUpDown = new System.Windows.Forms.NumericUpDown();
+			this.PosXUpDown = new System.Windows.Forms.NumericUpDown();
+			this.Part = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.X = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.Y = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.Z = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this._Width = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this._Height = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.Length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.U = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.V = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.listViewBoxes = new System.Windows.Forms.ListView();
+			this.positionGroup = new System.Windows.Forms.GroupBox();
+			this.positionGroupLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.sizeGroup = new System.Windows.Forms.GroupBox();
+			this.sizeGroupLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.uvGroup = new System.Windows.Forms.GroupBox();
+			this.uvGroupLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.optionsLayout = new System.Windows.Forms.FlowLayoutPanel();
+			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.texturePreviewGroup = new System.Windows.Forms.GroupBox();
+			this.texturePreviewLayout = new System.Windows.Forms.TableLayoutPanel();
 			this.uvPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
 			this.mainView = new OpenTK.GLControl();
-			this.parentGroup = new GroupBox();
-			this.optionsGroup = new GroupBox();
+			this.parentGroup = new System.Windows.Forms.GroupBox();
+			this.optionsGroup = new System.Windows.Forms.GroupBox();
 			this.boxContextMenu.SuspendLayout();
 			this.offsetGroup.SuspendLayout();
 			this.tabOffsets.SuspendLayout();
@@ -116,7 +116,7 @@ namespace PckStudio.Forms {
 			// boxContextMenu
 			// 
 			this.boxContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.boxContextMenu.Items.AddRange(new ToolStripItem[] {
+			this.boxContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
             this.cloneToolStripMenuItem,
             this.deleteToolStripMenuItem,
@@ -151,7 +151,7 @@ namespace PckStudio.Forms {
 			// buttonDone
 			// 
 			resources.ApplyResources(this.buttonDone, "buttonDone");
-			this.buttonDone.DialogResult = DialogResult.OK;
+			this.buttonDone.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.buttonDone.Name = "buttonDone";
 			this.buttonDone.Click += new System.EventHandler(this.finished);
 			// 
@@ -403,8 +403,8 @@ namespace PckStudio.Forms {
 			// listViewBoxes
 			// 
 			resources.ApplyResources(this.listViewBoxes, "listViewBoxes");
-			this.listViewBoxes.BorderStyle = BorderStyle.FixedSingle;
-			this.listViewBoxes.Columns.AddRange(new ColumnHeader[] {
+			this.listViewBoxes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.listViewBoxes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Part,
             this.X,
             this.Y,
@@ -415,16 +415,16 @@ namespace PckStudio.Forms {
             this.U,
             this.V});
 			this.listViewBoxes.ContextMenuStrip = this.boxContextMenu;
-			this.listViewBoxes.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+			this.listViewBoxes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.listViewBoxes.HideSelection = false;
 			this.listViewBoxes.LabelEdit = true;
 			this.listViewBoxes.MultiSelect = false;
 			this.listViewBoxes.Name = "listViewBoxes";
 			this.layout.SetRowSpan(this.listViewBoxes, 3);
 			this.listViewBoxes.UseCompatibleStateImageBehavior = false;
-			this.listViewBoxes.View = View.Details;
+			this.listViewBoxes.View = System.Windows.Forms.View.Details;
 			this.listViewBoxes.SelectedIndexChanged += new System.EventHandler(this.skinBoxSelected);
-			this.listViewBoxes.KeyDown += new KeyEventHandler(this.listViewKeyDown);
+			this.listViewBoxes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewKeyDown);
 			// 
 			// positionGroup
 			// 
@@ -511,7 +511,7 @@ namespace PckStudio.Forms {
 			// 
 			// uvPictureBox
 			// 
-			this.uvPictureBox.BorderStyle = BorderStyle.FixedSingle;
+			this.uvPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.texturePreviewLayout.SetColumnSpan(this.uvPictureBox, 2);
 			resources.ApplyResources(this.uvPictureBox, "uvPictureBox");
 			this.uvPictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
@@ -522,16 +522,16 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.mainView, "mainView");
 			this.mainView.BackColor = System.Drawing.Color.Black;
-			this.mainView.BorderStyle = BorderStyle.FixedSingle;
+			this.mainView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.mainView.Name = "mainView";
 			this.layout.SetRowSpan(this.mainView, 6);
 			this.mainView.TabStop = false;
 			this.mainView.VSync = false;
-			this.mainView.MouseDown += new MouseEventHandler(this.GLStartPanning);
+			this.mainView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GLStartPanning);
 			this.mainView.MouseEnter += new System.EventHandler(this.GLEnableZoom);
-			this.mainView.MouseMove += new MouseEventHandler(this.GLPan);
-			this.mainView.MouseUp += new MouseEventHandler(this.GLStopPanning);
-			this.mainView.MouseWheel += new MouseEventHandler(this.GLZoom);
+			this.mainView.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GLPan);
+			this.mainView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GLStopPanning);
+			this.mainView.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.GLZoom);
 			// 
 			// parentGroup
 			// 
@@ -550,10 +550,10 @@ namespace PckStudio.Forms {
 			// ModelGeneratorForm
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = AutoScaleMode.Font;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
 			this.Name = "ModelGeneratorForm";
-			this.FormClosing += new FormClosingEventHandler(this.formClosing);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosing);
 			this.Load += new System.EventHandler(this.formLoaded);
 			this.boxContextMenu.ResumeLayout(false);
 			this.offsetGroup.ResumeLayout(false);

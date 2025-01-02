@@ -97,12 +97,39 @@ namespace PckStudio.Renderer {
 			rightarm.Parent = body;
 		}
 
-		public void Tick(double time) {
+		public void Tick(double _time) {
+			double time = _time * 10.0f;
 			// anda anda anda pica pica pica
-			leftleg.Transform.Rotation = new Vector3((float)Math.Sin(time*2.0f)*MathHelper.PiOver6, 0.0f, 0.0f);
-			rightleg.Transform.Rotation = new Vector3(-(float)Math.Sin(time*2.0f)*MathHelper.PiOver6, 0.0f, 0.0f);
-			rightarm.Transform.Rotation = new Vector3((float)Math.Sin(time*2.0f)*MathHelper.PiOver6, 0.0f, 0.0f);
-			leftarm.Transform.Rotation  = new Vector3(-(float)Math.Sin(time*2.0f)*MathHelper.PiOver6, 0.0f, 0.0f);
+			body.Transform.Position = new Vector3(
+				0.0f,
+				(float)Math.Abs(Math.Sin(time * 0.6662f)) * 5.0f - 24.0f + 20.0f,
+				0.0f
+			);
+			head.Transform.Rotation = new Vector3(
+				(float)Math.Sin(time*0.23f) * 1.0f,
+				(float)Math.Sin(time*0.1f) * 0.8f,
+				0.0f
+			);
+			leftleg.Transform.Rotation = new Vector3(
+				(float)Math.Sin(time*0.6662f)*1.4f,
+				0.0f,
+				0.0f
+			);
+			rightleg.Transform.Rotation = new Vector3(
+				(float)Math.Sin(time*0.6662f+Math.PI)*1.4f,
+				0.0f,
+				0.0f
+			);
+			rightarm.Transform.Rotation = new Vector3(
+				(float)Math.Sin(time*0.6662f)*2.0f,
+				0.0f,
+				-((float)Math.Sin(time*0.2819f) - 1.0f) * 1.0f
+			);
+			leftarm.Transform.Rotation = new Vector3(
+				(float)Math.Sin(time*0.6662f+Math.PI)*2.0f,
+				0.0f,
+				-((float)Math.Sin(time*0.2312f) + 1.0f) * 1.0f
+			);
 		}
 
 		public void Render(GLShader shader, Vector3 camera) {

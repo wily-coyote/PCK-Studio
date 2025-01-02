@@ -31,11 +31,11 @@ namespace PckStudio
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextPrompt));
-			this.TextLabel = new Label();
-			this.OKButton = new Button();
-			this.InputTextBox = new TextBox();
-			this.contextLabel = new Label();
-			this.layout = new TableLayoutPanel();
+			this.TextLabel = new System.Windows.Forms.Label();
+			this.OKButton = new System.Windows.Forms.Button();
+			this.InputTextBox = new System.Windows.Forms.TextBox();
+			this.contextLabel = new System.Windows.Forms.Label();
+			this.layout = new System.Windows.Forms.TableLayoutPanel();
 			this.layout.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -75,7 +75,7 @@ namespace PckStudio
 			// 
 			this.AcceptButton = this.OKButton;
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = AutoScaleMode.Font;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

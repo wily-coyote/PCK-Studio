@@ -184,6 +184,7 @@
     <Compile Include="Renderer\GLTexture.cs" />
     <Compile Include="Renderer\GLTransform.cs" />
     <Compile Include="Renderer\IGLThing.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="ToolboxItems\BlendPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>

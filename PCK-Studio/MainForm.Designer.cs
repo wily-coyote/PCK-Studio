@@ -31,132 +31,132 @@ namespace PckStudio
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			ToolStripSeparator toolStripSeparator2;
+			System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			ToolStripSeparator toolStripSeparator4;
-			ToolStripSeparator toolStripSeparator1;
-			this.menuStrip = new MenuStrip();
-			this.fileToolStripMenuItem = new ToolStripMenuItem();
-			this.newToolStripMenuItem = new ToolStripMenuItem();
-			this.skinPackToolStripMenuItem = new ToolStripMenuItem();
-			this.texturePackToolStripMenuItem = new ToolStripMenuItem();
-			this.mashUpPackToolStripMenuItem = new ToolStripMenuItem();
-			this.openToolStripMenuItem = new ToolStripMenuItem();
-			this.recentlyOpenToolStripMenuItem = new ToolStripMenuItem();
-			this.closeToolStripMenuItem = new ToolStripMenuItem();
-			this.packSettingsToolStripMenuItem = new ToolStripMenuItem();
-			this.fullBoxSupportToolStripMenuItem = new ToolStripMenuItem();
-			this.saveToolStripMenuItem1 = new ToolStripMenuItem();
-			this.saveToolStripMenuItem = new ToolStripMenuItem();
-			this.exitToolStripMenuItem = new ToolStripMenuItem();
-			this.editToolStripMenuItem = new ToolStripMenuItem();
-			this.quickChangeToolStripMenuItem = new ToolStripMenuItem();
-			this.miscToolStripMenuItem = new ToolStripMenuItem();
-			this.openPckManagerToolStripMenuItem = new ToolStripMenuItem();
-			this.convertMusicFilesToolStripMenuItem = new ToolStripMenuItem();
-			this.wavBinkaToolStripMenuItem = new ToolStripMenuItem();
-			this.binkaWavToolStripMenuItem = new ToolStripMenuItem();
-			this.helpToolStripMenuItem = new ToolStripMenuItem();
-			this.checkForUpdatesToolStripMenuItem = new ToolStripMenuItem();
-			this.aboutToolStripMenuItem = new ToolStripMenuItem();
-			this.videosToolStripMenuItem = new ToolStripMenuItem();
-			this.howToMakeABasicSkinPackToolStripMenuItem = new ToolStripMenuItem();
-			this.howToMakeACustomSkinModelToolStripMenuItem = new ToolStripMenuItem();
-			this.howToMakeCustomSkinModelsbedrockToolStripMenuItem = new ToolStripMenuItem();
-			this.howToMakeCustomMusicToolStripMenuItem = new ToolStripMenuItem();
-			this.howToInstallPcksDirectlyToWiiUToolStripMenuItem = new ToolStripMenuItem();
-			this.pckCenterReleaseToolStripMenuItem = new ToolStripMenuItem();
-			this.howPCKsWorkToolStripMenuItem = new ToolStripMenuItem();
-			this.donateToolStripMenuItem = new ToolStripMenuItem();
-			this.toNobledezJackToolStripMenuItem = new ToolStripMenuItem();
-			this.toPhoenixARCDeveloperToolStripMenuItem = new ToolStripMenuItem();
-			this.forMattNLContributorToolStripMenuItem = new ToolStripMenuItem();
-			this.joinDevelopmentDiscordToolStripMenuItem = new ToolStripMenuItem();
-			this.trelloBoardToolStripMenuItem = new ToolStripMenuItem();
-			this.toolStripSeparator3 = new ToolStripSeparator();
-			this.settingsToolStripMenuItem = new ToolStripMenuItem();
-			this.statusStrip = new StatusStrip();
-			this.fileCountLabel = new ToolStripStatusLabel();
-			this.currentFileTypeLabel = new ToolStripStatusLabel();
-			this.imageSizeLabel = new ToolStripStatusLabel();
-			this.contextMenuPCKEntries = new ContextMenuStrip(this.components);
-			this.createToolStripMenuItem = new ToolStripMenuItem();
-			this.folderToolStripMenuItem = new ToolStripMenuItem();
-			this.skinToolStripMenuItem = new ToolStripMenuItem();
-			this.createAnimatedTextureToolStripMenuItem = new ToolStripMenuItem();
-			this.audiopckToolStripMenuItem = new ToolStripMenuItem();
-			this.colourscolToolStripMenuItem = new ToolStripMenuItem();
-			this.CreateSkinsPCKToolStripMenuItem1 = new ToolStripMenuItem();
-			this.behavioursbinToolStripMenuItem = new ToolStripMenuItem();
-			this.entityMaterialsbinToolStripMenuItem = new ToolStripMenuItem();
-			this.importSkinsToolStripMenuItem = new ToolStripMenuItem();
-			this.importSkinToolStripMenuItem = new ToolStripMenuItem();
-			this.importExtractedSkinsFolderToolStripMenuItem = new ToolStripMenuItem();
-			this.addTextureToolStripMenuItem = new ToolStripMenuItem();
-			this.addFileToolStripMenuItem = new ToolStripMenuItem();
-			this.exportToolStripMenuItem = new ToolStripMenuItem();
-			this.as3DSTextureFileToolStripMenuItem = new ToolStripMenuItem();
-			this.setFileTypeToolStripMenuItem = new ToolStripMenuItem();
-			this.skinToolStripMenuItem1 = new ToolStripMenuItem();
-			this.capeToolStripMenuItem = new ToolStripMenuItem();
-			this.textureToolStripMenuItem = new ToolStripMenuItem();
-			this.languagesFileLOCToolStripMenuItem = new ToolStripMenuItem();
-			this.gameRulesFileGRFToolStripMenuItem = new ToolStripMenuItem();
-			this.audioPCKFileToolStripMenuItem = new ToolStripMenuItem();
-			this.coloursCOLFileToolStripMenuItem = new ToolStripMenuItem();
-			this.gameRulesHeaderGRHToolStripMenuItem = new ToolStripMenuItem();
-			this.skinsPCKToolStripMenuItem = new ToolStripMenuItem();
-			this.modelsFileBINToolStripMenuItem = new ToolStripMenuItem();
-			this.behavioursFileBINToolStripMenuItem = new ToolStripMenuItem();
-			this.entityMaterialsFileBINToolStripMenuItem = new ToolStripMenuItem();
-			this.toolStripSeparator5 = new ToolStripSeparator();
-			this.generateMipMapTextureToolStripMenuItem1 = new ToolStripMenuItem();
-			this.viewFileInfoToolStripMenuItem = new ToolStripMenuItem();
-			this.correctSkinDecimalsToolStripMenuItem = new ToolStripMenuItem();
-			this.setSubPCKEndiannessToolStripMenuItem = new ToolStripMenuItem();
-			this.bigEndianXbox360PS3WiiUToolStripMenuItem = new ToolStripMenuItem();
-			this.littleEndianPS4PSVitaSwitchToolStripMenuItem = new ToolStripMenuItem();
-			this.setModelContainerFormatToolStripMenuItem = new ToolStripMenuItem();
-			this.version1ToolStripMenuItem = new ToolStripMenuItem();
-			this.version2ToolStripMenuItem = new ToolStripMenuItem();
-			this.version3114ToolStripMenuItem = new ToolStripMenuItem();
-			this.toolStripSeparator6 = new ToolStripSeparator();
-			this.extractToolStripMenuItem = new ToolStripMenuItem();
-			this.cloneFileToolStripMenuItem = new ToolStripMenuItem();
-			this.renameFileToolStripMenuItem = new ToolStripMenuItem();
-			this.replaceToolStripMenuItem = new ToolStripMenuItem();
-			this.deleteFileToolStripMenuItem = new ToolStripMenuItem();
-			this.contextMenuMetaTree = new ContextMenuStrip(this.components);
-			this.addEntryToolStripMenuItem = new ToolStripMenuItem();
-			this.addEntryToolStripMenuItem1 = new ToolStripMenuItem();
-			this.addBOXEntryToolStripMenuItem1 = new ToolStripMenuItem();
-			this.addANIMEntryToolStripMenuItem1 = new ToolStripMenuItem();
-			this.addMultipleEntriesToolStripMenuItem1 = new ToolStripMenuItem();
-			this.deleteEntryToolStripMenuItem = new ToolStripMenuItem();
-			this.editAllEntriesToolStripMenuItem = new ToolStripMenuItem();
-			this.tabControl = new TabControl();
-			this.openTab = new TabPage();
-			this.openLayout = new TableLayoutPanel();
-			this.whatsNewLabel = new Label();
-			this.littleEndianCheckBox = new CheckBox();
-			this.changelogRichText = new RichTextBox();
-			this.pckOpen = new PictureBox();
-			this.editorTab = new TabPage();
-			this.editorLayout = new TableLayoutPanel();
-			this.treeViewMain = new TreeView();
-			this.imageList = new ImageList(this.components);
+			System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+			System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+			this.menuStrip = new System.Windows.Forms.MenuStrip();
+			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.skinPackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.texturePackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.mashUpPackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.recentlyOpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.packSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fullBoxSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.quickChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.openPckManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.convertMusicFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.wavBinkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.binkaWavToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.videosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.howToMakeABasicSkinPackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.howToMakeACustomSkinModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.howToMakeCustomSkinModelsbedrockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.howToMakeCustomMusicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.howToInstallPcksDirectlyToWiiUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.pckCenterReleaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.howPCKsWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toNobledezJackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toPhoenixARCDeveloperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.forMattNLContributorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.joinDevelopmentDiscordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.trelloBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.statusStrip = new System.Windows.Forms.StatusStrip();
+			this.fileCountLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.currentFileTypeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.imageSizeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.contextMenuPCKEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.folderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.skinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.createAnimatedTextureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.audiopckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.colourscolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.CreateSkinsPCKToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.behavioursbinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.entityMaterialsbinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.importSkinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.importSkinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.importExtractedSkinsFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addTextureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.as3DSTextureFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.setFileTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.skinToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.capeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.textureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.languagesFileLOCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.gameRulesFileGRFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.audioPCKFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.coloursCOLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.gameRulesHeaderGRHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.skinsPCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.modelsFileBINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.behavioursFileBINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.entityMaterialsFileBINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+			this.generateMipMapTextureToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.viewFileInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.correctSkinDecimalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.setSubPCKEndiannessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.bigEndianXbox360PS3WiiUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.littleEndianPS4PSVitaSwitchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.setModelContainerFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.version1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.version2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.version3114ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+			this.extractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cloneFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.renameFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.replaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.deleteFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextMenuMetaTree = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.addEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addEntryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.addBOXEntryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.addANIMEntryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.addMultipleEntriesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.deleteEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.editAllEntriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tabControl = new System.Windows.Forms.TabControl();
+			this.openTab = new System.Windows.Forms.TabPage();
+			this.openLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.whatsNewLabel = new System.Windows.Forms.Label();
+			this.littleEndianCheckBox = new System.Windows.Forms.CheckBox();
+			this.changelogRichText = new System.Windows.Forms.RichTextBox();
+			this.pckOpen = new System.Windows.Forms.PictureBox();
+			this.editorTab = new System.Windows.Forms.TabPage();
+			this.editorLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.treeViewMain = new System.Windows.Forms.TreeView();
+			this.imageList = new System.Windows.Forms.ImageList(this.components);
 			this.previewPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
-			this.propTabControl = new TabControl();
-			this.metaTab = new TabPage();
-			this.propLayout = new TableLayoutPanel();
-			this.treeMeta = new TreeView();
-			this.entryTypeTextBox = new TextBox();
-			this.buttonEdit = new Button();
-			this.entryDataTextBox = new TextBox();
-			this.layout = new Panel();
-			toolStripSeparator2 = new ToolStripSeparator();
-			toolStripSeparator4 = new ToolStripSeparator();
-			toolStripSeparator1 = new ToolStripSeparator();
+			this.propTabControl = new System.Windows.Forms.TabControl();
+			this.metaTab = new System.Windows.Forms.TabPage();
+			this.propLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.treeMeta = new System.Windows.Forms.TreeView();
+			this.entryTypeTextBox = new System.Windows.Forms.TextBox();
+			this.buttonEdit = new System.Windows.Forms.Button();
+			this.entryDataTextBox = new System.Windows.Forms.TextBox();
+			this.layout = new System.Windows.Forms.Panel();
+			toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+			toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.contextMenuPCKEntries.SuspendLayout();
@@ -191,18 +191,18 @@ namespace PckStudio
 			// 
 			// menuStrip
 			// 
-			this.menuStrip.Items.AddRange(new ToolStripItem[] {
+			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.miscToolStripMenuItem,
             this.helpToolStripMenuItem});
-			this.menuStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+			this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			resources.ApplyResources(this.menuStrip, "menuStrip");
 			this.menuStrip.Name = "menuStrip";
 			// 
 			// fileToolStripMenuItem
 			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             toolStripSeparator2,
@@ -218,7 +218,7 @@ namespace PckStudio
 			// 
 			// newToolStripMenuItem
 			// 
-			this.newToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.skinPackToolStripMenuItem,
             this.texturePackToolStripMenuItem,
             this.mashUpPackToolStripMenuItem});
@@ -262,7 +262,7 @@ namespace PckStudio
 			// 
 			// packSettingsToolStripMenuItem
 			// 
-			this.packSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.packSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fullBoxSupportToolStripMenuItem});
 			this.packSettingsToolStripMenuItem.Image = global::PckStudio.Properties.Resources.ranch;
 			this.packSettingsToolStripMenuItem.Name = "packSettingsToolStripMenuItem";
@@ -295,7 +295,7 @@ namespace PckStudio
 			// 
 			// editToolStripMenuItem
 			// 
-			this.editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quickChangeToolStripMenuItem});
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
@@ -308,7 +308,7 @@ namespace PckStudio
 			// 
 			// miscToolStripMenuItem
 			// 
-			this.miscToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openPckManagerToolStripMenuItem,
             this.convertMusicFilesToolStripMenuItem});
 			resources.ApplyResources(this.miscToolStripMenuItem, "miscToolStripMenuItem");
@@ -322,7 +322,7 @@ namespace PckStudio
 			// 
 			// convertMusicFilesToolStripMenuItem
 			// 
-			this.convertMusicFilesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.convertMusicFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.wavBinkaToolStripMenuItem,
             this.binkaWavToolStripMenuItem});
 			this.convertMusicFilesToolStripMenuItem.Name = "convertMusicFilesToolStripMenuItem";
@@ -342,7 +342,7 @@ namespace PckStudio
 			// 
 			// helpToolStripMenuItem
 			// 
-			this.helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkForUpdatesToolStripMenuItem,
             this.aboutToolStripMenuItem,
             toolStripSeparator1,
@@ -369,7 +369,7 @@ namespace PckStudio
 			// 
 			// videosToolStripMenuItem
 			// 
-			this.videosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.videosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.howToMakeABasicSkinPackToolStripMenuItem,
             this.howToMakeACustomSkinModelToolStripMenuItem,
             this.howToMakeCustomSkinModelsbedrockToolStripMenuItem,
@@ -431,7 +431,7 @@ namespace PckStudio
 			// 
 			// donateToolStripMenuItem
 			// 
-			this.donateToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.donateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toNobledezJackToolStripMenuItem,
             this.toPhoenixARCDeveloperToolStripMenuItem,
             this.forMattNLContributorToolStripMenuItem});
@@ -482,7 +482,7 @@ namespace PckStudio
 			// 
 			// statusStrip
 			// 
-			this.statusStrip.Items.AddRange(new ToolStripItem[] {
+			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileCountLabel,
             this.currentFileTypeLabel,
             this.imageSizeLabel});
@@ -496,21 +496,21 @@ namespace PckStudio
 			// 
 			// currentFileTypeLabel
 			// 
-			this.currentFileTypeLabel.BorderSides = ToolStripStatusLabelBorderSides.Left;
-			this.currentFileTypeLabel.BorderStyle = Border3DStyle.Etched;
+			this.currentFileTypeLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+			this.currentFileTypeLabel.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
 			this.currentFileTypeLabel.Name = "currentFileTypeLabel";
 			resources.ApplyResources(this.currentFileTypeLabel, "currentFileTypeLabel");
 			// 
 			// imageSizeLabel
 			// 
-			this.imageSizeLabel.BorderSides = ToolStripStatusLabelBorderSides.Left;
-			this.imageSizeLabel.BorderStyle = Border3DStyle.Etched;
+			this.imageSizeLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+			this.imageSizeLabel.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
 			this.imageSizeLabel.Name = "imageSizeLabel";
 			resources.ApplyResources(this.imageSizeLabel, "imageSizeLabel");
 			// 
 			// contextMenuPCKEntries
 			// 
-			this.contextMenuPCKEntries.Items.AddRange(new ToolStripItem[] {
+			this.contextMenuPCKEntries.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
             this.importSkinsToolStripMenuItem,
             this.exportToolStripMenuItem,
@@ -533,7 +533,7 @@ namespace PckStudio
 			// 
 			// createToolStripMenuItem
 			// 
-			this.createToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.createToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.folderToolStripMenuItem,
             this.skinToolStripMenuItem,
             this.createAnimatedTextureToolStripMenuItem,
@@ -600,7 +600,7 @@ namespace PckStudio
 			// 
 			// importSkinsToolStripMenuItem
 			// 
-			this.importSkinsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.importSkinsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importSkinToolStripMenuItem,
             this.importExtractedSkinsFolderToolStripMenuItem,
             this.addTextureToolStripMenuItem,
@@ -636,7 +636,7 @@ namespace PckStudio
 			// 
 			// exportToolStripMenuItem
 			// 
-			this.exportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.as3DSTextureFileToolStripMenuItem});
 			this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
 			resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
@@ -649,7 +649,7 @@ namespace PckStudio
 			// 
 			// setFileTypeToolStripMenuItem
 			// 
-			this.setFileTypeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.setFileTypeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.skinToolStripMenuItem1,
             this.capeToolStripMenuItem,
             this.textureToolStripMenuItem,
@@ -750,7 +750,7 @@ namespace PckStudio
 			// 
 			// setSubPCKEndiannessToolStripMenuItem
 			// 
-			this.setSubPCKEndiannessToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.setSubPCKEndiannessToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bigEndianXbox360PS3WiiUToolStripMenuItem,
             this.littleEndianPS4PSVitaSwitchToolStripMenuItem});
 			this.setSubPCKEndiannessToolStripMenuItem.Name = "setSubPCKEndiannessToolStripMenuItem";
@@ -770,7 +770,7 @@ namespace PckStudio
 			// 
 			// setModelContainerFormatToolStripMenuItem
 			// 
-			this.setModelContainerFormatToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.setModelContainerFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.version1ToolStripMenuItem,
             this.version2ToolStripMenuItem,
             this.version3114ToolStripMenuItem});
@@ -832,7 +832,7 @@ namespace PckStudio
 			// 
 			// contextMenuMetaTree
 			// 
-			this.contextMenuMetaTree.Items.AddRange(new ToolStripItem[] {
+			this.contextMenuMetaTree.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addEntryToolStripMenuItem,
             this.addMultipleEntriesToolStripMenuItem1,
             this.deleteEntryToolStripMenuItem,
@@ -842,7 +842,7 @@ namespace PckStudio
 			// 
 			// addEntryToolStripMenuItem
 			// 
-			this.addEntryToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+			this.addEntryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addEntryToolStripMenuItem1,
             this.addBOXEntryToolStripMenuItem1,
             this.addANIMEntryToolStripMenuItem1});
@@ -893,7 +893,7 @@ namespace PckStudio
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
 			this.tabControl.TabStop = false;
-			this.tabControl.Selecting += new TabControlCancelEventHandler(this.tabControl_Selecting);
+			this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
 			// 
 			// openTab
 			// 
@@ -925,7 +925,7 @@ namespace PckStudio
 			// changelogRichText
 			// 
 			resources.ApplyResources(this.changelogRichText, "changelogRichText");
-			this.changelogRichText.BorderStyle = BorderStyle.FixedSingle;
+			this.changelogRichText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.openLayout.SetColumnSpan(this.changelogRichText, 2);
 			this.changelogRichText.Name = "changelogRichText";
 			this.changelogRichText.ReadOnly = true;
@@ -937,8 +937,8 @@ namespace PckStudio
 			this.pckOpen.Name = "pckOpen";
 			this.pckOpen.TabStop = false;
 			this.pckOpen.Click += new System.EventHandler(this.OpenPck_Click);
-			this.pckOpen.DragDrop += new DragEventHandler(this.OpenPck_DragDrop);
-			this.pckOpen.DragEnter += new DragEventHandler(this.OpenPck_DragEnter);
+			this.pckOpen.DragDrop += new System.Windows.Forms.DragEventHandler(this.OpenPck_DragDrop);
+			this.pckOpen.DragEnter += new System.Windows.Forms.DragEventHandler(this.OpenPck_DragEnter);
 			this.pckOpen.DragLeave += new System.EventHandler(this.OpenPck_DragLeave);
 			this.pckOpen.MouseEnter += new System.EventHandler(this.OpenPck_MouseEnter);
 			this.pckOpen.MouseLeave += new System.EventHandler(this.OpenPck_MouseLeave);
@@ -961,26 +961,26 @@ namespace PckStudio
 			// 
 			this.treeViewMain.AllowDrop = true;
 			resources.ApplyResources(this.treeViewMain, "treeViewMain");
-			this.treeViewMain.BorderStyle = BorderStyle.None;
+			this.treeViewMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.treeViewMain.ContextMenuStrip = this.contextMenuPCKEntries;
 			this.treeViewMain.ImageList = this.imageList;
 			this.treeViewMain.LabelEdit = true;
 			this.treeViewMain.Name = "treeViewMain";
 			this.treeViewMain.PathSeparator = "/";
 			this.editorLayout.SetRowSpan(this.treeViewMain, 2);
-			this.treeViewMain.BeforeLabelEdit += new NodeLabelEditEventHandler(this.treeViewMain_BeforeLabelEdit);
-			this.treeViewMain.ItemDrag += new ItemDragEventHandler(this.treeViewMain_ItemDrag);
-			this.treeViewMain.AfterSelect += new TreeViewEventHandler(this.treeViewMain_AfterSelect);
-			this.treeViewMain.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeViewMain_NodeMouseClick);
-			this.treeViewMain.DragDrop += new DragEventHandler(this.treeViewMain_DragDrop);
-			this.treeViewMain.DragEnter += new DragEventHandler(this.treeViewMain_DragEnter);
-			this.treeViewMain.DragOver += new DragEventHandler(this.treeViewMain_DragOver);
+			this.treeViewMain.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeViewMain_BeforeLabelEdit);
+			this.treeViewMain.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeViewMain_ItemDrag);
+			this.treeViewMain.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewMain_AfterSelect);
+			this.treeViewMain.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeViewMain_NodeMouseClick);
+			this.treeViewMain.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeViewMain_DragDrop);
+			this.treeViewMain.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeViewMain_DragEnter);
+			this.treeViewMain.DragOver += new System.Windows.Forms.DragEventHandler(this.treeViewMain_DragOver);
 			this.treeViewMain.DoubleClick += new System.EventHandler(this.treeViewMain_DoubleClick);
-			this.treeViewMain.KeyDown += new KeyEventHandler(this.treeViewMain_KeyDown);
+			this.treeViewMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeViewMain_KeyDown);
 			// 
 			// imageList
 			// 
-			this.imageList.ColorDepth = ColorDepth.Depth32Bit;
+			this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
 			resources.ApplyResources(this.imageList, "imageList");
 			this.imageList.TransparentColor = System.Drawing.Color.Transparent;
 			// 
@@ -1017,14 +1017,14 @@ namespace PckStudio
 			// treeMeta
 			// 
 			resources.ApplyResources(this.treeMeta, "treeMeta");
-			this.treeMeta.BorderStyle = BorderStyle.FixedSingle;
+			this.treeMeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.treeMeta.ContextMenuStrip = this.contextMenuMetaTree;
 			this.treeMeta.Name = "treeMeta";
 			this.treeMeta.PathSeparator = "/";
 			this.propLayout.SetRowSpan(this.treeMeta, 4);
-			this.treeMeta.AfterSelect += new TreeViewEventHandler(this.treeMeta_AfterSelect);
+			this.treeMeta.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeMeta_AfterSelect);
 			this.treeMeta.DoubleClick += new System.EventHandler(this.treeMeta_DoubleClick);
-			this.treeMeta.KeyDown += new KeyEventHandler(this.treeMeta_KeyDown);
+			this.treeMeta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeMeta_KeyDown);
 			// 
 			// entryTypeTextBox
 			// 
@@ -1051,13 +1051,13 @@ namespace PckStudio
 			// MainForm
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = AutoScaleMode.Font;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
 			this.Controls.Add(this.statusStrip);
 			this.Controls.Add(this.menuStrip);
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
-			this.FormClosing += new FormClosingEventHandler(this.MainForm_FormClosing);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
