@@ -9,7 +9,7 @@ using PckStudio.ToolboxItems;
 
 namespace PckStudio.Forms
 {
-    public partial class ContributorsForm : MetroForm
+    public partial class ContributorsForm : Form
     {
         public ContributorsForm()
         {
@@ -24,7 +24,7 @@ namespace PckStudio.Forms
 #else
             buildConfig = "unknown";
 #endif
-            buildLabel.Text = $"Verion: {ApplicationScope.CurrentVersion}\nBuild Config: {buildConfig}\nBranch: {CommitInfo.BranchName}@{CommitInfo.CommitHash}";
+            buildLabel.Text = $"PCK Studio version {ApplicationScope.CurrentVersion}\nBuild type: {buildConfig}\nGit revision: {CommitInfo.BranchName}@{CommitInfo.CommitHash}";
         }
 
         protected override void OnLoad(EventArgs e)

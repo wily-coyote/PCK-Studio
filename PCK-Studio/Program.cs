@@ -26,6 +26,8 @@ namespace PckStudio
         [STAThread]
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Updater.Initialize(RawProjectUrl);
 
             ApplicationScope.Initialize();

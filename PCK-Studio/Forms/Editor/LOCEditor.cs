@@ -4,7 +4,6 @@ using System.Data;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using MetroFramework.Forms;
 using PckStudio.Internal.Misc;
 using PckStudio.Forms.Additional_Popups.Loc;
 using OMI.Formats.Languages;
@@ -15,7 +14,7 @@ using PckStudio.Extensions;
 
 namespace PckStudio.Forms.Editor
 {
-	public partial class LOCEditor : MetroForm
+	public partial class LOCEditor : Form
     {
 		LOCFile _currentLoc;
 		PckAsset _asset;

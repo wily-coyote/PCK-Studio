@@ -39,34 +39,48 @@ using PckStudio.Internal.Json;
 using PckStudio.Internal.Deserializer;
 using PckStudio.Internal.Serializer;
 using PckStudio.Internal.App;
+using System.Runtime.InteropServices;
 
 namespace PckStudio
 {
-	public partial class MainForm : MetroFramework.Forms.MetroForm
+	public partial class MainForm : Form
 	{
+		[DllImport("user32.dll")]
+		private static extern int SetForegroundWindow(IntPtr hwnd);
+
 		private PckManager PckManager = null;
 		string saveLocation;
 
 		PckFile currentPCK = null;
+        
+		string currentFilename = "";
 
-		bool __modified = false;
+		bool _modified = false;
 		bool wasModified
-		{
-			get => __modified;
-			set
-			{
-				if (__modified == value)
-					return;
-				__modified = value;
-				pckFileLabel.Text = !pckFileLabel.Text.StartsWith("*") && __modified ? "*" + pckFileLabel.Text : pckFileLabel.Text.Substring(1);
+        {
+			get => _modified;
+			set {
+                _modified = value;
+				updateTitle();
             }
-        }
+		}
 
 		bool isTemplateFile = false;
-
 		bool isSelectingTab = false;
 
 		readonly Dictionary<PckAssetType, Action<PckAsset>> pckFileTypeHandler;
+
+		private void updateTitle()
+		{
+			if (String.IsNullOrEmpty(currentFilename)){
+                Text = $"{Application.ProductName} {ApplicationScope.CurrentVersion}";
+            } else {
+                Text = $"{Application.ProductName} {ApplicationScope.CurrentVersion} - ";
+				if (wasModified)
+					Text += "*";
+				Text += currentFilename;
+            }
+        }
 
 		public MainForm()
 		{
@@ -89,10 +103,11 @@ namespace PckStudio
 
 			pckOpen.AllowDrop = true;
 
-			Text = Application.ProductName;
+            fileCountLabel.Text = string.Empty;
+            currentFileTypeLabel.Text = string.Empty;
+            imageSizeLabel.Text = string.Empty;
 
-			labelVersion.Text = $"{Application.ProductName}: {ApplicationScope.CurrentVersion}";
-			ChangelogRichTextBox.Text = Resources.CHANGELOG;
+            changelogRichText.Text = Resources.CHANGELOG;
 
 			pckFileTypeHandler = new Dictionary<PckAssetType, Action<PckAsset>>(15)
 			{
@@ -112,6 +127,7 @@ namespace PckStudio
 				[PckAssetType.BehavioursFile] = HandleBehavioursFile,
 				[PckAssetType.MaterialFile] = HandleMaterialFile,
 			};
+			updateTitle();
 		}
 
 		// TODO: decide on how to handle embedded pck files
@@ -123,7 +139,7 @@ namespace PckStudio
 			{
 				try
 				{
-					PckFile subPCKfile = asset.GetData(new PckFileReader(LittleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian));
+					PckFile subPCKfile = asset.GetData(new PckFileReader(littleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian));
 					BuildPckTreeView(treeViewMain.SelectedNode.Nodes, subPCKfile);
 					treeViewMain.SelectedNode.ExpandAll();
                 }
@@ -164,7 +180,7 @@ namespace PckStudio
 		{
 			SettingsManager.Default.RegisterPropertyChangedCallback<bool>(nameof(Settings.Default.UseLittleEndianAsDefault), state =>
 			{
-				LittleEndianCheckBox.Checked = state;
+				littleEndianCheckBox.Checked = state;
 			});
 			SettingsManager.Default.RegisterPropertyChangedCallback(nameof(Settings.Default.LoadSubPcks), () =>
 			{
@@ -274,19 +290,19 @@ namespace PckStudio
 
 		private PckFile OpenPck(string filePath)
 		{
+			PckFile pck = null;
 			isTemplateFile = false;
 			saveLocation = filePath;
 			SaveToRecentFiles(filePath);
-            var reader = new PckFileReader(LittleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian);
+            var reader = new PckFileReader(littleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian);
 			try
 			{
-				PckFile pck = reader.FromFile(filePath);
-				return pck;
+				pck = reader.FromFile(filePath);
 			}
 			catch (OverflowException ex)
 			{
 				MessageBox.Show(this, "Failed to open pck\n" +
-					$"Try {(LittleEndianCheckBox.Checked ? "unchecking" : "checking")} the 'Open/Save as Switch/Vita/PS4 pck' check box in the upper right corner.",
+					$"Try {(littleEndianCheckBox.Checked ? "unchecking" : "checking")} the 'Open/Save as Switch/Vita/PS4 pck' check box in the upper right corner.",
 					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				Debug.WriteLine(ex.Message);
 			}
@@ -297,7 +313,8 @@ namespace PckStudio
 					"2. We're aware of an issue where a pck file might fail to load because it contains multiple entries with the same path.",
 					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			return null;
+			updateTitle();
+			return pck;
 		}
 
 		private void CheckForPasswordAndRemove()
@@ -310,11 +327,11 @@ namespace PckStudio
 
 		private void LoadEditorTab()
 		{
-			fileEntryCountLabel.Text = "Files:" + currentPCK.AssetCount;
+			fileCountLabel.Text = "Files: " + currentPCK.AssetCount;
 			if (isTemplateFile)
-				pckFileLabel.Text = "Unsaved File!";
+				currentFilename = "Untitled";
 			else
-				pckFileLabel.Text = Path.GetFileName(saveLocation);
+				currentFilename = Path.GetFileName(saveLocation);
 			treeViewMain.Enabled = treeMeta.Enabled = true;
 			closeToolStripMenuItem.Visible = true;
 			fullBoxSupportToolStripMenuItem.Checked = currentPCK.HasVerionString;
@@ -336,7 +353,7 @@ namespace PckStudio
 			tabControl.SelectTab(0);
 			isSelectingTab = false;
 			currentPCK = null;
-			wasModified = false;
+            wasModified = false;
 			isTemplateFile = false;
 			saveLocation = string.Empty;
 			previewPictureBox.Image = Resources.NoImageFound;
@@ -349,8 +366,8 @@ namespace PckStudio
 			quickChangeToolStripMenuItem.Enabled = false;
 			closeToolStripMenuItem.Visible = false;
 			packSettingsToolStripMenuItem.Visible = false;
-			fileEntryCountLabel.Text = string.Empty;
-			pckFileLabel.Text = string.Empty;
+			fileCountLabel.Text = string.Empty;
+			currentFilename = "";
 			UpdateRichPresence();
 		}
 
@@ -543,7 +560,7 @@ namespace PckStudio
 		{
 			try
             {
-				using AudioEditor audioEditor = new AudioEditor(asset, LittleEndianCheckBox.Checked);
+				using AudioEditor audioEditor = new AudioEditor(asset, littleEndianCheckBox.Checked);
 				wasModified = audioEditor.ShowDialog(this) == DialogResult.OK;
 			}
 			catch (OverflowException)
@@ -576,7 +593,7 @@ namespace PckStudio
 		{
 			if (asset.HasProperty("BOX"))
 			{
-				using generateModel generate = new generateModel(asset);
+				using ModelGeneratorForm generate = new ModelGeneratorForm(asset);
 				if (generate.ShowDialog(this) == DialogResult.OK)
 				{
 					entryDataTextBox.Text = entryTypeTextBox.Text = string.Empty;
@@ -612,15 +629,18 @@ namespace PckStudio
 		{
 			ReloadMetaTreeView();
 
-			entryTypeTextBox.Text = entryDataTextBox.Text = labelImageSize.Text = string.Empty;
+			entryTypeTextBox.Text = entryDataTextBox.Text = imageSizeLabel.Text = string.Empty;
 			buttonEdit.Visible = false;
 
 			previewPictureBox.Image = Resources.NoImageFound;
 			viewFileInfoToolStripMenuItem.Visible = false;
-			
-			if (e.Node.TryGetTagData(out PckAsset asset))
+
+			currentFileTypeLabel.Text = string.Empty;
+            if (e.Node.TryGetTagData(out PckAsset asset))
 			{
-				viewFileInfoToolStripMenuItem.Visible = true;
+				currentFileTypeLabel.Text = asset.Type.ToString();
+
+                viewFileInfoToolStripMenuItem.Visible = true;
 				if (asset.HasProperty("BOX"))
 				{
 					buttonEdit.Text = "EDIT BOXES";
@@ -649,11 +669,11 @@ namespace PckStudio
 							try
 							{
 								previewPictureBox.Image = img;
-								labelImageSize.Text = $"{previewPictureBox.Image.Size.Width}x{previewPictureBox.Image.Size.Height}";
+								imageSizeLabel.Text = $"{previewPictureBox.Image.Size.Width}x{previewPictureBox.Image.Size.Height}";
 							}
 							catch (Exception ex)
 							{
-								labelImageSize.Text = "";
+								imageSizeLabel.Text = "";
 								previewPictureBox.Image = Resources.NoImageFound;
 								Debug.WriteLine("Not a supported image format. Setting back to default");
 								Debug.WriteLine(string.Format("An error occured of type: {0} with message: {1}", ex.GetType(), ex.Message), "Exception");
@@ -793,14 +813,14 @@ namespace PckStudio
 				Save(saveFileDialog.FileName);
 				saveLocation = saveFileDialog.FileName;
 				SaveToRecentFiles(saveFileDialog.FileName);
-                pckFileLabel.Text = Path.GetFileName(saveLocation);
+				currentFilename = Path.GetFileName(saveLocation);
 				isTemplateFile = false;
 			}
 		}
 
 		private void Save(string filePath)
 		{
-			var writer = new PckFileWriter(currentPCK, LittleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian);
+			var writer = new PckFileWriter(currentPCK, littleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian);
 			writer.WriteToFile(filePath);
 			wasModified = false;
 			MessageBox.Show(this, "Saved Pck file", "File Saved");
@@ -1016,8 +1036,8 @@ namespace PckStudio
 				return;
 			}
 
-            PckAsset asset = CreateNewAudioFile(LittleEndianCheckBox.Checked);
-			AudioEditor diag = new AudioEditor(asset, LittleEndianCheckBox.Checked);
+            PckAsset asset = CreateNewAudioFile(littleEndianCheckBox.Checked);
+			AudioEditor diag = new AudioEditor(asset, littleEndianCheckBox.Checked);
 			if (diag.ShowDialog(this) == DialogResult.OK)
 			{
 				currentPCK.AddAsset(asset);
@@ -1252,6 +1272,11 @@ namespace PckStudio
 			treeViewMain.SelectedNode = node.IsTagOfType<PckAsset>() ? null : node;
         }
 
+		public void FocusMe()
+		{
+            SetForegroundWindow(this.Handle);
+        }
+
 		private void treeViewMain_DragEnter(object sender, DragEventArgs e)
 		{
 			e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : e.AllowedEffect;
@@ -1464,7 +1489,7 @@ namespace PckStudio
 			pack.CreateNewAsset("localisation.loc", PckAssetType.LocalisationFile, new LOCFileWriter(locFile, 2));
 
 			pack.CreateNewAssetIf(createSkinsPCK, "Skins.pck", PckAssetType.SkinDataFile, new PckFileWriter(new PckFile(3, true),
-				LittleEndianCheckBox.Checked
+				littleEndianCheckBox.Checked
 					? OMI.Endianness.LittleEndian
 					: OMI.Endianness.BigEndian));
 
@@ -1487,7 +1512,7 @@ namespace PckStudio
 			texturepackInfoAsset.AddProperty("PACKID", "0");
 			texturepackInfoAsset.AddProperty("DATAPATH", $"{res}Data.pck");
 
-			texturepackInfoAsset.SetData(new PckFileWriter(infoPCK, LittleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian));
+			texturepackInfoAsset.SetData(new PckFileWriter(infoPCK, littleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian));
 
 			return pack;
 		}
@@ -1564,7 +1589,7 @@ namespace PckStudio
 		private void quickChangeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			using AdvancedOptions advanced = new AdvancedOptions(currentPCK);
-			advanced.IsLittleEndian = LittleEndianCheckBox.Checked;
+			advanced.IsLittleEndian = littleEndianCheckBox.Checked;
 			if (advanced.ShowDialog(this) == DialogResult.OK)
 			{
 				wasModified = true;
@@ -2156,7 +2181,7 @@ namespace PckStudio
 			}
 
 			currentPCK.CreateNewAsset("Skins.pck", PckAssetType.SkinDataFile, new PckFileWriter(new PckFile(3, true),
-					LittleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian));
+					littleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian));
 
 			BuildMainTreeView();
 		}

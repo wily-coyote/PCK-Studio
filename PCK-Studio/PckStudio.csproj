@@ -176,6 +176,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Renderer\GLBox.cs" />
+    <Compile Include="Renderer\GLCamera.cs" />
+    <Compile Include="Renderer\GLHumanoidModel.cs" />
+    <Compile Include="Renderer\GLPlane.cs" />
+    <Compile Include="Renderer\GLShader.cs" />
+    <Compile Include="Renderer\GLTexture.cs" />
+    <Compile Include="Renderer\GLTransform.cs" />
+    <Compile Include="Renderer\IGLThing.cs" />
     <Compile Include="ToolboxItems\BlendPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -410,11 +418,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Skins-And-Textures\generateModel.cs">
+    <Compile Include="Forms\Skins-And-Textures\ModelGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Skins-And-Textures\generateModel.Designer.cs">
-      <DependentUpon>generateModel.cs</DependentUpon>
+    <Compile Include="Forms\Skins-And-Textures\ModelGeneratorForm.Designer.cs">
+      <DependentUpon>ModelGeneratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Skins-And-Textures\SkinPreview.cs">
       <SubType>Form</SubType>
@@ -553,11 +561,11 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Skins-And-Textures\generateModel.ja.resx">
-      <DependentUpon>generateModel.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\ModelGeneratorForm.ja.resx">
+      <DependentUpon>ModelGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Skins-And-Textures\generateModel.resx">
-      <DependentUpon>generateModel.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\ModelGeneratorForm.resx">
+      <DependentUpon>ModelGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Skins-And-Textures\SkinPreview.resx">
       <DependentUpon>SkinPreview.cs</DependentUpon>
@@ -717,6 +725,9 @@
     </PackageReference>
     <PackageReference Include="Octokit">
       <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="OpenTK.GLControl">
+      <Version>3.3.3</Version>
     </PackageReference>
     <PackageReference Include="System.Drawing.Common">
       <Version>9.0.0</Version>

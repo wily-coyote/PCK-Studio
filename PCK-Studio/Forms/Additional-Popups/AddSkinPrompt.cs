@@ -290,7 +290,7 @@ namespace PckStudio.Forms.Additional_Popups
 
             _skin.SetTexture(Resources.classic_template);
 
-            using generateModel generate = new generateModel(_skin);
+            using ModelGeneratorForm generate = new ModelGeneratorForm(_skin);
 
             if (generate.ShowDialog() == DialogResult.OK)
             {

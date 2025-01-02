@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
-using MetroFramework.Controls;
-using MetroFramework.Forms;
 using PckStudio.Properties;
 
 namespace PckStudio.Forms
 {
-    public partial class AppSettingsForm : MetroForm
+    public partial class AppSettingsForm : Form
     {
         private ApplicationSettingsBase _applicationSettings;
 
@@ -50,16 +48,13 @@ namespace PckStudio.Forms
                 Debug.WriteLine($"{item.Property.Name}: {item.Property.PropertyType}");
                 if (!item.Property.Attributes.ContainsKey(typeof(UserScopedSettingAttribute)) || item.Property.PropertyType != typeof(bool))
                     continue;
-                var checkBox = new MetroCheckBox
+                var checkBox = new CheckBox
                 {
                     Name = item.Name,
                     Tag = item.Name,
                     Text = CheckBoxText.ContainsKey(item.Name) ? CheckBoxText[item.Name] : item.Name,
                     Checked = (bool)item.PropertyValue,
-
                     AutoSize = true,
-                    Theme = MetroFramework.MetroThemeStyle.Dark,
-                    Style = MetroFramework.MetroColorStyle.White,
                 };
                 checkBox.CheckedChanged += CheckBox_CheckedChanged;
                 flowLayoutPanel.Controls.Add(checkBox);

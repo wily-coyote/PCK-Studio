@@ -5,7 +5,7 @@ using PckStudio.Properties;
 
 namespace PckStudio.Forms.Editor
 {
-	public partial class BoxEditor : MetroFramework.Forms.MetroForm
+	public partial class BoxEditor : Form
 	{
 		public string Result;
 
@@ -25,7 +25,7 @@ namespace PckStudio.Forms.Editor
 
             closeButton.Visible = !Settings.Default.AutoSaveChanges;
 
-            inflationUpDown.Enabled = hasInflation;
+            scaleUpDown.Enabled = hasInflation;
 
 			parentComboBox.SelectedItem = parentComboBox.Items[parentComboBox.Items.IndexOf(box.Type)];
 			PosXUpDown.Value = (decimal)box.Pos.X;
@@ -38,7 +38,7 @@ namespace PckStudio.Forms.Editor
 			uvYUpDown.Value = (decimal)box.UV.Y;
 			armorCheckBox.Checked = box.HideWithArmor;
 			mirrorCheckBox.Checked = box.Mirror;
-			inflationUpDown.Value = (decimal)box.Scale;
+			scaleUpDown.Value = (decimal)box.Scale;
 		}
 
 		private void saveButton_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace PckStudio.Forms.Editor
 				$"{uvXUpDown.Value} {uvYUpDown.Value} " +
 				$"{Convert.ToInt32(armorCheckBox.Checked)} " +
 				$"{Convert.ToInt32(mirrorCheckBox.Checked)} " +
-				$"{inflationUpDown.Value}";
+				$"{scaleUpDown.Value}";
 			DialogResult = DialogResult.OK;
 		}
 

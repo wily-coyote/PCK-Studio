@@ -1,4 +1,6 @@
-﻿namespace PckStudio.Forms
+﻿using System.Windows.Forms;
+
+namespace PckStudio.Forms
 {
     partial class AppSettingsForm
     {
@@ -29,25 +31,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppSettingsForm));
-            this.SettingToolTip = new MetroFramework.Components.MetroToolTip();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            // 
-            // SettingToolTip
-            // 
-            this.SettingToolTip.Style = MetroFramework.MetroColorStyle.White;
-            this.SettingToolTip.StyleManager = null;
-            this.SettingToolTip.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // flowLayoutPanel
             // 
             this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(20, 60);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.flowLayoutPanel.Size = new System.Drawing.Size(487, 190);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(527, 270);
             this.flowLayoutPanel.TabIndex = 0;
             // 
             // AppSettingsForm
@@ -60,18 +55,14 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AppSettingsForm";
-            this.Resizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Style = MetroFramework.MetroColorStyle.Black;
             this.Text = "Application Settings";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppBehaviorSettingsForm_FormClosing);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MetroFramework.Components.MetroToolTip SettingToolTip;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }

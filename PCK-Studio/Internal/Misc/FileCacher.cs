@@ -56,6 +56,9 @@ namespace PckStudio.Internal.Misc
         {
             _ = filename ?? throw new ArgumentNullException("filename");
             string destinationFilepath = Path.Combine(_cacheDirectory, filename);
+            // make the directory
+            if (!Directory.Exists(_cacheDirectory))
+                Directory.CreateDirectory(_cacheDirectory);
             if (!File.Exists(destinationFilepath))
             {
                 using FileStream fsDst = File.OpenWrite(destinationFilepath);
