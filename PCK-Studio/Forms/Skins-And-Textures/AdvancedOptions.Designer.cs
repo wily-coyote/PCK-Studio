@@ -30,19 +30,19 @@ namespace PckStudio.Popups
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.Label label1;
+			Label label1;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedOptions));
-			System.Windows.Forms.Label label2;
-			System.Windows.Forms.Label label3;
-			this.propertyTreeview = new System.Windows.Forms.TreeView();
-			this.fileTypeComboBox = new System.Windows.Forms.ComboBox();
-			this.applyButton = new System.Windows.Forms.Button();
-			this.propertyValueTextBox = new System.Windows.Forms.TextBox();
-			this.propertyKeyTextBox = new System.Windows.Forms.TextBox();
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			label1 = new System.Windows.Forms.Label();
-			label2 = new System.Windows.Forms.Label();
-			label3 = new System.Windows.Forms.Label();
+			Label label2;
+			Label label3;
+			this.propertyTreeview = new TreeView();
+			this.fileTypeComboBox = new ComboBox();
+			this.applyButton = new Button();
+			this.propertyValueTextBox = new TextBox();
+			this.propertyKeyTextBox = new TextBox();
+			this.tableLayoutPanel1 = new TableLayoutPanel();
+			label1 = new Label();
+			label2 = new Label();
+			label3 = new Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -63,11 +63,11 @@ namespace PckStudio.Popups
 			// 
 			// propertyTreeview
 			// 
-			this.propertyTreeview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.propertyTreeview.BorderStyle = BorderStyle.FixedSingle;
 			this.tableLayoutPanel1.SetColumnSpan(this.propertyTreeview, 2);
 			resources.ApplyResources(this.propertyTreeview, "propertyTreeview");
 			this.propertyTreeview.Name = "propertyTreeview";
-			this.propertyTreeview.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeMeta_AfterSelect);
+			this.propertyTreeview.AfterSelect += new TreeViewEventHandler(this.treeMeta_AfterSelect);
 			// 
 			// fileTypeComboBox
 			// 
@@ -122,7 +122,7 @@ namespace PckStudio.Popups
 			// AdvancedOptions
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

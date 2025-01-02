@@ -31,11 +31,11 @@ namespace PckStudio
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NumericPrompt));
-			this.TextLabel = new System.Windows.Forms.Label();
-			this.OKButton = new System.Windows.Forms.Button();
-			this.ContextLabel = new System.Windows.Forms.Label();
-			this.ValueUpDown = new System.Windows.Forms.NumericUpDown();
-			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.TextLabel = new Label();
+			this.OKButton = new Button();
+			this.ContextLabel = new Label();
+			this.ValueUpDown = new NumericUpDown();
+			this.layout = new TableLayoutPanel();
 			((System.ComponentModel.ISupportInitialize)(this.ValueUpDown)).BeginInit();
 			this.layout.SuspendLayout();
 			this.SuspendLayout();
@@ -77,7 +77,7 @@ namespace PckStudio
 			// 
 			this.AcceptButton = this.OKButton;
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -91,10 +91,10 @@ namespace PckStudio
         }
 
         #endregion
-        public System.Windows.Forms.Button OKButton;
-        public System.Windows.Forms.Label TextLabel;
+        public Button OKButton;
+        public Label TextLabel;
 		public Label ContextLabel;
-        private System.Windows.Forms.NumericUpDown ValueUpDown;
+        private NumericUpDown ValueUpDown;
 		private TableLayoutPanel layout;
 	}
 }

@@ -32,55 +32,55 @@ namespace PckStudio.Forms.Editor
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ANIMEditor));
-			this.saveButton = new System.Windows.Forms.Button();
-			this.flagsGroup = new System.Windows.Forms.GroupBox();
-			this.rightLegOCheckBox = new System.Windows.Forms.CheckBox();
-			this.headOCheckBox = new System.Windows.Forms.CheckBox();
-			this.leftLegOCheckBox = new System.Windows.Forms.CheckBox();
-			this.leftArmOCheckBox = new System.Windows.Forms.CheckBox();
-			this.bodyOCheckBox = new System.Windows.Forms.CheckBox();
-			this.rightLegCheckBox = new System.Windows.Forms.CheckBox();
-			this.slimCheckBox = new System.Windows.Forms.CheckBox();
-			this.headCheckBox = new System.Windows.Forms.CheckBox();
-			this.leftLegCheckBox = new System.Windows.Forms.CheckBox();
-			this.rightArmCheckBox = new System.Windows.Forms.CheckBox();
-			this.leftArmCheckBox = new System.Windows.Forms.CheckBox();
-			this.bodyCheckBox = new System.Windows.Forms.CheckBox();
-			this.classicCheckBox = new System.Windows.Forms.CheckBox();
-			this.rightArmOCheckBox = new System.Windows.Forms.CheckBox();
-			this.armorFlagsGroupBox = new System.Windows.Forms.GroupBox();
-			this.rightLeggingCheckBox = new System.Windows.Forms.CheckBox();
-			this.helmetCheckBox = new System.Windows.Forms.CheckBox();
-			this.leftLeggingCheckBox = new System.Windows.Forms.CheckBox();
-			this.rightArmorCheckBox = new System.Windows.Forms.CheckBox();
-			this.leftArmorCheckBox = new System.Windows.Forms.CheckBox();
-			this.chestplateCheckBox = new System.Windows.Forms.CheckBox();
-			this.specialAnimGroupBox = new System.Windows.Forms.GroupBox();
-			this.unknownCheckBox = new System.Windows.Forms.CheckBox();
-			this.crouchCheckBox = new System.Windows.Forms.CheckBox();
-			this.dinnerboneCheckBox = new System.Windows.Forms.CheckBox();
-			this.noArmorCheckBox = new System.Windows.Forms.CheckBox();
-			this.bobbingCheckBox = new System.Windows.Forms.CheckBox();
-			this.santaCheckBox = new System.Windows.Forms.CheckBox();
-			this.syncLegsCheckBox = new System.Windows.Forms.CheckBox();
-			this.staticArmsCheckBox = new System.Windows.Forms.CheckBox();
-			this.syncArmsCheckBox = new System.Windows.Forms.CheckBox();
-			this.statueCheckBox = new System.Windows.Forms.CheckBox();
-			this.zombieCheckBox = new System.Windows.Forms.CheckBox();
-			this.staticLegsCheckBox = new System.Windows.Forms.CheckBox();
-			this.copyButton = new System.Windows.Forms.Button();
-			this.importButton = new System.Windows.Forms.Button();
-			this.exportButton = new System.Windows.Forms.Button();
-			this.animValue = new System.Windows.Forms.Label();
-			this.uncheckAllButton = new System.Windows.Forms.Button();
-			this.checkAllButton = new System.Windows.Forms.Button();
-			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-			this.resetButton = new System.Windows.Forms.Button();
-			this.templateButton = new System.Windows.Forms.Button();
-			this.layout = new System.Windows.Forms.TableLayoutPanel();
-			this.armorFlagsLayout = new System.Windows.Forms.FlowLayoutPanel();
-			this.specialAnimLayout = new System.Windows.Forms.TableLayoutPanel();
-			this.flagsLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.saveButton = new Button();
+			this.flagsGroup = new GroupBox();
+			this.rightLegOCheckBox = new CheckBox();
+			this.headOCheckBox = new CheckBox();
+			this.leftLegOCheckBox = new CheckBox();
+			this.leftArmOCheckBox = new CheckBox();
+			this.bodyOCheckBox = new CheckBox();
+			this.rightLegCheckBox = new CheckBox();
+			this.slimCheckBox = new CheckBox();
+			this.headCheckBox = new CheckBox();
+			this.leftLegCheckBox = new CheckBox();
+			this.rightArmCheckBox = new CheckBox();
+			this.leftArmCheckBox = new CheckBox();
+			this.bodyCheckBox = new CheckBox();
+			this.classicCheckBox = new CheckBox();
+			this.rightArmOCheckBox = new CheckBox();
+			this.armorFlagsGroupBox = new GroupBox();
+			this.rightLeggingCheckBox = new CheckBox();
+			this.helmetCheckBox = new CheckBox();
+			this.leftLeggingCheckBox = new CheckBox();
+			this.rightArmorCheckBox = new CheckBox();
+			this.leftArmorCheckBox = new CheckBox();
+			this.chestplateCheckBox = new CheckBox();
+			this.specialAnimGroupBox = new GroupBox();
+			this.unknownCheckBox = new CheckBox();
+			this.crouchCheckBox = new CheckBox();
+			this.dinnerboneCheckBox = new CheckBox();
+			this.noArmorCheckBox = new CheckBox();
+			this.bobbingCheckBox = new CheckBox();
+			this.santaCheckBox = new CheckBox();
+			this.syncLegsCheckBox = new CheckBox();
+			this.staticArmsCheckBox = new CheckBox();
+			this.syncArmsCheckBox = new CheckBox();
+			this.statueCheckBox = new CheckBox();
+			this.zombieCheckBox = new CheckBox();
+			this.staticLegsCheckBox = new CheckBox();
+			this.copyButton = new Button();
+			this.importButton = new Button();
+			this.exportButton = new Button();
+			this.animValue = new Label();
+			this.uncheckAllButton = new Button();
+			this.checkAllButton = new Button();
+			this.toolTip = new ToolTip(this.components);
+			this.resetButton = new Button();
+			this.templateButton = new Button();
+			this.layout = new TableLayoutPanel();
+			this.armorFlagsLayout = new FlowLayoutPanel();
+			this.specialAnimLayout = new TableLayoutPanel();
+			this.flagsLayout = new TableLayoutPanel();
 			this.flagsGroup.SuspendLayout();
 			this.armorFlagsGroupBox.SuspendLayout();
 			this.specialAnimGroupBox.SuspendLayout();
@@ -92,7 +92,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// saveButton
 			// 
-			this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.saveButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.saveButton.Location = new System.Drawing.Point(197, 428);
 			this.saveButton.Name = "saveButton";
 			this.saveButton.Size = new System.Drawing.Size(188, 23);
@@ -104,7 +104,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			this.layout.SetColumnSpan(this.flagsGroup, 2);
 			this.flagsGroup.Controls.Add(this.flagsLayout);
-			this.flagsGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flagsGroup.Dock = DockStyle.Fill;
 			this.flagsGroup.Location = new System.Drawing.Point(3, 109);
 			this.flagsGroup.Name = "flagsGroup";
 			this.layout.SetRowSpan(this.flagsGroup, 2);
@@ -283,7 +283,7 @@ namespace PckStudio.Forms.Editor
 			// armorFlagsGroupBox
 			// 
 			this.armorFlagsGroupBox.Controls.Add(this.armorFlagsLayout);
-			this.armorFlagsGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.armorFlagsGroupBox.Dock = DockStyle.Fill;
 			this.armorFlagsGroupBox.Location = new System.Drawing.Point(391, 138);
 			this.armorFlagsGroupBox.Name = "armorFlagsGroupBox";
 			this.armorFlagsGroupBox.Size = new System.Drawing.Size(190, 163);
@@ -361,7 +361,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			this.layout.SetColumnSpan(this.specialAnimGroupBox, 3);
 			this.specialAnimGroupBox.Controls.Add(this.specialAnimLayout);
-			this.specialAnimGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.specialAnimGroupBox.Dock = DockStyle.Fill;
 			this.specialAnimGroupBox.Location = new System.Drawing.Point(3, 307);
 			this.specialAnimGroupBox.Name = "specialAnimGroupBox";
 			this.specialAnimGroupBox.Size = new System.Drawing.Size(578, 115);
@@ -496,7 +496,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// copyButton
 			// 
-			this.copyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.copyButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.copyButton.Location = new System.Drawing.Point(391, 80);
 			this.copyButton.Name = "copyButton";
 			this.copyButton.Size = new System.Drawing.Size(190, 23);
@@ -506,7 +506,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// importButton
 			// 
-			this.importButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.importButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.importButton.Location = new System.Drawing.Point(3, 80);
 			this.importButton.Name = "importButton";
 			this.importButton.Size = new System.Drawing.Size(188, 23);
@@ -516,7 +516,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// exportButton
 			// 
-			this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.exportButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.exportButton.Location = new System.Drawing.Point(197, 80);
 			this.exportButton.Name = "exportButton";
 			this.exportButton.Size = new System.Drawing.Size(188, 23);
@@ -528,7 +528,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			this.animValue.AutoSize = true;
 			this.layout.SetColumnSpan(this.animValue, 3);
-			this.animValue.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.animValue.Dock = DockStyle.Fill;
 			this.animValue.Location = new System.Drawing.Point(3, 0);
 			this.animValue.Name = "animValue";
 			this.animValue.Size = new System.Drawing.Size(578, 48);
@@ -538,7 +538,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// uncheckAllButton
 			// 
-			this.uncheckAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.uncheckAllButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.uncheckAllButton.Location = new System.Drawing.Point(197, 51);
 			this.uncheckAllButton.Name = "uncheckAllButton";
 			this.uncheckAllButton.Size = new System.Drawing.Size(188, 23);
@@ -548,7 +548,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// checkAllButton
 			// 
-			this.checkAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkAllButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.checkAllButton.Location = new System.Drawing.Point(3, 51);
 			this.checkAllButton.Name = "checkAllButton";
 			this.checkAllButton.Size = new System.Drawing.Size(188, 23);
@@ -562,7 +562,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// resetButton
 			// 
-			this.resetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.resetButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.resetButton.Location = new System.Drawing.Point(391, 51);
 			this.resetButton.Name = "resetButton";
 			this.resetButton.Size = new System.Drawing.Size(190, 23);
@@ -572,7 +572,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// templateButton
 			// 
-			this.templateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.templateButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.templateButton.Location = new System.Drawing.Point(391, 109);
 			this.templateButton.Name = "templateButton";
 			this.templateButton.Size = new System.Drawing.Size(190, 23);
@@ -583,9 +583,9 @@ namespace PckStudio.Forms.Editor
 			// layout
 			// 
 			this.layout.ColumnCount = 3;
-			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
 			this.layout.Controls.Add(this.saveButton, 1, 6);
 			this.layout.Controls.Add(this.specialAnimGroupBox, 0, 5);
 			this.layout.Controls.Add(this.flagsGroup, 0, 3);
@@ -598,17 +598,17 @@ namespace PckStudio.Forms.Editor
 			this.layout.Controls.Add(this.resetButton, 2, 1);
 			this.layout.Controls.Add(this.copyButton, 2, 2);
 			this.layout.Controls.Add(this.animValue, 0, 0);
-			this.layout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.layout.Dock = DockStyle.Fill;
 			this.layout.Location = new System.Drawing.Point(0, 0);
 			this.layout.Name = "layout";
 			this.layout.RowCount = 7;
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+			this.layout.RowStyles.Add(new RowStyle());
+			this.layout.RowStyles.Add(new RowStyle());
+			this.layout.RowStyles.Add(new RowStyle());
+			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.layout.RowStyles.Add(new RowStyle());
+			this.layout.RowStyles.Add(new RowStyle());
 			this.layout.Size = new System.Drawing.Size(584, 454);
 			this.layout.TabIndex = 30;
 			// 
@@ -620,7 +620,7 @@ namespace PckStudio.Forms.Editor
 			this.armorFlagsLayout.Controls.Add(this.rightArmorCheckBox);
 			this.armorFlagsLayout.Controls.Add(this.leftLeggingCheckBox);
 			this.armorFlagsLayout.Controls.Add(this.rightLeggingCheckBox);
-			this.armorFlagsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.armorFlagsLayout.Dock = DockStyle.Fill;
 			this.armorFlagsLayout.Location = new System.Drawing.Point(3, 16);
 			this.armorFlagsLayout.Name = "armorFlagsLayout";
 			this.armorFlagsLayout.Size = new System.Drawing.Size(184, 144);
@@ -629,10 +629,10 @@ namespace PckStudio.Forms.Editor
 			// specialAnimLayout
 			// 
 			this.specialAnimLayout.ColumnCount = 4;
-			this.specialAnimLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.specialAnimLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.specialAnimLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.specialAnimLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.specialAnimLayout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.specialAnimLayout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.specialAnimLayout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.specialAnimLayout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
 			this.specialAnimLayout.Controls.Add(this.staticArmsCheckBox, 0, 0);
 			this.specialAnimLayout.Controls.Add(this.zombieCheckBox, 0, 2);
 			this.specialAnimLayout.Controls.Add(this.unknownCheckBox, 1, 2);
@@ -645,22 +645,22 @@ namespace PckStudio.Forms.Editor
 			this.specialAnimLayout.Controls.Add(this.syncLegsCheckBox, 2, 0);
 			this.specialAnimLayout.Controls.Add(this.syncArmsCheckBox, 3, 0);
 			this.specialAnimLayout.Controls.Add(this.staticLegsCheckBox, 0, 1);
-			this.specialAnimLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.specialAnimLayout.Dock = DockStyle.Fill;
 			this.specialAnimLayout.Location = new System.Drawing.Point(3, 16);
 			this.specialAnimLayout.Name = "specialAnimLayout";
 			this.specialAnimLayout.RowCount = 4;
-			this.specialAnimLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.specialAnimLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.specialAnimLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.specialAnimLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.specialAnimLayout.RowStyles.Add(new RowStyle());
+			this.specialAnimLayout.RowStyles.Add(new RowStyle());
+			this.specialAnimLayout.RowStyles.Add(new RowStyle());
+			this.specialAnimLayout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.specialAnimLayout.Size = new System.Drawing.Size(572, 96);
 			this.specialAnimLayout.TabIndex = 14;
 			// 
 			// flagsLayout
 			// 
 			this.flagsLayout.ColumnCount = 2;
-			this.flagsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.flagsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.flagsLayout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.flagsLayout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.flagsLayout.Controls.Add(this.classicCheckBox, 0, 0);
 			this.flagsLayout.Controls.Add(this.rightLegOCheckBox, 1, 6);
 			this.flagsLayout.Controls.Add(this.headCheckBox, 0, 1);
@@ -675,25 +675,25 @@ namespace PckStudio.Forms.Editor
 			this.flagsLayout.Controls.Add(this.leftLegCheckBox, 0, 5);
 			this.flagsLayout.Controls.Add(this.slimCheckBox, 1, 0);
 			this.flagsLayout.Controls.Add(this.rightLegCheckBox, 0, 6);
-			this.flagsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flagsLayout.Dock = DockStyle.Fill;
 			this.flagsLayout.Location = new System.Drawing.Point(3, 16);
 			this.flagsLayout.Name = "flagsLayout";
 			this.flagsLayout.RowCount = 8;
-			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.flagsLayout.RowStyles.Add(new RowStyle());
+			this.flagsLayout.RowStyles.Add(new RowStyle());
+			this.flagsLayout.RowStyles.Add(new RowStyle());
+			this.flagsLayout.RowStyles.Add(new RowStyle());
+			this.flagsLayout.RowStyles.Add(new RowStyle());
+			this.flagsLayout.RowStyles.Add(new RowStyle());
+			this.flagsLayout.RowStyles.Add(new RowStyle());
+			this.flagsLayout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.flagsLayout.Size = new System.Drawing.Size(376, 173);
 			this.flagsLayout.TabIndex = 14;
 			// 
 			// ANIMEditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(584, 454);
 			this.Controls.Add(this.layout);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -701,7 +701,7 @@ namespace PckStudio.Forms.Editor
 			this.MinimizeBox = false;
 			this.Name = "ANIMEditor";
 			this.Text = "ANIM Editor";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ANIMEditor_FormClosing);
+			this.FormClosing += new FormClosingEventHandler(this.ANIMEditor_FormClosing);
 			this.flagsGroup.ResumeLayout(false);
 			this.armorFlagsGroupBox.ResumeLayout(false);
 			this.specialAnimGroupBox.ResumeLayout(false);
@@ -719,7 +719,7 @@ namespace PckStudio.Forms.Editor
 
 		#endregion
 		private Button saveButton;
-		private System.Windows.Forms.GroupBox flagsGroup;
+		private GroupBox flagsGroup;
 		private CheckBox headCheckBox;
 		private CheckBox leftLegCheckBox;
 		private CheckBox rightArmCheckBox;
@@ -734,14 +734,14 @@ namespace PckStudio.Forms.Editor
 		private CheckBox rightArmOCheckBox;
 		private CheckBox leftArmOCheckBox;
 		private CheckBox bodyOCheckBox;
-		private System.Windows.Forms.GroupBox armorFlagsGroupBox;
+		private GroupBox armorFlagsGroupBox;
 		private CheckBox rightLeggingCheckBox;
 		private CheckBox helmetCheckBox;
 		private CheckBox leftLeggingCheckBox;
 		private CheckBox rightArmorCheckBox;
 		private CheckBox leftArmorCheckBox;
 		private CheckBox chestplateCheckBox;
-		private System.Windows.Forms.GroupBox specialAnimGroupBox;
+		private GroupBox specialAnimGroupBox;
 		private CheckBox syncLegsCheckBox;
 		private CheckBox staticArmsCheckBox;
 		private CheckBox syncArmsCheckBox;

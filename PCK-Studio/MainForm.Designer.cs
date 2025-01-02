@@ -151,8 +151,9 @@ namespace PckStudio
 			this.propLayout = new TableLayoutPanel();
 			this.treeMeta = new TreeView();
 			this.entryTypeTextBox = new TextBox();
-			this.entryDataTextBox = new TextBox();
 			this.buttonEdit = new Button();
+			this.entryDataTextBox = new TextBox();
+			this.layout = new Panel();
 			toolStripSeparator2 = new ToolStripSeparator();
 			toolStripSeparator4 = new ToolStripSeparator();
 			toolStripSeparator1 = new ToolStripSeparator();
@@ -170,6 +171,7 @@ namespace PckStudio
 			this.propTabControl.SuspendLayout();
 			this.metaTab.SuspendLayout();
 			this.propLayout.SuspendLayout();
+			this.layout.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// toolStripSeparator2
@@ -190,10 +192,10 @@ namespace PckStudio
 			// menuStrip
 			// 
 			this.menuStrip.Items.AddRange(new ToolStripItem[] {
-			this.fileToolStripMenuItem,
-			this.editToolStripMenuItem,
-			this.miscToolStripMenuItem,
-			this.helpToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.miscToolStripMenuItem,
+            this.helpToolStripMenuItem});
 			this.menuStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			resources.ApplyResources(this.menuStrip, "menuStrip");
 			this.menuStrip.Name = "menuStrip";
@@ -201,25 +203,25 @@ namespace PckStudio
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.newToolStripMenuItem,
-			this.openToolStripMenuItem,
-			toolStripSeparator2,
-			this.recentlyOpenToolStripMenuItem,
-			toolStripSeparator4,
-			this.closeToolStripMenuItem,
-			this.packSettingsToolStripMenuItem,
-			this.saveToolStripMenuItem1,
-			this.saveToolStripMenuItem,
-			this.exitToolStripMenuItem});
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
+            toolStripSeparator2,
+            this.recentlyOpenToolStripMenuItem,
+            toolStripSeparator4,
+            this.closeToolStripMenuItem,
+            this.packSettingsToolStripMenuItem,
+            this.saveToolStripMenuItem1,
+            this.saveToolStripMenuItem,
+            this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
 			// 
 			// newToolStripMenuItem
 			// 
 			this.newToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.skinPackToolStripMenuItem,
-			this.texturePackToolStripMenuItem,
-			this.mashUpPackToolStripMenuItem});
+            this.skinPackToolStripMenuItem,
+            this.texturePackToolStripMenuItem,
+            this.mashUpPackToolStripMenuItem});
 			resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
 			// 
@@ -261,7 +263,7 @@ namespace PckStudio
 			// packSettingsToolStripMenuItem
 			// 
 			this.packSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.fullBoxSupportToolStripMenuItem});
+            this.fullBoxSupportToolStripMenuItem});
 			this.packSettingsToolStripMenuItem.Image = global::PckStudio.Properties.Resources.ranch;
 			this.packSettingsToolStripMenuItem.Name = "packSettingsToolStripMenuItem";
 			resources.ApplyResources(this.packSettingsToolStripMenuItem, "packSettingsToolStripMenuItem");
@@ -294,7 +296,7 @@ namespace PckStudio
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.quickChangeToolStripMenuItem});
+            this.quickChangeToolStripMenuItem});
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
 			// 
@@ -307,8 +309,8 @@ namespace PckStudio
 			// miscToolStripMenuItem
 			// 
 			this.miscToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.openPckManagerToolStripMenuItem,
-			this.convertMusicFilesToolStripMenuItem});
+            this.openPckManagerToolStripMenuItem,
+            this.convertMusicFilesToolStripMenuItem});
 			resources.ApplyResources(this.miscToolStripMenuItem, "miscToolStripMenuItem");
 			this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
 			// 
@@ -321,8 +323,8 @@ namespace PckStudio
 			// convertMusicFilesToolStripMenuItem
 			// 
 			this.convertMusicFilesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.wavBinkaToolStripMenuItem,
-			this.binkaWavToolStripMenuItem});
+            this.wavBinkaToolStripMenuItem,
+            this.binkaWavToolStripMenuItem});
 			this.convertMusicFilesToolStripMenuItem.Name = "convertMusicFilesToolStripMenuItem";
 			resources.ApplyResources(this.convertMusicFilesToolStripMenuItem, "convertMusicFilesToolStripMenuItem");
 			// 
@@ -341,15 +343,15 @@ namespace PckStudio
 			// helpToolStripMenuItem
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.checkForUpdatesToolStripMenuItem,
-			this.aboutToolStripMenuItem,
-			toolStripSeparator1,
-			this.videosToolStripMenuItem,
-			this.donateToolStripMenuItem,
-			this.joinDevelopmentDiscordToolStripMenuItem,
-			this.trelloBoardToolStripMenuItem,
-			this.toolStripSeparator3,
-			this.settingsToolStripMenuItem});
+            this.checkForUpdatesToolStripMenuItem,
+            this.aboutToolStripMenuItem,
+            toolStripSeparator1,
+            this.videosToolStripMenuItem,
+            this.donateToolStripMenuItem,
+            this.joinDevelopmentDiscordToolStripMenuItem,
+            this.trelloBoardToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.settingsToolStripMenuItem});
 			resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			// 
@@ -368,13 +370,13 @@ namespace PckStudio
 			// videosToolStripMenuItem
 			// 
 			this.videosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.howToMakeABasicSkinPackToolStripMenuItem,
-			this.howToMakeACustomSkinModelToolStripMenuItem,
-			this.howToMakeCustomSkinModelsbedrockToolStripMenuItem,
-			this.howToMakeCustomMusicToolStripMenuItem,
-			this.howToInstallPcksDirectlyToWiiUToolStripMenuItem,
-			this.pckCenterReleaseToolStripMenuItem,
-			this.howPCKsWorkToolStripMenuItem});
+            this.howToMakeABasicSkinPackToolStripMenuItem,
+            this.howToMakeACustomSkinModelToolStripMenuItem,
+            this.howToMakeCustomSkinModelsbedrockToolStripMenuItem,
+            this.howToMakeCustomMusicToolStripMenuItem,
+            this.howToInstallPcksDirectlyToWiiUToolStripMenuItem,
+            this.pckCenterReleaseToolStripMenuItem,
+            this.howPCKsWorkToolStripMenuItem});
 			resources.ApplyResources(this.videosToolStripMenuItem, "videosToolStripMenuItem");
 			this.videosToolStripMenuItem.Name = "videosToolStripMenuItem";
 			// 
@@ -430,9 +432,9 @@ namespace PckStudio
 			// donateToolStripMenuItem
 			// 
 			this.donateToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.toNobledezJackToolStripMenuItem,
-			this.toPhoenixARCDeveloperToolStripMenuItem,
-			this.forMattNLContributorToolStripMenuItem});
+            this.toNobledezJackToolStripMenuItem,
+            this.toPhoenixARCDeveloperToolStripMenuItem,
+            this.forMattNLContributorToolStripMenuItem});
 			resources.ApplyResources(this.donateToolStripMenuItem, "donateToolStripMenuItem");
 			this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
 			// 
@@ -481,9 +483,9 @@ namespace PckStudio
 			// statusStrip
 			// 
 			this.statusStrip.Items.AddRange(new ToolStripItem[] {
-			this.fileCountLabel,
-			this.currentFileTypeLabel,
-			this.imageSizeLabel});
+            this.fileCountLabel,
+            this.currentFileTypeLabel,
+            this.imageSizeLabel});
 			resources.ApplyResources(this.statusStrip, "statusStrip");
 			this.statusStrip.Name = "statusStrip";
 			// 
@@ -494,33 +496,37 @@ namespace PckStudio
 			// 
 			// currentFileTypeLabel
 			// 
+			this.currentFileTypeLabel.BorderSides = ToolStripStatusLabelBorderSides.Left;
+			this.currentFileTypeLabel.BorderStyle = Border3DStyle.Etched;
 			this.currentFileTypeLabel.Name = "currentFileTypeLabel";
 			resources.ApplyResources(this.currentFileTypeLabel, "currentFileTypeLabel");
 			// 
 			// imageSizeLabel
 			// 
+			this.imageSizeLabel.BorderSides = ToolStripStatusLabelBorderSides.Left;
+			this.imageSizeLabel.BorderStyle = Border3DStyle.Etched;
 			this.imageSizeLabel.Name = "imageSizeLabel";
 			resources.ApplyResources(this.imageSizeLabel, "imageSizeLabel");
 			// 
 			// contextMenuPCKEntries
 			// 
 			this.contextMenuPCKEntries.Items.AddRange(new ToolStripItem[] {
-			this.createToolStripMenuItem,
-			this.importSkinsToolStripMenuItem,
-			this.exportToolStripMenuItem,
-			this.setFileTypeToolStripMenuItem,
-			this.toolStripSeparator5,
-			this.generateMipMapTextureToolStripMenuItem1,
-			this.viewFileInfoToolStripMenuItem,
-			this.correctSkinDecimalsToolStripMenuItem,
-			this.setSubPCKEndiannessToolStripMenuItem,
-			this.setModelContainerFormatToolStripMenuItem,
-			this.toolStripSeparator6,
-			this.extractToolStripMenuItem,
-			this.cloneFileToolStripMenuItem,
-			this.renameFileToolStripMenuItem,
-			this.replaceToolStripMenuItem,
-			this.deleteFileToolStripMenuItem});
+            this.createToolStripMenuItem,
+            this.importSkinsToolStripMenuItem,
+            this.exportToolStripMenuItem,
+            this.setFileTypeToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.generateMipMapTextureToolStripMenuItem1,
+            this.viewFileInfoToolStripMenuItem,
+            this.correctSkinDecimalsToolStripMenuItem,
+            this.setSubPCKEndiannessToolStripMenuItem,
+            this.setModelContainerFormatToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.extractToolStripMenuItem,
+            this.cloneFileToolStripMenuItem,
+            this.renameFileToolStripMenuItem,
+            this.replaceToolStripMenuItem,
+            this.deleteFileToolStripMenuItem});
 			this.contextMenuPCKEntries.Name = "contextMenuStrip1";
 			resources.ApplyResources(this.contextMenuPCKEntries, "contextMenuPCKEntries");
 			this.contextMenuPCKEntries.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuPCKEntries_Opening);
@@ -528,14 +534,14 @@ namespace PckStudio
 			// createToolStripMenuItem
 			// 
 			this.createToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.folderToolStripMenuItem,
-			this.skinToolStripMenuItem,
-			this.createAnimatedTextureToolStripMenuItem,
-			this.audiopckToolStripMenuItem,
-			this.colourscolToolStripMenuItem,
-			this.CreateSkinsPCKToolStripMenuItem1,
-			this.behavioursbinToolStripMenuItem,
-			this.entityMaterialsbinToolStripMenuItem});
+            this.folderToolStripMenuItem,
+            this.skinToolStripMenuItem,
+            this.createAnimatedTextureToolStripMenuItem,
+            this.audiopckToolStripMenuItem,
+            this.colourscolToolStripMenuItem,
+            this.CreateSkinsPCKToolStripMenuItem1,
+            this.behavioursbinToolStripMenuItem,
+            this.entityMaterialsbinToolStripMenuItem});
 			resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
 			this.createToolStripMenuItem.Name = "createToolStripMenuItem";
 			// 
@@ -595,10 +601,10 @@ namespace PckStudio
 			// importSkinsToolStripMenuItem
 			// 
 			this.importSkinsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.importSkinToolStripMenuItem,
-			this.importExtractedSkinsFolderToolStripMenuItem,
-			this.addTextureToolStripMenuItem,
-			this.addFileToolStripMenuItem});
+            this.importSkinToolStripMenuItem,
+            this.importExtractedSkinsFolderToolStripMenuItem,
+            this.addTextureToolStripMenuItem,
+            this.addFileToolStripMenuItem});
 			resources.ApplyResources(this.importSkinsToolStripMenuItem, "importSkinsToolStripMenuItem");
 			this.importSkinsToolStripMenuItem.Name = "importSkinsToolStripMenuItem";
 			// 
@@ -631,7 +637,7 @@ namespace PckStudio
 			// exportToolStripMenuItem
 			// 
 			this.exportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.as3DSTextureFileToolStripMenuItem});
+            this.as3DSTextureFileToolStripMenuItem});
 			this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
 			resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
 			// 
@@ -644,18 +650,18 @@ namespace PckStudio
 			// setFileTypeToolStripMenuItem
 			// 
 			this.setFileTypeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.skinToolStripMenuItem1,
-			this.capeToolStripMenuItem,
-			this.textureToolStripMenuItem,
-			this.languagesFileLOCToolStripMenuItem,
-			this.gameRulesFileGRFToolStripMenuItem,
-			this.audioPCKFileToolStripMenuItem,
-			this.coloursCOLFileToolStripMenuItem,
-			this.gameRulesHeaderGRHToolStripMenuItem,
-			this.skinsPCKToolStripMenuItem,
-			this.modelsFileBINToolStripMenuItem,
-			this.behavioursFileBINToolStripMenuItem,
-			this.entityMaterialsFileBINToolStripMenuItem});
+            this.skinToolStripMenuItem1,
+            this.capeToolStripMenuItem,
+            this.textureToolStripMenuItem,
+            this.languagesFileLOCToolStripMenuItem,
+            this.gameRulesFileGRFToolStripMenuItem,
+            this.audioPCKFileToolStripMenuItem,
+            this.coloursCOLFileToolStripMenuItem,
+            this.gameRulesHeaderGRHToolStripMenuItem,
+            this.skinsPCKToolStripMenuItem,
+            this.modelsFileBINToolStripMenuItem,
+            this.behavioursFileBINToolStripMenuItem,
+            this.entityMaterialsFileBINToolStripMenuItem});
 			this.setFileTypeToolStripMenuItem.Name = "setFileTypeToolStripMenuItem";
 			resources.ApplyResources(this.setFileTypeToolStripMenuItem, "setFileTypeToolStripMenuItem");
 			// 
@@ -745,8 +751,8 @@ namespace PckStudio
 			// setSubPCKEndiannessToolStripMenuItem
 			// 
 			this.setSubPCKEndiannessToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.bigEndianXbox360PS3WiiUToolStripMenuItem,
-			this.littleEndianPS4PSVitaSwitchToolStripMenuItem});
+            this.bigEndianXbox360PS3WiiUToolStripMenuItem,
+            this.littleEndianPS4PSVitaSwitchToolStripMenuItem});
 			this.setSubPCKEndiannessToolStripMenuItem.Name = "setSubPCKEndiannessToolStripMenuItem";
 			resources.ApplyResources(this.setSubPCKEndiannessToolStripMenuItem, "setSubPCKEndiannessToolStripMenuItem");
 			// 
@@ -765,9 +771,9 @@ namespace PckStudio
 			// setModelContainerFormatToolStripMenuItem
 			// 
 			this.setModelContainerFormatToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.version1ToolStripMenuItem,
-			this.version2ToolStripMenuItem,
-			this.version3114ToolStripMenuItem});
+            this.version1ToolStripMenuItem,
+            this.version2ToolStripMenuItem,
+            this.version3114ToolStripMenuItem});
 			this.setModelContainerFormatToolStripMenuItem.Name = "setModelContainerFormatToolStripMenuItem";
 			resources.ApplyResources(this.setModelContainerFormatToolStripMenuItem, "setModelContainerFormatToolStripMenuItem");
 			// 
@@ -827,19 +833,19 @@ namespace PckStudio
 			// contextMenuMetaTree
 			// 
 			this.contextMenuMetaTree.Items.AddRange(new ToolStripItem[] {
-			this.addEntryToolStripMenuItem,
-			this.addMultipleEntriesToolStripMenuItem1,
-			this.deleteEntryToolStripMenuItem,
-			this.editAllEntriesToolStripMenuItem});
+            this.addEntryToolStripMenuItem,
+            this.addMultipleEntriesToolStripMenuItem1,
+            this.deleteEntryToolStripMenuItem,
+            this.editAllEntriesToolStripMenuItem});
 			this.contextMenuMetaTree.Name = "contextMenuStrip1";
 			resources.ApplyResources(this.contextMenuMetaTree, "contextMenuMetaTree");
 			// 
 			// addEntryToolStripMenuItem
 			// 
 			this.addEntryToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-			this.addEntryToolStripMenuItem1,
-			this.addBOXEntryToolStripMenuItem1,
-			this.addANIMEntryToolStripMenuItem1});
+            this.addEntryToolStripMenuItem1,
+            this.addBOXEntryToolStripMenuItem1,
+            this.addANIMEntryToolStripMenuItem1});
 			resources.ApplyResources(this.addEntryToolStripMenuItem, "addEntryToolStripMenuItem");
 			this.addEntryToolStripMenuItem.Name = "addEntryToolStripMenuItem";
 			// 
@@ -1025,22 +1031,28 @@ namespace PckStudio
 			resources.ApplyResources(this.entryTypeTextBox, "entryTypeTextBox");
 			this.entryTypeTextBox.Name = "entryTypeTextBox";
 			// 
-			// entryDataTextBox
-			// 
-			resources.ApplyResources(this.entryDataTextBox, "entryDataTextBox");
-			this.entryDataTextBox.Name = "entryDataTextBox";
-			// 
 			// buttonEdit
 			// 
 			resources.ApplyResources(this.buttonEdit, "buttonEdit");
 			this.buttonEdit.Name = "buttonEdit";
 			this.buttonEdit.Click += new System.EventHandler(this.treeViewMain_DoubleClick);
 			// 
+			// entryDataTextBox
+			// 
+			resources.ApplyResources(this.entryDataTextBox, "entryDataTextBox");
+			this.entryDataTextBox.Name = "entryDataTextBox";
+			// 
+			// layout
+			// 
+			this.layout.Controls.Add(this.tabControl);
+			resources.ApplyResources(this.layout, "layout");
+			this.layout.Name = "layout";
+			// 
 			// MainForm
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = AutoScaleMode.Font;
-			this.Controls.Add(this.tabControl);
+			this.Controls.Add(this.layout);
 			this.Controls.Add(this.statusStrip);
 			this.Controls.Add(this.menuStrip);
 			this.MainMenuStrip = this.menuStrip;
@@ -1065,6 +1077,7 @@ namespace PckStudio
 			this.metaTab.ResumeLayout(false);
 			this.propLayout.ResumeLayout(false);
 			this.propLayout.PerformLayout();
+			this.layout.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1189,6 +1202,7 @@ namespace PckStudio
 		private TableLayoutPanel editorLayout;
 		private TableLayoutPanel propLayout;
 		private Button buttonEdit;
+		private Panel layout;
 	}
 }
 

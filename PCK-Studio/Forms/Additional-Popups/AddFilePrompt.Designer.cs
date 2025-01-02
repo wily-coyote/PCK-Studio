@@ -26,12 +26,12 @@ namespace PckStudio.Popups {
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFilePrompt));
-			this.pathlabel = new System.Windows.Forms.Label();
-			this.OKButton = new System.Windows.Forms.Button();
-			this.InputTextBox = new System.Windows.Forms.TextBox();
-			this.typeLabel = new System.Windows.Forms.Label();
-			this.FileTypeComboBox = new System.Windows.Forms.ComboBox();
-			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.pathlabel = new Label();
+			this.OKButton = new Button();
+			this.InputTextBox = new TextBox();
+			this.typeLabel = new Label();
+			this.FileTypeComboBox = new ComboBox();
+			this.layout = new TableLayoutPanel();
 			this.layout.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -93,9 +93,9 @@ namespace PckStudio.Popups {
 			// 
 			this.AcceptButton = this.OKButton;
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			this.Name = "AddFilePrompt";
 			this.layout.ResumeLayout(false);
 			this.layout.PerformLayout();
@@ -104,10 +104,10 @@ namespace PckStudio.Popups {
 		}
 
 		#endregion
-		public System.Windows.Forms.Button OKButton;
-		public System.Windows.Forms.Label pathlabel;
+		public Button OKButton;
+		public Label pathlabel;
 		private TextBox InputTextBox;
-		public System.Windows.Forms.Label typeLabel;
+		public Label typeLabel;
 		private ComboBox FileTypeComboBox;
 		private TableLayoutPanel layout;
 	}

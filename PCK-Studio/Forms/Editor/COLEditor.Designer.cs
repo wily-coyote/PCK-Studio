@@ -28,55 +28,55 @@ namespace PckStudio.Forms.Editor {
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(COLEditor));
-			this.menuStrip = new System.Windows.Forms.MenuStrip();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.stripPS4BiomesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.targetUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU12ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU13ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU14ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU19ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU31ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU32ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU43ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU46ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU51ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU53ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU54ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.TU69ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this._1_9_1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.ColorContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.copyColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.pasteColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.restoreOriginalColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.removeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.hexLabel = new System.Windows.Forms.Label();
-			this.colorTextbox = new System.Windows.Forms.TextBox();
-			this.redLabel = new System.Windows.Forms.Label();
-			this.greenLabel = new System.Windows.Forms.Label();
-			this.blueLabel = new System.Windows.Forms.Label();
-			this.alphaLabel = new System.Windows.Forms.Label();
-			this.alphaUpDown = new System.Windows.Forms.NumericUpDown();
-			this.redUpDown = new System.Windows.Forms.NumericUpDown();
-			this.greenUpDown = new System.Windows.Forms.NumericUpDown();
-			this.blueUpDown = new System.Windows.Forms.NumericUpDown();
-			this.setColorBtn = new System.Windows.Forms.Button();
-			this.tabControl = new System.Windows.Forms.TabControl();
-			this.colorsTab = new System.Windows.Forms.TabPage();
-			this.colorTreeView = new System.Windows.Forms.TreeView();
-			this.waterTab = new System.Windows.Forms.TabPage();
-			this.waterTreeView = new System.Windows.Forms.TreeView();
-			this.underwaterTab = new System.Windows.Forms.TabPage();
-			this.underwaterTreeView = new System.Windows.Forms.TreeView();
-			this.fogTab = new System.Windows.Forms.TabPage();
-			this.fogTreeView = new System.Windows.Forms.TreeView();
-			this.filterLabel = new System.Windows.Forms.Label();
-			this.filterTextBox = new System.Windows.Forms.TextBox();
-			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.menuStrip = new MenuStrip();
+			this.fileToolStripMenuItem = new ToolStripMenuItem();
+			this.saveToolStripMenuItem1 = new ToolStripMenuItem();
+			this.toolsToolStripMenuItem = new ToolStripMenuItem();
+			this.stripPS4BiomesToolStripMenuItem = new ToolStripMenuItem();
+			this.targetUpdateToolStripMenuItem = new ToolStripMenuItem();
+			this.TU12ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU13ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU14ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU19ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU31ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU32ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU43ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU46ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU51ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU53ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU54ToolStripMenuItem = new ToolStripMenuItem();
+			this.TU69ToolStripMenuItem = new ToolStripMenuItem();
+			this._1_9_1ToolStripMenuItem = new ToolStripMenuItem();
+			this.ColorContextMenu = new ContextMenuStrip(this.components);
+			this.copyColorToolStripMenuItem = new ToolStripMenuItem();
+			this.pasteColorToolStripMenuItem = new ToolStripMenuItem();
+			this.restoreOriginalColorToolStripMenuItem = new ToolStripMenuItem();
+			this.addColorToolStripMenuItem = new ToolStripMenuItem();
+			this.removeColorToolStripMenuItem = new ToolStripMenuItem();
+			this.pictureBox1 = new PictureBox();
+			this.hexLabel = new Label();
+			this.colorTextbox = new TextBox();
+			this.redLabel = new Label();
+			this.greenLabel = new Label();
+			this.blueLabel = new Label();
+			this.alphaLabel = new Label();
+			this.alphaUpDown = new NumericUpDown();
+			this.redUpDown = new NumericUpDown();
+			this.greenUpDown = new NumericUpDown();
+			this.blueUpDown = new NumericUpDown();
+			this.setColorBtn = new Button();
+			this.tabControl = new TabControl();
+			this.colorsTab = new TabPage();
+			this.colorTreeView = new TreeView();
+			this.waterTab = new TabPage();
+			this.waterTreeView = new TreeView();
+			this.underwaterTab = new TabPage();
+			this.underwaterTreeView = new TreeView();
+			this.fogTab = new TabPage();
+			this.fogTreeView = new TreeView();
+			this.filterLabel = new Label();
+			this.filterTextBox = new TextBox();
+			this.layout = new TableLayoutPanel();
 			this.menuStrip.SuspendLayout();
 			this.ColorContextMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,14 +95,14 @@ namespace PckStudio.Forms.Editor {
 			// menuStrip
 			// 
 			resources.ApplyResources(this.menuStrip, "menuStrip");
-			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.menuStrip.Items.AddRange(new ToolStripItem[] {
 			this.fileToolStripMenuItem,
 			this.toolsToolStripMenuItem});
 			this.menuStrip.Name = "menuStrip";
 			// 
 			// fileToolStripMenuItem
 			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
 			this.saveToolStripMenuItem1});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
@@ -115,7 +115,7 @@ namespace PckStudio.Forms.Editor {
 			// 
 			// toolsToolStripMenuItem
 			// 
-			this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
 			this.stripPS4BiomesToolStripMenuItem,
 			this.targetUpdateToolStripMenuItem});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
@@ -129,7 +129,7 @@ namespace PckStudio.Forms.Editor {
 			// 
 			// targetUpdateToolStripMenuItem
 			// 
-			this.targetUpdateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.targetUpdateToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
 			this.TU12ToolStripMenuItem,
 			this.TU13ToolStripMenuItem,
 			this.TU14ToolStripMenuItem,
@@ -213,7 +213,7 @@ namespace PckStudio.Forms.Editor {
 			// 
 			// ColorContextMenu
 			// 
-			this.ColorContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.ColorContextMenu.Items.AddRange(new ToolStripItem[] {
 			this.copyColorToolStripMenuItem,
 			this.pasteColorToolStripMenuItem,
 			this.restoreOriginalColorToolStripMenuItem,
@@ -272,10 +272,10 @@ namespace PckStudio.Forms.Editor {
 			// colorTextbox
 			// 
 			resources.ApplyResources(this.colorTextbox, "colorTextbox");
-			this.colorTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.colorTextbox.CharacterCasing = CharacterCasing.Upper;
 			this.colorTextbox.Name = "colorTextbox";
 			this.colorTextbox.TextChanged += new System.EventHandler(this.colorBox_TextChanged);
-			this.colorTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.colorTextbox_KeyPress);
+			this.colorTextbox.KeyPress += new KeyPressEventHandler(this.colorTextbox_KeyPress);
 			// 
 			// redLabel
 			// 
@@ -368,8 +368,8 @@ namespace PckStudio.Forms.Editor {
 			this.colorTreeView.ContextMenuStrip = this.ColorContextMenu;
 			resources.ApplyResources(this.colorTreeView, "colorTreeView");
 			this.colorTreeView.Name = "colorTreeView";
-			this.colorTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-			this.colorTreeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+			this.colorTreeView.AfterSelect += new TreeViewEventHandler(this.treeView1_AfterSelect);
+			this.colorTreeView.KeyDown += new KeyEventHandler(this.treeView1_KeyDown);
 			// 
 			// waterTab
 			// 
@@ -382,8 +382,8 @@ namespace PckStudio.Forms.Editor {
 			this.waterTreeView.ContextMenuStrip = this.ColorContextMenu;
 			resources.ApplyResources(this.waterTreeView, "waterTreeView");
 			this.waterTreeView.Name = "waterTreeView";
-			this.waterTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView2_AfterSelect);
-			this.waterTreeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView2_KeyDown);
+			this.waterTreeView.AfterSelect += new TreeViewEventHandler(this.treeView2_AfterSelect);
+			this.waterTreeView.KeyDown += new KeyEventHandler(this.treeView2_KeyDown);
 			// 
 			// underwaterTab
 			// 
@@ -396,8 +396,8 @@ namespace PckStudio.Forms.Editor {
 			this.underwaterTreeView.ContextMenuStrip = this.ColorContextMenu;
 			resources.ApplyResources(this.underwaterTreeView, "underwaterTreeView");
 			this.underwaterTreeView.Name = "underwaterTreeView";
-			this.underwaterTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView3_AfterSelect);
-			this.underwaterTreeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView3_KeyDown);
+			this.underwaterTreeView.AfterSelect += new TreeViewEventHandler(this.treeView3_AfterSelect);
+			this.underwaterTreeView.KeyDown += new KeyEventHandler(this.treeView3_KeyDown);
 			// 
 			// fogTab
 			// 
@@ -410,8 +410,8 @@ namespace PckStudio.Forms.Editor {
 			this.fogTreeView.ContextMenuStrip = this.ColorContextMenu;
 			resources.ApplyResources(this.fogTreeView, "fogTreeView");
 			this.fogTreeView.Name = "fogTreeView";
-			this.fogTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView4_AfterSelect);
-			this.fogTreeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView4_KeyDown);
+			this.fogTreeView.AfterSelect += new TreeViewEventHandler(this.treeView4_AfterSelect);
+			this.fogTreeView.KeyDown += new KeyEventHandler(this.treeView4_KeyDown);
 			// 
 			// filterLabel
 			// 
@@ -447,11 +447,11 @@ namespace PckStudio.Forms.Editor {
 			// COLEditor
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
 			this.Controls.Add(this.menuStrip);
 			this.Name = "COLEditor";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.COLEditor_FormClosing);
+			this.FormClosing += new FormClosingEventHandler(this.COLEditor_FormClosing);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.ColorContextMenu.ResumeLayout(false);
@@ -472,9 +472,9 @@ namespace PckStudio.Forms.Editor {
 		}
 
 		#endregion
-		private System.Windows.Forms.MenuStrip menuStrip;
-		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
+		private MenuStrip menuStrip;
+		private ToolStripMenuItem fileToolStripMenuItem;
+		private ToolStripMenuItem saveToolStripMenuItem1;
 		private ContextMenuStrip ColorContextMenu;
 		private ToolStripMenuItem restoreOriginalColorToolStripMenuItem;
 		private ToolStripMenuItem copyColorToolStripMenuItem;

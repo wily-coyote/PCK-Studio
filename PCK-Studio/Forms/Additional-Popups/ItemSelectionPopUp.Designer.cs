@@ -31,11 +31,11 @@ namespace PckStudio.Forms.Additional_Popups
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemSelectionPopUp));
-			this.itemsLabel = new System.Windows.Forms.Label();
-			this.okBtn = new System.Windows.Forms.Button();
-			this.cancelButton = new System.Windows.Forms.Button();
-			this.ComboBox = new System.Windows.Forms.ComboBox();
-			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.itemsLabel = new Label();
+			this.okBtn = new Button();
+			this.cancelButton = new Button();
+			this.ComboBox = new ComboBox();
+			this.layout = new TableLayoutPanel();
 			this.layout.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -75,9 +75,9 @@ namespace PckStudio.Forms.Additional_Popups
 			// ItemSelectionPopUp
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			this.Name = "ItemSelectionPopUp";
 			this.layout.ResumeLayout(false);
 			this.layout.PerformLayout();
@@ -86,10 +86,10 @@ namespace PckStudio.Forms.Additional_Popups
         }
 
         #endregion
-		private System.Windows.Forms.Button cancelButton;
+		private Button cancelButton;
         private ComboBox ComboBox;
-        private System.Windows.Forms.Label itemsLabel;
-        private System.Windows.Forms.Button okBtn;
+        private Label itemsLabel;
+        private Button okBtn;
 		private TableLayoutPanel layout;
 	}
 }

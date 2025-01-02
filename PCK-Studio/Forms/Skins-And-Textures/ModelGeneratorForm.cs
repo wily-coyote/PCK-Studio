@@ -22,15 +22,6 @@ namespace PckStudio.Forms {
 		private Image _previewImage;
 		public Image PreviewImage => _previewImage;
 
-		private ViewDirection direction = ViewDirection.front;
-
-		private enum ViewDirection {
-			front,
-			right,
-			back,
-			left,
-		}
-
 		private PckAsset _asset;
 		private SkinANIM _ANIM;
 
@@ -97,6 +88,7 @@ namespace PckStudio.Forms {
 			"TOOL1",
 		};
 
+		SkinBOX selectedBox;
 		List<SkinBOX> modelBoxes = new List<SkinBOX>();
 		List<ModelOffset> modelOffsets = new List<ModelOffset>();
 
@@ -163,13 +155,12 @@ namespace PckStudio.Forms {
 		}
 
 		//Rename model part/item
-		private void listView1_DoubleClick_1(object sender, EventArgs e) {
+		private void renameSkinBox(object sender, EventArgs e) {
 			listViewBoxes.SelectedItems[0].BeginEdit();
 		}
 
 		private void Rerender([CallerMemberName] string caller = default!) {
 			Debug.WriteLine($"Call from {caller}", category: nameof(Rerender));
-			Render(this, EventArgs.Empty);
 			if(generateTextureCheckBox.Checked)
 				GenerateUVTextureMap();
 		}
@@ -179,8 +170,6 @@ namespace PckStudio.Forms {
 		// TODO: line drawing in OpenGL for armor & guidelines, floor grid
 		private Timer glTimer;
 		private GLShader shader;
-		private int VBO;
-		private int VAO;
 		private Bitmap bitmap;
 		private GLTexture skin;
 		private GLHumanoidModel model;
@@ -240,8 +229,6 @@ void main(){
 
 			// Object creation
 			skin = new GLTexture(bitmap);
-			VAO = GL.GenVertexArray();
-			VBO = GL.GenBuffer();
 			shader = new GLShader(vertShader, fragShader);
 			camera = new GLCamera(new Vector3(0.0f, 0.0f, 24.0f), new Vector3(0.0f, 0.0f, 0.0f));
 			model = new GLHumanoidModel(skin);
@@ -310,11 +297,6 @@ void main(){
 		}
 
 		#endregion
-
-		// Graphic Rendering
-		// Builds an image based on the view
-		[Obsolete("Use the OpenGL renderer instead.")]
-		private void Render(object sender, EventArgs e) { }
 
 		private void GenerateUVTextureMap() {
 			Random rng = new Random();
@@ -428,38 +410,16 @@ void main(){
 			//Rerender();
 			GLInit();
 			PopulateGLBoxes();
-			MessageBox.Show(this, "This feature is now considered deprecated and will no longer recieve updates. A better alternative is currently under development. Use at your own risk.", "Deprecated Feature", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 		}
 
-		private void createToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void createSkinBox(object sender, EventArgs e) {
 			modelBoxes.Add(SkinBOX.Empty);
 			UpdateListView();
 			Rerender();
 		}
 
-		private void listView1_SelectedIndexChanged(object sender, EventArgs e) {
-			changeColorToolStripMenuItem.Visible = false;
-			if(listViewBoxes.SelectedItems.Count != 0 && listViewBoxes.SelectedItems[0].Tag is SkinBOX) {
-				changeColorToolStripMenuItem.Visible = true;
-				var part = listViewBoxes.SelectedItems[0].Tag as SkinBOX;
-				//graphics.DrawRectangle(Pens.Yellow, x + (float)double.Parse(this.selected.SubItems[3].Text) * 5 - 1, y + (float)double.Parse(this.selected.SubItems[2].Text) * 5 - 1, (float)double.Parse(this.selected.SubItems[6].Text) * 5 + 2, (float)double.Parse(this.selected.SubItems[5].Text) * 5 + 2);
-				//graphics.DrawRectangle(Pens.Black, x + (float)double.Parse(this.selected.SubItems[3].Text) * 5, y + (float)double.Parse(this.selected.SubItems[2].Text) * 5, (float)double.Parse(this.selected.SubItems[6].Text) * 5, (float)double.Parse(this.selected.SubItems[5].Text) * 5);
-				comboParent.Text = part.Type;
-				PosXUpDown.Value = (decimal)part.Pos.X;
-				PosYUpDown.Value = (decimal)part.Pos.Y;
-				PosZUpDown.Value = (decimal)part.Pos.Z;
-				SizeXUpDown.Value = (decimal)part.Size.X;
-				SizeYUpDown.Value = (decimal)part.Size.Y;
-				SizeZUpDown.Value = (decimal)part.Size.Z;
-				UVXUpDown.Value = (decimal)part.UV.X;
-				UVYUpDown.Value = (decimal)part.UV.Y;
-				Rerender();
-			}
-		}
-
-
 		//Changes Item Model Class
-		private void comboParent_SelectedIndexChanged(object sender, EventArgs e) {
+		private void parentChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.Type = comboParent.Text;
@@ -477,7 +437,7 @@ void main(){
 			Rerender();
 		}
 
-		private void SizeXUpDown_ValueChanged(object sender, EventArgs e) {
+		private void xSizeChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.Size.X = (float)SizeXUpDown.Value;
@@ -486,7 +446,7 @@ void main(){
 			Rerender();
 		}
 
-		private void SizeYUpDown_ValueChanged(object sender, EventArgs e) {
+		private void ySizeChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.Size.Y = (float)SizeYUpDown.Value;
@@ -495,7 +455,7 @@ void main(){
 			Rerender();
 		}
 
-		private void SizeZUpDown_ValueChanged(object sender, EventArgs e) {
+		private void zSizeChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.Size.Z = (float)SizeZUpDown.Value;
@@ -504,7 +464,7 @@ void main(){
 			Rerender();
 		}
 
-		private void PosXUpDown_ValueChanged(object sender, EventArgs e) {
+		private void xPosChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.Pos.X = (float)PosXUpDown.Value;
@@ -514,7 +474,7 @@ void main(){
 		}
 
 
-		private void PosYUpDown_ValueChanged(object sender, EventArgs e) {
+		private void yPosChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.Pos.Y = (float)PosYUpDown.Value;
@@ -523,8 +483,7 @@ void main(){
 			Rerender();
 		}
 
-
-		private void PosZUpDown_ValueChanged(object sender, EventArgs e) {
+		private void zPosChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.Pos.Z = (float)PosZUpDown.Value;
@@ -533,27 +492,9 @@ void main(){
 			Rerender();
 		}
 
-		private void rotateRightBtn_Click(object sender, EventArgs e) {
-			if(direction <= ViewDirection.front)
-				direction = ViewDirection.left;
-			else
-				--direction;
-			labelView.Text = $"{direction} view";
-			Rerender();
-		}
-
-		private void rotateLeftBtn_Click(object sender, EventArgs e) {
-			if(direction >= ViewDirection.left)
-				direction = 0;
-			else
-				++direction;
-			labelView.Text = $"{direction} view";
-			Rerender();
-		}
-
 
 		//Sets Texture X-Offset
-		private void TextureXUpDown_ValueChanged(object sender, EventArgs e) {
+		private void uCoordChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.UV.X = (int)UVXUpDown.Value;
@@ -564,7 +505,7 @@ void main(){
 
 
 		//Sets texture Y-Offset
-		private void TextureYUpDown_ValueChanged(object sender, EventArgs e) {
+		private void vCoordChanged(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				part.UV.Y = (int)UVYUpDown.Value;
@@ -575,7 +516,7 @@ void main(){
 
 
 		//Export Current Skin Texture
-		private void buttonEXPORT_Click(object sender, EventArgs e) {
+		private void exportSkinTexture(object sender, EventArgs e) {
 			// Not all skins are 64x64.
 			Bitmap bitmap = new Bitmap(uvPictureBox.Image);
 			using SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -587,7 +528,7 @@ void main(){
 
 
 		//Imports Skin Texture
-		private void buttonIMPORT_Click(object sender, EventArgs e) {
+		private void importSkinTexture(object sender, EventArgs e) {
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.Filter = "PNG Image Files | *.png";
 			openFileDialog.Title = "Select Skin Texture";
@@ -611,7 +552,7 @@ void main(){
 		}
 
 		// Creates Model Data and Finalizes
-		private void buttonDone_Click(object sender, EventArgs e) {
+		private void finished(object sender, EventArgs e) {
 			foreach(SkinBOX part in modelBoxes) {
 				_asset.AddProperty("BOX", part);
 			}
@@ -627,33 +568,48 @@ void main(){
 		}
 
 		// Renders model after texture change
-		private void texturePreview_BackgroundImageChanged(object sender, EventArgs e) {
+		private void textureChanged(object sender, EventArgs e) {
 			Rerender();
 		}
-
-		// Trigger Dialog to select model part/item color
-		private void listView1_DoubleClick(object sender, EventArgs e) {
-			ColorDialog colorDialog = new ColorDialog();
-			if(colorDialog.ShowDialog(this) == DialogResult.OK)
-				listViewBoxes.SelectedItems[0].ForeColor = colorDialog.Color;
-			Rerender();
-		}
-
 
 		//Re-renders head with updated x-offset
-		private void offsetHead_TextChanged(object sender, EventArgs e) {
+		private void headOffsetChanged(object sender, EventArgs e) {
 			Rerender();
 		}
 
 
 		//Re-renders body with updated x-offset
-		private void offsetBody_TextAlignChanged(object sender, EventArgs e) {
+		private void bodyOffsetChanged(object sender, EventArgs e) {
+			Rerender();
+		}
+		
+		//Re-renders tool with updated x-offset
+		private void toolOffsetChanged(object sender, EventArgs e) {
 			Rerender();
 		}
 
+		//Re-renders helmet with updated x-offset
+		private void helmetOffsetChanged(object sender, EventArgs e) {
+			Rerender();
+		}
+
+		//Re-renders pants with updated x-offset
+		private void pantsOffsetChanged(object sender, EventArgs e) {
+			Rerender();
+		}
+
+		//Re-renders leggings with updated x-offset
+		private void leggingsOffsetChanged(object sender, EventArgs e) {
+			Rerender();
+		}
+
+		//Re-renders boots with updated x-offset
+		private void bootsOffsetChanged(object sender, EventArgs e) {
+			Rerender();
+		}
 
 		//Loads in model template(Steve)
-		private void buttonTemplate_Click(object sender, EventArgs e) {
+		private void generateTemplate(object sender, EventArgs e) {
 			modelBoxes.Add(SkinBOX.FromString("HEAD -4 -8 -4 8 8 8 0 0 0 0 0"));
 			modelBoxes.Add(SkinBOX.FromString("BODY -4 0 -2 8 12 4 16 16 0 0 0"));
 			modelBoxes.Add(SkinBOX.FromString("ARM0 -3 -2 -2 4 12 4 40 16 0 0 0"));
@@ -682,7 +638,7 @@ void main(){
 			}
 		}
 
-		private void cloneToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void cloneSkinBox(object sender, EventArgs e) {
 			try {
 				ListViewItem listViewItem = new ListViewItem();
 				ListViewItem selected = listViewBoxes.SelectedItems[0];
@@ -701,83 +657,59 @@ void main(){
 			}
 		}
 
-		private void deleteToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void deleteSkinBox(object sender, EventArgs e) {
 			if(listViewBoxes.SelectedItems[0] == null)
 				return;
 			listViewBoxes.SelectedItems[0].Remove();
 			Rerender();
 		}
 
-		private void changeColorToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void changeSkinBoxDisplayColor(object sender, EventArgs e) {
 			ColorDialog colorDialog = new ColorDialog();
 			if(colorDialog.ShowDialog(this) == DialogResult.OK)
 				listViewBoxes.SelectedItems[0].ForeColor = colorDialog.Color;
 			Rerender();
 		}
 
-		//Re-renders tool with updated x-offset
-		private void offsetTool_TextChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders helmet with updated x-offset
-		private void offsetHelmet_TextChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders pants with updated x-offset
-		private void offsetPants_TextChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders leggings with updated x-offset
-		private void offsetLeggings_TextChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders boots with updated x-offset
-		private void offsetBoots_TextChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Item Selection
-		private void listView1_Click(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 && listViewBoxes.SelectedItems[0] != null &&
+		private void skinBoxSelected(object sender, EventArgs e) {
+			selectedBox = null;
+			if(
+				listViewBoxes.SelectedItems.Count != 0 &&
+				listViewBoxes.SelectedItems[0] != null &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				comboParent.Text = part.Type;
-				PosXUpDown.Value = (decimal)part.Pos.X;
-				PosYUpDown.Value = (decimal)part.Pos.Y;
-				PosZUpDown.Value = (decimal)part.Pos.Z;
-				SizeXUpDown.Value = (decimal)part.Size.X;
-				SizeYUpDown.Value = (decimal)part.Size.Y;
-				SizeZUpDown.Value = (decimal)part.Size.Z;
-				UVXUpDown.Value = (decimal)part.UV.X;
-				UVYUpDown.Value = (decimal)part.UV.Y;
-				SizeXUpDown.Enabled = true;
-				SizeYUpDown.Enabled = true;
-				SizeZUpDown.Enabled = true;
-				PosXUpDown.Enabled = true;
-				PosYUpDown.Enabled = true;
-				PosZUpDown.Enabled = true;
-				UVXUpDown.Enabled = true;
-				UVYUpDown.Enabled = true;
-				comboParent.Enabled = true;
-				return;
+				selectedBox = part;
 			}
-			SizeXUpDown.Enabled = false;
-			SizeYUpDown.Enabled = false;
-			SizeZUpDown.Enabled = false;
-			PosXUpDown.Enabled = false;
-			PosYUpDown.Enabled = false;
-			PosZUpDown.Enabled = false;
-			UVXUpDown.Enabled = false;
-			UVYUpDown.Enabled = false;
-			comboParent.Enabled = false;
+			refreshValues();
 			Rerender();
+		}
+		private void refreshValues() {
+			bool exists = selectedBox != null;
+			changeColorToolStripMenuItem.Visible = exists;
+			SizeXUpDown.Enabled = exists;
+			SizeYUpDown.Enabled = exists;
+			SizeZUpDown.Enabled = exists;
+			PosXUpDown.Enabled = exists;
+			PosYUpDown.Enabled = exists;
+			PosZUpDown.Enabled = exists;
+			UVXUpDown.Enabled = exists;
+			UVYUpDown.Enabled = exists;
+			comboParent.Enabled = exists;
+			if(exists) {
+				comboParent.Text = selectedBox.Type;
+				PosXUpDown.Value = (decimal)selectedBox.Pos.X;
+				PosYUpDown.Value = (decimal)selectedBox.Pos.Y;
+				PosZUpDown.Value = (decimal)selectedBox.Pos.Z;
+				SizeXUpDown.Value = (decimal)selectedBox.Size.X;
+				SizeYUpDown.Value = (decimal)selectedBox.Size.Y;
+				SizeZUpDown.Value = (decimal)selectedBox.Size.Z;
+				UVXUpDown.Value = (decimal)selectedBox.UV.X;
+				UVYUpDown.Value = (decimal)selectedBox.UV.Y;
+				Rerender();
+			}
 		}
 
 		//currently scrapped
-		private void generateModel_FormClosing(object sender, FormClosingEventArgs e) {
+		private void formClosing(object sender, FormClosingEventArgs e) {
 			GLDeinit(sender, e);
 			/*
 			if (MessageBox.Show("You done here?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
@@ -788,17 +720,13 @@ void main(){
 			e.Cancel = false;*/
 		}
 
-		private void delStuffUsingDelKey(object sender, KeyEventArgs e) {
+		private void listViewKeyDown(object sender, KeyEventArgs e) {
 			if(e.KeyCode == Keys.Delete && listViewBoxes.SelectedItems.Count != 0 &&
 				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
 				if(modelBoxes.Remove(part))
 					listViewBoxes.SelectedItems[0].Remove();
 				Rerender();
 			}
-		}
-
-		private void generateModel_SizeChanged(object sender, EventArgs e) {
-			//Rerender();
 		}
 	}
 }

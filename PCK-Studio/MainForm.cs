@@ -206,7 +206,7 @@ namespace PckStudio {
 			for(int i = 0; i < Settings.Default.RecentFiles.Count && i < 5; i++) {
 				string filepath = Settings.Default.RecentFiles[i];
 				if(!string.IsNullOrWhiteSpace(filepath)) {
-					string displayFilepath = Regex.Replace(filepath, @"([A-Z]{1}\:\\[Uu]sers\\)([^\\]*\\)(.*)", "~\\$3");
+					string displayFilepath = filepath.Substring(filepath.LastIndexOf('\\')+1);
 					ToolStripItem item = recentlyOpenToolStripMenuItem.DropDownItems.Add(displayFilepath, null, HandleOpenFile);
 					item.Tag = filepath;
 				}

@@ -31,15 +31,15 @@ namespace PckStudio.Forms.Additional_Popups.Loc
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddLanguage));
-			this.LanguageComboBox = new System.Windows.Forms.ComboBox();
-			this.AddBtn = new System.Windows.Forms.Button();
-			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.LanguageComboBox = new ComboBox();
+			this.AddBtn = new Button();
+			this.layout = new TableLayoutPanel();
 			this.layout.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// LanguageComboBox
 			// 
-			this.LanguageComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.LanguageComboBox.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.layout.SetColumnSpan(this.LanguageComboBox, 3);
 			this.LanguageComboBox.FormattingEnabled = true;
 			this.LanguageComboBox.ItemHeight = 13;
@@ -50,7 +50,7 @@ namespace PckStudio.Forms.Additional_Popups.Loc
 			// 
 			// AddBtn
 			// 
-			this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.AddBtn.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.AddBtn.Location = new System.Drawing.Point(77, 36);
 			this.AddBtn.Name = "AddBtn";
 			this.AddBtn.Size = new System.Drawing.Size(68, 23);
@@ -61,19 +61,19 @@ namespace PckStudio.Forms.Additional_Popups.Loc
 			// layout
 			// 
 			this.layout.ColumnCount = 3;
-			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.layout.Controls.Add(this.LanguageComboBox, 0, 0);
 			this.layout.Controls.Add(this.AddBtn, 1, 1);
-			this.layout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.layout.Dock = DockStyle.Fill;
 			this.layout.Location = new System.Drawing.Point(0, 0);
 			this.layout.Name = "layout";
 			this.layout.RowCount = 2;
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.layout.RowStyles.Add(new RowStyle());
+			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.layout.Size = new System.Drawing.Size(224, 62);
 			this.layout.TabIndex = 2;
 			// 
@@ -81,14 +81,14 @@ namespace PckStudio.Forms.Additional_Popups.Loc
 			// 
 			this.AcceptButton = this.AddBtn;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(224, 60);
 			this.Controls.Add(this.layout);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(240, 96);
 			this.Name = "AddLanguage";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.StartPosition = FormStartPosition.CenterParent;
 			this.Text = "Add Language";
 			this.layout.ResumeLayout(false);
 			this.ResumeLayout(false);

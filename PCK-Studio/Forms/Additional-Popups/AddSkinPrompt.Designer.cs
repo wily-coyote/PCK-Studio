@@ -26,20 +26,20 @@ namespace PckStudio.Forms.Additional_Popups {
 		/// </summary>
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.Label label3;
+			Label label3;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSkinPrompt));
-			System.Windows.Forms.Label label2;
-			System.Windows.Forms.Label label1;
-			this.textTheme = new System.Windows.Forms.TextBox();
-			this.contextMenuSkin = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.replaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.contextMenuCape = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.replaceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			Label label2;
+			Label label1;
+			this.textTheme = new TextBox();
+			this.contextMenuSkin = new ContextMenuStrip(this.components);
+			this.replaceToolStripMenuItem = new ToolStripMenuItem();
+			this.contextMenuCape = new ContextMenuStrip(this.components);
+			this.replaceToolStripMenuItem1 = new ToolStripMenuItem();
 			this.buttonDone = new Button();
 			this.buttonModelGen = new Button();
 			this.buttonCape = new Button();
 			this.buttonSkin = new Button();
-			this.displayBox = new System.Windows.Forms.PictureBox();
+			this.displayBox = new PictureBox();
 			this.radioButtonAuto = new RadioButton();
 			this.radioButtonManual = new RadioButton();
 			this.textSkinID = new TextBox();
@@ -50,9 +50,9 @@ namespace PckStudio.Forms.Additional_Popups {
 			this.buttonAnimGen = new Button();
 			this.capePictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
 			this.skinPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
-			label3 = new System.Windows.Forms.Label();
-			label2 = new System.Windows.Forms.Label();
-			label1 = new System.Windows.Forms.Label();
+			label3 = new Label();
+			label2 = new Label();
+			label1 = new Label();
 			this.contextMenuSkin.SuspendLayout();
 			this.contextMenuCape.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.displayBox)).BeginInit();
@@ -85,7 +85,7 @@ namespace PckStudio.Forms.Additional_Popups {
 			// 
 			// contextMenuSkin
 			// 
-			this.contextMenuSkin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.contextMenuSkin.Items.AddRange(new ToolStripItem[] {
 			this.replaceToolStripMenuItem});
 			this.contextMenuSkin.Name = "contextMenuSkin";
 			resources.ApplyResources(this.contextMenuSkin, "contextMenuSkin");
@@ -98,7 +98,7 @@ namespace PckStudio.Forms.Additional_Popups {
 			// 
 			// contextMenuCape
 			// 
-			this.contextMenuCape.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.contextMenuCape.Items.AddRange(new ToolStripItem[] {
 			this.replaceToolStripMenuItem1});
 			this.contextMenuCape.Name = "contextMenuCape";
 			resources.ApplyResources(this.contextMenuCape, "contextMenuCape");
@@ -166,7 +166,7 @@ namespace PckStudio.Forms.Additional_Popups {
 			this.textSkinID.MaxLength = 8;
 			this.textSkinID.Name = "textSkinID";
 			this.textSkinID.PasswordChar = '\0';
-			this.textSkinID.ScrollBars = System.Windows.Forms.ScrollBars.None;
+			this.textSkinID.ScrollBars = ScrollBars.None;
 			this.textSkinID.SelectedText = "";
 			this.textSkinID.SelectionLength = 0;
 			this.textSkinID.SelectionStart = 0;
@@ -184,7 +184,7 @@ namespace PckStudio.Forms.Additional_Popups {
 			this.textSkinName.MaxLength = 32767;
 			this.textSkinName.Name = "textSkinName";
 			this.textSkinName.PasswordChar = '\0';
-			this.textSkinName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+			this.textSkinName.ScrollBars = ScrollBars.None;
 			this.textSkinName.SelectedText = "";
 			this.textSkinName.SelectionLength = 0;
 			this.textSkinName.SelectionStart = 0;
@@ -201,7 +201,7 @@ namespace PckStudio.Forms.Additional_Popups {
 			this.textThemeName.MaxLength = 32767;
 			this.textThemeName.Name = "textThemeName";
 			this.textThemeName.PasswordChar = '\0';
-			this.textThemeName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+			this.textThemeName.ScrollBars = ScrollBars.None;
 			this.textThemeName.SelectedText = "";
 			this.textThemeName.SelectionLength = 0;
 			this.textThemeName.SelectionStart = 0;
@@ -226,25 +226,25 @@ namespace PckStudio.Forms.Additional_Popups {
 			// capePictureBox
 			// 
 			resources.ApplyResources(this.capePictureBox, "capePictureBox");
-			this.capePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.capePictureBox.BorderStyle = BorderStyle.FixedSingle;
 			this.capePictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
 			this.capePictureBox.Name = "capePictureBox";
 			this.capePictureBox.TabStop = false;
-			this.capePictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.capePictureBox_MouseClick);
+			this.capePictureBox.MouseClick += new MouseEventHandler(this.capePictureBox_MouseClick);
 			// 
 			// skinPictureBox
 			// 
 			resources.ApplyResources(this.skinPictureBox, "skinPictureBox");
-			this.skinPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.skinPictureBox.BorderStyle = BorderStyle.FixedSingle;
 			this.skinPictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
 			this.skinPictureBox.Name = "skinPictureBox";
 			this.skinPictureBox.TabStop = false;
-			this.skinPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.skinPictureBox_MouseClick);
+			this.skinPictureBox.MouseClick += new MouseEventHandler(this.skinPictureBox_MouseClick);
 			// 
 			// AddNewSkin
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.buttonCape);
 			this.Controls.Add(this.buttonAnimGen);
 			this.Controls.Add(this.capeLabel);
@@ -277,16 +277,16 @@ namespace PckStudio.Forms.Additional_Popups {
 		}
 
 		#endregion
-		private System.Windows.Forms.TextBox textTheme;
-		private System.Windows.Forms.ContextMenuStrip contextMenuSkin;
-		private System.Windows.Forms.ToolStripMenuItem replaceToolStripMenuItem;
-		private System.Windows.Forms.ContextMenuStrip contextMenuCape;
-		private System.Windows.Forms.ToolStripMenuItem replaceToolStripMenuItem1;
+		private TextBox textTheme;
+		private ContextMenuStrip contextMenuSkin;
+		private ToolStripMenuItem replaceToolStripMenuItem;
+		private ContextMenuStrip contextMenuCape;
+		private ToolStripMenuItem replaceToolStripMenuItem1;
 		private Button buttonDone;
 		private Button buttonModelGen;
 		private Button buttonCape;
 		private Button buttonSkin;
-		private System.Windows.Forms.PictureBox displayBox;
+		private PictureBox displayBox;
 		private RadioButton radioButtonAuto;
 		private RadioButton radioButtonManual;
 		private TextBox textSkinID;

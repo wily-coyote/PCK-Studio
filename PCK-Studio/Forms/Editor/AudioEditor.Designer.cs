@@ -32,36 +32,36 @@ namespace PckStudio.Forms.Editor
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AudioEditor));
-			this.treeView1 = new System.Windows.Forms.TreeView();
-			this.categoryContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.addCategoryStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.removeCategoryStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.changeCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.catImages = new System.Windows.Forms.ImageList(this.components);
-			this.menuStrip = new System.Windows.Forms.MenuStrip();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.deleteUnusedBINKAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.openDataFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.bulkReplaceExistingTracksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.organizeTracksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.howToAddSongsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.whatAreTheCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.howToEditCreditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.optimizeDataFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.bINKACompressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.treeView2 = new System.Windows.Forms.TreeView();
-			this.entryContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.addEntryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.removeEntryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.verifyFileLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.convertToWAVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.playOverworldInCreative = new System.Windows.Forms.CheckBox();
-			this.compressionUpDown = new System.Windows.Forms.NumericUpDown();
-			this.BinkCompressionLabel = new System.Windows.Forms.Label();
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.treeView1 = new TreeView();
+			this.categoryContextMenu = new ContextMenuStrip(this.components);
+			this.addCategoryStripMenuItem = new ToolStripMenuItem();
+			this.removeCategoryStripMenuItem = new ToolStripMenuItem();
+			this.changeCategoryToolStripMenuItem = new ToolStripMenuItem();
+			this.catImages = new ImageList(this.components);
+			this.menuStrip = new MenuStrip();
+			this.fileToolStripMenuItem = new ToolStripMenuItem();
+			this.saveToolStripMenuItem = new ToolStripMenuItem();
+			this.toolsToolStripMenuItem = new ToolStripMenuItem();
+			this.deleteUnusedBINKAsToolStripMenuItem = new ToolStripMenuItem();
+			this.openDataFolderToolStripMenuItem = new ToolStripMenuItem();
+			this.bulkReplaceExistingTracksToolStripMenuItem = new ToolStripMenuItem();
+			this.organizeTracksToolStripMenuItem = new ToolStripMenuItem();
+			this.helpToolStripMenuItem = new ToolStripMenuItem();
+			this.howToAddSongsToolStripMenuItem = new ToolStripMenuItem();
+			this.whatAreTheCategoriesToolStripMenuItem = new ToolStripMenuItem();
+			this.howToEditCreditsToolStripMenuItem = new ToolStripMenuItem();
+			this.optimizeDataFolderToolStripMenuItem = new ToolStripMenuItem();
+			this.bINKACompressionToolStripMenuItem = new ToolStripMenuItem();
+			this.treeView2 = new TreeView();
+			this.entryContextMenu = new ContextMenuStrip(this.components);
+			this.addEntryMenuItem = new ToolStripMenuItem();
+			this.removeEntryMenuItem = new ToolStripMenuItem();
+			this.verifyFileLocationToolStripMenuItem = new ToolStripMenuItem();
+			this.convertToWAVToolStripMenuItem = new ToolStripMenuItem();
+			this.playOverworldInCreative = new CheckBox();
+			this.compressionUpDown = new NumericUpDown();
+			this.BinkCompressionLabel = new Label();
+			this.tableLayoutPanel1 = new TableLayoutPanel();
 			this.categoryContextMenu.SuspendLayout();
 			this.menuStrip.SuspendLayout();
 			this.entryContextMenu.SuspendLayout();
@@ -76,12 +76,12 @@ namespace PckStudio.Forms.Editor
 			this.treeView1.ImageList = this.catImages;
 			this.treeView1.LabelEdit = true;
 			this.treeView1.Name = "treeView1";
-			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-			this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+			this.treeView1.AfterSelect += new TreeViewEventHandler(this.treeView1_AfterSelect);
+			this.treeView1.KeyDown += new KeyEventHandler(this.treeView1_KeyDown);
 			// 
 			// categoryContextMenu
 			// 
-			this.categoryContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.categoryContextMenu.Items.AddRange(new ToolStripItem[] {
             this.addCategoryStripMenuItem,
             this.removeCategoryStripMenuItem,
             this.changeCategoryToolStripMenuItem});
@@ -108,7 +108,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// catImages
 			// 
-			this.catImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("catImages.ImageStream")));
+			this.catImages.ImageStream = ((ImageListStreamer)(resources.GetObject("catImages.ImageStream")));
 			this.catImages.TransparentColor = System.Drawing.Color.Transparent;
 			this.catImages.Images.SetKeyName(0, "0_overworld.png");
 			this.catImages.Images.SetKeyName(1, "1_nether.png");
@@ -123,7 +123,7 @@ namespace PckStudio.Forms.Editor
 			// menuStrip
 			// 
 			resources.ApplyResources(this.menuStrip, "menuStrip");
-			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.menuStrip.Items.AddRange(new ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
@@ -131,7 +131,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// fileToolStripMenuItem
 			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.saveToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
@@ -144,7 +144,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// toolsToolStripMenuItem
 			// 
-			this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.deleteUnusedBINKAsToolStripMenuItem,
             this.openDataFolderToolStripMenuItem,
             this.bulkReplaceExistingTracksToolStripMenuItem,
@@ -178,7 +178,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// helpToolStripMenuItem
 			// 
-			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.howToAddSongsToolStripMenuItem,
             this.whatAreTheCategoriesToolStripMenuItem,
             this.howToEditCreditsToolStripMenuItem,
@@ -224,13 +224,13 @@ namespace PckStudio.Forms.Editor
 			this.treeView2.ContextMenuStrip = this.entryContextMenu;
 			resources.ApplyResources(this.treeView2, "treeView2");
 			this.treeView2.Name = "treeView2";
-			this.treeView2.DragDrop += new System.Windows.Forms.DragEventHandler(this.Binka_DragDrop);
-			this.treeView2.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeView2_DragEnter);
-			this.treeView2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView2_KeyDown);
+			this.treeView2.DragDrop += new DragEventHandler(this.Binka_DragDrop);
+			this.treeView2.DragEnter += new DragEventHandler(this.treeView2_DragEnter);
+			this.treeView2.KeyDown += new KeyEventHandler(this.treeView2_KeyDown);
 			// 
 			// entryContextMenu
 			// 
-			this.entryContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.entryContextMenu.Items.AddRange(new ToolStripItem[] {
             this.addEntryMenuItem,
             this.removeEntryMenuItem,
             this.verifyFileLocationToolStripMenuItem,
@@ -306,13 +306,13 @@ namespace PckStudio.Forms.Editor
 			// AudioEditor
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Controls.Add(this.menuStrip);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "AudioEditor";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AudioEditor_FormClosing);
+			this.FormClosing += new FormClosingEventHandler(this.AudioEditor_FormClosing);
 			this.Shown += new System.EventHandler(this.AudioEditor_Shown);
 			this.categoryContextMenu.ResumeLayout(false);
 			this.menuStrip.ResumeLayout(false);
@@ -327,35 +327,35 @@ namespace PckStudio.Forms.Editor
 
 		#endregion
 
-		private System.Windows.Forms.TreeView treeView1;
-		private System.Windows.Forms.MenuStrip menuStrip;
-		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-		private System.Windows.Forms.TreeView treeView2;
-		private System.Windows.Forms.ContextMenuStrip categoryContextMenu;
-		private System.Windows.Forms.ToolStripMenuItem removeCategoryStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem addCategoryStripMenuItem;
-		private System.Windows.Forms.ContextMenuStrip entryContextMenu;
-		private System.Windows.Forms.ToolStripMenuItem addEntryMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem removeEntryMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ImageList catImages;
-		private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem verifyFileLocationToolStripMenuItem;
+		private TreeView treeView1;
+		private MenuStrip menuStrip;
+		private ToolStripMenuItem fileToolStripMenuItem;
+		private ToolStripMenuItem saveToolStripMenuItem;
+		private TreeView treeView2;
+		private ContextMenuStrip categoryContextMenu;
+		private ToolStripMenuItem removeCategoryStripMenuItem;
+		private ToolStripMenuItem addCategoryStripMenuItem;
+		private ContextMenuStrip entryContextMenu;
+		private ToolStripMenuItem addEntryMenuItem;
+		private ToolStripMenuItem removeEntryMenuItem;
+		private ToolStripMenuItem helpToolStripMenuItem;
+        private ImageList catImages;
+		private ToolStripMenuItem toolsToolStripMenuItem;
+		private ToolStripMenuItem verifyFileLocationToolStripMenuItem;
 		private CheckBox playOverworldInCreative;
-		private System.Windows.Forms.ToolStripMenuItem deleteUnusedBINKAsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem howToAddSongsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem whatAreTheCategoriesToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem howToEditCreditsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem optimizeDataFolderToolStripMenuItem;
-		private System.Windows.Forms.NumericUpDown compressionUpDown;
-		private System.Windows.Forms.ToolStripMenuItem bINKACompressionToolStripMenuItem;
+		private ToolStripMenuItem deleteUnusedBINKAsToolStripMenuItem;
+		private ToolStripMenuItem howToAddSongsToolStripMenuItem;
+		private ToolStripMenuItem whatAreTheCategoriesToolStripMenuItem;
+		private ToolStripMenuItem howToEditCreditsToolStripMenuItem;
+		private ToolStripMenuItem optimizeDataFolderToolStripMenuItem;
+		private NumericUpDown compressionUpDown;
+		private ToolStripMenuItem bINKACompressionToolStripMenuItem;
 		private Label BinkCompressionLabel;
-		private System.Windows.Forms.ToolStripMenuItem openDataFolderToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem bulkReplaceExistingTracksToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem changeCategoryToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem organizeTracksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem convertToWAVToolStripMenuItem;
+		private ToolStripMenuItem openDataFolderToolStripMenuItem;
+		private ToolStripMenuItem bulkReplaceExistingTracksToolStripMenuItem;
+		private ToolStripMenuItem changeCategoryToolStripMenuItem;
+		private ToolStripMenuItem organizeTracksToolStripMenuItem;
+        private ToolStripMenuItem convertToWAVToolStripMenuItem;
 		private TableLayoutPanel tableLayoutPanel1;
 	}
 }

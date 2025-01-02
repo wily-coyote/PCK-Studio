@@ -26,22 +26,22 @@ namespace PckStudio.Forms.Features {
 		/// </summary>
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.TableLayoutPanel layoutPanel;
-			this.gameDirectoryContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.radioButtonEur = new System.Windows.Forms.RadioButton();
-			this.radioButtonUs = new System.Windows.Forms.RadioButton();
-			this.radioButtonJap = new System.Windows.Forms.RadioButton();
-			this.GameDirectoryTextBox = new System.Windows.Forms.TextBox();
-			this.BrowseDirectoryBtn = new System.Windows.Forms.Button();
-			this.DLCTreeView = new System.Windows.Forms.TreeView();
-			this.DLCContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.openSkinPackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.openTexturePackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addCustomPckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.removePckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			layoutPanel = new System.Windows.Forms.TableLayoutPanel();
+			TableLayoutPanel layoutPanel;
+			this.gameDirectoryContextMenu = new ContextMenuStrip(this.components);
+			this.openToolStripMenuItem = new ToolStripMenuItem();
+			this.copyToolStripMenuItem = new ToolStripMenuItem();
+			this.radioButtonEur = new RadioButton();
+			this.radioButtonUs = new RadioButton();
+			this.radioButtonJap = new RadioButton();
+			this.GameDirectoryTextBox = new TextBox();
+			this.BrowseDirectoryBtn = new Button();
+			this.DLCTreeView = new TreeView();
+			this.DLCContextMenu = new ContextMenuStrip(this.components);
+			this.openSkinPackToolStripMenuItem = new ToolStripMenuItem();
+			this.openTexturePackToolStripMenuItem = new ToolStripMenuItem();
+			this.addCustomPckToolStripMenuItem = new ToolStripMenuItem();
+			this.removePckToolStripMenuItem = new ToolStripMenuItem();
+			layoutPanel = new TableLayoutPanel();
 			layoutPanel.SuspendLayout();
 			this.gameDirectoryContextMenu.SuspendLayout();
 			this.DLCContextMenu.SuspendLayout();
@@ -50,9 +50,9 @@ namespace PckStudio.Forms.Features {
 			// layoutPanel
 			// 
 			layoutPanel.ColumnCount = 3;
-			layoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
-			layoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-			layoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+			layoutPanel.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
+			layoutPanel.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+			layoutPanel.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
 			layoutPanel.ContextMenuStrip = this.gameDirectoryContextMenu;
 			layoutPanel.Controls.Add(this.radioButtonEur, 0, 1);
 			layoutPanel.Controls.Add(this.radioButtonUs, 1, 1);
@@ -60,20 +60,20 @@ namespace PckStudio.Forms.Features {
 			layoutPanel.Controls.Add(this.GameDirectoryTextBox, 0, 0);
 			layoutPanel.Controls.Add(this.BrowseDirectoryBtn, 2, 0);
 			layoutPanel.Controls.Add(this.DLCTreeView, 0, 2);
-			layoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			layoutPanel.Dock = DockStyle.Fill;
 			layoutPanel.Location = new System.Drawing.Point(0, 0);
-			layoutPanel.Margin = new System.Windows.Forms.Padding(0);
+			layoutPanel.Margin = new Padding(0);
 			layoutPanel.Name = "layoutPanel";
 			layoutPanel.RowCount = 3;
-			layoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			layoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			layoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			layoutPanel.RowStyles.Add(new RowStyle());
+			layoutPanel.RowStyles.Add(new RowStyle());
+			layoutPanel.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			layoutPanel.Size = new System.Drawing.Size(430, 550);
 			layoutPanel.TabIndex = 4;
 			// 
 			// gameDirectoryContextMenu
 			// 
-			this.gameDirectoryContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.gameDirectoryContextMenu.Items.AddRange(new ToolStripItem[] {
 			this.openToolStripMenuItem,
 			this.copyToolStripMenuItem});
 			this.gameDirectoryContextMenu.Name = "gameDirectoryContextMenu";
@@ -95,12 +95,12 @@ namespace PckStudio.Forms.Features {
 			// 
 			// radioButtonEur
 			// 
-			this.radioButtonEur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.radioButtonEur.Appearance = System.Windows.Forms.Appearance.Button;
+			this.radioButtonEur.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.radioButtonEur.Appearance = Appearance.Button;
 			this.radioButtonEur.AutoSize = true;
 			this.radioButtonEur.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
 			this.radioButtonEur.Checked = true;
-			this.radioButtonEur.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.radioButtonEur.ImeMode = ImeMode.NoControl;
 			this.radioButtonEur.Location = new System.Drawing.Point(3, 32);
 			this.radioButtonEur.Name = "radioButtonEur";
 			this.radioButtonEur.Size = new System.Drawing.Size(137, 23);
@@ -112,11 +112,11 @@ namespace PckStudio.Forms.Features {
 			// 
 			// radioButtonUs
 			// 
-			this.radioButtonUs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.radioButtonUs.Appearance = System.Windows.Forms.Appearance.Button;
+			this.radioButtonUs.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.radioButtonUs.Appearance = Appearance.Button;
 			this.radioButtonUs.AutoSize = true;
 			this.radioButtonUs.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
-			this.radioButtonUs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.radioButtonUs.ImeMode = ImeMode.NoControl;
 			this.radioButtonUs.Location = new System.Drawing.Point(146, 32);
 			this.radioButtonUs.Name = "radioButtonUs";
 			this.radioButtonUs.Size = new System.Drawing.Size(137, 23);
@@ -127,11 +127,11 @@ namespace PckStudio.Forms.Features {
 			// 
 			// radioButtonJap
 			// 
-			this.radioButtonJap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.radioButtonJap.Appearance = System.Windows.Forms.Appearance.Button;
+			this.radioButtonJap.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.radioButtonJap.Appearance = Appearance.Button;
 			this.radioButtonJap.AutoSize = true;
 			this.radioButtonJap.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
-			this.radioButtonJap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.radioButtonJap.ImeMode = ImeMode.NoControl;
 			this.radioButtonJap.Location = new System.Drawing.Point(289, 32);
 			this.radioButtonJap.Name = "radioButtonJap";
 			this.radioButtonJap.Size = new System.Drawing.Size(138, 23);
@@ -142,7 +142,7 @@ namespace PckStudio.Forms.Features {
 			// 
 			// GameDirectoryTextBox
 			// 
-			this.GameDirectoryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.GameDirectoryTextBox.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			layoutPanel.SetColumnSpan(this.GameDirectoryTextBox, 2);
 			this.GameDirectoryTextBox.Location = new System.Drawing.Point(3, 4);
 			this.GameDirectoryTextBox.Name = "GameDirectoryTextBox";
@@ -152,11 +152,11 @@ namespace PckStudio.Forms.Features {
 			// 
 			// BrowseDirectoryBtn
 			// 
-			this.BrowseDirectoryBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.BrowseDirectoryBtn.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.BrowseDirectoryBtn.AutoSize = true;
-			this.BrowseDirectoryBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.BrowseDirectoryBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 			this.BrowseDirectoryBtn.FlatAppearance.BorderSize = 0;
-			this.BrowseDirectoryBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.BrowseDirectoryBtn.ImeMode = ImeMode.NoControl;
 			this.BrowseDirectoryBtn.Location = new System.Drawing.Point(289, 3);
 			this.BrowseDirectoryBtn.Name = "BrowseDirectoryBtn";
 			this.BrowseDirectoryBtn.Size = new System.Drawing.Size(138, 23);
@@ -166,23 +166,23 @@ namespace PckStudio.Forms.Features {
 			// 
 			// DLCTreeView
 			// 
-			this.DLCTreeView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.DLCTreeView.Anchor = ((AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| AnchorStyles.Left)
+			| AnchorStyles.Right)));
 			layoutPanel.SetColumnSpan(this.DLCTreeView, 3);
 			this.DLCTreeView.ContextMenuStrip = this.DLCContextMenu;
 			this.DLCTreeView.Location = new System.Drawing.Point(3, 61);
 			this.DLCTreeView.Name = "DLCTreeView";
 			this.DLCTreeView.Size = new System.Drawing.Size(424, 486);
 			this.DLCTreeView.TabIndex = 13;
-			this.DLCTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.DLCTreeView_AfterSelect);
-			this.DLCTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.DLCTreeView_NodeMouseDoubleClick);
-			this.DLCTreeView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DLCTreeView_KeyPress);
-			this.DLCTreeView.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.DLCTreeView_PreviewKeyDown);
+			this.DLCTreeView.AfterSelect += new TreeViewEventHandler(this.DLCTreeView_AfterSelect);
+			this.DLCTreeView.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(this.DLCTreeView_NodeMouseDoubleClick);
+			this.DLCTreeView.KeyPress += new KeyPressEventHandler(this.DLCTreeView_KeyPress);
+			this.DLCTreeView.PreviewKeyDown += new PreviewKeyDownEventHandler(this.DLCTreeView_PreviewKeyDown);
 			// 
 			// DLCContextMenu
 			// 
-			this.DLCContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.DLCContextMenu.Items.AddRange(new ToolStripItem[] {
 			this.openSkinPackToolStripMenuItem,
 			this.openTexturePackToolStripMenuItem,
 			this.addCustomPckToolStripMenuItem,
@@ -221,7 +221,7 @@ namespace PckStudio.Forms.Features {
 			// CemuPanel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.Controls.Add(layoutPanel);
 			this.Name = "CemuPanel";

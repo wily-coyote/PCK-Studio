@@ -32,30 +32,30 @@ namespace PckStudio.Forms.Editor
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnimationEditor));
-            this.frameTreeView = new System.Windows.Forms.TreeView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addFrameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeFrameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TextureIcons = new System.Windows.Forms.ImageList(this.components);
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importAnimationTextureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importJavaAnimationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importGifToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportJavaAnimationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gifToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bulkAnimationSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.frameTimeandTicksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToInterpolation = new System.Windows.Forms.ToolStripMenuItem();
-            this.editorControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setBulkSpedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.javaAnimationSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frameTreeView = new TreeView();
+            this.contextMenuStrip1 = new ContextMenuStrip(this.components);
+            this.addFrameToolStripMenuItem = new ToolStripMenuItem();
+            this.removeFrameToolStripMenuItem = new ToolStripMenuItem();
+            this.TextureIcons = new ImageList(this.components);
+            this.menuStrip = new MenuStrip();
+            this.fileToolStripMenuItem = new ToolStripMenuItem();
+            this.saveToolStripMenuItem1 = new ToolStripMenuItem();
+            this.toolStripSeparator1 = new ToolStripSeparator();
+            this.importToolStripMenuItem = new ToolStripMenuItem();
+            this.importAnimationTextureToolStripMenuItem = new ToolStripMenuItem();
+            this.importJavaAnimationToolStripMenuItem = new ToolStripMenuItem();
+            this.importGifToolStripMenuItem = new ToolStripMenuItem();
+            this.exportAsToolStripMenuItem = new ToolStripMenuItem();
+            this.exportJavaAnimationToolStripMenuItem = new ToolStripMenuItem();
+            this.gifToolStripMenuItem = new ToolStripMenuItem();
+            this.editToolStripMenuItem = new ToolStripMenuItem();
+            this.bulkAnimationSpeedToolStripMenuItem = new ToolStripMenuItem();
+            this.helpToolStripMenuItem = new ToolStripMenuItem();
+            this.frameTimeandTicksToolStripMenuItem = new ToolStripMenuItem();
+            this.howToInterpolation = new ToolStripMenuItem();
+            this.editorControlsToolStripMenuItem = new ToolStripMenuItem();
+            this.setBulkSpedToolStripMenuItem = new ToolStripMenuItem();
+            this.javaAnimationSupportToolStripMenuItem = new ToolStripMenuItem();
             this.InterpolationCheckbox = new CheckBox();
             this.AnimationStartStopBtn = new Button();
             this.tileLabel = new Label();
@@ -68,31 +68,31 @@ namespace PckStudio.Forms.Editor
             // frameTreeView
             // 
             this.frameTreeView.AllowDrop = true;
-            this.frameTreeView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.frameTreeView.Anchor = ((AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | AnchorStyles.Left)));
             this.frameTreeView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.frameTreeView.ContextMenuStrip = this.contextMenuStrip1;
             this.frameTreeView.ForeColor = System.Drawing.Color.White;
             this.frameTreeView.ImageIndex = 0;
             this.frameTreeView.ImageList = this.TextureIcons;
             this.frameTreeView.Location = new System.Drawing.Point(20, 88);
-            this.frameTreeView.Margin = new System.Windows.Forms.Padding(0);
+            this.frameTreeView.Margin = new Padding(0);
             this.frameTreeView.Name = "frameTreeView";
             this.frameTreeView.SelectedImageIndex = 0;
             this.frameTreeView.ShowLines = false;
             this.frameTreeView.ShowRootLines = false;
             this.frameTreeView.Size = new System.Drawing.Size(134, 253);
             this.frameTreeView.TabIndex = 15;
-            this.frameTreeView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.frameTreeView_ItemDrag);
-            this.frameTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.frameTreeView_AfterSelect);
-            this.frameTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_doubleClick);
-            this.frameTreeView.DragDrop += new System.Windows.Forms.DragEventHandler(this.frameTreeView_DragDrop);
-            this.frameTreeView.DragEnter += new System.Windows.Forms.DragEventHandler(this.frameTreeView_DragEnter);
-            this.frameTreeView.DragOver += new System.Windows.Forms.DragEventHandler(this.frameTreeView_DragOver);
+            this.frameTreeView.ItemDrag += new ItemDragEventHandler(this.frameTreeView_ItemDrag);
+            this.frameTreeView.AfterSelect += new TreeViewEventHandler(this.frameTreeView_AfterSelect);
+            this.frameTreeView.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(this.treeView1_doubleClick);
+            this.frameTreeView.DragDrop += new DragEventHandler(this.frameTreeView_DragDrop);
+            this.frameTreeView.DragEnter += new DragEventHandler(this.frameTreeView_DragEnter);
+            this.frameTreeView.DragOver += new DragEventHandler(this.frameTreeView_DragOver);
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenuStrip1.Items.AddRange(new ToolStripItem[] {
             this.addFrameToolStripMenuItem,
             this.removeFrameToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -114,7 +114,7 @@ namespace PckStudio.Forms.Editor
             // 
             // TextureIcons
             // 
-            this.TextureIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.TextureIcons.ColorDepth = ColorDepth.Depth32Bit;
             this.TextureIcons.ImageSize = new System.Drawing.Size(32, 32);
             this.TextureIcons.TransparentColor = System.Drawing.Color.Transparent;
             // 
@@ -122,21 +122,21 @@ namespace PckStudio.Forms.Editor
             // 
             this.menuStrip.AutoSize = false;
             this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menuStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Dock = DockStyle.None;
+            this.menuStrip.Items.AddRange(new ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(20, 60);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip.RenderMode = ToolStripRenderMode.Professional;
             this.menuStrip.Size = new System.Drawing.Size(134, 24);
             this.menuStrip.TabIndex = 14;
             this.menuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.saveToolStripMenuItem1,
             this.toolStripSeparator1,
             this.importToolStripMenuItem,
@@ -161,7 +161,7 @@ namespace PckStudio.Forms.Editor
             // 
             // importToolStripMenuItem
             // 
-            this.importToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.importAnimationTextureToolStripMenuItem,
             this.importJavaAnimationToolStripMenuItem,
             this.importGifToolStripMenuItem});
@@ -192,7 +192,7 @@ namespace PckStudio.Forms.Editor
             // 
             // exportAsToolStripMenuItem
             // 
-            this.exportAsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportAsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.exportJavaAnimationToolStripMenuItem,
             this.gifToolStripMenuItem});
             this.exportAsToolStripMenuItem.Name = "exportAsToolStripMenuItem";
@@ -215,7 +215,7 @@ namespace PckStudio.Forms.Editor
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.bulkAnimationSpeedToolStripMenuItem});
             this.editToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
@@ -231,7 +231,7 @@ namespace PckStudio.Forms.Editor
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.frameTimeandTicksToolStripMenuItem,
             this.howToInterpolation,
             this.editorControlsToolStripMenuItem,
@@ -289,8 +289,8 @@ namespace PckStudio.Forms.Editor
             // 
             // AnimationStartStopBtn
             // 
-            this.AnimationStartStopBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnimationStartStopBtn.Anchor = ((AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | AnchorStyles.Right)));
             this.AnimationStartStopBtn.Location = new System.Drawing.Point(157, 317);
             this.AnimationStartStopBtn.Name = "AnimationStartStopBtn";
             this.AnimationStartStopBtn.Size = new System.Drawing.Size(232, 24);
@@ -300,7 +300,7 @@ namespace PckStudio.Forms.Editor
             // 
             // tileLabel
             // 
-            this.tileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tileLabel.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tileLabel.AutoSize = true;
             this.tileLabel.Location = new System.Drawing.Point(20, 341);
             this.tileLabel.MinimumSize = new System.Drawing.Size(170, 19);
@@ -311,9 +311,9 @@ namespace PckStudio.Forms.Editor
             // 
             // animationPictureBox
             // 
-            this.animationPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.animationPictureBox.Anchor = ((AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | AnchorStyles.Left) 
+            | AnchorStyles.Right)));
             this.animationPictureBox.BlendColor = System.Drawing.Color.White;
             this.animationPictureBox.BlendMode = PckStudio.Extensions.BlendMode.Multiply;
             this.animationPictureBox.Image = null;
@@ -321,14 +321,14 @@ namespace PckStudio.Forms.Editor
             this.animationPictureBox.Location = new System.Drawing.Point(157, 88);
             this.animationPictureBox.Name = "animationPictureBox";
             this.animationPictureBox.Size = new System.Drawing.Size(235, 223);
-            this.animationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.animationPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             this.animationPictureBox.TabIndex = 16;
             this.animationPictureBox.TabStop = false;
             // 
             // AnimationEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 362);
             this.Controls.Add(this.InterpolationCheckbox);
             this.Controls.Add(this.AnimationStartStopBtn);
@@ -340,7 +340,7 @@ namespace PckStudio.Forms.Editor
             this.MinimumSize = new System.Drawing.Size(412, 362);
             this.Name = "AnimationEditor";
             this.Text = "Animation Editor";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnimationEditor_FormClosing);
+            this.FormClosing += new FormClosingEventHandler(this.AnimationEditor_FormClosing);
             this.Load += new System.EventHandler(this.AnimationEditor_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
@@ -353,33 +353,33 @@ namespace PckStudio.Forms.Editor
 
 		#endregion
 
-		private System.Windows.Forms.TreeView frameTreeView;
-		private System.Windows.Forms.MenuStrip menuStrip;
-		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
+		private TreeView frameTreeView;
+		private MenuStrip menuStrip;
+		private ToolStripMenuItem fileToolStripMenuItem;
+		private ToolStripMenuItem saveToolStripMenuItem1;
 		private PckStudio.ToolboxItems.AnimationPictureBox animationPictureBox;
 		private CheckBox InterpolationCheckbox;
 		private Button AnimationStartStopBtn;
-		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem addFrameToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem removeFrameToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem bulkAnimationSpeedToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+		private ContextMenuStrip contextMenuStrip1;
+		private ToolStripMenuItem addFrameToolStripMenuItem;
+		private ToolStripMenuItem removeFrameToolStripMenuItem;
+		private ToolStripMenuItem editToolStripMenuItem;
+		private ToolStripMenuItem bulkAnimationSpeedToolStripMenuItem;
+		private ToolStripMenuItem helpToolStripMenuItem;
 		private Label tileLabel;
-		private System.Windows.Forms.ToolStripMenuItem howToInterpolation;
-		private System.Windows.Forms.ToolStripMenuItem editorControlsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem setBulkSpedToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem javaAnimationSupportToolStripMenuItem;
-		private System.Windows.Forms.ImageList TextureIcons;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importJavaAnimationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importGifToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportJavaAnimationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem importAnimationTextureToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gifToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem frameTimeandTicksToolStripMenuItem;
+		private ToolStripMenuItem howToInterpolation;
+		private ToolStripMenuItem editorControlsToolStripMenuItem;
+		private ToolStripMenuItem setBulkSpedToolStripMenuItem;
+		private ToolStripMenuItem javaAnimationSupportToolStripMenuItem;
+		private ImageList TextureIcons;
+        private ToolStripMenuItem importToolStripMenuItem;
+        private ToolStripMenuItem importJavaAnimationToolStripMenuItem;
+        private ToolStripMenuItem importGifToolStripMenuItem;
+        private ToolStripMenuItem exportAsToolStripMenuItem;
+        private ToolStripMenuItem exportJavaAnimationToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem importAnimationTextureToolStripMenuItem;
+        private ToolStripMenuItem gifToolStripMenuItem;
+		private ToolStripMenuItem frameTimeandTicksToolStripMenuItem;
 	}
 }

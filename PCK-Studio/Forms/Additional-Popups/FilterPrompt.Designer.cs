@@ -25,13 +25,13 @@ namespace PckStudio.Forms.Additional_Popups.Animation {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			System.Windows.Forms.Label filterLabel;
+			Label filterLabel;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilterPrompt));
-			this.acceptButton = new System.Windows.Forms.Button();
-			this.cancelButton = new System.Windows.Forms.Button();
-			this.filterTextBox = new System.Windows.Forms.TextBox();
-			this.tabController = new System.Windows.Forms.TabControl();
-			filterLabel = new System.Windows.Forms.Label();
+			this.acceptButton = new Button();
+			this.cancelButton = new Button();
+			this.filterTextBox = new TextBox();
+			this.tabController = new TabControl();
+			filterLabel = new Label();
 			this.SuspendLayout();
 			// 
 			// filterLabel
@@ -45,8 +45,8 @@ namespace PckStudio.Forms.Additional_Popups.Animation {
 			// 
 			// acceptButton
 			// 
-			this.acceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.acceptButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.acceptButton.DialogResult = DialogResult.OK;
+			this.acceptButton.ImeMode = ImeMode.NoControl;
 			this.acceptButton.Location = new System.Drawing.Point(92, 196);
 			this.acceptButton.Name = "acceptButton";
 			this.acceptButton.Size = new System.Drawing.Size(75, 23);
@@ -56,8 +56,8 @@ namespace PckStudio.Forms.Additional_Popups.Animation {
 			// 
 			// cancelButton
 			// 
-			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.cancelButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.cancelButton.DialogResult = DialogResult.Cancel;
+			this.cancelButton.ImeMode = ImeMode.NoControl;
 			this.cancelButton.Location = new System.Drawing.Point(172, 196);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -85,7 +85,7 @@ namespace PckStudio.Forms.Additional_Popups.Animation {
 			// 
 			this.AcceptButton = this.acceptButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.CancelButton = this.cancelButton;
 			this.ClientSize = new System.Drawing.Size(338, 228);
 			this.ControlBox = false;
@@ -94,7 +94,7 @@ namespace PckStudio.Forms.Additional_Popups.Animation {
 			this.Controls.Add(this.tabController);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.acceptButton);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -109,8 +109,8 @@ namespace PckStudio.Forms.Additional_Popups.Animation {
 		}
 
 		#endregion
-		private System.Windows.Forms.Button acceptButton;
-		private System.Windows.Forms.Button cancelButton;
+		private Button acceptButton;
+		private Button cancelButton;
 		private TextBox filterTextBox;
 		private TabControl tabController;
 	}

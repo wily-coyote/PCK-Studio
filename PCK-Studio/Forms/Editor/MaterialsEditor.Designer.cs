@@ -27,17 +27,17 @@ namespace PckStudio.Forms.Editor {
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialsEditor));
-			this.treeView1 = new System.Windows.Forms.TreeView();
-			this.metroContextMenu1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuStrip = new System.Windows.Forms.MenuStrip();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.xLabel = new System.Windows.Forms.Label();
-			this.materialComboBox = new System.Windows.Forms.ComboBox();
-			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.treeView1 = new TreeView();
+			this.metroContextMenu1 = new ContextMenuStrip(this.components);
+			this.addToolStripMenuItem = new ToolStripMenuItem();
+			this.removeToolStripMenuItem = new ToolStripMenuItem();
+			this.menuStrip = new MenuStrip();
+			this.fileToolStripMenuItem = new ToolStripMenuItem();
+			this.saveToolStripMenuItem1 = new ToolStripMenuItem();
+			this.helpToolStripMenuItem = new ToolStripMenuItem();
+			this.xLabel = new Label();
+			this.materialComboBox = new ComboBox();
+			this.layout = new TableLayoutPanel();
 			this.metroContextMenu1.SuspendLayout();
 			this.menuStrip.SuspendLayout();
 			this.layout.SuspendLayout();
@@ -47,18 +47,18 @@ namespace PckStudio.Forms.Editor {
 			// 
 			this.layout.SetColumnSpan(this.treeView1, 2);
 			this.treeView1.ContextMenuStrip = this.metroContextMenu1;
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView1.Dock = DockStyle.Fill;
 			this.treeView1.Location = new System.Drawing.Point(3, 3);
 			this.treeView1.Name = "treeView1";
 			this.treeView1.Size = new System.Drawing.Size(378, 307);
 			this.treeView1.TabIndex = 13;
-			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-			this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
-			this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+			this.treeView1.AfterSelect += new TreeViewEventHandler(this.treeView1_AfterSelect);
+			this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+			this.treeView1.KeyDown += new KeyEventHandler(this.treeView1_KeyDown);
 			// 
 			// metroContextMenu1
 			// 
-			this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.metroContextMenu1.Items.AddRange(new ToolStripItem[] {
 			this.addToolStripMenuItem,
 			this.removeToolStripMenuItem});
 			this.metroContextMenu1.Name = "metroContextMenu1";
@@ -81,7 +81,7 @@ namespace PckStudio.Forms.Editor {
 			// menuStrip
 			// 
 			this.menuStrip.AutoSize = false;
-			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.menuStrip.Items.AddRange(new ToolStripItem[] {
 			this.fileToolStripMenuItem,
 			this.helpToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -92,7 +92,7 @@ namespace PckStudio.Forms.Editor {
 			// 
 			// fileToolStripMenuItem
 			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
 			this.saveToolStripMenuItem1});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -114,7 +114,7 @@ namespace PckStudio.Forms.Editor {
 			// 
 			// xLabel
 			// 
-			this.xLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.xLabel.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.xLabel.AutoSize = true;
 			this.xLabel.Location = new System.Drawing.Point(3, 320);
 			this.xLabel.Name = "xLabel";
@@ -125,7 +125,7 @@ namespace PckStudio.Forms.Editor {
 			// 
 			// materialComboBox
 			// 
-			this.materialComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.materialComboBox.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.materialComboBox.FormattingEnabled = true;
 			this.materialComboBox.ItemHeight = 13;
 			this.materialComboBox.Items.AddRange(new object[] {
@@ -144,25 +144,25 @@ namespace PckStudio.Forms.Editor {
 			// layout
 			// 
 			this.layout.ColumnCount = 2;
-			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
 			this.layout.Controls.Add(this.treeView1, 0, 0);
 			this.layout.Controls.Add(this.xLabel, 0, 1);
 			this.layout.Controls.Add(this.materialComboBox, 1, 1);
-			this.layout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.layout.Dock = DockStyle.Fill;
 			this.layout.Location = new System.Drawing.Point(0, 24);
 			this.layout.Name = "layout";
 			this.layout.RowCount = 3;
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.layout.RowStyles.Add(new RowStyle());
+			this.layout.RowStyles.Add(new RowStyle());
 			this.layout.Size = new System.Drawing.Size(384, 340);
 			this.layout.TabIndex = 32;
 			// 
 			// MaterialsEditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(384, 364);
 			this.Controls.Add(this.layout);
 			this.Controls.Add(this.menuStrip);

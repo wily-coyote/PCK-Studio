@@ -22,12 +22,12 @@ namespace PckStudio.ToolboxItems {
 			_contributor = contributor;
 		}
 
-		//protected override void OnCreateControl() {
-		//	if(DesignMode)
-		//		return;
-		//	Visible = false;
-		//	Task.Run(LoadAuthor);
-		//}
+		protected override void OnCreateControl() {
+			if(DesignMode)
+				return;
+			Visible = false;
+			Task.Run(LoadAuthor);
+		}
 
 		private void LoadAuthor() {
 			// TODO: find a better way to check if the avatar has changed since last cache.

@@ -26,13 +26,13 @@ namespace PckStudio {
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateTexturePackPrompt));
-			this.nameLabel = new System.Windows.Forms.Label();
-			this.OKButton = new System.Windows.Forms.Button();
-			this.InputTextBox = new System.Windows.Forms.TextBox();
-			this.resolutionComboBox = new System.Windows.Forms.ComboBox();
-			this.resolutionLabel = new System.Windows.Forms.Label();
-			this.createSkinsPckCheckBox = new System.Windows.Forms.CheckBox();
-			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.nameLabel = new Label();
+			this.OKButton = new Button();
+			this.InputTextBox = new TextBox();
+			this.resolutionComboBox = new ComboBox();
+			this.resolutionLabel = new Label();
+			this.createSkinsPckCheckBox = new CheckBox();
+			this.layout = new TableLayoutPanel();
 			this.layout.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -96,9 +96,9 @@ namespace PckStudio {
 			// 
 			this.AcceptButton = this.OKButton;
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			this.Name = "CreateTexturePackPrompt";
 			this.layout.ResumeLayout(false);
 			this.layout.PerformLayout();
