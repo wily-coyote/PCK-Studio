@@ -1,46 +1,39 @@
 ﻿using System;
-using System.IO;
 using System.Drawing;
-using PckStudio.Models;
-using PckStudio.Properties;
 
-namespace PckStudio.Models
-{
-	internal class Steve64x32Model : ModelBase
-	{
-        public Steve64x32Model(Image texture)
-		{
+namespace PckStudio.Models {
+	internal class Steve64x32Model : ModelBase {
+		public Steve64x32Model(Image texture) {
 			textures = new Image[1] { texture };
 		}
 
-		public override void AddToModelView(MinecraftModelView modelView)
-		{
+		public override void AddToModelView(MinecraftModelView modelView) {
 			_ = Textures[0] ?? throw new NullReferenceException(nameof(Textures));
-            Image source = Textures[0];
-			Box head        = new Box(source, new Rectangle( 8, 0, 16, 8), new Rectangle( 0, 8, 32, 8), new Point3D(0f, 0f, 0f));
+			Image source = Textures[0];
+			Box head = new Box(source, new Rectangle(8, 0, 16, 8), new Rectangle(0, 8, 32, 8), new Point3D(0f, 0f, 0f));
 			Box headOverlay = new Box(source, new Rectangle(40, 0, 16, 8), new Rectangle(32, 8, 32, 8), new Point3D(0f, 0f, 0f));
 			headOverlay.Scale = OverlayScale;
 
 			Box body = new Box(source, new Rectangle(20, 16, 16, 4), new Rectangle(16, 20, 24, 12), new Point3D(0f, 0f, 0f));
 
-			Box leftArm  = new Box(source, new Rectangle(44, 16, 8,  4), new Rectangle(40, 20, 32, 12), new Point3D(0f, 4f, 0f));
-			Box rightArm = new Box(source, new Rectangle(44, 16, 8,  4), new Rectangle(40, 20, 32, 12), new Point3D(0f, 4f, 0f));
+			Box leftArm = new Box(source, new Rectangle(44, 16, 8, 4), new Rectangle(40, 20, 32, 12), new Point3D(0f, 4f, 0f));
+			Box rightArm = new Box(source, new Rectangle(44, 16, 8, 4), new Rectangle(40, 20, 32, 12), new Point3D(0f, 4f, 0f));
 
-			Box leftLeg  = new Box(source, new Rectangle(4, 16, 8, 4), new Rectangle(0, 20, 16, 12), new Point3D(0f, 6f, 0f));
+			Box leftLeg = new Box(source, new Rectangle(4, 16, 8, 4), new Rectangle(0, 20, 16, 12), new Point3D(0f, 6f, 0f));
 			Box rightLeg = new Box(source, new Rectangle(4, 16, 8, 4), new Rectangle(0, 20, 16, 12), new Point3D(0f, 6f, 0f));
 
 			Object3DGroup headGroup = new Object3DGroup();
-			
+
 			headGroup.RotationOrder = RotationOrders.XY;
 			headGroup.MinDegrees1 = -80f;
 			headGroup.MaxDegrees1 = 80f;
 
 			headGroup.MinDegrees2 = -57f;
 			headGroup.MaxDegrees2 = 57f;
-			
+
 			headGroup.Add(head);
 			headGroup.Add(headOverlay);
-			
+
 			headGroup.Position = new Point3D(0f, 8f, 0f);
 			headGroup.Origin = new Point3D(0f, -4f, 0f);
 			headGroup.RotationOrder = RotationOrders.XY;
@@ -67,7 +60,7 @@ namespace PckStudio.Models
 			leftLeg.MaxDegrees1 = 70f;
 			leftLeg.MinDegrees2 = -110f;
 			leftLeg.MaxDegrees2 = 60f;
-			
+
 			rightLeg.Position = new Point3D(-2f, -4f, 0f);
 			rightLeg.RotationOrder = RotationOrders.ZX;
 			rightLeg.MinDegrees1 = -70f;

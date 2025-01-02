@@ -1,4 +1,6 @@
-﻿namespace PckStudio.Forms.Editor
+﻿using System.Windows.Forms;
+
+namespace PckStudio.Forms.Editor
 {
 	partial class ANIMEditor
 	{
@@ -28,766 +30,742 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ANIMEditor));
-            this.saveButton = new MetroFramework.Controls.MetroButton();
-            this.effectsGroup = new System.Windows.Forms.GroupBox();
-            this.rightLegOCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.headOCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.leftLegOCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.leftArmOCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.bodyOCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.rightLegCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.slimCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.headCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.leftLegCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.rightArmCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.leftArmCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.bodyCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.classicCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.rightArmOCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.effectsGroup2 = new System.Windows.Forms.GroupBox();
-            this.rightLeggingCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.helmetCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.leftLeggingCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.rightArmorCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.leftArmorCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.chestplateCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.unknownCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.crouchCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.dinnerboneCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.noArmorCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.bobbingCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.santaCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.syncLegsCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.staticArmsCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.syncArmsCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.statueCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.zombieCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.staticLegsCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.copyButton = new MetroFramework.Controls.MetroButton();
-            this.importButton = new MetroFramework.Controls.MetroButton();
-            this.exportButton = new MetroFramework.Controls.MetroButton();
-            this.animValue = new MetroFramework.Controls.MetroLabel();
-            this.uncheckAllButton = new MetroFramework.Controls.MetroButton();
-            this.checkAllButton = new MetroFramework.Controls.MetroButton();
-            this.toolTip = new MetroFramework.Components.MetroToolTip();
-            this.resetButton = new MetroFramework.Controls.MetroButton();
-            this.templateButton = new MetroFramework.Controls.MetroButton();
-            this.effectsGroup.SuspendLayout();
-            this.effectsGroup2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(250, 514);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(126, 23);
-            this.saveButton.TabIndex = 1;
-            this.saveButton.Text = "Save";
-            this.saveButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.saveButton.UseSelectable = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // effectsGroup
-            // 
-            this.effectsGroup.Controls.Add(this.rightLegOCheckBox);
-            this.effectsGroup.Controls.Add(this.headOCheckBox);
-            this.effectsGroup.Controls.Add(this.leftLegOCheckBox);
-            this.effectsGroup.Controls.Add(this.leftArmOCheckBox);
-            this.effectsGroup.Controls.Add(this.bodyOCheckBox);
-            this.effectsGroup.Controls.Add(this.rightLegCheckBox);
-            this.effectsGroup.Controls.Add(this.slimCheckBox);
-            this.effectsGroup.Controls.Add(this.headCheckBox);
-            this.effectsGroup.Controls.Add(this.leftLegCheckBox);
-            this.effectsGroup.Controls.Add(this.rightArmCheckBox);
-            this.effectsGroup.Controls.Add(this.leftArmCheckBox);
-            this.effectsGroup.Controls.Add(this.bodyCheckBox);
-            this.effectsGroup.Controls.Add(this.classicCheckBox);
-            this.effectsGroup.Controls.Add(this.rightArmOCheckBox);
-            this.effectsGroup.ForeColor = System.Drawing.SystemColors.Window;
-            this.effectsGroup.Location = new System.Drawing.Point(22, 148);
-            this.effectsGroup.Name = "effectsGroup";
-            this.effectsGroup.Size = new System.Drawing.Size(393, 238);
-            this.effectsGroup.TabIndex = 2;
-            this.effectsGroup.TabStop = false;
-            this.effectsGroup.Text = "Skin Flags";
-            // 
-            // rightLegOCheckBox
-            // 
-            this.rightLegOCheckBox.AutoSize = true;
-            this.rightLegOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightLegOCheckBox.Location = new System.Drawing.Point(180, 208);
-            this.rightLegOCheckBox.Name = "rightLegOCheckBox";
-            this.rightLegOCheckBox.Size = new System.Drawing.Size(199, 19);
-            this.rightLegOCheckBox.TabIndex = 13;
-            this.rightLegOCheckBox.Text = "Remove Right Leg Layer Box";
-            this.rightLegOCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.rightLegOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ANIMEditor));
+			this.saveButton = new System.Windows.Forms.Button();
+			this.flagsGroup = new System.Windows.Forms.GroupBox();
+			this.rightLegOCheckBox = new System.Windows.Forms.CheckBox();
+			this.headOCheckBox = new System.Windows.Forms.CheckBox();
+			this.leftLegOCheckBox = new System.Windows.Forms.CheckBox();
+			this.leftArmOCheckBox = new System.Windows.Forms.CheckBox();
+			this.bodyOCheckBox = new System.Windows.Forms.CheckBox();
+			this.rightLegCheckBox = new System.Windows.Forms.CheckBox();
+			this.slimCheckBox = new System.Windows.Forms.CheckBox();
+			this.headCheckBox = new System.Windows.Forms.CheckBox();
+			this.leftLegCheckBox = new System.Windows.Forms.CheckBox();
+			this.rightArmCheckBox = new System.Windows.Forms.CheckBox();
+			this.leftArmCheckBox = new System.Windows.Forms.CheckBox();
+			this.bodyCheckBox = new System.Windows.Forms.CheckBox();
+			this.classicCheckBox = new System.Windows.Forms.CheckBox();
+			this.rightArmOCheckBox = new System.Windows.Forms.CheckBox();
+			this.armorFlagsGroupBox = new System.Windows.Forms.GroupBox();
+			this.rightLeggingCheckBox = new System.Windows.Forms.CheckBox();
+			this.helmetCheckBox = new System.Windows.Forms.CheckBox();
+			this.leftLeggingCheckBox = new System.Windows.Forms.CheckBox();
+			this.rightArmorCheckBox = new System.Windows.Forms.CheckBox();
+			this.leftArmorCheckBox = new System.Windows.Forms.CheckBox();
+			this.chestplateCheckBox = new System.Windows.Forms.CheckBox();
+			this.specialAnimGroupBox = new System.Windows.Forms.GroupBox();
+			this.unknownCheckBox = new System.Windows.Forms.CheckBox();
+			this.crouchCheckBox = new System.Windows.Forms.CheckBox();
+			this.dinnerboneCheckBox = new System.Windows.Forms.CheckBox();
+			this.noArmorCheckBox = new System.Windows.Forms.CheckBox();
+			this.bobbingCheckBox = new System.Windows.Forms.CheckBox();
+			this.santaCheckBox = new System.Windows.Forms.CheckBox();
+			this.syncLegsCheckBox = new System.Windows.Forms.CheckBox();
+			this.staticArmsCheckBox = new System.Windows.Forms.CheckBox();
+			this.syncArmsCheckBox = new System.Windows.Forms.CheckBox();
+			this.statueCheckBox = new System.Windows.Forms.CheckBox();
+			this.zombieCheckBox = new System.Windows.Forms.CheckBox();
+			this.staticLegsCheckBox = new System.Windows.Forms.CheckBox();
+			this.copyButton = new System.Windows.Forms.Button();
+			this.importButton = new System.Windows.Forms.Button();
+			this.exportButton = new System.Windows.Forms.Button();
+			this.animValue = new System.Windows.Forms.Label();
+			this.uncheckAllButton = new System.Windows.Forms.Button();
+			this.checkAllButton = new System.Windows.Forms.Button();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.resetButton = new System.Windows.Forms.Button();
+			this.templateButton = new System.Windows.Forms.Button();
+			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.armorFlagsLayout = new System.Windows.Forms.FlowLayoutPanel();
+			this.specialAnimLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.flagsLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.flagsGroup.SuspendLayout();
+			this.armorFlagsGroupBox.SuspendLayout();
+			this.specialAnimGroupBox.SuspendLayout();
+			this.layout.SuspendLayout();
+			this.armorFlagsLayout.SuspendLayout();
+			this.specialAnimLayout.SuspendLayout();
+			this.flagsLayout.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// saveButton
+			// 
+			this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.saveButton.Location = new System.Drawing.Point(197, 428);
+			this.saveButton.Name = "saveButton";
+			this.saveButton.Size = new System.Drawing.Size(188, 23);
+			this.saveButton.TabIndex = 1;
+			this.saveButton.Text = "Save";
+			this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+			// 
+			// flagsGroup
+			// 
+			this.layout.SetColumnSpan(this.flagsGroup, 2);
+			this.flagsGroup.Controls.Add(this.flagsLayout);
+			this.flagsGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flagsGroup.Location = new System.Drawing.Point(3, 109);
+			this.flagsGroup.Name = "flagsGroup";
+			this.layout.SetRowSpan(this.flagsGroup, 2);
+			this.flagsGroup.Size = new System.Drawing.Size(382, 192);
+			this.flagsGroup.TabIndex = 2;
+			this.flagsGroup.TabStop = false;
+			this.flagsGroup.Text = "Skin Flags";
+			// 
+			// rightLegOCheckBox
+			// 
+			this.rightLegOCheckBox.AutoSize = true;
+			this.rightLegOCheckBox.Location = new System.Drawing.Point(191, 141);
+			this.rightLegOCheckBox.Name = "rightLegOCheckBox";
+			this.rightLegOCheckBox.Size = new System.Drawing.Size(165, 17);
+			this.rightLegOCheckBox.TabIndex = 13;
+			this.rightLegOCheckBox.Text = "Remove Right Leg Layer Box";
+			this.toolTip.SetToolTip(this.rightLegOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.rightLegOCheckBox.UseSelectable = true;
-            // 
-            // headOCheckBox
-            // 
-            this.headOCheckBox.AutoSize = true;
-            this.headOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.headOCheckBox.Location = new System.Drawing.Point(180, 50);
-            this.headOCheckBox.Name = "headOCheckBox";
-            this.headOCheckBox.Size = new System.Drawing.Size(173, 19);
-            this.headOCheckBox.TabIndex = 12;
-            this.headOCheckBox.Text = "Remove Head Layer Box";
-            this.headOCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.headOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// headOCheckBox
+			// 
+			this.headOCheckBox.AutoSize = true;
+			this.headOCheckBox.Location = new System.Drawing.Point(191, 26);
+			this.headOCheckBox.Name = "headOCheckBox";
+			this.headOCheckBox.Size = new System.Drawing.Size(145, 17);
+			this.headOCheckBox.TabIndex = 12;
+			this.headOCheckBox.Text = "Remove Head Layer Box";
+			this.toolTip.SetToolTip(this.headOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.headOCheckBox.UseSelectable = true;
-            // 
-            // leftLegOCheckBox
-            // 
-            this.leftLegOCheckBox.AutoSize = true;
-            this.leftLegOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftLegOCheckBox.Location = new System.Drawing.Point(180, 174);
-            this.leftLegOCheckBox.Name = "leftLegOCheckBox";
-            this.leftLegOCheckBox.Size = new System.Drawing.Size(190, 19);
-            this.leftLegOCheckBox.TabIndex = 11;
-            this.leftLegOCheckBox.Text = "Remove Left Leg Layer Box";
-            this.leftLegOCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.leftLegOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// leftLegOCheckBox
+			// 
+			this.leftLegOCheckBox.AutoSize = true;
+			this.leftLegOCheckBox.Location = new System.Drawing.Point(191, 118);
+			this.leftLegOCheckBox.Name = "leftLegOCheckBox";
+			this.leftLegOCheckBox.Size = new System.Drawing.Size(158, 17);
+			this.leftLegOCheckBox.TabIndex = 11;
+			this.leftLegOCheckBox.Text = "Remove Left Leg Layer Box";
+			this.toolTip.SetToolTip(this.leftLegOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.leftLegOCheckBox.UseSelectable = true;
-            // 
-            // leftArmOCheckBox
-            // 
-            this.leftArmOCheckBox.AutoSize = true;
-            this.leftArmOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftArmOCheckBox.Location = new System.Drawing.Point(180, 112);
-            this.leftArmOCheckBox.Name = "leftArmOCheckBox";
-            this.leftArmOCheckBox.Size = new System.Drawing.Size(194, 19);
-            this.leftArmOCheckBox.TabIndex = 9;
-            this.leftArmOCheckBox.Text = "Remove Left Arm Layer Box";
-            this.leftArmOCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.leftArmOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// leftArmOCheckBox
+			// 
+			this.leftArmOCheckBox.AutoSize = true;
+			this.leftArmOCheckBox.Location = new System.Drawing.Point(191, 72);
+			this.leftArmOCheckBox.Name = "leftArmOCheckBox";
+			this.leftArmOCheckBox.Size = new System.Drawing.Size(158, 17);
+			this.leftArmOCheckBox.TabIndex = 9;
+			this.leftArmOCheckBox.Text = "Remove Left Arm Layer Box";
+			this.toolTip.SetToolTip(this.leftArmOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.leftArmOCheckBox.UseSelectable = true;
-            // 
-            // bodyOCheckBox
-            // 
-            this.bodyOCheckBox.AutoSize = true;
-            this.bodyOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.bodyOCheckBox.Location = new System.Drawing.Point(180, 81);
-            this.bodyOCheckBox.Name = "bodyOCheckBox";
-            this.bodyOCheckBox.Size = new System.Drawing.Size(172, 19);
-            this.bodyOCheckBox.TabIndex = 8;
-            this.bodyOCheckBox.Text = "Remove Body Layer Box";
-            this.bodyOCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.bodyOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// bodyOCheckBox
+			// 
+			this.bodyOCheckBox.AutoSize = true;
+			this.bodyOCheckBox.Location = new System.Drawing.Point(191, 49);
+			this.bodyOCheckBox.Name = "bodyOCheckBox";
+			this.bodyOCheckBox.Size = new System.Drawing.Size(143, 17);
+			this.bodyOCheckBox.TabIndex = 8;
+			this.bodyOCheckBox.Text = "Remove Body Layer Box";
+			this.toolTip.SetToolTip(this.bodyOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.bodyOCheckBox.UseSelectable = true;
-            // 
-            // rightLegCheckBox
-            // 
-            this.rightLegCheckBox.AutoSize = true;
-            this.rightLegCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightLegCheckBox.Location = new System.Drawing.Point(6, 208);
-            this.rightLegCheckBox.Name = "rightLegCheckBox";
-            this.rightLegCheckBox.Size = new System.Drawing.Size(162, 19);
-            this.rightLegCheckBox.TabIndex = 7;
-            this.rightLegCheckBox.Text = "Remove Right Leg Box";
-            this.rightLegCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.rightLegCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// rightLegCheckBox
+			// 
+			this.rightLegCheckBox.AutoSize = true;
+			this.rightLegCheckBox.Location = new System.Drawing.Point(3, 141);
+			this.rightLegCheckBox.Name = "rightLegCheckBox";
+			this.rightLegCheckBox.Size = new System.Drawing.Size(136, 17);
+			this.rightLegCheckBox.TabIndex = 7;
+			this.rightLegCheckBox.Text = "Remove Right Leg Box";
+			this.toolTip.SetToolTip(this.rightLegCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.rightLegCheckBox.UseSelectable = true;
-            // 
-            // slimCheckBox
-            // 
-            this.slimCheckBox.AutoSize = true;
-            this.slimCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.slimCheckBox.Location = new System.Drawing.Point(180, 19);
-            this.slimCheckBox.Name = "slimCheckBox";
-            this.slimCheckBox.Size = new System.Drawing.Size(151, 19);
-            this.slimCheckBox.TabIndex = 6;
-            this.slimCheckBox.Text = "64x64 Alex/Slim Skin";
-            this.slimCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.slimCheckBox, "          The 1.8 style skin type with slim arms, overlays for each part, and sep" +
+			// 
+			// slimCheckBox
+			// 
+			this.slimCheckBox.AutoSize = true;
+			this.slimCheckBox.Location = new System.Drawing.Point(191, 3);
+			this.slimCheckBox.Name = "slimCheckBox";
+			this.slimCheckBox.Size = new System.Drawing.Size(126, 17);
+			this.slimCheckBox.TabIndex = 6;
+			this.slimCheckBox.Text = "64x64 Alex/Slim Skin";
+			this.toolTip.SetToolTip(this.slimCheckBox, "          The 1.8 style skin type with slim arms, overlays for each part, and sep" +
         "arate textures for right and left limbs. Resolution is also set to 64x64.       " +
         "   ");
-            this.slimCheckBox.UseSelectable = true;
-            // 
-            // headCheckBox
-            // 
-            this.headCheckBox.AutoSize = true;
-            this.headCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.headCheckBox.Location = new System.Drawing.Point(6, 50);
-            this.headCheckBox.Name = "headCheckBox";
-            this.headCheckBox.Size = new System.Drawing.Size(136, 19);
-            this.headCheckBox.TabIndex = 5;
-            this.headCheckBox.Text = "Remove Head Box";
-            this.headCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.headCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// headCheckBox
+			// 
+			this.headCheckBox.AutoSize = true;
+			this.headCheckBox.Location = new System.Drawing.Point(3, 26);
+			this.headCheckBox.Name = "headCheckBox";
+			this.headCheckBox.Size = new System.Drawing.Size(116, 17);
+			this.headCheckBox.TabIndex = 5;
+			this.headCheckBox.Text = "Remove Head Box";
+			this.toolTip.SetToolTip(this.headCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.headCheckBox.UseSelectable = true;
-            // 
-            // leftLegCheckBox
-            // 
-            this.leftLegCheckBox.AutoSize = true;
-            this.leftLegCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftLegCheckBox.Location = new System.Drawing.Point(6, 174);
-            this.leftLegCheckBox.Name = "leftLegCheckBox";
-            this.leftLegCheckBox.Size = new System.Drawing.Size(153, 19);
-            this.leftLegCheckBox.TabIndex = 4;
-            this.leftLegCheckBox.Text = "Remove Left Leg Box";
-            this.leftLegCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.leftLegCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// leftLegCheckBox
+			// 
+			this.leftLegCheckBox.AutoSize = true;
+			this.leftLegCheckBox.Location = new System.Drawing.Point(3, 118);
+			this.leftLegCheckBox.Name = "leftLegCheckBox";
+			this.leftLegCheckBox.Size = new System.Drawing.Size(129, 17);
+			this.leftLegCheckBox.TabIndex = 4;
+			this.leftLegCheckBox.Text = "Remove Left Leg Box";
+			this.toolTip.SetToolTip(this.leftLegCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.leftLegCheckBox.UseSelectable = true;
-            // 
-            // rightArmCheckBox
-            // 
-            this.rightArmCheckBox.AutoSize = true;
-            this.rightArmCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightArmCheckBox.Location = new System.Drawing.Point(6, 143);
-            this.rightArmCheckBox.Name = "rightArmCheckBox";
-            this.rightArmCheckBox.Size = new System.Drawing.Size(166, 19);
-            this.rightArmCheckBox.TabIndex = 3;
-            this.rightArmCheckBox.Text = "Remove Right Arm Box";
-            this.rightArmCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.rightArmCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// rightArmCheckBox
+			// 
+			this.rightArmCheckBox.AutoSize = true;
+			this.rightArmCheckBox.Location = new System.Drawing.Point(3, 95);
+			this.rightArmCheckBox.Name = "rightArmCheckBox";
+			this.rightArmCheckBox.Size = new System.Drawing.Size(136, 17);
+			this.rightArmCheckBox.TabIndex = 3;
+			this.rightArmCheckBox.Text = "Remove Right Arm Box";
+			this.toolTip.SetToolTip(this.rightArmCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.rightArmCheckBox.UseSelectable = true;
-            // 
-            // leftArmCheckBox
-            // 
-            this.leftArmCheckBox.AutoSize = true;
-            this.leftArmCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftArmCheckBox.Location = new System.Drawing.Point(6, 112);
-            this.leftArmCheckBox.Name = "leftArmCheckBox";
-            this.leftArmCheckBox.Size = new System.Drawing.Size(157, 19);
-            this.leftArmCheckBox.TabIndex = 2;
-            this.leftArmCheckBox.Text = "Remove Left Arm Box";
-            this.leftArmCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.leftArmCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// leftArmCheckBox
+			// 
+			this.leftArmCheckBox.AutoSize = true;
+			this.leftArmCheckBox.Location = new System.Drawing.Point(3, 72);
+			this.leftArmCheckBox.Name = "leftArmCheckBox";
+			this.leftArmCheckBox.Size = new System.Drawing.Size(129, 17);
+			this.leftArmCheckBox.TabIndex = 2;
+			this.leftArmCheckBox.Text = "Remove Left Arm Box";
+			this.toolTip.SetToolTip(this.leftArmCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.leftArmCheckBox.UseSelectable = true;
-            // 
-            // bodyCheckBox
-            // 
-            this.bodyCheckBox.AutoSize = true;
-            this.bodyCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.bodyCheckBox.Location = new System.Drawing.Point(6, 81);
-            this.bodyCheckBox.Name = "bodyCheckBox";
-            this.bodyCheckBox.Size = new System.Drawing.Size(135, 19);
-            this.bodyCheckBox.TabIndex = 1;
-            this.bodyCheckBox.Text = "Remove Body Box";
-            this.bodyCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.bodyCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// bodyCheckBox
+			// 
+			this.bodyCheckBox.AutoSize = true;
+			this.bodyCheckBox.Location = new System.Drawing.Point(3, 49);
+			this.bodyCheckBox.Name = "bodyCheckBox";
+			this.bodyCheckBox.Size = new System.Drawing.Size(114, 17);
+			this.bodyCheckBox.TabIndex = 1;
+			this.bodyCheckBox.Text = "Remove Body Box";
+			this.toolTip.SetToolTip(this.bodyCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.bodyCheckBox.UseSelectable = true;
-            // 
-            // classicCheckBox
-            // 
-            this.classicCheckBox.AutoSize = true;
-            this.classicCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.classicCheckBox.Location = new System.Drawing.Point(6, 19);
-            this.classicCheckBox.Name = "classicCheckBox";
-            this.classicCheckBox.Size = new System.Drawing.Size(136, 19);
-            this.classicCheckBox.TabIndex = 0;
-            this.classicCheckBox.Text = "64x64 Classic Skin";
-            this.classicCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.classicCheckBox, "          The 1.8 style skin type with overlays for each part and separate textur" +
+			// 
+			// classicCheckBox
+			// 
+			this.classicCheckBox.AutoSize = true;
+			this.classicCheckBox.Location = new System.Drawing.Point(3, 3);
+			this.classicCheckBox.Name = "classicCheckBox";
+			this.classicCheckBox.Size = new System.Drawing.Size(115, 17);
+			this.classicCheckBox.TabIndex = 0;
+			this.classicCheckBox.Text = "64x64 Classic Skin";
+			this.toolTip.SetToolTip(this.classicCheckBox, "          The 1.8 style skin type with overlays for each part and separate textur" +
         "es for right and left limbs. Resolution is also set to 64x64.         ");
-            this.classicCheckBox.UseSelectable = true;
-            // 
-            // rightArmOCheckBox
-            // 
-            this.rightArmOCheckBox.AutoSize = true;
-            this.rightArmOCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.rightArmOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightArmOCheckBox.Location = new System.Drawing.Point(180, 143);
-            this.rightArmOCheckBox.Name = "rightArmOCheckBox";
-            this.rightArmOCheckBox.Size = new System.Drawing.Size(203, 19);
-            this.rightArmOCheckBox.TabIndex = 10;
-            this.rightArmOCheckBox.Text = "Remove Right Arm Layer Box";
-            this.rightArmOCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.rightArmOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
+			// 
+			// rightArmOCheckBox
+			// 
+			this.rightArmOCheckBox.AutoSize = true;
+			this.rightArmOCheckBox.Location = new System.Drawing.Point(191, 95);
+			this.rightArmOCheckBox.Name = "rightArmOCheckBox";
+			this.rightArmOCheckBox.Size = new System.Drawing.Size(165, 17);
+			this.rightArmOCheckBox.TabIndex = 10;
+			this.rightArmOCheckBox.Text = "Remove Right Arm Layer Box";
+			this.toolTip.SetToolTip(this.rightArmOCheckBox, "             Removes the parent Box for this part. You can still make new boxes f" +
         "or this part. Armor will be disabled for this part, but can be rendered again wi" +
         "th the armor flags.              ");
-            this.rightArmOCheckBox.UseSelectable = true;
-            // 
-            // effectsGroup2
-            // 
-            this.effectsGroup2.Controls.Add(this.rightLeggingCheckBox);
-            this.effectsGroup2.Controls.Add(this.helmetCheckBox);
-            this.effectsGroup2.Controls.Add(this.leftLeggingCheckBox);
-            this.effectsGroup2.Controls.Add(this.rightArmorCheckBox);
-            this.effectsGroup2.Controls.Add(this.leftArmorCheckBox);
-            this.effectsGroup2.Controls.Add(this.chestplateCheckBox);
-            this.effectsGroup2.ForeColor = System.Drawing.SystemColors.Window;
-            this.effectsGroup2.Location = new System.Drawing.Point(421, 183);
-            this.effectsGroup2.Name = "effectsGroup2";
-            this.effectsGroup2.Size = new System.Drawing.Size(188, 203);
-            this.effectsGroup2.TabIndex = 14;
-            this.effectsGroup2.TabStop = false;
-            this.effectsGroup2.Text = "Armor Flags";
-            // 
-            // rightLeggingCheckBox
-            // 
-            this.rightLeggingCheckBox.AutoSize = true;
-            this.rightLeggingCheckBox.Enabled = false;
-            this.rightLeggingCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightLeggingCheckBox.Location = new System.Drawing.Point(6, 174);
-            this.rightLeggingCheckBox.Name = "rightLeggingCheckBox";
-            this.rightLeggingCheckBox.Size = new System.Drawing.Size(173, 19);
-            this.rightLeggingCheckBox.TabIndex = 7;
-            this.rightLeggingCheckBox.Text = "Render Right Leg Armor";
-            this.rightLeggingCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.rightLeggingCheckBox, " Forcefully enables the specified armor piece.");
-            this.rightLeggingCheckBox.UseSelectable = true;
-            // 
-            // helmetCheckBox
-            // 
-            this.helmetCheckBox.AutoSize = true;
-            this.helmetCheckBox.Enabled = false;
-            this.helmetCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.helmetCheckBox.Location = new System.Drawing.Point(6, 19);
-            this.helmetCheckBox.Name = "helmetCheckBox";
-            this.helmetCheckBox.Size = new System.Drawing.Size(147, 19);
-            this.helmetCheckBox.TabIndex = 5;
-            this.helmetCheckBox.Text = "Render Head Armor";
-            this.helmetCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.helmetCheckBox, " Forcefully enables the specified armor piece.");
-            this.helmetCheckBox.UseSelectable = true;
-            // 
-            // leftLeggingCheckBox
-            // 
-            this.leftLeggingCheckBox.AutoSize = true;
-            this.leftLeggingCheckBox.Enabled = false;
-            this.leftLeggingCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftLeggingCheckBox.Location = new System.Drawing.Point(6, 143);
-            this.leftLeggingCheckBox.Name = "leftLeggingCheckBox";
-            this.leftLeggingCheckBox.Size = new System.Drawing.Size(164, 19);
-            this.leftLeggingCheckBox.TabIndex = 4;
-            this.leftLeggingCheckBox.Text = "Render Left Leg Armor";
-            this.leftLeggingCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.leftLeggingCheckBox, " Forcefully enables the specified armor piece.");
-            this.leftLeggingCheckBox.UseSelectable = true;
-            // 
-            // rightArmorCheckBox
-            // 
-            this.rightArmorCheckBox.AutoSize = true;
-            this.rightArmorCheckBox.Enabled = false;
-            this.rightArmorCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightArmorCheckBox.Location = new System.Drawing.Point(6, 112);
-            this.rightArmorCheckBox.Name = "rightArmorCheckBox";
-            this.rightArmorCheckBox.Size = new System.Drawing.Size(177, 19);
-            this.rightArmorCheckBox.TabIndex = 3;
-            this.rightArmorCheckBox.Text = "Render Right Arm Armor";
-            this.rightArmorCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.rightArmorCheckBox, " Forcefully enables the specified armor piece.");
-            this.rightArmorCheckBox.UseSelectable = true;
-            // 
-            // leftArmorCheckBox
-            // 
-            this.leftArmorCheckBox.AutoSize = true;
-            this.leftArmorCheckBox.Enabled = false;
-            this.leftArmorCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftArmorCheckBox.Location = new System.Drawing.Point(6, 81);
-            this.leftArmorCheckBox.Name = "leftArmorCheckBox";
-            this.leftArmorCheckBox.Size = new System.Drawing.Size(168, 19);
-            this.leftArmorCheckBox.TabIndex = 2;
-            this.leftArmorCheckBox.Text = "Render Left Arm Armor";
-            this.leftArmorCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.leftArmorCheckBox, " Forcefully enables the specified armor piece.");
-            this.leftArmorCheckBox.UseSelectable = true;
-            // 
-            // chestplateCheckBox
-            // 
-            this.chestplateCheckBox.AutoSize = true;
-            this.chestplateCheckBox.Enabled = false;
-            this.chestplateCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chestplateCheckBox.Location = new System.Drawing.Point(6, 50);
-            this.chestplateCheckBox.Name = "chestplateCheckBox";
-            this.chestplateCheckBox.Size = new System.Drawing.Size(146, 19);
-            this.chestplateCheckBox.TabIndex = 1;
-            this.chestplateCheckBox.Text = "Render Body Armor";
-            this.chestplateCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.chestplateCheckBox, " Forcefully enables the specified armor piece.");
-            this.chestplateCheckBox.UseSelectable = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.unknownCheckBox);
-            this.groupBox1.Controls.Add(this.crouchCheckBox);
-            this.groupBox1.Controls.Add(this.dinnerboneCheckBox);
-            this.groupBox1.Controls.Add(this.noArmorCheckBox);
-            this.groupBox1.Controls.Add(this.bobbingCheckBox);
-            this.groupBox1.Controls.Add(this.santaCheckBox);
-            this.groupBox1.Controls.Add(this.syncLegsCheckBox);
-            this.groupBox1.Controls.Add(this.staticArmsCheckBox);
-            this.groupBox1.Controls.Add(this.syncArmsCheckBox);
-            this.groupBox1.Controls.Add(this.statueCheckBox);
-            this.groupBox1.Controls.Add(this.zombieCheckBox);
-            this.groupBox1.Controls.Add(this.staticLegsCheckBox);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(22, 388);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(587, 115);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Special Animations";
-            // 
-            // unknownCheckBox
-            // 
-            this.unknownCheckBox.AutoSize = true;
-            this.unknownCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.unknownCheckBox.Location = new System.Drawing.Point(126, 81);
-            this.unknownCheckBox.Name = "unknownCheckBox";
-            this.unknownCheckBox.Size = new System.Drawing.Size(84, 19);
-            this.unknownCheckBox.TabIndex = 13;
-            this.unknownCheckBox.Text = "Unknown";
-            this.unknownCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.unknownCheckBox, "   If you figure out what this is. Please reach out to MNL#8935 on Discord. (:   " +
+			// 
+			// armorFlagsGroupBox
+			// 
+			this.armorFlagsGroupBox.Controls.Add(this.armorFlagsLayout);
+			this.armorFlagsGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.armorFlagsGroupBox.Location = new System.Drawing.Point(391, 138);
+			this.armorFlagsGroupBox.Name = "armorFlagsGroupBox";
+			this.armorFlagsGroupBox.Size = new System.Drawing.Size(190, 163);
+			this.armorFlagsGroupBox.TabIndex = 14;
+			this.armorFlagsGroupBox.TabStop = false;
+			this.armorFlagsGroupBox.Text = "Armor Flags";
+			// 
+			// rightLeggingCheckBox
+			// 
+			this.rightLeggingCheckBox.AutoSize = true;
+			this.rightLeggingCheckBox.Enabled = false;
+			this.rightLeggingCheckBox.Location = new System.Drawing.Point(3, 118);
+			this.rightLeggingCheckBox.Name = "rightLeggingCheckBox";
+			this.rightLeggingCheckBox.Size = new System.Drawing.Size(140, 17);
+			this.rightLeggingCheckBox.TabIndex = 7;
+			this.rightLeggingCheckBox.Text = "Render Right Leg Armor";
+			this.toolTip.SetToolTip(this.rightLeggingCheckBox, " Forcefully enables the specified armor piece.");
+			// 
+			// helmetCheckBox
+			// 
+			this.helmetCheckBox.AutoSize = true;
+			this.helmetCheckBox.Enabled = false;
+			this.helmetCheckBox.Location = new System.Drawing.Point(3, 3);
+			this.helmetCheckBox.Name = "helmetCheckBox";
+			this.helmetCheckBox.Size = new System.Drawing.Size(120, 17);
+			this.helmetCheckBox.TabIndex = 5;
+			this.helmetCheckBox.Text = "Render Head Armor";
+			this.toolTip.SetToolTip(this.helmetCheckBox, " Forcefully enables the specified armor piece.");
+			// 
+			// leftLeggingCheckBox
+			// 
+			this.leftLeggingCheckBox.AutoSize = true;
+			this.leftLeggingCheckBox.Enabled = false;
+			this.leftLeggingCheckBox.Location = new System.Drawing.Point(3, 95);
+			this.leftLeggingCheckBox.Name = "leftLeggingCheckBox";
+			this.leftLeggingCheckBox.Size = new System.Drawing.Size(133, 17);
+			this.leftLeggingCheckBox.TabIndex = 4;
+			this.leftLeggingCheckBox.Text = "Render Left Leg Armor";
+			this.toolTip.SetToolTip(this.leftLeggingCheckBox, " Forcefully enables the specified armor piece.");
+			// 
+			// rightArmorCheckBox
+			// 
+			this.rightArmorCheckBox.AutoSize = true;
+			this.rightArmorCheckBox.Enabled = false;
+			this.rightArmorCheckBox.Location = new System.Drawing.Point(3, 72);
+			this.rightArmorCheckBox.Name = "rightArmorCheckBox";
+			this.rightArmorCheckBox.Size = new System.Drawing.Size(140, 17);
+			this.rightArmorCheckBox.TabIndex = 3;
+			this.rightArmorCheckBox.Text = "Render Right Arm Armor";
+			this.toolTip.SetToolTip(this.rightArmorCheckBox, " Forcefully enables the specified armor piece.");
+			// 
+			// leftArmorCheckBox
+			// 
+			this.leftArmorCheckBox.AutoSize = true;
+			this.leftArmorCheckBox.Enabled = false;
+			this.leftArmorCheckBox.Location = new System.Drawing.Point(3, 49);
+			this.leftArmorCheckBox.Name = "leftArmorCheckBox";
+			this.leftArmorCheckBox.Size = new System.Drawing.Size(133, 17);
+			this.leftArmorCheckBox.TabIndex = 2;
+			this.leftArmorCheckBox.Text = "Render Left Arm Armor";
+			this.toolTip.SetToolTip(this.leftArmorCheckBox, " Forcefully enables the specified armor piece.");
+			// 
+			// chestplateCheckBox
+			// 
+			this.chestplateCheckBox.AutoSize = true;
+			this.chestplateCheckBox.Enabled = false;
+			this.chestplateCheckBox.Location = new System.Drawing.Point(3, 26);
+			this.chestplateCheckBox.Name = "chestplateCheckBox";
+			this.chestplateCheckBox.Size = new System.Drawing.Size(118, 17);
+			this.chestplateCheckBox.TabIndex = 1;
+			this.chestplateCheckBox.Text = "Render Body Armor";
+			this.toolTip.SetToolTip(this.chestplateCheckBox, " Forcefully enables the specified armor piece.");
+			// 
+			// specialAnimGroupBox
+			// 
+			this.layout.SetColumnSpan(this.specialAnimGroupBox, 3);
+			this.specialAnimGroupBox.Controls.Add(this.specialAnimLayout);
+			this.specialAnimGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.specialAnimGroupBox.Location = new System.Drawing.Point(3, 307);
+			this.specialAnimGroupBox.Name = "specialAnimGroupBox";
+			this.specialAnimGroupBox.Size = new System.Drawing.Size(578, 115);
+			this.specialAnimGroupBox.TabIndex = 15;
+			this.specialAnimGroupBox.TabStop = false;
+			this.specialAnimGroupBox.Text = "Special Animations";
+			// 
+			// unknownCheckBox
+			// 
+			this.unknownCheckBox.AutoSize = true;
+			this.unknownCheckBox.Location = new System.Drawing.Point(146, 49);
+			this.unknownCheckBox.Name = "unknownCheckBox";
+			this.unknownCheckBox.Size = new System.Drawing.Size(72, 17);
+			this.unknownCheckBox.TabIndex = 13;
+			this.unknownCheckBox.Text = "Unknown";
+			this.toolTip.SetToolTip(this.unknownCheckBox, "   If you figure out what this is. Please reach out to MNL#8935 on Discord. (:   " +
         "");
-            this.unknownCheckBox.UseSelectable = true;
-            // 
-            // crouchCheckBox
-            // 
-            this.crouchCheckBox.AutoSize = true;
-            this.crouchCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.crouchCheckBox.Location = new System.Drawing.Point(126, 50);
-            this.crouchCheckBox.Name = "crouchCheckBox";
-            this.crouchCheckBox.Size = new System.Drawing.Size(137, 19);
-            this.crouchCheckBox.TabIndex = 12;
-            this.crouchCheckBox.Text = "Backwards Crouch";
-            this.crouchCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.crouchCheckBox, "      The crouch animation is reversed so that the arms and body lean back. Usefu" +
+			// 
+			// crouchCheckBox
+			// 
+			this.crouchCheckBox.AutoSize = true;
+			this.crouchCheckBox.Location = new System.Drawing.Point(146, 26);
+			this.crouchCheckBox.Name = "crouchCheckBox";
+			this.crouchCheckBox.Size = new System.Drawing.Size(116, 17);
+			this.crouchCheckBox.TabIndex = 12;
+			this.crouchCheckBox.Text = "Backwards Crouch";
+			this.toolTip.SetToolTip(this.crouchCheckBox, "      The crouch animation is reversed so that the arms and body lean back. Usefu" +
         "l for small skins.     ");
-            this.crouchCheckBox.UseSelectable = true;
-            // 
-            // dinnerboneCheckBox
-            // 
-            this.dinnerboneCheckBox.AutoSize = true;
-            this.dinnerboneCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.dinnerboneCheckBox.Location = new System.Drawing.Point(126, 19);
-            this.dinnerboneCheckBox.Name = "dinnerboneCheckBox";
-            this.dinnerboneCheckBox.Size = new System.Drawing.Size(97, 19);
-            this.dinnerboneCheckBox.TabIndex = 11;
-            this.dinnerboneCheckBox.Text = "Dinnerbone";
-            this.dinnerboneCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dinnerboneCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.dinnerboneCheckBox, "   Flips the skin upside down like Dinnerbone\'s skin, a Minecraft developer.  ");
-            this.dinnerboneCheckBox.UseSelectable = true;
-            // 
-            // noArmorCheckBox
-            // 
-            this.noArmorCheckBox.AutoSize = true;
-            this.noArmorCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.noArmorCheckBox.Location = new System.Drawing.Point(420, 81);
-            this.noArmorCheckBox.Name = "noArmorCheckBox";
-            this.noArmorCheckBox.Size = new System.Drawing.Size(131, 19);
-            this.noArmorCheckBox.TabIndex = 10;
-            this.noArmorCheckBox.Text = "Disable All Armor";
-            this.noArmorCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.noArmorCheckBox, " Disables all armor desptie the armor flags.  ");
-            this.noArmorCheckBox.UseSelectable = true;
-            // 
-            // bobbingCheckBox
-            // 
-            this.bobbingCheckBox.AutoSize = true;
-            this.bobbingCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.bobbingCheckBox.Location = new System.Drawing.Point(272, 50);
-            this.bobbingCheckBox.Name = "bobbingCheckBox";
-            this.bobbingCheckBox.Size = new System.Drawing.Size(124, 19);
-            this.bobbingCheckBox.TabIndex = 9;
-            this.bobbingCheckBox.Text = "Disable Bobbing";
-            this.bobbingCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.bobbingCheckBox, " Disables the bobbing effect in first person.");
-            this.bobbingCheckBox.UseSelectable = true;
-            // 
-            // santaCheckBox
-            // 
-            this.santaCheckBox.AutoSize = true;
-            this.santaCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.santaCheckBox.Location = new System.Drawing.Point(420, 50);
-            this.santaCheckBox.Name = "santaCheckBox";
-            this.santaCheckBox.Size = new System.Drawing.Size(86, 19);
-            this.santaCheckBox.TabIndex = 8;
-            this.santaCheckBox.Text = "Bad Santa";
-            this.santaCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.santaCheckBox, "       The skin sits down after about 10 seconds of no controller input. Made for" +
+			// 
+			// dinnerboneCheckBox
+			// 
+			this.dinnerboneCheckBox.AutoSize = true;
+			this.dinnerboneCheckBox.Location = new System.Drawing.Point(146, 3);
+			this.dinnerboneCheckBox.Name = "dinnerboneCheckBox";
+			this.dinnerboneCheckBox.Size = new System.Drawing.Size(81, 17);
+			this.dinnerboneCheckBox.TabIndex = 11;
+			this.dinnerboneCheckBox.Text = "Dinnerbone";
+			this.dinnerboneCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.toolTip.SetToolTip(this.dinnerboneCheckBox, "   Flips the skin upside down like Dinnerbone\'s skin, a Minecraft developer.  ");
+			// 
+			// noArmorCheckBox
+			// 
+			this.noArmorCheckBox.AutoSize = true;
+			this.noArmorCheckBox.Location = new System.Drawing.Point(432, 49);
+			this.noArmorCheckBox.Name = "noArmorCheckBox";
+			this.noArmorCheckBox.Size = new System.Drawing.Size(105, 17);
+			this.noArmorCheckBox.TabIndex = 10;
+			this.noArmorCheckBox.Text = "Disable All Armor";
+			this.toolTip.SetToolTip(this.noArmorCheckBox, " Disables all armor desptie the armor flags.  ");
+			// 
+			// bobbingCheckBox
+			// 
+			this.bobbingCheckBox.AutoSize = true;
+			this.bobbingCheckBox.Location = new System.Drawing.Point(289, 26);
+			this.bobbingCheckBox.Name = "bobbingCheckBox";
+			this.bobbingCheckBox.Size = new System.Drawing.Size(103, 17);
+			this.bobbingCheckBox.TabIndex = 9;
+			this.bobbingCheckBox.Text = "Disable Bobbing";
+			this.toolTip.SetToolTip(this.bobbingCheckBox, " Disables the bobbing effect in first person.");
+			// 
+			// santaCheckBox
+			// 
+			this.santaCheckBox.AutoSize = true;
+			this.santaCheckBox.Location = new System.Drawing.Point(432, 26);
+			this.santaCheckBox.Name = "santaCheckBox";
+			this.santaCheckBox.Size = new System.Drawing.Size(76, 17);
+			this.santaCheckBox.TabIndex = 8;
+			this.santaCheckBox.Text = "Bad Santa";
+			this.toolTip.SetToolTip(this.santaCheckBox, "       The skin sits down after about 10 seconds of no controller input. Made for" +
         " Bad Santa in the \"Festive\" skin pack.       ");
-            this.santaCheckBox.UseSelectable = true;
-            // 
-            // syncLegsCheckBox
-            // 
-            this.syncLegsCheckBox.AutoSize = true;
-            this.syncLegsCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.syncLegsCheckBox.Location = new System.Drawing.Point(272, 19);
-            this.syncLegsCheckBox.Name = "syncLegsCheckBox";
-            this.syncLegsCheckBox.Size = new System.Drawing.Size(136, 19);
-            this.syncLegsCheckBox.TabIndex = 7;
-            this.syncLegsCheckBox.Text = "Synchronous Legs";
-            this.syncLegsCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.syncLegsCheckBox, "   These parts will move at the same time and angle as each other.  ");
-            this.syncLegsCheckBox.UseSelectable = true;
-            // 
-            // staticArmsCheckBox
-            // 
-            this.staticArmsCheckBox.AutoSize = true;
-            this.staticArmsCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.staticArmsCheckBox.Location = new System.Drawing.Point(6, 19);
-            this.staticArmsCheckBox.Name = "staticArmsCheckBox";
-            this.staticArmsCheckBox.Size = new System.Drawing.Size(94, 19);
-            this.staticArmsCheckBox.TabIndex = 5;
-            this.staticArmsCheckBox.Text = "Static Arms";
-            this.staticArmsCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.staticArmsCheckBox, " These parts will not move in most animations. ");
-            this.staticArmsCheckBox.UseSelectable = true;
-            // 
-            // syncArmsCheckBox
-            // 
-            this.syncArmsCheckBox.AutoSize = true;
-            this.syncArmsCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.syncArmsCheckBox.Location = new System.Drawing.Point(420, 19);
-            this.syncArmsCheckBox.Name = "syncArmsCheckBox";
-            this.syncArmsCheckBox.Size = new System.Drawing.Size(140, 19);
-            this.syncArmsCheckBox.TabIndex = 4;
-            this.syncArmsCheckBox.Text = "Synchronous Arms";
-            this.syncArmsCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.syncArmsCheckBox, "   These parts will move at the same time and angle as each other.  ");
-            this.syncArmsCheckBox.UseSelectable = true;
-            // 
-            // statueCheckBox
-            // 
-            this.statueCheckBox.AutoSize = true;
-            this.statueCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.statueCheckBox.Location = new System.Drawing.Point(272, 81);
-            this.statueCheckBox.Name = "statueCheckBox";
-            this.statueCheckBox.Size = new System.Drawing.Size(126, 19);
-            this.statueCheckBox.TabIndex = 3;
-            this.statueCheckBox.Text = "Statue of Liberty";
-            this.statueCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.statueCheckBox, "       The right arm is lifted like the Statue of Liberty. Made for Angel of Libe" +
+			// 
+			// syncLegsCheckBox
+			// 
+			this.syncLegsCheckBox.AutoSize = true;
+			this.syncLegsCheckBox.Location = new System.Drawing.Point(289, 3);
+			this.syncLegsCheckBox.Name = "syncLegsCheckBox";
+			this.syncLegsCheckBox.Size = new System.Drawing.Size(114, 17);
+			this.syncLegsCheckBox.TabIndex = 7;
+			this.syncLegsCheckBox.Text = "Synchronous Legs";
+			this.toolTip.SetToolTip(this.syncLegsCheckBox, "   These parts will move at the same time and angle as each other.  ");
+			// 
+			// staticArmsCheckBox
+			// 
+			this.staticArmsCheckBox.AutoSize = true;
+			this.staticArmsCheckBox.Location = new System.Drawing.Point(3, 3);
+			this.staticArmsCheckBox.Name = "staticArmsCheckBox";
+			this.staticArmsCheckBox.Size = new System.Drawing.Size(79, 17);
+			this.staticArmsCheckBox.TabIndex = 5;
+			this.staticArmsCheckBox.Text = "Static Arms";
+			this.toolTip.SetToolTip(this.staticArmsCheckBox, " These parts will not move in most animations. ");
+			// 
+			// syncArmsCheckBox
+			// 
+			this.syncArmsCheckBox.AutoSize = true;
+			this.syncArmsCheckBox.Location = new System.Drawing.Point(432, 3);
+			this.syncArmsCheckBox.Name = "syncArmsCheckBox";
+			this.syncArmsCheckBox.Size = new System.Drawing.Size(114, 17);
+			this.syncArmsCheckBox.TabIndex = 4;
+			this.syncArmsCheckBox.Text = "Synchronous Arms";
+			this.toolTip.SetToolTip(this.syncArmsCheckBox, "   These parts will move at the same time and angle as each other.  ");
+			// 
+			// statueCheckBox
+			// 
+			this.statueCheckBox.AutoSize = true;
+			this.statueCheckBox.Location = new System.Drawing.Point(289, 49);
+			this.statueCheckBox.Name = "statueCheckBox";
+			this.statueCheckBox.Size = new System.Drawing.Size(103, 17);
+			this.statueCheckBox.TabIndex = 3;
+			this.statueCheckBox.Text = "Statue of Liberty";
+			this.toolTip.SetToolTip(this.statueCheckBox, "       The right arm is lifted like the Statue of Liberty. Made for Angel of Libe" +
         "rty in the \"Doctor Who Volume I\" skin pack.       ");
-            this.statueCheckBox.UseSelectable = true;
-            // 
-            // zombieCheckBox
-            // 
-            this.zombieCheckBox.AutoSize = true;
-            this.zombieCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.zombieCheckBox.Location = new System.Drawing.Point(6, 81);
-            this.zombieCheckBox.Name = "zombieCheckBox";
-            this.zombieCheckBox.Size = new System.Drawing.Size(107, 19);
-            this.zombieCheckBox.TabIndex = 2;
-            this.zombieCheckBox.Text = "Zombie Arms";
-            this.zombieCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.zombieCheckBox, " Both arms will stick up like a Zombie. ");
-            this.zombieCheckBox.UseSelectable = true;
-            // 
-            // staticLegsCheckBox
-            // 
-            this.staticLegsCheckBox.AutoSize = true;
-            this.staticLegsCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.staticLegsCheckBox.Location = new System.Drawing.Point(6, 50);
-            this.staticLegsCheckBox.Name = "staticLegsCheckBox";
-            this.staticLegsCheckBox.Size = new System.Drawing.Size(90, 19);
-            this.staticLegsCheckBox.TabIndex = 1;
-            this.staticLegsCheckBox.Text = "Static Legs";
-            this.staticLegsCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.toolTip.SetToolTip(this.staticLegsCheckBox, " These parts will not move in most animations. ");
-            this.staticLegsCheckBox.UseSelectable = true;
-            // 
-            // copyButton
-            // 
-            this.copyButton.Location = new System.Drawing.Point(425, 119);
-            this.copyButton.Name = "copyButton";
-            this.copyButton.Size = new System.Drawing.Size(173, 23);
-            this.copyButton.TabIndex = 22;
-            this.copyButton.Text = "Copy ANIM Value";
-            this.copyButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.copyButton.UseSelectable = true;
-            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
-            // 
-            // importButton
-            // 
-            this.importButton.Location = new System.Drawing.Point(32, 119);
-            this.importButton.Name = "importButton";
-            this.importButton.Size = new System.Drawing.Size(186, 23);
-            this.importButton.TabIndex = 23;
-            this.importButton.Text = "Import ANIM";
-            this.importButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.importButton.UseSelectable = true;
-            this.importButton.Click += new System.EventHandler(this.importButton_Click);
-            // 
-            // exportButton
-            // 
-            this.exportButton.Location = new System.Drawing.Point(229, 119);
-            this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(186, 23);
-            this.exportButton.TabIndex = 24;
-            this.exportButton.Text = "Export Template Texture";
-            this.exportButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.exportButton.UseSelectable = true;
-            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
-            // 
-            // animValue
-            // 
-            this.animValue.AutoSize = true;
-            this.animValue.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.animValue.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.animValue.Location = new System.Drawing.Point(260, 60);
-            this.animValue.Name = "animValue";
-            this.animValue.Size = new System.Drawing.Size(110, 25);
-            this.animValue.TabIndex = 25;
-            this.animValue.Text = "0x00000000";
-            this.animValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.animValue.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // uncheckAllButton
-            // 
-            this.uncheckAllButton.Location = new System.Drawing.Point(229, 90);
-            this.uncheckAllButton.Name = "uncheckAllButton";
-            this.uncheckAllButton.Size = new System.Drawing.Size(186, 23);
-            this.uncheckAllButton.TabIndex = 26;
-            this.uncheckAllButton.Text = "Uncheck All";
-            this.uncheckAllButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.uncheckAllButton.UseSelectable = true;
-            this.uncheckAllButton.Click += new System.EventHandler(this.uncheckAllButton_Click);
-            // 
-            // checkAllButton
-            // 
-            this.checkAllButton.Location = new System.Drawing.Point(32, 90);
-            this.checkAllButton.Name = "checkAllButton";
-            this.checkAllButton.Size = new System.Drawing.Size(186, 23);
-            this.checkAllButton.TabIndex = 27;
-            this.checkAllButton.Text = "Check All";
-            this.checkAllButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.checkAllButton.UseSelectable = true;
-            this.checkAllButton.Click += new System.EventHandler(this.checkAllButton_Click);
-            // 
-            // toolTip
-            // 
-            this.toolTip.StripAmpersands = true;
-            this.toolTip.Style = MetroFramework.MetroColorStyle.Blue;
-            this.toolTip.StyleManager = null;
-            this.toolTip.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // resetButton
-            // 
-            this.resetButton.Location = new System.Drawing.Point(425, 90);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(173, 23);
-            this.resetButton.TabIndex = 28;
-            this.resetButton.Text = "Restore ANIM";
-            this.resetButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.resetButton.UseSelectable = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
-            // templateButton
-            // 
-            this.templateButton.Location = new System.Drawing.Point(425, 154);
-            this.templateButton.Name = "templateButton";
-            this.templateButton.Size = new System.Drawing.Size(173, 23);
-            this.templateButton.TabIndex = 29;
-            this.templateButton.Text = "Skin Presets";
-            this.templateButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.templateButton.UseSelectable = true;
-            this.templateButton.Click += new System.EventHandler(this.templateButton_Click);
-            // 
-            // ANIMEditor
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 554);
-            this.Controls.Add(this.templateButton);
-            this.Controls.Add(this.effectsGroup);
-            this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.checkAllButton);
-            this.Controls.Add(this.uncheckAllButton);
-            this.Controls.Add(this.animValue);
-            this.Controls.Add(this.exportButton);
-            this.Controls.Add(this.importButton);
-            this.Controls.Add(this.copyButton);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.effectsGroup2);
-            this.Controls.Add(this.saveButton);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(630, 554);
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(630, 554);
-            this.Name = "ANIMEditor";
-            this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Silver;
-            this.Text = "ANIM Editor";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ANIMEditor_FormClosing);
-            this.effectsGroup.ResumeLayout(false);
-            this.effectsGroup.PerformLayout();
-            this.effectsGroup2.ResumeLayout(false);
-            this.effectsGroup2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			// 
+			// zombieCheckBox
+			// 
+			this.zombieCheckBox.AutoSize = true;
+			this.zombieCheckBox.Location = new System.Drawing.Point(3, 49);
+			this.zombieCheckBox.Name = "zombieCheckBox";
+			this.zombieCheckBox.Size = new System.Drawing.Size(87, 17);
+			this.zombieCheckBox.TabIndex = 2;
+			this.zombieCheckBox.Text = "Zombie Arms";
+			this.toolTip.SetToolTip(this.zombieCheckBox, " Both arms will stick up like a Zombie. ");
+			// 
+			// staticLegsCheckBox
+			// 
+			this.staticLegsCheckBox.AutoSize = true;
+			this.staticLegsCheckBox.Location = new System.Drawing.Point(3, 26);
+			this.staticLegsCheckBox.Name = "staticLegsCheckBox";
+			this.staticLegsCheckBox.Size = new System.Drawing.Size(79, 17);
+			this.staticLegsCheckBox.TabIndex = 1;
+			this.staticLegsCheckBox.Text = "Static Legs";
+			this.toolTip.SetToolTip(this.staticLegsCheckBox, " These parts will not move in most animations. ");
+			// 
+			// copyButton
+			// 
+			this.copyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.copyButton.Location = new System.Drawing.Point(391, 80);
+			this.copyButton.Name = "copyButton";
+			this.copyButton.Size = new System.Drawing.Size(190, 23);
+			this.copyButton.TabIndex = 22;
+			this.copyButton.Text = "Copy ANIM Value";
+			this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
+			// 
+			// importButton
+			// 
+			this.importButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.importButton.Location = new System.Drawing.Point(3, 80);
+			this.importButton.Name = "importButton";
+			this.importButton.Size = new System.Drawing.Size(188, 23);
+			this.importButton.TabIndex = 23;
+			this.importButton.Text = "Import ANIM";
+			this.importButton.Click += new System.EventHandler(this.importButton_Click);
+			// 
+			// exportButton
+			// 
+			this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.exportButton.Location = new System.Drawing.Point(197, 80);
+			this.exportButton.Name = "exportButton";
+			this.exportButton.Size = new System.Drawing.Size(188, 23);
+			this.exportButton.TabIndex = 24;
+			this.exportButton.Text = "Export Template Texture";
+			this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
+			// 
+			// animValue
+			// 
+			this.animValue.AutoSize = true;
+			this.layout.SetColumnSpan(this.animValue, 3);
+			this.animValue.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.animValue.Location = new System.Drawing.Point(3, 0);
+			this.animValue.Name = "animValue";
+			this.animValue.Size = new System.Drawing.Size(578, 48);
+			this.animValue.TabIndex = 25;
+			this.animValue.Text = "0x00000000";
+			this.animValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// uncheckAllButton
+			// 
+			this.uncheckAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.uncheckAllButton.Location = new System.Drawing.Point(197, 51);
+			this.uncheckAllButton.Name = "uncheckAllButton";
+			this.uncheckAllButton.Size = new System.Drawing.Size(188, 23);
+			this.uncheckAllButton.TabIndex = 26;
+			this.uncheckAllButton.Text = "Uncheck All";
+			this.uncheckAllButton.Click += new System.EventHandler(this.uncheckAllButton_Click);
+			// 
+			// checkAllButton
+			// 
+			this.checkAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkAllButton.Location = new System.Drawing.Point(3, 51);
+			this.checkAllButton.Name = "checkAllButton";
+			this.checkAllButton.Size = new System.Drawing.Size(188, 23);
+			this.checkAllButton.TabIndex = 27;
+			this.checkAllButton.Text = "Check All";
+			this.checkAllButton.Click += new System.EventHandler(this.checkAllButton_Click);
+			// 
+			// toolTip
+			// 
+			this.toolTip.StripAmpersands = true;
+			// 
+			// resetButton
+			// 
+			this.resetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.resetButton.Location = new System.Drawing.Point(391, 51);
+			this.resetButton.Name = "resetButton";
+			this.resetButton.Size = new System.Drawing.Size(190, 23);
+			this.resetButton.TabIndex = 28;
+			this.resetButton.Text = "Restore ANIM";
+			this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+			// 
+			// templateButton
+			// 
+			this.templateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.templateButton.Location = new System.Drawing.Point(391, 109);
+			this.templateButton.Name = "templateButton";
+			this.templateButton.Size = new System.Drawing.Size(190, 23);
+			this.templateButton.TabIndex = 29;
+			this.templateButton.Text = "Skin Presets";
+			this.templateButton.Click += new System.EventHandler(this.templateButton_Click);
+			// 
+			// layout
+			// 
+			this.layout.ColumnCount = 3;
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+			this.layout.Controls.Add(this.saveButton, 1, 6);
+			this.layout.Controls.Add(this.specialAnimGroupBox, 0, 5);
+			this.layout.Controls.Add(this.flagsGroup, 0, 3);
+			this.layout.Controls.Add(this.armorFlagsGroupBox, 2, 4);
+			this.layout.Controls.Add(this.templateButton, 2, 3);
+			this.layout.Controls.Add(this.checkAllButton, 0, 1);
+			this.layout.Controls.Add(this.uncheckAllButton, 1, 1);
+			this.layout.Controls.Add(this.importButton, 0, 2);
+			this.layout.Controls.Add(this.exportButton, 1, 2);
+			this.layout.Controls.Add(this.resetButton, 2, 1);
+			this.layout.Controls.Add(this.copyButton, 2, 2);
+			this.layout.Controls.Add(this.animValue, 0, 0);
+			this.layout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.layout.Location = new System.Drawing.Point(0, 0);
+			this.layout.Name = "layout";
+			this.layout.RowCount = 7;
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.Size = new System.Drawing.Size(584, 454);
+			this.layout.TabIndex = 30;
+			// 
+			// armorFlagsLayout
+			// 
+			this.armorFlagsLayout.Controls.Add(this.helmetCheckBox);
+			this.armorFlagsLayout.Controls.Add(this.chestplateCheckBox);
+			this.armorFlagsLayout.Controls.Add(this.leftArmorCheckBox);
+			this.armorFlagsLayout.Controls.Add(this.rightArmorCheckBox);
+			this.armorFlagsLayout.Controls.Add(this.leftLeggingCheckBox);
+			this.armorFlagsLayout.Controls.Add(this.rightLeggingCheckBox);
+			this.armorFlagsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.armorFlagsLayout.Location = new System.Drawing.Point(3, 16);
+			this.armorFlagsLayout.Name = "armorFlagsLayout";
+			this.armorFlagsLayout.Size = new System.Drawing.Size(184, 144);
+			this.armorFlagsLayout.TabIndex = 8;
+			// 
+			// specialAnimLayout
+			// 
+			this.specialAnimLayout.ColumnCount = 4;
+			this.specialAnimLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.specialAnimLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.specialAnimLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.specialAnimLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.specialAnimLayout.Controls.Add(this.staticArmsCheckBox, 0, 0);
+			this.specialAnimLayout.Controls.Add(this.zombieCheckBox, 0, 2);
+			this.specialAnimLayout.Controls.Add(this.unknownCheckBox, 1, 2);
+			this.specialAnimLayout.Controls.Add(this.dinnerboneCheckBox, 1, 0);
+			this.specialAnimLayout.Controls.Add(this.statueCheckBox, 2, 2);
+			this.specialAnimLayout.Controls.Add(this.noArmorCheckBox, 3, 2);
+			this.specialAnimLayout.Controls.Add(this.crouchCheckBox, 1, 1);
+			this.specialAnimLayout.Controls.Add(this.santaCheckBox, 3, 1);
+			this.specialAnimLayout.Controls.Add(this.bobbingCheckBox, 2, 1);
+			this.specialAnimLayout.Controls.Add(this.syncLegsCheckBox, 2, 0);
+			this.specialAnimLayout.Controls.Add(this.syncArmsCheckBox, 3, 0);
+			this.specialAnimLayout.Controls.Add(this.staticLegsCheckBox, 0, 1);
+			this.specialAnimLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.specialAnimLayout.Location = new System.Drawing.Point(3, 16);
+			this.specialAnimLayout.Name = "specialAnimLayout";
+			this.specialAnimLayout.RowCount = 4;
+			this.specialAnimLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.specialAnimLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.specialAnimLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.specialAnimLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.specialAnimLayout.Size = new System.Drawing.Size(572, 96);
+			this.specialAnimLayout.TabIndex = 14;
+			// 
+			// flagsLayout
+			// 
+			this.flagsLayout.ColumnCount = 2;
+			this.flagsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.flagsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.flagsLayout.Controls.Add(this.classicCheckBox, 0, 0);
+			this.flagsLayout.Controls.Add(this.rightLegOCheckBox, 1, 6);
+			this.flagsLayout.Controls.Add(this.headCheckBox, 0, 1);
+			this.flagsLayout.Controls.Add(this.leftLegOCheckBox, 1, 5);
+			this.flagsLayout.Controls.Add(this.headOCheckBox, 1, 1);
+			this.flagsLayout.Controls.Add(this.rightArmOCheckBox, 1, 4);
+			this.flagsLayout.Controls.Add(this.leftArmOCheckBox, 1, 3);
+			this.flagsLayout.Controls.Add(this.bodyCheckBox, 0, 2);
+			this.flagsLayout.Controls.Add(this.bodyOCheckBox, 1, 2);
+			this.flagsLayout.Controls.Add(this.leftArmCheckBox, 0, 3);
+			this.flagsLayout.Controls.Add(this.rightArmCheckBox, 0, 4);
+			this.flagsLayout.Controls.Add(this.leftLegCheckBox, 0, 5);
+			this.flagsLayout.Controls.Add(this.slimCheckBox, 1, 0);
+			this.flagsLayout.Controls.Add(this.rightLegCheckBox, 0, 6);
+			this.flagsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flagsLayout.Location = new System.Drawing.Point(3, 16);
+			this.flagsLayout.Name = "flagsLayout";
+			this.flagsLayout.RowCount = 8;
+			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.flagsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.flagsLayout.Size = new System.Drawing.Size(376, 173);
+			this.flagsLayout.TabIndex = 14;
+			// 
+			// ANIMEditor
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(584, 454);
+			this.Controls.Add(this.layout);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
+			this.Name = "ANIMEditor";
+			this.Text = "ANIM Editor";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ANIMEditor_FormClosing);
+			this.flagsGroup.ResumeLayout(false);
+			this.armorFlagsGroupBox.ResumeLayout(false);
+			this.specialAnimGroupBox.ResumeLayout(false);
+			this.layout.ResumeLayout(false);
+			this.layout.PerformLayout();
+			this.armorFlagsLayout.ResumeLayout(false);
+			this.armorFlagsLayout.PerformLayout();
+			this.specialAnimLayout.ResumeLayout(false);
+			this.specialAnimLayout.PerformLayout();
+			this.flagsLayout.ResumeLayout(false);
+			this.flagsLayout.PerformLayout();
+			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		private MetroFramework.Controls.MetroButton saveButton;
-		private System.Windows.Forms.GroupBox effectsGroup;
-		private MetroFramework.Controls.MetroCheckBox headCheckBox;
-		private MetroFramework.Controls.MetroCheckBox leftLegCheckBox;
-		private MetroFramework.Controls.MetroCheckBox rightArmCheckBox;
-		private MetroFramework.Controls.MetroCheckBox leftArmCheckBox;
-		private MetroFramework.Controls.MetroCheckBox bodyCheckBox;
-		private MetroFramework.Controls.MetroCheckBox classicCheckBox;
-		private MetroFramework.Controls.MetroCheckBox slimCheckBox;
-		private MetroFramework.Controls.MetroCheckBox rightLegCheckBox;
-		private MetroFramework.Controls.MetroCheckBox rightLegOCheckBox;
-		private MetroFramework.Controls.MetroCheckBox headOCheckBox;
-		private MetroFramework.Controls.MetroCheckBox leftLegOCheckBox;
-		private MetroFramework.Controls.MetroCheckBox rightArmOCheckBox;
-		private MetroFramework.Controls.MetroCheckBox leftArmOCheckBox;
-		private MetroFramework.Controls.MetroCheckBox bodyOCheckBox;
-		private System.Windows.Forms.GroupBox effectsGroup2;
-		private MetroFramework.Controls.MetroCheckBox rightLeggingCheckBox;
-		private MetroFramework.Controls.MetroCheckBox helmetCheckBox;
-		private MetroFramework.Controls.MetroCheckBox leftLeggingCheckBox;
-		private MetroFramework.Controls.MetroCheckBox rightArmorCheckBox;
-		private MetroFramework.Controls.MetroCheckBox leftArmorCheckBox;
-		private MetroFramework.Controls.MetroCheckBox chestplateCheckBox;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private MetroFramework.Controls.MetroCheckBox syncLegsCheckBox;
-		private MetroFramework.Controls.MetroCheckBox staticArmsCheckBox;
-		private MetroFramework.Controls.MetroCheckBox syncArmsCheckBox;
-		private MetroFramework.Controls.MetroCheckBox statueCheckBox;
-		private MetroFramework.Controls.MetroCheckBox zombieCheckBox;
-		private MetroFramework.Controls.MetroCheckBox staticLegsCheckBox;
-		private MetroFramework.Controls.MetroCheckBox bobbingCheckBox;
-		private MetroFramework.Controls.MetroCheckBox santaCheckBox;
-		private MetroFramework.Controls.MetroCheckBox noArmorCheckBox;
-		private MetroFramework.Controls.MetroCheckBox dinnerboneCheckBox;
-		private MetroFramework.Controls.MetroCheckBox crouchCheckBox;
-		private MetroFramework.Controls.MetroCheckBox unknownCheckBox;
-		private MetroFramework.Controls.MetroButton copyButton;
-		private MetroFramework.Controls.MetroButton importButton;
-		private MetroFramework.Controls.MetroButton exportButton;
-		private MetroFramework.Controls.MetroLabel animValue;
-		private MetroFramework.Controls.MetroButton uncheckAllButton;
-		private MetroFramework.Controls.MetroButton checkAllButton;
-		private MetroFramework.Components.MetroToolTip toolTip;
-		private MetroFramework.Controls.MetroButton resetButton;
-		private MetroFramework.Controls.MetroButton templateButton;
+		private Button saveButton;
+		private System.Windows.Forms.GroupBox flagsGroup;
+		private CheckBox headCheckBox;
+		private CheckBox leftLegCheckBox;
+		private CheckBox rightArmCheckBox;
+		private CheckBox leftArmCheckBox;
+		private CheckBox bodyCheckBox;
+		private CheckBox classicCheckBox;
+		private CheckBox slimCheckBox;
+		private CheckBox rightLegCheckBox;
+		private CheckBox rightLegOCheckBox;
+		private CheckBox headOCheckBox;
+		private CheckBox leftLegOCheckBox;
+		private CheckBox rightArmOCheckBox;
+		private CheckBox leftArmOCheckBox;
+		private CheckBox bodyOCheckBox;
+		private System.Windows.Forms.GroupBox armorFlagsGroupBox;
+		private CheckBox rightLeggingCheckBox;
+		private CheckBox helmetCheckBox;
+		private CheckBox leftLeggingCheckBox;
+		private CheckBox rightArmorCheckBox;
+		private CheckBox leftArmorCheckBox;
+		private CheckBox chestplateCheckBox;
+		private System.Windows.Forms.GroupBox specialAnimGroupBox;
+		private CheckBox syncLegsCheckBox;
+		private CheckBox staticArmsCheckBox;
+		private CheckBox syncArmsCheckBox;
+		private CheckBox statueCheckBox;
+		private CheckBox zombieCheckBox;
+		private CheckBox staticLegsCheckBox;
+		private CheckBox bobbingCheckBox;
+		private CheckBox santaCheckBox;
+		private CheckBox noArmorCheckBox;
+		private CheckBox dinnerboneCheckBox;
+		private CheckBox crouchCheckBox;
+		private CheckBox unknownCheckBox;
+		private Button copyButton;
+		private Button importButton;
+		private Button exportButton;
+		private Label animValue;
+		private Button uncheckAllButton;
+		private Button checkAllButton;
+		private ToolTip toolTip;
+		private Button resetButton;
+		private Button templateButton;
+		private TableLayoutPanel layout;
+		private FlowLayoutPanel armorFlagsLayout;
+		private TableLayoutPanel specialAnimLayout;
+		private TableLayoutPanel flagsLayout;
 	}
 }

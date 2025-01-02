@@ -18,46 +18,43 @@
 using System;
 using System.Windows.Forms;
 
-namespace PckStudio.Internal.IO.TGA
-{
-    internal struct TGAExtentionData
-    {
-        public const short ExtensionSize = 0x1EF;
-        public string AuthorName;
-        public string AuthorComment;
-        public DateTime TimeStamp;
-        public string JobID;
-        public TimeSpan JobTime;
-        public string SoftwareID;
-        public byte[] SoftwareVersion;
-        public int KeyColor;
-        public int PixelAspectRatio;
-        public int GammaValue;
-        public int ColorCorrectionOffset;
-        public int PostageStampOffset;
-        public int ScanLineOffset;
-        public byte AttributesType;
+namespace PckStudio.Internal.IO.TGA {
+	internal struct TGAExtentionData {
+		public const short ExtensionSize = 0x1EF;
+		public string AuthorName;
+		public string AuthorComment;
+		public DateTime TimeStamp;
+		public string JobID;
+		public TimeSpan JobTime;
+		public string SoftwareID;
+		public byte[] SoftwareVersion;
+		public int KeyColor;
+		public int PixelAspectRatio;
+		public int GammaValue;
+		public int ColorCorrectionOffset;
+		public int PostageStampOffset;
+		public int ScanLineOffset;
+		public byte AttributesType;
 
-        public static TGAExtentionData Create()
-        {
-            var extensionData = new TGAExtentionData();
-            extensionData.AuthorName = "";
-            extensionData.AuthorComment = "";
-            extensionData.AuthorComment = "";
-            extensionData.TimeStamp = DateTime.Now;
-            extensionData.JobID = "";
-            extensionData.JobTime = new TimeSpan(extensionData.TimeStamp.Hour, extensionData.TimeStamp.Minute, extensionData.TimeStamp.Second);
-            extensionData.SoftwareID = Application.ProductName;
-            Version.TryParse(Application.ProductVersion, out Version currentVersion);
-            extensionData.SoftwareVersion = new byte[] { (byte)currentVersion.Major, (byte)currentVersion.Minor, (byte)currentVersion.Build };
-            extensionData.KeyColor = 0;
-            extensionData.PixelAspectRatio = 0;
-            extensionData.GammaValue = 0;
-            extensionData.ColorCorrectionOffset = 0;
-            extensionData.PostageStampOffset = 0;
-            extensionData.ScanLineOffset = 0;
-            extensionData.AttributesType = 3;
-            return extensionData;
-        }
-    }
+		public static TGAExtentionData Create() {
+			var extensionData = new TGAExtentionData();
+			extensionData.AuthorName = "";
+			extensionData.AuthorComment = "";
+			extensionData.AuthorComment = "";
+			extensionData.TimeStamp = DateTime.Now;
+			extensionData.JobID = "";
+			extensionData.JobTime = new TimeSpan(extensionData.TimeStamp.Hour, extensionData.TimeStamp.Minute, extensionData.TimeStamp.Second);
+			extensionData.SoftwareID = Application.ProductName;
+			Version.TryParse(Application.ProductVersion, out Version currentVersion);
+			extensionData.SoftwareVersion = new byte[] { (byte)currentVersion.Major, (byte)currentVersion.Minor, (byte)currentVersion.Build };
+			extensionData.KeyColor = 0;
+			extensionData.PixelAspectRatio = 0;
+			extensionData.GammaValue = 0;
+			extensionData.ColorCorrectionOffset = 0;
+			extensionData.PostageStampOffset = 0;
+			extensionData.ScanLineOffset = 0;
+			extensionData.AttributesType = 3;
+			return extensionData;
+		}
+	}
 }

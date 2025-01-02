@@ -15,18 +15,15 @@
  *    misrepresented as being the original software.
  * 3. This notice may not be removed or altered from any source distribution.
 **/
-using System.IO;
 using System.Drawing;
+using System.IO;
 
-namespace PckStudio.Internal.IO.TGA
-{
-    internal static class TGASerializer
-    {
-        private static TGAWriter _writer = new TGAWriter();
+namespace PckStudio.Internal.IO.TGA {
+	internal static class TGASerializer {
+		private static TGAWriter _writer = new TGAWriter();
 
-        public static void SerializeToStream(Stream stream, Image image)
-        {
-            _writer.WriteToStream(stream, image);
-        }
-    }
+		public static void SerializeToStream(Stream stream, Image image) {
+			_writer.WriteToStream(stream, image);
+		}
+	}
 }

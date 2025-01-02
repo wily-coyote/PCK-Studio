@@ -15,61 +15,46 @@
  *    misrepresented as being the original software.
  * 3. This notice may not be removed or altered from any source distribution.
 **/
-using System;
-using System.Diagnostics;
-using System.Windows.Forms;
-using System.Runtime.CompilerServices;
-
 using PckStudio.Extensions;
-using PckStudio.Internal;
 using System.Drawing;
-using AnimatedGif;
 using System.Drawing.Imaging;
+using System.Windows.Forms;
 
-namespace PckStudio.ToolboxItems
-{
-	internal class AnimationPictureBox : BlendPictureBox
-    {
-        public bool IsPlaying => _isPlaying;
-        
-        private bool _isPlaying;
+namespace PckStudio.ToolboxItems {
+	internal class AnimationPictureBox : BlendPictureBox {
+		public bool IsPlaying => _isPlaying;
 
-        public new Image Image
-        {
-            get => base.Image;
-            set
-            {
-                base.Image = value;
-                this.Animate(false);
-                if (value is null)
-                    return;
-                value.SelectActiveFrame(new FrameDimension(value.FrameDimensionsList[0]), 0);
-            }
-        }
+		private bool _isPlaying;
 
-        protected override void OnPaint(PaintEventArgs paintEventArgs)
-        {
-            base.OnPaint(paintEventArgs);
-            if (!_isPlaying && this.IsAnimating())
-            {
-                Stop();
-            }
-        }
+		public new Image Image {
+			get => base.Image;
+			set {
+				base.Image = value;
+				this.Animate(false);
+				if(value is null)
+					return;
+				value.SelectActiveFrame(new FrameDimension(value.FrameDimensionsList[0]), 0);
+			}
+		}
 
-        public void Start()
-		{
-            _isPlaying = true;
-            this.Animate(_isPlaying);
-        }
+		protected override void OnPaint(PaintEventArgs paintEventArgs) {
+			base.OnPaint(paintEventArgs);
+			if(!_isPlaying && this.IsAnimating()) {
+				Stop();
+			}
+		}
 
-        public void Stop()
-		{
-            _isPlaying = false;
-            this.Animate(_isPlaying);
-        }
+		public void Start() {
+			_isPlaying = true;
+			this.Animate(_isPlaying);
+		}
 
-		protected override void Dispose(bool disposing)
-		{
+		public void Stop() {
+			_isPlaying = false;
+			this.Animate(_isPlaying);
+		}
+
+		protected override void Dispose(bool disposing) {
 			Stop();
 			base.Dispose(disposing);
 		}

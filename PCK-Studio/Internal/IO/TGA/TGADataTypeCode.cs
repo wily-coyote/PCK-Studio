@@ -16,45 +16,43 @@
  * 3. This notice may not be removed or altered from any source distribution.
 **/
 
-namespace PckStudio.Internal.IO.TGA
-{
-    internal enum TGADataTypeCode : byte
-    {
-        /// <summary>
-        /// No image data included.
-        /// </summary>
-        NO_DATA = 0,
-        /// <summary>
-        /// Uncompressed, color-mapped images.
-        /// </summary>
-        COLORMAPPED = 1,
-        /// <summary>
-        /// Uncompressed, RGB images.
-        /// </summary>
-        RGB = 2,
-        /// <summary>
-        /// Uncompressed, black and white images.
-        /// </summary>
-        BLACK_WHITE = 3,
-        /// <summary>
-        /// Runlength encoded color-mapped images.
-        /// </summary>
-        RLE_COLORMAPPED = 9,
-        /// <summary>
-        /// Runlength encoded RGB images.
-        /// </summary>
-        RLE_RGB = 10,
-        /// <summary>
-        /// Compressed, black and white images.
-        /// </summary>
-        COMPRESSED_BLACK_WHITE = 11,
-        /// <summary>
-        /// Compressed color-mapped data, using Huffman, Delta, and runlength encoding.
-        /// </summary>
-        COMPRESSED_RLE_COLORMAPPED = 32,
-        /// <summary>
-        /// Compressed color-mapped data, using Huffman, Delta, and runlength encoding. 4-pass quadtree-type process.
-        /// </summary>
-        COMPRESSED_RLE_COLORMAPPED_4 = 33,
-    }
+namespace PckStudio.Internal.IO.TGA {
+	internal enum TGADataTypeCode : byte {
+		/// <summary>
+		/// No image data included.
+		/// </summary>
+		NO_DATA = 0,
+		/// <summary>
+		/// Uncompressed, color-mapped images.
+		/// </summary>
+		COLORMAPPED = 1,
+		/// <summary>
+		/// Uncompressed, RGB images.
+		/// </summary>
+		RGB = 2,
+		/// <summary>
+		/// Uncompressed, black and white images.
+		/// </summary>
+		BLACK_WHITE = 3,
+		/// <summary>
+		/// Runlength encoded color-mapped images.
+		/// </summary>
+		RLE_COLORMAPPED = 9,
+		/// <summary>
+		/// Runlength encoded RGB images.
+		/// </summary>
+		RLE_RGB = 10,
+		/// <summary>
+		/// Compressed, black and white images.
+		/// </summary>
+		COMPRESSED_BLACK_WHITE = 11,
+		/// <summary>
+		/// Compressed color-mapped data, using Huffman, Delta, and runlength encoding.
+		/// </summary>
+		COMPRESSED_RLE_COLORMAPPED = 32,
+		/// <summary>
+		/// Compressed color-mapped data, using Huffman, Delta, and runlength encoding. 4-pass quadtree-type process.
+		/// </summary>
+		COMPRESSED_RLE_COLORMAPPED_4 = 33,
+	}
 }

@@ -1,8 +1,6 @@
-﻿namespace PckStudio.Extensions
-{
-    internal enum ImageLayoutDirection
-    {
-        Horizontal,
-        Vertical
-    }
+﻿namespace PckStudio.Extensions {
+	internal enum ImageLayoutDirection {
+		Horizontal,
+		Vertical
+	}
 }

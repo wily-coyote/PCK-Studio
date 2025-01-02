@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using MetroFramework.Forms;
 
-namespace PckStudio
-{
-    public partial class CreateTexturePackPrompt : MetroForm
-	{
+namespace PckStudio {
+	public partial class CreateTexturePackPrompt : Form {
 		/// <summary>
 		/// Text entered <c>only access when DialogResult == DialogResult.OK</c>
 		/// </summary>
@@ -13,16 +10,14 @@ namespace PckStudio
 		public string PackName => InputTextBox.Text;
 		public string PackRes => resolutionComboBox.Text;
 
-		public CreateTexturePackPrompt()
-		{
+		public CreateTexturePackPrompt() {
 			InitializeComponent();
 		}
 
-        private void OKBtn_Click(object sender, EventArgs e)
-        {
-			if (resolutionComboBox.SelectedIndex < 0)
+		private void OKBtn_Click(object sender, EventArgs e) {
+			if(resolutionComboBox.SelectedIndex < 0)
 				return;
 			DialogResult = DialogResult.OK;
-        }
-    }
+		}
+	}
 }

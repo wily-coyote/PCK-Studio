@@ -16,22 +16,20 @@
  * 3. This notice may not be removed or altered from any source distribution.
 **/
 
-namespace PckStudio.Internal
-{
-    internal enum ResourceCategory
-    {
-        Unknown = -1,
-        ItemAnimation,
-        BlockAnimation,
-        ItemAtlas,
-        BlockAtlas,
-        ParticleAtlas,
-        BannerAtlas,
-        PaintingAtlas,
-        ExplosionAtlas,
-        ExperienceOrbAtlas,
-        MoonPhaseAtlas,
-        MapIconAtlas,
-        AdditionalMapIconsAtlas,
-    }
+namespace PckStudio.Internal {
+	internal enum ResourceCategory {
+		Unknown = -1,
+		ItemAnimation,
+		BlockAnimation,
+		ItemAtlas,
+		BlockAtlas,
+		ParticleAtlas,
+		BannerAtlas,
+		PaintingAtlas,
+		ExplosionAtlas,
+		ExperienceOrbAtlas,
+		MoonPhaseAtlas,
+		MapIconAtlas,
+		AdditionalMapIconsAtlas,
+	}
 }

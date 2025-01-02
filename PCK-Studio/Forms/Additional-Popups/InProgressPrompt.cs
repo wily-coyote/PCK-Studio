@@ -1,11 +1,8 @@
-﻿using MetroFramework.Forms;
+﻿using System.Windows.Forms;
 
-namespace PckStudio.Forms.Additional_Popups
-{
-	public partial class InProgressPrompt : MetroForm
-	{
-		public InProgressPrompt()
-		{
+namespace PckStudio.Forms.Additional_Popups {
+	public partial class InProgressPrompt : Form {
+		public InProgressPrompt() {
 			InitializeComponent();
 		}
 	}

@@ -1,22 +1,15 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 
-namespace PckStudio.Models
-{
-	public class Box : Object3D
-	{
-		public override Image Image
-		{
-			set
-			{
+namespace PckStudio.Models {
+	public class Box : Object3D {
+		public override Image Image {
+			set {
 				SetImage(value);
 			}
 		}
 
-		internal override MinecraftModelView Viewport
-		{
-			set
-			{
+		internal override MinecraftModelView Viewport {
+			set {
 				base.Viewport = value;
 				top.Viewport = value;
 				bottom.Viewport = value;
@@ -28,8 +21,7 @@ namespace PckStudio.Models
 			}
 		}
 
-		internal override void Update()
-		{
+		internal override void Update() {
 			Matrix3D a = globalTransformation * localTransformation;
 			top.LocalTransformation = a * topLocalTransformation;
 			bottom.LocalTransformation = a * bottomLocalTransformation;
@@ -39,15 +31,13 @@ namespace PckStudio.Models
 			right.LocalTransformation = a * rightLocalTransformation;
 		}
 
-		public Box(Image image, Rectangle srcTopBottom, Rectangle srcSides, Point3D origin, Effects effects = Effects.None)
-		{
+		public Box(Image image, Rectangle srcTopBottom, Rectangle srcSides, Point3D origin, Effects effects = Effects.None) {
 			this.effects = effects;
 			Origin = origin;
 			SetImage(image, srcTopBottom, srcSides);
 		}
 
-		private void SetImage(Image image, Rectangle srcTopBottom, Rectangle srcSides)
-		{
+		private void SetImage(Image image, Rectangle srcTopBottom, Rectangle srcSides) {
 			int num = srcTopBottom.Width / 2;
 			int height = srcSides.Height;
 			int height2 = srcTopBottom.Height;
@@ -60,8 +50,7 @@ namespace PckStudio.Models
 			SetImage(image);
 		}
 
-		private void SetImage(Image image)
-		{
+		private void SetImage(Image image) {
 			bool flag = (byte)(effects & Effects.FlipHorizontally) == 1;
 			bool flag2 = (byte)(effects & Effects.FlipVertically) == 2;
 			int width = srcFront.Width;
@@ -81,37 +70,30 @@ namespace PckStudio.Models
 			right.Viewport = viewport;
 		}
 
-		public override float HitTest(PointF location)
-		{
+		public override float HitTest(PointF location) {
 			float num = -1000f;
 			float num2 = top.HitTest(location);
-			if (num2 > num)
-			{
+			if(num2 > num) {
 				num = num2;
 			}
 			num2 = bottom.HitTest(location);
-			if (num2 > num)
-			{
+			if(num2 > num) {
 				num = num2;
 			}
 			num2 = front.HitTest(location);
-			if (num2 > num)
-			{
+			if(num2 > num) {
 				num = num2;
 			}
 			num2 = back.HitTest(location);
-			if (num2 > num)
-			{
+			if(num2 > num) {
 				num = num2;
 			}
 			num2 = left.HitTest(location);
-			if (num2 > num)
-			{
+			if(num2 > num) {
 				num = num2;
 			}
 			num2 = right.HitTest(location);
-			if (num2 > num)
-			{
+			if(num2 > num) {
 				num = num2;
 			}
 			return num;

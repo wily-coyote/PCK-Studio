@@ -1,31 +1,26 @@
-﻿using System;
-using System.Windows.Forms;
-using PckStudio.Internal;
+﻿using PckStudio.Internal;
 using PckStudio.Properties;
+using System;
+using System.Windows.Forms;
 
-namespace PckStudio.Forms.Editor
-{
-	public partial class BoxEditor : Form
-	{
+namespace PckStudio.Forms.Editor {
+	public partial class BoxEditor : Form {
 		public string Result;
 
 		public BoxEditor(string box, bool hasInflation)
-			: this(SkinBOX.FromString(box), hasInflation)
-		{
+			: this(SkinBOX.FromString(box), hasInflation) {
 		}
 
-		public BoxEditor(SkinBOX box, bool hasInflation)
-		{
+		public BoxEditor(SkinBOX box, bool hasInflation) {
 			InitializeComponent();
 
-            if (string.IsNullOrEmpty(box.Type) || !parentComboBox.Items.Contains(box.Type))
-            {
-                throw new Exception("Failed to parse BOX value");
-            }
+			if(string.IsNullOrEmpty(box.Type) || !parentComboBox.Items.Contains(box.Type)) {
+				throw new Exception("Failed to parse BOX value");
+			}
 
-            closeButton.Visible = !Settings.Default.AutoSaveChanges;
+			closeButton.Visible = !Settings.Default.AutoSaveChanges;
 
-            scaleUpDown.Enabled = hasInflation;
+			scaleUpDown.Enabled = hasInflation;
 
 			parentComboBox.SelectedItem = parentComboBox.Items[parentComboBox.Items.IndexOf(box.Type)];
 			PosXUpDown.Value = (decimal)box.Pos.X;
@@ -41,8 +36,7 @@ namespace PckStudio.Forms.Editor
 			scaleUpDown.Value = (decimal)box.Scale;
 		}
 
-		private void saveButton_Click(object sender, EventArgs e)
-		{
+		private void saveButton_Click(object sender, EventArgs e) {
 			Result =
 				$"{parentComboBox.SelectedItem} " +
 				$"{PosXUpDown.Value} {PosYUpDown.Value} {PosZUpDown.Value} " +
@@ -54,12 +48,10 @@ namespace PckStudio.Forms.Editor
 			DialogResult = DialogResult.OK;
 		}
 
-        private void BoxEditor_FormClosing(object sender, FormClosingEventArgs e)
-        {
-			if (Settings.Default.AutoSaveChanges)
-			{
+		private void BoxEditor_FormClosing(object sender, FormClosingEventArgs e) {
+			if(Settings.Default.AutoSaveChanges) {
 				saveButton_Click(sender, EventArgs.Empty);
 			}
-        }
-    }
+		}
+	}
 }

@@ -70,7 +70,7 @@ namespace PckStudio.ToolboxItems
             // GithubUserPanel
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            //this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.userPictureBox);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.userNameLabel);

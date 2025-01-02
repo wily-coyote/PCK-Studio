@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
-namespace PckStudio.Internal
-{
-    internal static class GameConstants
-    {
+namespace PckStudio.Internal {
+	internal static class GameConstants {
 
-        public const int GameTickInMilliseconds = 50;
+		public const int GameTickInMilliseconds = 50;
 
-        // See: https://minecraft.fandom.com/wiki/Dye#Color_values for more information.
-        public static readonly Color[] DyeColors = [
-            Color.FromArgb(0xf9fffe), // White
+		// See: https://minecraft.fandom.com/wiki/Dye#Color_values for more information.
+		public static readonly Color[] DyeColors = [
+			Color.FromArgb(0xf9fffe), // White
             Color.FromArgb(0xf9801d), // Orange
             Color.FromArgb(0xc74ebd), // Magenta
             Color.FromArgb(0x3ab3da), // Light Blue
@@ -31,5 +24,5 @@ namespace PckStudio.Internal
             Color.FromArgb(0xb02e26), // Red
             Color.FromArgb(0x1d1d21), // Black
             ];
-    }
+	}
 }

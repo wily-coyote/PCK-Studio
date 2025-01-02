@@ -18,26 +18,22 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace PckStudio.Internal.App
-{
-    internal static class Profiler
-    {
-        private static Stopwatch _stopwatch = new Stopwatch();
+namespace PckStudio.Internal.App {
+	internal static class Profiler {
+		private static Stopwatch _stopwatch = new Stopwatch();
 
-        [Conditional("DEBUG")]
-        internal static void Start([CallerMemberName] string caller = default!, [CallerFilePath] string source = default!, [CallerLineNumber] int line = default!)
-        {
-            Debug.WriteLine($"Stopwatch starts", category: nameof(Profiler));
-            Debug.WriteLine($"{source}@{caller}:{line}", category: nameof(Profiler));
-            _stopwatch.Restart();
-        }
+		[Conditional("DEBUG")]
+		internal static void Start([CallerMemberName] string caller = default!, [CallerFilePath] string source = default!, [CallerLineNumber] int line = default!) {
+			Debug.WriteLine($"Stopwatch starts", category: nameof(Profiler));
+			Debug.WriteLine($"{source}@{caller}:{line}", category: nameof(Profiler));
+			_stopwatch.Restart();
+		}
 
-        [Conditional("DEBUG")]
-        internal static void Stop([CallerMemberName] string caller = default!, [CallerFilePath] string source = default!, [CallerLineNumber] int line = default!)
-        {
-            _stopwatch.Stop();
-            Debug.WriteLine($"{caller} took {_stopwatch.ElapsedMilliseconds}ms", category: nameof(Profiler));
-        }
+		[Conditional("DEBUG")]
+		internal static void Stop([CallerMemberName] string caller = default!, [CallerFilePath] string source = default!, [CallerLineNumber] int line = default!) {
+			_stopwatch.Stop();
+			Debug.WriteLine($"{caller} took {_stopwatch.ElapsedMilliseconds}ms", category: nameof(Profiler));
+		}
 
-    }
+	}
 }

@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TextLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
+    <value>Left, Right</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TextLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -127,10 +127,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TextLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 90</value>
+    <value>3, 93</value>
   </data>
   <data name="TextLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+    <value>68, 13</value>
   </data>
   <data name="TextLabel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -139,7 +139,7 @@
     <value>Name</value>
   </data>
   <data name="TextLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;TextLabel.Name" xml:space="preserve">
     <value>TextLabel</value>
@@ -148,25 +148,22 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TextLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>layout</value>
   </data>
   <data name="&gt;&gt;TextLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="OKButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+    <value>Left, Right</value>
   </data>
   <data name="OKButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 118</value>
+    <value>77, 117</value>
   </data>
   <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>68, 23</value>
   </data>
   <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -181,61 +178,25 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;OKButton.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>layout</value>
   </data>
   <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="InputTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
+    <value>Left, Right</value>
   </data>
-  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="layout.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="resource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 1</value>
-  </data>
-  <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="resource.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="resource.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="InputTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 85</value>
-  </data>
-  <data name="InputTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 23</value>
-  </data>
-  <data name="InputTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;InputTextBox.Name" xml:space="preserve">
-    <value>InputTextBox</value>
-  </data>
-  <data name="&gt;&gt;InputTextBox.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;InputTextBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;InputTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="contextLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+  <data name="contextLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="contextLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 27</value>
+    <value>3, 0</value>
   </data>
   <data name="contextLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 55</value>
+    <value>218, 86</value>
   </data>
   <data name="contextLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -247,13 +208,67 @@
     <value>contextLabel</value>
   </data>
   <data name="&gt;&gt;contextLabel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;contextLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>layout</value>
   </data>
   <data name="&gt;&gt;contextLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="layout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="layout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="layout.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="layout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 144</value>
+  </data>
+  <data name="layout.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;layout.Name" xml:space="preserve">
+    <value>layout</value>
+  </data>
+  <data name="&gt;&gt;layout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;layout.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;layout.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="layout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="OKButton" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="contextLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="TextLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="InputTextBox" Row="1" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,33.33334,Percent,33.33334" /&gt;&lt;Rows Styles="Percent,75,Percent,25,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="InputTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 90</value>
+  </data>
+  <data name="InputTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>255</value>
+  </data>
+  <data name="InputTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 20</value>
+  </data>
+  <data name="InputTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;InputTextBox.Name" xml:space="preserve">
+    <value>InputTextBox</value>
+  </data>
+  <data name="&gt;&gt;InputTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InputTextBox.Parent" xml:space="preserve">
+    <value>layout</value>
+  </data>
+  <data name="&gt;&gt;InputTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -262,7 +277,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>264, 150</value>
+    <value>224, 144</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2773,10 +2788,13 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Enter text</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>TextPrompt</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

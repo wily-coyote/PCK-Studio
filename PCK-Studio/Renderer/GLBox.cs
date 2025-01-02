@@ -1,11 +1,6 @@
 ﻿using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PckStudio.Renderer {
 	internal class GLBox : IGLThing, IDisposable {
@@ -73,7 +68,7 @@ namespace PckStudio.Renderer {
 			}
 		}
 		private bool mirror;
-		
+
 		/**
 		 * <summary>The UV offset of the GLBox, based on the top left corner of the bounding box</summary>
 		 **/
@@ -118,35 +113,35 @@ namespace PckStudio.Renderer {
 			if(mirror) {
 				uvs = new float[48] {
 					// Front
-					zSize+xSize,				zSize+ySize,
-					zSize,						zSize+ySize,
-					zSize,						zSize,
-					zSize+xSize,				zSize,
+					zSize+xSize,             zSize+ySize,
+					zSize,                      zSize+ySize,
+					zSize,                      zSize,
+					zSize+xSize,                zSize,
 					// Back
-					zSize+xSize+zSize+xSize,	zSize+ySize,
-					zSize+xSize+zSize,			zSize+ySize,
-					zSize+xSize+zSize,			zSize,
-					zSize+xSize+zSize+xSize,	zSize,
+					zSize+xSize+zSize+xSize, zSize+ySize,
+					zSize+xSize+zSize,          zSize+ySize,
+					zSize+xSize+zSize,          zSize,
+					zSize+xSize+zSize+xSize,    zSize,
 					// Left (swapped with right)
-					zSize+xSize+zSize,			zSize+ySize,
-					zSize+xSize,				zSize+ySize,
-					zSize+xSize,				zSize,
-					zSize+xSize+zSize,			zSize,
+					zSize+xSize+zSize,           zSize+ySize,
+					zSize+xSize,                zSize+ySize,
+					zSize+xSize,                zSize,
+					zSize+xSize+zSize,          zSize,
 					// Right (swapped with left)
-					zSize,						zSize+ySize,
-					0.0f,						zSize+ySize,
-					0.0f,						zSize,
-					zSize,						zSize,
+					zSize,                       zSize+ySize,
+					0.0f,                       zSize+ySize,
+					0.0f,                       zSize,
+					zSize,                      zSize,
 					// Up
-					zSize+xSize,				zSize,
-					zSize,						zSize,
-					zSize,						0.0f,
-					zSize+xSize,				0.0f,
+					zSize+xSize,             zSize,
+					zSize,                      zSize,
+					zSize,                      0.0f,
+					zSize+xSize,                0.0f,
 					// Down
-					zSize+xSize+xSize,			0.0f,
-					zSize+xSize,				0.0f,
-					zSize+xSize,				zSize,
-					zSize+xSize+xSize,			zSize,
+					zSize+xSize+xSize,           0.0f,
+					zSize+xSize,                0.0f,
+					zSize+xSize,                zSize,
+					zSize+xSize+xSize,          zSize,
 				};
 			} else {
 				uvs = new float[48] {
@@ -186,59 +181,59 @@ namespace PckStudio.Renderer {
 				// Counterclockwise from bottom left
 				// Front
 				// EBO would be 0, 1, 2,	 0, 2, 3
-				-xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	1.0f,
-				xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	1.0f,
-				xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	1.0f,
-				-xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	1.0f,
+				-xSizePadded,    -ySizePadded,   zSizePadded,    0.0f,   0.0f,   0.0f,   0.0f,   1.0f,
+				xSizePadded,    -ySizePadded,   zSizePadded,    0.0f,   0.0f,   0.0f,   0.0f,   1.0f,
+				xSizePadded,    ySizePadded,    zSizePadded,    0.0f,   0.0f,   0.0f,   0.0f,   1.0f,
+				-xSizePadded,   ySizePadded,    zSizePadded,    0.0f,   0.0f,   0.0f,   0.0f,   1.0f,
 				// Back
-				xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	-1.0f,
-				-xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	-1.0f,
-				-xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	-1.0f,
-				xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	-1.0f,
+				xSizePadded,   -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   0.0f,   0.0f,   -1.0f,
+				-xSizePadded,   -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   0.0f,   0.0f,   -1.0f,
+				-xSizePadded,   ySizePadded,    -zSizePadded,   0.0f,   0.0f,   0.0f,   0.0f,   -1.0f,
+				xSizePadded,    ySizePadded,    -zSizePadded,   0.0f,   0.0f,   0.0f,   0.0f,   -1.0f,
 				// Left
-				-xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	-1.0f,	0.0f,	0.0f,
-				-xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	-1.0f,	0.0f,	0.0f,
-				-xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	-1.0f,	0.0f,	0.0f,
-				-xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	-1.0f,	0.0f,	0.0f,
+				-xSizePadded,    -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   -1.0f,  0.0f,   0.0f,
+				-xSizePadded,   -ySizePadded,   zSizePadded,    0.0f,   0.0f,   -1.0f,  0.0f,   0.0f,
+				-xSizePadded,   ySizePadded,    zSizePadded,    0.0f,   0.0f,   -1.0f,  0.0f,   0.0f,
+				-xSizePadded,   ySizePadded,    -zSizePadded,   0.0f,   0.0f,   -1.0f,  0.0f,   0.0f,
 				// Right
-				xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	1.0f,	0.0f,	0.0f,
-				xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	1.0f,	0.0f,	0.0f,
-				xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	1.0f,	0.0f,	0.0f,
-				xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	1.0f,	0.0f,	0.0f,
+				xSizePadded,   -ySizePadded,   zSizePadded,    0.0f,   0.0f,   1.0f,   0.0f,   0.0f,
+				xSizePadded,    -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   1.0f,   0.0f,   0.0f,
+				xSizePadded,    ySizePadded,    -zSizePadded,   0.0f,   0.0f,   1.0f,   0.0f,   0.0f,
+				xSizePadded,    ySizePadded,    zSizePadded,    0.0f,   0.0f,   1.0f,   0.0f,   0.0f,
 				// Up
-				-xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	1.0f,	0.0f,
-				xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	1.0f,	0.0f,
-				xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	1.0f,	0.0f,
-				-xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	1.0f,	0.0f,
+				-xSizePadded,    ySizePadded,    zSizePadded,    0.0f,   0.0f,   0.0f,   1.0f,   0.0f,
+				xSizePadded,    ySizePadded,    zSizePadded,    0.0f,   0.0f,   0.0f,   1.0f,   0.0f,
+				xSizePadded,    ySizePadded,    -zSizePadded,   0.0f,   0.0f,   0.0f,   1.0f,   0.0f,
+				-xSizePadded,   ySizePadded,    -zSizePadded,   0.0f,   0.0f,   0.0f,   1.0f,   0.0f,
 				// Down
-				-xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	-1.0f,	0.0f,
-				xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	-1.0f,	0.0f,
-				xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	-1.0f,	0.0f,
-				-xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	-1.0f,	0.0f,
+				-xSizePadded,    -ySizePadded,   zSizePadded,    0.0f,   0.0f,   0.0f,   -1.0f,  0.0f,
+				xSizePadded,    -ySizePadded,   zSizePadded,    0.0f,   0.0f,   0.0f,   -1.0f,  0.0f,
+				xSizePadded,    -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   0.0f,   -1.0f,  0.0f,
+				-xSizePadded,   -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   0.0f,   -1.0f,  0.0f,
 			};
-			for(int i=0; i < 24; i++) {
-				vertices[3+(i*8)]	= uvs[i*2];
-				vertices[3+(i*8)+1]	= uvs[(i*2)+1];
+			for(int i = 0; i < 24; i++) {
+				vertices[3+(i*8)]   = uvs[i*2];
+				vertices[3+(i*8)+1] = uvs[(i*2)+1];
 			}
 			indices = new uint[36] {
 				// front
-				0,	1,	2,
-				0,	2,	3,
+				0,   1,  2,
+				0,  2,  3,
 				// back
-				4,	5,	6,
-				4,	6,	7,
+				4,   5,  6,
+				4,  6,  7,
 				// left
-				8,	9,	10,
-				8,	10,	11,
+				8,   9,  10,
+				8,  10, 11,
 				// right
-				12,	13,	14,
-				12,	14,	15,
+				12,   13, 14,
+				12, 14, 15,
 				// up
-				16,	17,	18,
-				16,	18,	19,
+				16,   17, 18,
+				16, 18, 19,
 				// down
-				20,	21,	22,
-				20,	22,	23,
+				20,   21, 22,
+				20, 22, 23,
 			};
 			// Box is different from Plane
 			// because it uses GL_TRIANGLES
@@ -304,7 +299,7 @@ namespace PckStudio.Renderer {
 				GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
 			}
 		}
-		
+
 		public float DistanceFromCamera(Vector3 camera) {
 			Vector4 realpos = new Vector4(Transform.Position);
 			realpos.W = 1.0f;

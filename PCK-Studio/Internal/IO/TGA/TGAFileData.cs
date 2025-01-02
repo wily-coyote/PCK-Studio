@@ -15,26 +15,23 @@
  *    misrepresented as being the original software.
  * 3. This notice may not be removed or altered from any source distribution.
 **/
-using System.IO;
 using System.Drawing;
+using System.IO;
 
-namespace PckStudio.Internal.IO.TGA
-{
-    internal class TGAFileData
-    {
-        public TGAFileData(TGAHeader header, Image bitmap, TGAFooter footer, TGAExtentionData extentionData)
-        {
-            if (bitmap.Width != header.Width || bitmap.Height != header.Height)
-                throw new InvalidDataException("Header resolution doesn't match Image resolution");
-            Header = header;
-            Bitmap = bitmap;
-            Footer = footer;
-            ExtentionData = extentionData;
-        }
+namespace PckStudio.Internal.IO.TGA {
+	internal class TGAFileData {
+		public TGAFileData(TGAHeader header, Image bitmap, TGAFooter footer, TGAExtentionData extentionData) {
+			if(bitmap.Width != header.Width || bitmap.Height != header.Height)
+				throw new InvalidDataException("Header resolution doesn't match Image resolution");
+			Header = header;
+			Bitmap = bitmap;
+			Footer = footer;
+			ExtentionData = extentionData;
+		}
 
-        public readonly TGAHeader Header;
-        public readonly Image Bitmap;
-        public readonly TGAFooter Footer;
-        public readonly TGAExtentionData ExtentionData;
-    }
+		public readonly TGAHeader Header;
+		public readonly Image Bitmap;
+		public readonly TGAFooter Footer;
+		public readonly TGAExtentionData ExtentionData;
+	}
 }

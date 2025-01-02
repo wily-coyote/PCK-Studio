@@ -1,9 +1,5 @@
-﻿using System;
-
-namespace PckStudio.Models
-{
-	public enum Backgrounds
-	{
+﻿namespace PckStudio.Models {
+	public enum Backgrounds {
 		LightStone,
 		DarkStone,
 		DaySky,

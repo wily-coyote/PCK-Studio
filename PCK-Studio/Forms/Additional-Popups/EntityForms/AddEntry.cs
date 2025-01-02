@@ -1,33 +1,28 @@
-﻿using System;
+﻿using PckStudio.Forms.Additional_Popups.Animation;
+using PckStudio.Internal.Json;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using PckStudio.Forms.Additional_Popups.Animation;
-using PckStudio.Internal.Json;
 
-
-namespace PckStudio.Forms.Additional_Popups.EntityForms
-{
+namespace PckStudio.Forms.Additional_Popups.EntityForms {
 	/// Wrapper class kept for simplicity
-	public class AddEntry
-	{
-        string selectedEntity = "";
+	public class AddEntry {
+		string selectedEntity = "";
 		public string SelectedEntity => selectedEntity;
 
 		private FilterPrompt filterPrompt;
 
-		public AddEntry(string dataType, System.Drawing.Image[] entityImages)
-		{
+		public AddEntry(string dataType, System.Drawing.Image[] entityImages) {
 			filterPrompt = new FilterPrompt();
-            filterPrompt.OnSelectedItemChanged += FilterPrompt_OnSelectedItemChanged;
-            TreeView treeViewEntity = filterPrompt.AddFilterPage("Entities", null, filterPredicate);
-            ImageList entities = new ImageList();
+			filterPrompt.OnSelectedItemChanged += FilterPrompt_OnSelectedItemChanged;
+			TreeView treeViewEntity = filterPrompt.AddFilterPage("Entities", null, filterPredicate);
+			ImageList entities = new ImageList();
 			entities.ColorDepth = ColorDepth.Depth32Bit;
 			entities.ImageSize = new System.Drawing.Size(32, 32);
 			entities.Images.AddRange(entityImages);
 			treeViewEntity.ImageList = entities;
 
-            List<EntityInfo> entityInfos = dataType switch
-			{
+			List<EntityInfo> entityInfos = dataType switch {
 				"models" => Entities.ModelInfos,
 				"materials" => Entities.MaterialInfos,
 				"behaviours" => Entities.BehaviourInfos,
@@ -36,17 +31,14 @@ namespace PckStudio.Forms.Additional_Popups.EntityForms
 
 			int i = 0;
 
-			foreach(EntityInfo entity in entityInfos)
-            {
-				TreeNode entityNode = new TreeNode(entity.DisplayName)
-				{
+			foreach(EntityInfo entity in entityInfos) {
+				TreeNode entityNode = new TreeNode(entity.DisplayName) {
 					Tag = entity.InternalName,
 					ImageIndex = i,
 					SelectedImageIndex = i,
 				};
 				i++;
-				if (!string.IsNullOrEmpty(entity.InternalName))
-                {
+				if(!string.IsNullOrEmpty(entity.InternalName)) {
 					treeViewEntity.Nodes.Add(entityNode);
 					(treeViewEntity.Tag as List<TreeNode>).Add(entityNode);
 				}
@@ -55,27 +47,22 @@ namespace PckStudio.Forms.Additional_Popups.EntityForms
 			treeViewEntity.Sort();
 		}
 
-        private void FilterPrompt_OnSelectedItemChanged(object sender, EventArgs e)
-        {
+		private void FilterPrompt_OnSelectedItemChanged(object sender, EventArgs e) {
 			selectedEntity = filterPrompt.SelectedItem.ToString();
-        }
+		}
 
-        public DialogResult ShowDialog(IWin32Window owner)
-		{
+		public DialogResult ShowDialog(IWin32Window owner) {
 			return filterPrompt.ShowDialog(owner);
 		}
 
-		private void treeViews_AfterSelect(object sender, TreeViewEventArgs e)
-		{
-			if (e.Node.Tag is string entityData)
-			{
+		private void treeViews_AfterSelect(object sender, TreeViewEventArgs e) {
+			if(e.Node.Tag is string entityData) {
 				selectedEntity = entityData;
 			}
 		}
 
-		private bool filterPredicate(string filterText, object nodeTag)
-		{
+		private bool filterPredicate(string filterText, object nodeTag) {
 			return nodeTag is string a && a.ToLower().Contains(filterText.ToLower());
-        }
+		}
 	}
 }

@@ -1,7 +1,7 @@
-﻿namespace PckStudio.Forms.Editor
-{
-	partial class MaterialsEditor
-	{
+﻿using System.Windows.Forms;
+
+namespace PckStudio.Forms.Editor {
+	partial class MaterialsEditor {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -11,10 +11,8 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
+		protected override void Dispose(bool disposing) {
+			if(disposing && (components != null)) {
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -26,161 +24,172 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent()
-		{
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialsEditor));
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xLabel = new MetroFramework.Controls.MetroLabel();
-            this.materialComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.metroContextMenu1.SuspendLayout();
-            this.menuStrip.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // treeView1
-            // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.treeView1.ContextMenuStrip = this.metroContextMenu1;
-            this.treeView1.ForeColor = System.Drawing.Color.White;
-            this.treeView1.Location = new System.Drawing.Point(20, 84);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(246, 234);
-            this.treeView1.TabIndex = 13;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            // 
-            // metroContextMenu1
-            // 
-            this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.removeToolStripMenuItem});
-            this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(127, 48);
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.addToolStripMenuItem.Text = "Add Entry";
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
-            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
-            // 
-            // menuStrip
-            // 
-            this.menuStrip.AutoSize = false;
-            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(20, 60);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(246, 24);
-            this.menuStrip.TabIndex = 14;
-            this.menuStrip.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem1});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // saveToolStripMenuItem1
-            // 
-            this.saveToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem1.Image")));
-            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
-            this.saveToolStripMenuItem1.Text = "Save";
-            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // xLabel
-            // 
-            this.xLabel.AutoSize = true;
-            this.xLabel.Location = new System.Drawing.Point(98, 325);
-            this.xLabel.Name = "xLabel";
-            this.xLabel.Size = new System.Drawing.Size(91, 19);
-            this.xLabel.TabIndex = 30;
-            this.xLabel.Text = "Material Type:";
-            this.xLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // materialComboBox
-            // 
-            this.materialComboBox.FormattingEnabled = true;
-            this.materialComboBox.ItemHeight = 23;
-            this.materialComboBox.Items.AddRange(new object[] {
-            "entity",
-            "entity_alphatest",
-            "entity_emissive_alpha",
-            "entity_emissive_alpha_only",
-            "entity_alphatest_change_color",
-            "entity_change_color"});
-            this.materialComboBox.Location = new System.Drawing.Point(20, 347);
-            this.materialComboBox.Name = "materialComboBox";
-            this.materialComboBox.Size = new System.Drawing.Size(246, 29);
-            this.materialComboBox.TabIndex = 31;
-            this.materialComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.materialComboBox.UseSelectable = true;
-            this.materialComboBox.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SelectedIndexChanged);
-            // 
-            // MaterialsEditor
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 399);
-            this.Controls.Add(this.materialComboBox);
-            this.Controls.Add(this.xLabel);
-            this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.treeView1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MaterialsEditor";
-            this.Style = MetroFramework.MetroColorStyle.Silver;
-            this.Text = "Materials Editor";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroContextMenu1.ResumeLayout(false);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+		private void InitializeComponent() {
+			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialsEditor));
+			this.treeView1 = new System.Windows.Forms.TreeView();
+			this.metroContextMenu1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip = new System.Windows.Forms.MenuStrip();
+			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.xLabel = new System.Windows.Forms.Label();
+			this.materialComboBox = new System.Windows.Forms.ComboBox();
+			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.metroContextMenu1.SuspendLayout();
+			this.menuStrip.SuspendLayout();
+			this.layout.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// treeView1
+			// 
+			this.layout.SetColumnSpan(this.treeView1, 2);
+			this.treeView1.ContextMenuStrip = this.metroContextMenu1;
+			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView1.Location = new System.Drawing.Point(3, 3);
+			this.treeView1.Name = "treeView1";
+			this.treeView1.Size = new System.Drawing.Size(378, 307);
+			this.treeView1.TabIndex = 13;
+			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+			this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+			this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+			// 
+			// metroContextMenu1
+			// 
+			this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.addToolStripMenuItem,
+			this.removeToolStripMenuItem});
+			this.metroContextMenu1.Name = "metroContextMenu1";
+			this.metroContextMenu1.Size = new System.Drawing.Size(127, 48);
+			// 
+			// addToolStripMenuItem
+			// 
+			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+			this.addToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+			this.addToolStripMenuItem.Text = "Add Entry";
+			this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+			// 
+			// removeToolStripMenuItem
+			// 
+			this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+			this.removeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+			this.removeToolStripMenuItem.Text = "Remove";
+			this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+			// 
+			// menuStrip
+			// 
+			this.menuStrip.AutoSize = false;
+			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.fileToolStripMenuItem,
+			this.helpToolStripMenuItem});
+			this.menuStrip.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip.Name = "menuStrip";
+			this.menuStrip.Size = new System.Drawing.Size(384, 24);
+			this.menuStrip.TabIndex = 14;
+			this.menuStrip.Text = "menuStrip1";
+			// 
+			// fileToolStripMenuItem
+			// 
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.saveToolStripMenuItem1});
+			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.fileToolStripMenuItem.Text = "File";
+			// 
+			// saveToolStripMenuItem1
+			// 
+			this.saveToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem1.Image")));
+			this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
+			this.saveToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+			this.saveToolStripMenuItem1.Text = "Save";
+			this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
+			// 
+			// helpToolStripMenuItem
+			// 
+			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.helpToolStripMenuItem.Text = "Help";
+			// 
+			// xLabel
+			// 
+			this.xLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.xLabel.AutoSize = true;
+			this.xLabel.Location = new System.Drawing.Point(3, 320);
+			this.xLabel.Name = "xLabel";
+			this.xLabel.Size = new System.Drawing.Size(90, 13);
+			this.xLabel.TabIndex = 30;
+			this.xLabel.Text = "Material Type";
+			this.xLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// materialComboBox
+			// 
+			this.materialComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.materialComboBox.FormattingEnabled = true;
+			this.materialComboBox.ItemHeight = 13;
+			this.materialComboBox.Items.AddRange(new object[] {
+			"entity",
+			"entity_alphatest",
+			"entity_emissive_alpha",
+			"entity_emissive_alpha_only",
+			"entity_alphatest_change_color",
+			"entity_change_color"});
+			this.materialComboBox.Location = new System.Drawing.Point(99, 316);
+			this.materialComboBox.Name = "materialComboBox";
+			this.materialComboBox.Size = new System.Drawing.Size(282, 21);
+			this.materialComboBox.TabIndex = 31;
+			this.materialComboBox.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SelectedIndexChanged);
+			// 
+			// layout
+			// 
+			this.layout.ColumnCount = 2;
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+			this.layout.Controls.Add(this.treeView1, 0, 0);
+			this.layout.Controls.Add(this.xLabel, 0, 1);
+			this.layout.Controls.Add(this.materialComboBox, 1, 1);
+			this.layout.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.layout.Location = new System.Drawing.Point(0, 24);
+			this.layout.Name = "layout";
+			this.layout.RowCount = 3;
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.layout.Size = new System.Drawing.Size(384, 340);
+			this.layout.TabIndex = 32;
+			// 
+			// MaterialsEditor
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(384, 364);
+			this.Controls.Add(this.layout);
+			this.Controls.Add(this.menuStrip);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Name = "MaterialsEditor";
+			this.Text = "Materials Editor";
+			this.metroContextMenu1.ResumeLayout(false);
+			this.menuStrip.ResumeLayout(false);
+			this.menuStrip.PerformLayout();
+			this.layout.ResumeLayout(false);
+			this.layout.PerformLayout();
+			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.TreeView treeView1;
-		private System.Windows.Forms.MenuStrip menuStrip;
-		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-		private MetroFramework.Controls.MetroLabel xLabel;
-		private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
-		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-		private MetroFramework.Controls.MetroComboBox materialComboBox;
+		private TreeView treeView1;
+		private MenuStrip menuStrip;
+		private ToolStripMenuItem fileToolStripMenuItem;
+		private ToolStripMenuItem saveToolStripMenuItem1;
+		private ToolStripMenuItem helpToolStripMenuItem;
+		private Label xLabel;
+		private ContextMenuStrip metroContextMenu1;
+		private ToolStripMenuItem addToolStripMenuItem;
+		private ToolStripMenuItem removeToolStripMenuItem;
+		private ComboBox materialComboBox;
+		private TableLayoutPanel layout;
 	}
 }

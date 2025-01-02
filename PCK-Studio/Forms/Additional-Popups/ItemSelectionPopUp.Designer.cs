@@ -1,4 +1,6 @@
-﻿namespace PckStudio.Forms.Additional_Popups
+﻿using System.Windows.Forms;
+
+namespace PckStudio.Forms.Additional_Popups
 {
     partial class ItemSelectionPopUp
     {
@@ -28,69 +30,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemSelectionPopUp));
-            this.label2 = new System.Windows.Forms.Label();
-            this.okBtn = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.ComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.SuspendLayout();
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Name = "label2";
-            // 
-            // okBtn
-            // 
-            resources.ApplyResources(this.okBtn, "okBtn");
-            this.okBtn.ForeColor = System.Drawing.Color.White;
-            this.okBtn.Name = "okBtn";
-            this.okBtn.UseVisualStyleBackColor = true;
-            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
-            // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // ComboBox
-            // 
-            this.ComboBox.FormattingEnabled = true;
-            resources.ApplyResources(this.ComboBox, "ComboBox");
-            this.ComboBox.Name = "ComboBox";
-            this.ComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ComboBox.UseSelectable = true;
-            // 
-            // ItemSelectionPopUp
-            // 
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ControlBox = false;
-            this.Controls.Add(this.ComboBox);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.okBtn);
-            this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ItemSelectionPopUp";
-            this.Resizable = false;
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
-            this.Style = MetroFramework.MetroColorStyle.Silver;
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemSelectionPopUp));
+			this.itemsLabel = new System.Windows.Forms.Label();
+			this.okBtn = new System.Windows.Forms.Button();
+			this.cancelButton = new System.Windows.Forms.Button();
+			this.ComboBox = new System.Windows.Forms.ComboBox();
+			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			this.layout.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// itemsLabel
+			// 
+			resources.ApplyResources(this.itemsLabel, "itemsLabel");
+			this.itemsLabel.Name = "itemsLabel";
+			// 
+			// okBtn
+			// 
+			resources.ApplyResources(this.okBtn, "okBtn");
+			this.okBtn.Name = "okBtn";
+			this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
+			// 
+			// cancelButton
+			// 
+			resources.ApplyResources(this.cancelButton, "cancelButton");
+			this.cancelButton.Name = "cancelButton";
+			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+			// 
+			// ComboBox
+			// 
+			resources.ApplyResources(this.ComboBox, "ComboBox");
+			this.layout.SetColumnSpan(this.ComboBox, 3);
+			this.ComboBox.FormattingEnabled = true;
+			this.ComboBox.Name = "ComboBox";
+			// 
+			// layout
+			// 
+			resources.ApplyResources(this.layout, "layout");
+			this.layout.Controls.Add(this.itemsLabel, 0, 0);
+			this.layout.Controls.Add(this.cancelButton, 2, 1);
+			this.layout.Controls.Add(this.okBtn, 1, 1);
+			this.layout.Controls.Add(this.ComboBox, 1, 0);
+			this.layout.Name = "layout";
+			// 
+			// ItemSelectionPopUp
+			// 
+			resources.ApplyResources(this, "$this");
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.layout);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Name = "ItemSelectionPopUp";
+			this.layout.ResumeLayout(false);
+			this.layout.PerformLayout();
+			this.ResumeLayout(false);
 
         }
 
         #endregion
 		private System.Windows.Forms.Button cancelButton;
-        private MetroFramework.Controls.MetroComboBox ComboBox;
-        private System.Windows.Forms.Label label2;
+        private ComboBox ComboBox;
+        private System.Windows.Forms.Label itemsLabel;
         private System.Windows.Forms.Button okBtn;
-    }
+		private TableLayoutPanel layout;
+	}
 }

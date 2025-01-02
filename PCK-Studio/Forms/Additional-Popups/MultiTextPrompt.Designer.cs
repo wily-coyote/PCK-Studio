@@ -1,4 +1,6 @@
-﻿namespace PckStudio.Forms.Additional_Popups
+﻿using System.Windows.Forms;
+
+namespace PckStudio.Forms.Additional_Popups
 {
     partial class MultiTextPrompt
     {
@@ -28,96 +30,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiTextPrompt));
-            this.PromptTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.okBtn = new MetroFramework.Controls.MetroButton();
-            this.cancelBtn = new MetroFramework.Controls.MetroButton();
-            this.SuspendLayout();
-            // 
-            // PromptTextBox
-            // 
-            // 
-            // 
-            // 
-            this.PromptTextBox.CustomButton.Image = null;
-            this.PromptTextBox.CustomButton.Location = new System.Drawing.Point(34, 1);
-            this.PromptTextBox.CustomButton.Name = "";
-            this.PromptTextBox.CustomButton.Size = new System.Drawing.Size(283, 283);
-            this.PromptTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.PromptTextBox.CustomButton.TabIndex = 1;
-            this.PromptTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.PromptTextBox.CustomButton.UseSelectable = true;
-            this.PromptTextBox.CustomButton.Visible = false;
-            this.PromptTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PromptTextBox.Lines = new string[0];
-            this.PromptTextBox.Location = new System.Drawing.Point(20, 60);
-            this.PromptTextBox.MaxLength = 32767;
-            this.PromptTextBox.Multiline = true;
-            this.PromptTextBox.Name = "PromptTextBox";
-            this.PromptTextBox.PasswordChar = '\0';
-            this.PromptTextBox.PromptText = "Paste Multi-line text here...";
-            this.PromptTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.PromptTextBox.SelectedText = "";
-            this.PromptTextBox.SelectionLength = 0;
-            this.PromptTextBox.SelectionStart = 0;
-            this.PromptTextBox.ShortcutsEnabled = true;
-            this.PromptTextBox.ShowClearButton = true;
-            this.PromptTextBox.Size = new System.Drawing.Size(318, 285);
-            this.PromptTextBox.Style = MetroFramework.MetroColorStyle.Black;
-            this.PromptTextBox.TabIndex = 0;
-            this.PromptTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.PromptTextBox.UseSelectable = true;
-            this.PromptTextBox.WaterMark = "Paste Multi-line text here...";
-            this.PromptTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.PromptTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // okBtn
-            // 
-            this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okBtn.Location = new System.Drawing.Point(264, 351);
-            this.okBtn.Name = "okBtn";
-            this.okBtn.Size = new System.Drawing.Size(74, 23);
-            this.okBtn.TabIndex = 1;
-            this.okBtn.Text = "OK";
-            this.okBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.okBtn.UseSelectable = true;
-            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.Location = new System.Drawing.Point(183, 351);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 2;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.cancelBtn.UseSelectable = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
-            // MultiTextPrompt
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 385);
-            this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.okBtn);
-            this.Controls.Add(this.PromptTextBox);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(270, 335);
-            this.Name = "MultiTextPrompt";
-            this.Padding = new System.Windows.Forms.Padding(20, 60, 20, 40);
-            this.Style = MetroFramework.MetroColorStyle.Black;
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ResumeLayout(false);
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiTextPrompt));
+			this.PromptTextBox = new System.Windows.Forms.TextBox();
+			this.okBtn = new System.Windows.Forms.Button();
+			this.cancelBtn = new System.Windows.Forms.Button();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.tableLayoutPanel1.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// PromptTextBox
+			// 
+			this.tableLayoutPanel1.SetColumnSpan(this.PromptTextBox, 4);
+			this.PromptTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PromptTextBox.Location = new System.Drawing.Point(3, 3);
+			this.PromptTextBox.Multiline = true;
+			this.PromptTextBox.Name = "PromptTextBox";
+			this.PromptTextBox.Size = new System.Drawing.Size(248, 264);
+			this.PromptTextBox.TabIndex = 0;
+			// 
+			// okBtn
+			// 
+			this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.okBtn.Location = new System.Drawing.Point(129, 273);
+			this.okBtn.Name = "okBtn";
+			this.okBtn.Size = new System.Drawing.Size(57, 23);
+			this.okBtn.TabIndex = 1;
+			this.okBtn.Text = "OK";
+			this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
+			// 
+			// cancelBtn
+			// 
+			this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.cancelBtn.Location = new System.Drawing.Point(66, 273);
+			this.cancelBtn.Name = "cancelBtn";
+			this.cancelBtn.Size = new System.Drawing.Size(57, 23);
+			this.cancelBtn.TabIndex = 2;
+			this.cancelBtn.Text = "Cancel";
+			this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+			// 
+			// tableLayoutPanel1
+			// 
+			this.tableLayoutPanel1.ColumnCount = 4;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.tableLayoutPanel1.Controls.Add(this.cancelBtn, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.PromptTextBox, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.okBtn, 2, 1);
+			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 2;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(254, 299);
+			this.tableLayoutPanel1.TabIndex = 3;
+			// 
+			// MultiTextPrompt
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(254, 299);
+			this.Controls.Add(this.tableLayoutPanel1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MinimizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(270, 335);
+			this.Name = "MultiTextPrompt";
+			this.Text = "Insert multi-line text";
+			this.tableLayoutPanel1.ResumeLayout(false);
+			this.tableLayoutPanel1.PerformLayout();
+			this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MetroFramework.Controls.MetroTextBox PromptTextBox;
-        private MetroFramework.Controls.MetroButton okBtn;
-        private MetroFramework.Controls.MetroButton cancelBtn;
-    }
+        private TextBox PromptTextBox;
+        private Button okBtn;
+        private Button cancelBtn;
+		private TableLayoutPanel tableLayoutPanel1;
+	}
 }

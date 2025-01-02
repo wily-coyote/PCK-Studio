@@ -1,208 +1,157 @@
 ﻿using System;
 using System.Drawing;
 
-namespace PckStudio.Models
-{
-	public abstract class Object3D
-	{
+namespace PckStudio.Models {
+	public abstract class Object3D {
 		public abstract Image Image { set; }
 
-		public float Angle1
-		{
-			get
-			{
+		public float Angle1 {
+			get {
 				return angle1;
 			}
-			set
-			{
+			set {
 				angle1 = value;
 				OnUpdateRotation();
 			}
 		}
 
-		public float Angle2
-		{
-			get
-			{
+		public float Angle2 {
+			get {
 				return angle2;
 			}
-			set
-			{
+			set {
 				angle2 = value;
 				OnUpdateRotation();
 			}
 		}
 
-		public float MinAngle1
-		{
-			get
-			{
+		public float MinAngle1 {
+			get {
 				return minAngle1;
 			}
-			set
-			{
+			set {
 				minAngle1 = value;
 			}
 		}
 
-		public float MinAngle2
-		{
-			get
-			{
+		public float MinAngle2 {
+			get {
 				return minAngle2;
 			}
-			set
-			{
+			set {
 				minAngle2 = value;
 			}
 		}
 
-		public float MaxAngle1
-		{
-			get
-			{
+		public float MaxAngle1 {
+			get {
 				return maxAngle1;
 			}
-			set
-			{
+			set {
 				maxAngle1 = value;
 			}
 		}
 
-		public float MaxAngle2
-		{
-			get
-			{
+		public float MaxAngle2 {
+			get {
 				return maxAngle2;
 			}
-			set
-			{
+			set {
 				maxAngle2 = value;
 			}
 		}
 
-		public float AngleRange1
-		{
-			get
-			{
+		public float AngleRange1 {
+			get {
 				return maxAngle1 - minAngle1;
 			}
-			set
-			{
+			set {
 				minAngle1 = angle1 - value / 2f;
 				maxAngle1 = angle1 + value / 2f;
 			}
 		}
 
-		public float AngleRange2
-		{
-			get
-			{
+		public float AngleRange2 {
+			get {
 				return maxAngle2 - minAngle2;
 			}
-			set
-			{
+			set {
 				minAngle2 = angle2 - value / 2f;
 				maxAngle2 = angle2 + value / 2f;
 			}
 		}
 
-		public float MinDegrees1
-		{
-			get
-			{
+		public float MinDegrees1 {
+			get {
 				return minAngle1 / PIby180;
 			}
-			set
-			{
+			set {
 				minAngle1 = value * PIby180;
 			}
 		}
 
-		public float MinDegrees2
-		{
-			get
-			{
+		public float MinDegrees2 {
+			get {
 				return minAngle2 / PIby180;
 			}
-			set
-			{
+			set {
 				minAngle2 = value * PIby180;
 			}
 		}
 
-		public float MaxDegrees1
-		{
-			get
-			{
+		public float MaxDegrees1 {
+			get {
 				return maxAngle1 / PIby180;
 			}
-			set
-			{
+			set {
 				maxAngle1 = value * PIby180;
 			}
 		}
 
-		public float MaxDegrees2
-		{
-			get
-			{
+		public float MaxDegrees2 {
+			get {
 				return maxAngle2 / PIby180;
 			}
-			set
-			{
+			set {
 				maxAngle2 = value * PIby180;
 			}
 		}
 
-		public float DegreesRange1
-		{
-			get
-			{
+		public float DegreesRange1 {
+			get {
 				return AngleRange1 / PIby180;
 			}
-			set
-			{
+			set {
 				AngleRange1 = value * PIby180;
 			}
 		}
 
-		public float DegreesRange2
-		{
-			get
-			{
+		public float DegreesRange2 {
+			get {
 				return AngleRange2 / PIby180;
 			}
-			set
-			{
+			set {
 				AngleRange2 = value * PIby180;
 			}
 		}
 
-		public float Scale
-		{
-			get
-			{
+		public float Scale {
+			get {
 				return scaleTransformation.M11;
 			}
-			set
-			{
+			set {
 				scaleTransformation = Matrix3D.CreateScale(value);
 				UpdateRotation();
 			}
 		}
 
-		public RotationOrders RotationOrder
-		{
-			get
-			{
+		public RotationOrders RotationOrder {
+			get {
 				return order;
 			}
-			set
-			{
+			set {
 				order = value;
-				switch (order)
-				{
+				switch(order) {
 					case RotationOrders.XY:
 						Rotate = new RotateMethod(RotateXY);
 						OnUpdateRotation = UpdateRotationXY;
@@ -233,35 +182,27 @@ namespace PckStudio.Models
 			}
 		}
 
-		internal virtual MinecraftModelView Viewport
-		{
-			set
-			{
+		internal virtual MinecraftModelView Viewport {
+			set {
 				viewport = value;
 			}
 		}
 
-		public Point3D Origin
-		{
-			get
-			{
+		public Point3D Origin {
+			get {
 				return new Point3D(-originTranslation.M14, -originTranslation.M24, -originTranslation.M34);
 			}
-			set
-			{
+			set {
 				originTranslation = Matrix3D.CreateTranslation(-value.X, -value.Y, -value.Z);
 				UpdateRotation();
 			}
 		}
 
-		public Point3D Position
-		{
-			get
-			{
+		public Point3D Position {
+			get {
 				return new Point3D(positionTranslation.M14, positionTranslation.M24, positionTranslation.M34);
 			}
-			set
-			{
+			set {
 				positionTranslation = Matrix3D.CreateTranslation(value);
 				UpdateRotation();
 				Update();
@@ -270,159 +211,131 @@ namespace PckStudio.Models
 
 		internal abstract void Update();
 
-		public Matrix3D GlobalTransformation
-		{
-			get
-			{
+		public Matrix3D GlobalTransformation {
+			get {
 				return globalTransformation;
 			}
-			set
-			{
+			set {
 				globalTransformation = value;
 				Update();
 			}
 		}
 
-		public Matrix3D LocalTransformation
-		{
-			get
-			{
+		public Matrix3D LocalTransformation {
+			get {
 				return localTransformation;
 			}
-			set
-			{
+			set {
 				localTransformation = value;
 				Update();
 			}
 		}
 
-		public void SetRotation(float angle1, float angle2)
-		{
+		public void SetRotation(float angle1, float angle2) {
 			this.angle1 = angle1;
 			this.angle2 = angle2;
 			OnUpdateRotation();
 		}
 
-		public void RotateByMouse(float deltaX, float deltaY)
-		{
-			if (Rotate != null)
-			{
+		public void RotateByMouse(float deltaX, float deltaY) {
+			if(Rotate != null) {
 				Rotate(deltaX, deltaY);
 				Update();
 			}
 		}
 
-		private void CorrectAngles()
-		{
-			if (angle1 > maxAngle1)
-			{
+		private void CorrectAngles() {
+			if(angle1 > maxAngle1) {
 				angle1 = maxAngle1;
-			}
-			else if (angle1 < minAngle1)
-			{
+			} else if(angle1 < minAngle1) {
 				angle1 = minAngle1;
 			}
-			if (angle2 > maxAngle2)
-			{
+			if(angle2 > maxAngle2) {
 				angle2 = maxAngle2;
 				return;
 			}
-			if (angle2 < minAngle2)
-			{
+			if(angle2 < minAngle2) {
 				angle2 = minAngle2;
 			}
 		}
 
 		public abstract float HitTest(PointF location);
 
-		private void RotateXY(float delta1, float delta2)
-		{
+		private void RotateXY(float delta1, float delta2) {
 			angle1 += delta1 * PIby180;
 			angle2 += delta2 * PIby180 * (float)Math.Cos((double)(viewport.RotationY * PIby180));
 			UpdateRotationXY();
 		}
 
-		private void RotateYX(float delta1, float delta2)
-		{
+		private void RotateYX(float delta1, float delta2) {
 			angle1 += delta1 * PIby180;
 			angle2 += delta2 * PIby180 * (float)Math.Cos(viewport.RotationY * 3.1415926535897931 / 180.0);
 			UpdateRotationYX();
 		}
 
-		private void RotateXZ(float delta1, float delta2)
-		{
+		private void RotateXZ(float delta1, float delta2) {
 			angle1 += delta1 * PIby180 * (float)Math.Cos((double)(viewport.RotationY * PIby180)) + delta2 * PIby180 * (float)Math.Sin((double)(viewport.RotationY * PIby180));
 			angle2 += delta2 * PIby180 * (float)Math.Cos((double)(viewport.RotationY * PIby180)) - delta1 * PIby180 * (float)Math.Sin((double)(viewport.RotationY * PIby180));
 			UpdateRotationXZ();
 		}
 
-		private void RotateZX(float delta1, float delta2)
-		{
+		private void RotateZX(float delta1, float delta2) {
 			angle1 += delta1 * PIby180 * (float)Math.Cos((double)(viewport.RotationY * PIby180)) + delta2 * PIby180 * (float)Math.Sin((double)(viewport.RotationY * PIby180));
 			angle2 += delta2 * PIby180 * (float)Math.Cos((double)(viewport.RotationY * PIby180)) - delta1 * PIby180 * (float)Math.Sin((double)(viewport.RotationY * PIby180));
 			UpdateRotationZX();
 		}
 
-		private void RotateZY(float delta1, float delta2)
-		{
+		private void RotateZY(float delta1, float delta2) {
 			angle1 -= delta2 * PIby180;
 			angle2 += delta1 * PIby180;
 			UpdateRotationZY();
 		}
 
-		private void RotateYZ(float delta1, float delta2)
-		{
+		private void RotateYZ(float delta1, float delta2) {
 			angle1 += delta1 * PIby180;
 			angle2 += delta2 * PIby180 * (float)Math.Sin((double)(viewport.RotationY * PIby180));
 			UpdateRotationYZ();
 		}
 
-		private void UpdateRotationXY()
-		{
+		private void UpdateRotationXY() {
 			CorrectAngles();
 			localRotation = Matrix3D.CreateRotationY(angle1) * Matrix3D.CreateRotationX(angle2);
 			UpdateRotation();
 		}
 
-		private void UpdateRotationYX()
-		{
+		private void UpdateRotationYX() {
 			CorrectAngles();
 			localRotation = Matrix3D.CreateRotationX(angle2) * Matrix3D.CreateRotationY(angle1);
 			UpdateRotation();
 		}
 
-		private void UpdateRotationXZ()
-		{
+		private void UpdateRotationXZ() {
 			CorrectAngles();
 			localRotation = Matrix3D.CreateRotationZ(angle1) * Matrix3D.CreateRotationX(angle2);
 			UpdateRotation();
 		}
 
-		private void UpdateRotationZX()
-		{
+		private void UpdateRotationZX() {
 			CorrectAngles();
 			localRotation = Matrix3D.CreateRotationX(angle2) * Matrix3D.CreateRotationZ(angle1);
 			UpdateRotation();
 		}
 
-		private void UpdateRotationZY()
-		{
+		private void UpdateRotationZY() {
 			CorrectAngles();
 			localRotation = Matrix3D.CreateRotationY(angle2) * Matrix3D.CreateRotationZ(angle1);
 			UpdateRotation();
 		}
 
-		private void UpdateRotationYZ()
-		{
+		private void UpdateRotationYZ() {
 			CorrectAngles();
 			localRotation = Matrix3D.CreateRotationZ(angle2) * Matrix3D.CreateRotationY(angle1);
 			UpdateRotation();
 		}
 
-		private void UpdateRotation()
-		{
-            localTransformation = positionTranslation * localRotation * originTranslation * scaleTransformation;
-        }
+		private void UpdateRotation() {
+			localTransformation = positionTranslation * localRotation * originTranslation * scaleTransformation;
+		}
 
 		public const float PIby180 = 0.0174532924f;
 

@@ -1,9 +1,5 @@
-﻿using System;
-
-namespace PckStudio.Models
-{
-	public enum Positions
-	{
+﻿namespace PckStudio.Models {
+	public enum Positions {
 		Default,
 		Outstretched,
 		Walking,

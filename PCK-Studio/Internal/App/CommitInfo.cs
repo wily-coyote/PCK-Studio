@@ -18,33 +18,27 @@
 using System.Linq;
 using System.Reflection;
 
-namespace PckStudio.Internal.App
-{
-    static internal class CommitInfo
-    {
-        private static string _branchName = null;
-        private static string _commitHash = null;
+namespace PckStudio.Internal.App {
+	static internal class CommitInfo {
+		private static string _branchName = null;
+		private static string _commitHash = null;
 
-        public static string BranchName
-        {
-            get
-            {
-                return _branchName ??= Assembly
-                        .GetEntryAssembly()
-                        .GetCustomAttributes<AssemblyMetadataAttribute>()
-                        .FirstOrDefault(attr => attr.Key == "GitBranch")?.Value;
-            }
-        }
+		public static string BranchName {
+			get {
+				return _branchName ??= Assembly
+						.GetEntryAssembly()
+						.GetCustomAttributes<AssemblyMetadataAttribute>()
+						.FirstOrDefault(attr => attr.Key == "GitBranch")?.Value;
+			}
+		}
 
-        public static string CommitHash
-        {
-            get
-            {
-                return _commitHash ??= Assembly
-                        .GetEntryAssembly()
-                        .GetCustomAttributes<AssemblyMetadataAttribute>()
-                        .FirstOrDefault(attr => attr.Key == "GitHash")?.Value;
-            }
-        }
-    }
+		public static string CommitHash {
+			get {
+				return _commitHash ??= Assembly
+						.GetEntryAssembly()
+						.GetCustomAttributes<AssemblyMetadataAttribute>()
+						.FirstOrDefault(attr => attr.Key == "GitHash")?.Value;
+			}
+		}
+	}
 }

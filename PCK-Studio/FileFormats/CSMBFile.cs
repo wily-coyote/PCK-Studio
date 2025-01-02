@@ -1,15 +1,8 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace PckStudio.FileFormats
-{
-    #region File Structure
-    /*
+namespace PckStudio.FileFormats {
+	#region File Structure
+	/*
 	Version - 4 bytes[int32]
 	NumberOfParts - 4 bytes[int32]
 	{
@@ -34,31 +27,27 @@ namespace PckStudio.FileFormats
 		vertical offset - 4 bytes[float]
 	}
 	 */
-    #endregion
-    class CSMBFile
-    {
+	#endregion
+	class CSMBFile {
 		public List<CSMBPart> Parts = new List<CSMBPart>();
 		public List<CSMBOffset> Offsets = new List<CSMBOffset>();
-    }
+	}
 
-	public class CSMBPart
-    {
+	public class CSMBPart {
 		public string Name = "Partname";
 		public CSMBParentPart Parent = 0;
 		public float posX, posY, posZ = 0.0f;
 		public float sizeX, sizeY, sizeZ = 0.0f;
-        public int uvX, uvY = 0;
+		public int uvX, uvY = 0;
 		public bool HideWArmour, MirrorTexture = false;
 		public float Inflation = 0.0f;
 	}
-	public class CSMBOffset
-    {
+	public class CSMBOffset {
 		public CSMBOffsetPart offsetPart = 0;
 		public float VerticalOffset = 0.0f;
 	}
 
-	public enum CSMBOffsetPart
-	{
+	public enum CSMBOffsetPart {
 		HEAD = 0,
 		BODY = 1,
 		ARM0 = 2,
@@ -90,8 +79,7 @@ namespace PckStudio.FileFormats
 		CHEST = 28
 	}
 
-	public enum CSMBParentPart
-	{
+	public enum CSMBParentPart {
 		HEAD = 0,
 		BODY = 1,
 		ARM0 = 2,

@@ -16,22 +16,20 @@
  * 3. This notice may not be removed or altered from any source distribution.
 **/
 
-namespace PckStudio.Internal.IO.TGA
-{
-    /// <summary>
-    /// Resources:
-    ///  <http://www.paulbourke.net/dataformats/tga/>
-    ///  <https://en.wikipedia.org/wiki/Truevision_TGA>
-    /// </summary>
-    internal struct TGAHeader
-    {
-        public byte[] Id;
-        public TGADataTypeCode DataTypeCode;
-        public (byte Type, short Origin/*Offset*/, short Length, byte Depth) Colormap;
-        public (short X, short Y) Origin;
-        public short Width;
-        public short Height;
-        public byte BitsPerPixel;
-        public byte ImageDescriptor;
-    }
+namespace PckStudio.Internal.IO.TGA {
+	/// <summary>
+	/// Resources:
+	///  <http://www.paulbourke.net/dataformats/tga/>
+	///  <https://en.wikipedia.org/wiki/Truevision_TGA>
+	/// </summary>
+	internal struct TGAHeader {
+		public byte[] Id;
+		public TGADataTypeCode DataTypeCode;
+		public (byte Type, short Origin/*Offset*/, short Length, byte Depth) Colormap;
+		public (short X, short Y) Origin;
+		public short Width;
+		public short Height;
+		public byte BitsPerPixel;
+		public byte ImageDescriptor;
+	}
 }

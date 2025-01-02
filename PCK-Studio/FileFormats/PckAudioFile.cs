@@ -1,31 +1,23 @@
-﻿using System;
+﻿using OMI.Formats.Languages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OMI.Formats.Languages;
 
-namespace PckStudio.FileFormats
-{
-    public class PckAudioFile
-    {
-		public class InvalidCategoryException : Exception
-        {
-			public InvalidCategoryException(string message) : base(message)
-			{ }
+namespace PckStudio.FileFormats {
+	public class PckAudioFile {
+		public class InvalidCategoryException : Exception {
+			public InvalidCategoryException(string message) : base(message) { }
 		}
 
 		public readonly int type = 1;
 
-        public AudioCategory[] Categories => Array.FindAll(_categories, c => c is not null);
-        private AudioCategory[] _categories { get; } = new AudioCategory[9];
+		public AudioCategory[] Categories => Array.FindAll(_categories, c => c is not null);
+		private AudioCategory[] _categories { get; } = new AudioCategory[9];
 
 		public Dictionary<string, string> Credits { get; } = new Dictionary<string, string>();
 
-		public class AudioCategory
-        {
-			public enum EAudioType : int
-			{
+		public class AudioCategory {
+			public enum EAudioType : int {
 				Overworld,
 				Nether,
 				End,
@@ -37,19 +29,17 @@ namespace PckStudio.FileFormats
 				Unused,
 			}
 
-			public enum EAudioParameterType : int
-			{
+			public enum EAudioParameterType : int {
 				unk0, // dimension music
 				unk1, // unused music ?
 			}
 
 			public string Name { get; set; } = string.Empty;
 			public EAudioType AudioType { get; }
-			public List<string> SongNames { get;  } = new List<string>();
-            public EAudioParameterType parameterType { get; }
+			public List<string> SongNames { get; } = new List<string>();
+			public EAudioParameterType parameterType { get; }
 
-			public AudioCategory(string name, EAudioParameterType parameterType, EAudioType audioType)
-			{
+			public AudioCategory(string name, EAudioParameterType parameterType, EAudioType audioType) {
 				this.Name = name;
 				this.parameterType = parameterType;
 				this.AudioType = audioType;
@@ -59,44 +49,37 @@ namespace PckStudio.FileFormats
 		public string[] GetCredits() => Credits.Values.ToArray();
 		public string GetCreditsString() => string.Join("\n", Credits.Values.ToArray());
 
-		public void AddCredits(params string[] credits)
-        {
-			foreach (var credit in credits)
-            {
+		public void AddCredits(params string[] credits) {
+			foreach(var credit in credits) {
 				AddCredit(credit);
 			}
-        }
+		}
 
 		/// <summary>
 		/// Applies internal Credits to loc file
 		/// </summary>
-		public void ApplyCredits(LOCFile locFile)
-        {
-            foreach (KeyValuePair<string, string> credit in Credits)
-            {
+		public void ApplyCredits(LOCFile locFile) {
+			foreach(KeyValuePair<string, string> credit in Credits) {
 				locFile.SetLocEntry(credit.Key, credit.Value);
-            }
-        }
+			}
+		}
 
 		/// <summary>
 		/// Clears and sets the new supplied <paramref name="credits"/>
 		/// </summary>
-		public void SetCredits(params string[] credits)
-        {
+		public void SetCredits(params string[] credits) {
 			Credits.Clear();
 			AddCredits(credits);
-        }
+		}
 
-		public bool SetCredit(string creditId, string s)
-        {
-			if (!Credits.ContainsKey(creditId))
+		public bool SetCredit(string creditId, string s) {
+			if(!Credits.ContainsKey(creditId))
 				return false;
 			Credits[creditId] = s;
 			return true;
 		}
 
-		public void AddCredit(string credit)
-		{
+		public void AddCredit(string credit) {
 			Credits.Add($"IDS_CREDIT{(Credits.Count > 0 ? $"_{Credits.Count+1}" : string.Empty)}", credit);
 		}
 
@@ -107,35 +90,31 @@ namespace PckStudio.FileFormats
 		public bool HasCategory(AudioCategory.EAudioType category) => GetCategory(category) is AudioCategory;
 
 		/// <exception cref="InvalidCategoryException"></exception>
-		public AudioCategory GetCategory(AudioCategory.EAudioType category)
-		{
-			if (category < AudioCategory.EAudioType.Overworld ||
+		public AudioCategory GetCategory(AudioCategory.EAudioType category) {
+			if(category < AudioCategory.EAudioType.Overworld ||
 				category > AudioCategory.EAudioType.Unused)
 				throw new InvalidCategoryException(nameof(category));
 			return _categories[(int)category];
 		}
 
 		/// <exception cref="InvalidCategoryException"></exception>
-		public bool TryGetCategory(AudioCategory.EAudioType category, out AudioCategory audioCategory)
-        {
-			if (GetCategory(category) is AudioCategory a)
-            {
+		public bool TryGetCategory(AudioCategory.EAudioType category, out AudioCategory audioCategory) {
+			if(GetCategory(category) is AudioCategory a) {
 				audioCategory = a;
 				return true;
-            }
+			}
 			audioCategory = null;
 			return false;
-        }
+		}
 
 		/// <returns>True when category was created, otherwise false</returns>
 		/// <exception cref="InvalidCategoryException"></exception>
-		public bool AddCategory(AudioCategory.EAudioParameterType parameterType, AudioCategory.EAudioType category, string name = "")
-		{
-			if (category < AudioCategory.EAudioType.Overworld ||
+		public bool AddCategory(AudioCategory.EAudioParameterType parameterType, AudioCategory.EAudioType category, string name = "") {
+			if(category < AudioCategory.EAudioType.Overworld ||
 				category > AudioCategory.EAudioType.Unused)
 				throw new InvalidCategoryException(nameof(category));
 			bool exists = HasCategory(category);
-			if (!exists)
+			if(!exists)
 				_categories[(int)category] = new AudioCategory(name, parameterType, category);
 			return !exists;
 		}
@@ -147,10 +126,9 @@ namespace PckStudio.FileFormats
 
 		/// <returns>True when category was removed, otherwise false</returns>
 		/// <exception cref="InvalidCategoryException"></exception>
-		public bool RemoveCategory(AudioCategory.EAudioType category)
-        {
+		public bool RemoveCategory(AudioCategory.EAudioType category) {
 			bool exists = HasCategory(category);
-			if (exists)
+			if(exists)
 				_categories[(int)category] = null;
 			return exists;
 		}

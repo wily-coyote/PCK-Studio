@@ -1,28 +1,21 @@
-﻿using System;
+﻿using OMI.Formats.Pck;
+using OpenTK;
+using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL4;
+using PckStudio.Extensions;
+using PckStudio.Internal;
+using PckStudio.Renderer;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Windows.Forms;
-using System.Collections;
 using System.IO;
-using System.Text.RegularExpressions;
-
-using Newtonsoft.Json;
-using MetroFramework.Forms;
-using OMI.Formats.Pck;
-using PckStudio.Internal;
-using PckStudio.Extensions;
+using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Diagnostics;
-using System.Text;
-using OpenTK.Graphics.OpenGL4;
-using OpenTK;
-using System.Diagnostics.Eventing.Reader;
-using OpenTK.Graphics;
-using PckStudio.Renderer;
-using System.Windows.Controls.Primitives;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace PckStudio.Forms {
 	public partial class ModelGeneratorForm : Form {
@@ -261,7 +254,7 @@ void main(){
 		private void GLPaint(object sender, EventArgs e) {
 			GLRender(sender, e);
 		}
-		
+
 		private void GLEnableZoom(object sender, EventArgs e) {
 			mainView.Focus();
 		}
@@ -277,11 +270,11 @@ void main(){
 		private void GLPan(object sender, MouseEventArgs e) {
 			camera.Pan(new Vector2(e.X, e.Y));
 		}
-		
+
 		private void GLStopPanning(object sender, MouseEventArgs e) {
 			camera.StopPanning();
 		}
-		
+
 		private void GLRender(object sender, EventArgs e) {
 			// Context and clear
 			mainView.MakeCurrent();
@@ -346,7 +339,7 @@ void main(){
 			}
 			uvPictureBox.Invalidate();
 		}
-	
+
 		// TODO: call this and PopulateGLBoxes when the user edits
 		private void EmptyGLBoxes() {
 			if(model != null) {
@@ -357,7 +350,7 @@ void main(){
 				}
 			}
 		}
-		
+
 		// This also converts 4J's BOX format to our custom OpenGL format
 		// TODO: fix offset for when a skin uses thinner arms e.g. Kazooie/Birthday#2
 		private void PopulateGLBoxes() {

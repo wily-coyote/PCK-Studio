@@ -19,29 +19,25 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace PckStudio.Internal.App
-{
-    static internal class ApplicationBuildInfo
-    {
-        // this is to specify which build release this is. This is manually updated for now
-        // TODO: add different chars for different configurations
-        private const string BuildType = "c";
-        private static System.Globalization.Calendar _buildCalendar;
-        private static DateTime date = new FileInfo(Assembly.GetExecutingAssembly().Location).LastWriteTime;
-        private static string _betaBuildVersion;
+namespace PckStudio.Internal.App {
+	static internal class ApplicationBuildInfo {
+		// this is to specify which build release this is. This is manually updated for now
+		// TODO: add different chars for different configurations
+		private const string BuildType = "c";
+		private static System.Globalization.Calendar _buildCalendar;
+		private static DateTime date = new FileInfo(Assembly.GetExecutingAssembly().Location).LastWriteTime;
+		private static string _betaBuildVersion;
 
-        public static string BetaBuildVersion
-        {
-            get
-            {
-                // adopted Minecraft Java Edition Snapshot format (YYwWWn)
-                // to keep track of work in progress features and builds
-                _buildCalendar ??= new System.Globalization.CultureInfo("en-US").Calendar;
-                return _betaBuildVersion ??= string.Format("#{0}w{1}{2}",
-                    date.ToString("yy"),
-                    _buildCalendar.GetWeekOfYear(date, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday),
-                    BuildType);
-            }
-        }
-    }
+		public static string BetaBuildVersion {
+			get {
+				// adopted Minecraft Java Edition Snapshot format (YYwWWn)
+				// to keep track of work in progress features and builds
+				_buildCalendar ??= new System.Globalization.CultureInfo("en-US").Calendar;
+				return _betaBuildVersion ??= string.Format("#{0}w{1}{2}",
+					date.ToString("yy"),
+					_buildCalendar.GetWeekOfYear(date, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday),
+					BuildType);
+			}
+		}
+	}
 }

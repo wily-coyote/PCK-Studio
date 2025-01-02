@@ -1,114 +1,97 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using OMI.Formats.Pck;
 using PckStudio.Extensions;
 using PckStudio.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 
-namespace PckStudio.Internal.Deserializer
-{
-    internal sealed class AnimationDeserializer : IPckAssetDeserializer<Animation>
-    {
-        public static readonly AnimationDeserializer DefaultDeserializer = new AnimationDeserializer();
-        
-        public Animation Deserialize(PckAsset asset)
-        {
-            _ = asset ?? throw new ArgumentNullException(nameof(asset));
-            if (asset.Size > 0)
-            {
-                Image texture = asset.GetTexture();
-                IEnumerable<Image> frameTextures = texture.Split(ImageLayoutDirection.Vertical);
-                string animString = asset.GetProperty("ANIM");
-                bool animStringIsEmpty = string.IsNullOrEmpty(animString);
-                Animation animation = new Animation(frameTextures, animStringIsEmpty);
-                if (!animStringIsEmpty)
-                    DeserializeAnimationAnim(ref animation, animString);
-                return animation;
-            }
-            return Animation.CreateEmpty();
-        }
+namespace PckStudio.Internal.Deserializer {
+	internal sealed class AnimationDeserializer : IPckAssetDeserializer<Animation> {
+		public static readonly AnimationDeserializer DefaultDeserializer = new AnimationDeserializer();
 
-        private static bool DeserializeAnimationAnim(ref Animation animation, string animString)
-        {
-            animString = animString.Trim();
+		public Animation Deserialize(PckAsset asset) {
+			_ = asset ?? throw new ArgumentNullException(nameof(asset));
+			if(asset.Size > 0) {
+				Image texture = asset.GetTexture();
+				IEnumerable<Image> frameTextures = texture.Split(ImageLayoutDirection.Vertical);
+				string animString = asset.GetProperty("ANIM");
+				bool animStringIsEmpty = string.IsNullOrEmpty(animString);
+				Animation animation = new Animation(frameTextures, animStringIsEmpty);
+				if(!animStringIsEmpty)
+					DeserializeAnimationAnim(ref animation, animString);
+				return animation;
+			}
+			return Animation.CreateEmpty();
+		}
 
-            animation.Interpolate = animString.StartsWith("#");
-            animString = animation.Interpolate ? animString.Substring(1) : animString;
+		private static bool DeserializeAnimationAnim(ref Animation animation, string animString) {
+			animString = animString.Trim();
 
-            string[] animData = animString.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            if (animData.Length <= 0)
-            {
-                Trace.TraceError($"[{nameof(AnimationExtensions)}:{nameof(DeserializeAnimationAnim)}] Failed to parse anim. animData was empty.");
-                return false;
-            }
+			animation.Interpolate = animString.StartsWith("#");
+			animString = animation.Interpolate ? animString.Substring(1) : animString;
 
-            int lastFrameTime = Animation.MinimumFrameTime;
-            foreach (string frameInfo in animData)
-            {
-                string[] frameData = frameInfo.Split('*');
-                int currentFrameIndex = 0;
-                int.TryParse(frameData[0], out currentFrameIndex);
+			string[] animData = animString.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+			if(animData.Length <= 0) {
+				Trace.TraceError($"[{nameof(AnimationExtensions)}:{nameof(DeserializeAnimationAnim)}] Failed to parse anim. animData was empty.");
+				return false;
+			}
 
-                // Some textures like the Halloween 2015's Lava texture don't have a
-                // frame time parameter for certain frames.
-                // This will detect that and place the last frame time in its place.
-                // This is accurate to console edition behavior.
-                // - MattNL
-                int currentFrameTime = frameData.Length < 2 || string.IsNullOrEmpty(frameData[1]) ? lastFrameTime : int.Parse(frameData[1]);
-                animation.AddFrame(currentFrameIndex, currentFrameTime);
-                lastFrameTime = currentFrameTime;
-            }
-            return true;
-        }
+			int lastFrameTime = Animation.MinimumFrameTime;
+			foreach(string frameInfo in animData) {
+				string[] frameData = frameInfo.Split('*');
+				int currentFrameIndex = 0;
+				int.TryParse(frameData[0], out currentFrameIndex);
 
-        public Animation DeserializeJavaAnimation(JObject jsonObject, Image texture)
-        {
-            IEnumerable<Image> textures = texture.Split(ImageLayoutDirection.Vertical);
-            Animation result = new Animation(textures);
-            if (jsonObject["animation"] is not JToken animation)
-                return result;
+				// Some textures like the Halloween 2015's Lava texture don't have a
+				// frame time parameter for certain frames.
+				// This will detect that and place the last frame time in its place.
+				// This is accurate to console edition behavior.
+				// - MattNL
+				int currentFrameTime = frameData.Length < 2 || string.IsNullOrEmpty(frameData[1]) ? lastFrameTime : int.Parse(frameData[1]);
+				animation.AddFrame(currentFrameIndex, currentFrameTime);
+				lastFrameTime = currentFrameTime;
+			}
+			return true;
+		}
 
-            int frameTime = Animation.MinimumFrameTime;
+		public Animation DeserializeJavaAnimation(JObject jsonObject, Image texture) {
+			IEnumerable<Image> textures = texture.Split(ImageLayoutDirection.Vertical);
+			Animation result = new Animation(textures);
+			if(jsonObject["animation"] is not JToken animation)
+				return result;
 
-            if (animation["frametime"] is JToken frametime_token && frametime_token.Type == JTokenType.Integer)
-                frameTime = (int)frametime_token;
+			int frameTime = Animation.MinimumFrameTime;
 
-            if (animation["interpolate"] is JToken interpolate_token && interpolate_token.Type == JTokenType.Boolean)
-                result.Interpolate = (bool)interpolate_token;
+			if(animation["frametime"] is JToken frametime_token && frametime_token.Type == JTokenType.Integer)
+				frameTime = (int)frametime_token;
 
-            if (animation["frames"] is JToken frames_token && frames_token.Type == JTokenType.Array)
-            {
-                foreach (JToken frame in frames_token.Children())
-                {
-                    if (frame.Type == JTokenType.Object &&
-                        frame["index"] is JToken frame_index &&
-                        frame_index.Type == JTokenType.Integer &&
-                        frame["time"] is JToken frame_time &&
-                        frame_time.Type == JTokenType.Integer)
-                    {
-                        Debug.WriteLine("Index: {0}, Time: {1}", frame_index, frame_time);
-                        result.AddFrame((int)frame_index, (int)frame_time);
-                    }
-                    else if (frame.Type == JTokenType.Integer)
-                    {
-                        Debug.WriteLine("Index: {0}, Time: {1}", frame, frameTime);
-                        result.AddFrame((int)frame, frameTime);
-                    }
-                }
-                return result;
-            }
+			if(animation["interpolate"] is JToken interpolate_token && interpolate_token.Type == JTokenType.Boolean)
+				result.Interpolate = (bool)interpolate_token;
 
-            for (int i = 0; i < result.TextureCount; i++)
-            {
-                result.AddFrame(i, frameTime);
-            }
+			if(animation["frames"] is JToken frames_token && frames_token.Type == JTokenType.Array) {
+				foreach(JToken frame in frames_token.Children()) {
+					if(frame.Type == JTokenType.Object &&
+						frame["index"] is JToken frame_index &&
+						frame_index.Type == JTokenType.Integer &&
+						frame["time"] is JToken frame_time &&
+						frame_time.Type == JTokenType.Integer) {
+						Debug.WriteLine("Index: {0}, Time: {1}", frame_index, frame_time);
+						result.AddFrame((int)frame_index, (int)frame_time);
+					} else if(frame.Type == JTokenType.Integer) {
+						Debug.WriteLine("Index: {0}, Time: {1}", frame, frameTime);
+						result.AddFrame((int)frame, frameTime);
+					}
+				}
+				return result;
+			}
 
-            return result;
-        }
-    }
+			for(int i = 0; i < result.TextureCount; i++) {
+				result.AddFrame(i, frameTime);
+			}
+
+			return result;
+		}
+	}
 }

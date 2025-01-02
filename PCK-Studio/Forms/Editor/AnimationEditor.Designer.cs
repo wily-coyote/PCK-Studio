@@ -1,4 +1,6 @@
-﻿namespace PckStudio.Forms.Editor
+﻿using System.Windows.Forms;
+
+namespace PckStudio.Forms.Editor
 {
 	partial class AnimationEditor
 	{
@@ -54,9 +56,9 @@
             this.editorControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setBulkSpedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.javaAnimationSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.InterpolationCheckbox = new MetroFramework.Controls.MetroCheckBox();
-            this.AnimationStartStopBtn = new MetroFramework.Controls.MetroButton();
-            this.tileLabel = new MetroFramework.Controls.MetroLabel();
+            this.InterpolationCheckbox = new CheckBox();
+            this.AnimationStartStopBtn = new Button();
+            this.tileLabel = new Label();
             this.animationPictureBox = new PckStudio.ToolboxItems.AnimationPictureBox();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -283,8 +285,6 @@
             this.InterpolationCheckbox.Size = new System.Drawing.Size(129, 15);
             this.InterpolationCheckbox.TabIndex = 17;
             this.InterpolationCheckbox.Text = "Enable Interpolation";
-            this.InterpolationCheckbox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.InterpolationCheckbox.UseSelectable = true;
             this.InterpolationCheckbox.CheckedChanged += new System.EventHandler(this.InterpolationCheckbox_CheckedChanged);
             // 
             // AnimationStartStopBtn
@@ -294,11 +294,8 @@
             this.AnimationStartStopBtn.Location = new System.Drawing.Point(157, 317);
             this.AnimationStartStopBtn.Name = "AnimationStartStopBtn";
             this.AnimationStartStopBtn.Size = new System.Drawing.Size(232, 24);
-            this.AnimationStartStopBtn.Style = MetroFramework.MetroColorStyle.White;
             this.AnimationStartStopBtn.TabIndex = 18;
             this.AnimationStartStopBtn.Text = "Play Animation";
-            this.AnimationStartStopBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.AnimationStartStopBtn.UseSelectable = true;
             this.AnimationStartStopBtn.Click += new System.EventHandler(this.AnimationStartStopBtn_Click);
             // 
             // tileLabel
@@ -311,7 +308,6 @@
             this.tileLabel.Size = new System.Drawing.Size(57, 19);
             this.tileLabel.TabIndex = 20;
             this.tileLabel.Text = "tileLabel";
-            this.tileLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // animationPictureBox
             // 
@@ -343,9 +339,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(412, 362);
             this.Name = "AnimationEditor";
-            this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "Animation Editor";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnimationEditor_FormClosing);
             this.Load += new System.EventHandler(this.AnimationEditor_Load);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -364,15 +358,15 @@
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
 		private PckStudio.ToolboxItems.AnimationPictureBox animationPictureBox;
-		private MetroFramework.Controls.MetroCheckBox InterpolationCheckbox;
-		private MetroFramework.Controls.MetroButton AnimationStartStopBtn;
+		private CheckBox InterpolationCheckbox;
+		private Button AnimationStartStopBtn;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem addFrameToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem removeFrameToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem bulkAnimationSpeedToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-		private MetroFramework.Controls.MetroLabel tileLabel;
+		private Label tileLabel;
 		private System.Windows.Forms.ToolStripMenuItem howToInterpolation;
 		private System.Windows.Forms.ToolStripMenuItem editorControlsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem setBulkSpedToolStripMenuItem;

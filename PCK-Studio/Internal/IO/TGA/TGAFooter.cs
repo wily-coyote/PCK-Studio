@@ -16,12 +16,10 @@
  * 3. This notice may not be removed or altered from any source distribution.
 **/
 
-namespace PckStudio.Internal.IO.TGA
-{
-    internal struct TGAFooter
-    {
-        internal const string Signature = "TRUEVISION-XFILE";
-        public int ExtensionDataOffset; 
-        public int DeveloperAreaDataOffset;
-    }
+namespace PckStudio.Internal.IO.TGA {
+	internal struct TGAFooter {
+		internal const string Signature = "TRUEVISION-XFILE";
+		public int ExtensionDataOffset;
+		public int DeveloperAreaDataOffset;
+	}
 }
