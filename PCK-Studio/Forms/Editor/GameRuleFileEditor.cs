@@ -46,7 +46,6 @@ namespace PckStudio.Forms.Editor
 
         private void OnLoad(object sender, EventArgs e)
         {
-            RPC.SetPresence("GRF Editor", "Editing a GRF File");
             ReloadGameRuleTree();
         }
 

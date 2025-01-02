@@ -29,7 +29,6 @@ namespace PckStudio.Forms.Editor
 
 		private void LOCEditor_Load(object sender, EventArgs e)
 		{
-			RPC.SetPresence("LOC Editor", "Editing localization File.");
 			foreach(string locKey in _currentLoc.LocKeys.Keys)
 				treeViewLocKeys.Nodes.Add(locKey);
 		}

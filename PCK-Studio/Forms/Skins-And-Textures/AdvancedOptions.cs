@@ -1,5 +1,4 @@
-﻿using DiscordRPC;
-using OMI;
+﻿using OMI;
 using OMI.Formats.Pck;
 using OMI.Workers.Pck;
 using PckStudio.Extensions;

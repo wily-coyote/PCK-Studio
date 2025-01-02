@@ -24,7 +24,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using OMI;
 using System.Windows.Forms;
-using DiscordRPC;
 
 namespace PckStudio.Internal.IO.TGA
 {

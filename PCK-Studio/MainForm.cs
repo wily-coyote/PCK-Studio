@@ -214,8 +214,6 @@ namespace PckStudio
 			tabControl.SelectTab(0);
 			isSelectingTab = false;
 
-			UpdateRichPresence();
-
 			if (!string.IsNullOrWhiteSpace(saveLocation))
 				LoadPckFromFile(saveLocation);
 		}
@@ -344,7 +342,6 @@ namespace PckStudio
 			isSelectingTab = true;
 			tabControl.SelectTab(1);
 			isSelectingTab = false;
-			UpdateRichPresence();
 		}
 
 		private void CloseEditorTab()
@@ -368,21 +365,6 @@ namespace PckStudio
 			packSettingsToolStripMenuItem.Visible = false;
 			fileCountLabel.Text = string.Empty;
 			currentFilename = "";
-			UpdateRichPresence();
-		}
-
-		private void UpdateRichPresence()
-		{
-			if (currentPCK is not null &&
-				TryGetLocFile(out LOCFile locfile) &&
-				locfile.HasLocEntry("IDS_DISPLAY_NAME") &&
-				locfile.Languages.Contains("en-EN"))
-			{
-				RPC.SetPresence($"Editing a Pack: {locfile.GetLocEntry("IDS_DISPLAY_NAME", "en-EN")}");
-				return;
-			}
-			// default
-			RPC.SetPresence("An Open Source .PCK File Editor");
 		}
 
 		/// <summary>
@@ -552,7 +534,6 @@ namespace PckStudio
 			{
 				asset.SetData(new GameRuleFileWriter(grfEditor.Result));
 				wasModified = true;
-				UpdateRichPresence();
 			}
 		}
 
@@ -580,7 +561,6 @@ namespace PckStudio
 		{
 			using LOCEditor locedit = new LOCEditor(asset);
 			wasModified = locedit.ShowDialog(this) == DialogResult.OK;
-			UpdateRichPresence();
 		}
 
 		private void HandleColourFile(PckAsset asset)

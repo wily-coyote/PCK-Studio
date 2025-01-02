@@ -271,7 +271,6 @@
     <Compile Include="Classes\Models\Texel.cs" />
     <Compile Include="Classes\Models\TexelComparer.cs" />
     <Compile Include="Classes\Models\TexturePlane.cs" />
-    <Compile Include="Internal\Misc\RichPresenceClient.cs" />
     <Compile Include="Forms\Features\CemuPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -698,9 +697,6 @@
       <Version>5.8.0-alpha0098</Version>
       <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="DiscordRichPresence">
-      <Version>1.2.1.24</Version>
     </PackageReference>
     <PackageReference Include="MetroFramework">
       <Version>1.2.0.3</Version>

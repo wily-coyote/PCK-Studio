@@ -90,14 +90,14 @@ namespace PckStudio.Renderer {
 			
 			leftarm = new GLBox(this.skin, new Vector3(4.0f, 12.0f, 4.0f));
 			leftarm.Offset = new Vector2(40.0f, 16.0f);
-			leftarm.Transform.Pivot = new Vector3(0.0f, 4.0f, 0.0f);
+			leftarm.Transform.Pivot = new Vector3(-2.0f, 6.0f, 0.0f);
 			leftarm.Transform.Position = new Vector3(-6.0f, 0.0f, 0.0f);
 			leftarm.Parent = body;
 			
 			rightarm = new GLBox(this.skin, new Vector3(4.0f, 12.0f, 4.0f));
 			rightarm.Mirror = true;
 			rightarm.Offset = new Vector2(40.0f, 16.0f);
-			rightarm.Transform.Pivot = new Vector3(0.0f, 4.0f, 0.0f);
+			rightarm.Transform.Pivot = new Vector3(2.0f, 6.0f, 0.0f);
 			rightarm.Transform.Position = new Vector3(6.0f, 0.0f, 0.0f);
 			rightarm.Parent = body;
 		}

@@ -128,15 +128,15 @@ namespace PckStudio.Renderer {
 					zSize+xSize+zSize,			zSize,
 					zSize+xSize+zSize+xSize,	zSize,
 					// Left (swapped with right)
-					zSize+xSize,				zSize+ySize,
 					zSize+xSize+zSize,			zSize+ySize,
-					zSize+xSize+zSize,			zSize,
+					zSize+xSize,				zSize+ySize,
 					zSize+xSize,				zSize,
+					zSize+xSize+zSize,			zSize,
 					// Right (swapped with left)
-					0.0f,						zSize+ySize,
 					zSize,						zSize+ySize,
-					zSize,						zSize,
+					0.0f,						zSize+ySize,
 					0.0f,						zSize,
+					zSize,						zSize,
 					// Up
 					zSize+xSize,				zSize,
 					zSize,						zSize,

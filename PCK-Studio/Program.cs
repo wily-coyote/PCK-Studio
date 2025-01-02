@@ -32,12 +32,11 @@ namespace PckStudio
 
             ApplicationScope.Initialize();
             Trace.TraceInformation("Startup");
-            RPC.Initialize();
             MainInstance = new MainForm();
             Updater.SetOwner(MainInstance);
             if (args.Length > 0 && File.Exists(args[0]) && args[0].EndsWith(".pck"))
                 MainInstance.InitPckFromFile(args[0]);
-            Application.ApplicationExit += (sender, e) => { RPC.Deinitialize(); };
+            //Application.ApplicationExit += (sender, e) => {  };
             MainInstance.FocusMe();
             Application.Run(MainInstance);
         }
