@@ -85,6 +85,7 @@ namespace PckStudio.Forms {
 			this.mainView = new OpenTK.GLControl();
 			this.parentGroup = new System.Windows.Forms.GroupBox();
 			this.optionsGroup = new System.Windows.Forms.GroupBox();
+			this.toggleAnimationCheckBox = new System.Windows.Forms.CheckBox();
 			this.boxContextMenu.SuspendLayout();
 			this.offsetGroup.SuspendLayout();
 			this.tabOffsets.SuspendLayout();
@@ -476,6 +477,7 @@ namespace PckStudio.Forms {
 			this.optionsLayout.Controls.Add(this.generateTextureCheckBox);
 			this.optionsLayout.Controls.Add(this.showGuidelinesCheckBox);
 			this.optionsLayout.Controls.Add(this.showArmorCheckBox);
+			this.optionsLayout.Controls.Add(this.toggleAnimationCheckBox);
 			this.optionsLayout.Name = "optionsLayout";
 			// 
 			// layout
@@ -546,6 +548,15 @@ namespace PckStudio.Forms {
 			this.optionsGroup.Controls.Add(this.optionsLayout);
 			this.optionsGroup.Name = "optionsGroup";
 			this.optionsGroup.TabStop = false;
+			// 
+			// toggleAnimationCheckBox
+			// 
+			resources.ApplyResources(this.toggleAnimationCheckBox, "toggleAnimationCheckBox");
+			this.toggleAnimationCheckBox.Checked = true;
+			this.toggleAnimationCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.toggleAnimationCheckBox.Name = "toggleAnimationCheckBox";
+			this.toggleAnimationCheckBox.UseVisualStyleBackColor = true;
+			this.toggleAnimationCheckBox.CheckedChanged += new System.EventHandler(this.toggleAnimationChanged);
 			// 
 			// ModelGeneratorForm
 			// 
@@ -648,5 +659,6 @@ namespace PckStudio.Forms {
 		private GroupBox parentGroup;
 		private GroupBox optionsGroup;
 		private OpenTK.GLControl mainView;
+		private CheckBox toggleAnimationCheckBox;
 	}
 }

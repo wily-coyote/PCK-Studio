@@ -1476,6 +1476,33 @@
   <data name="optionsLayout.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="toggleAnimationCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="toggleAnimationCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 72</value>
+  </data>
+  <data name="toggleAnimationCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="toggleAnimationCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="toggleAnimationCheckBox.Text" xml:space="preserve">
+    <value>Animate</value>
+  </data>
+  <data name="&gt;&gt;toggleAnimationCheckBox.Name" xml:space="preserve">
+    <value>toggleAnimationCheckBox</value>
+  </data>
+  <data name="&gt;&gt;toggleAnimationCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toggleAnimationCheckBox.Parent" xml:space="preserve">
+    <value>optionsLayout</value>
+  </data>
+  <data name="&gt;&gt;toggleAnimationCheckBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="optionsLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>

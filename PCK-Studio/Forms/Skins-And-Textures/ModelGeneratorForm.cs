@@ -334,7 +334,7 @@ void main(){
 		}
 
 		// This also converts 4J's BOX format to our custom OpenGL format
-		// TODO: fix offset for when a skin uses thinner arms e.g. Kazooie/Birthday#2
+		// TODO: model hiding based on the ANIM property
 		private void PopulateGLBoxes() {
 			if(model != null) {
 				for(int i = modelBoxes.Count-1; i >= 0; i--) {
@@ -741,6 +741,10 @@ void main(){
 					listViewBoxes.SelectedItems[0].Remove();
 				Rerender();
 			}
+		}
+
+		private void toggleAnimationChanged(object sender, EventArgs e) {
+			model.Animate = toggleAnimationCheckBox.Checked;
 		}
 	}
 }
