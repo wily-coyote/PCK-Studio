@@ -7,158 +7,204 @@ using PckStudio.Internal;
 using PckStudio.Renderer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PckStudio.Forms {
 	public partial class ModelGeneratorForm : Form {
-		private Image _previewImage;
-		public Image PreviewImage => _previewImage;
 
-		private PckAsset _asset;
-		private SkinANIM _ANIM;
+		// TODO: This and ReplaceWhiteSpace should be in an util class instead of just being here.
+		private static readonly Regex sWhitespace = new Regex(@"\s+");
 
-		private static Color _backgroundColor = Color.FromArgb(0xff, 0x50, 0x50, 0x50);
+		/** <summary>The skin texture used for the model. Used in GL rendering.</summary> **/
+		private Bitmap bitmap;
+
+		private Image previewImage;
+		public Image PreviewImage => previewImage;
+
+		/** <summary>The PckAsset this form is editing a model for.</summary> **/
+		private PckAsset pckAsset;
+
+		/** <summary>The ANIM property associated with this model, taken from <see cref="ModelGeneratorForm.pckAsset"/>.</summary> **/
+		private SkinANIM skinAnim;
+
 		private static GraphicsConfig _graphicsConfig = new GraphicsConfig() {
 			InterpolationMode = InterpolationMode.NearestNeighbor,
 			PixelOffsetMode = PixelOffsetMode.HighQuality,
 		};
-
-		private static readonly string[] ValidModelBoxTypes = new string[]
-		{
-			// Base 64x32 Parts
-			"HEAD",
-			"BODY",
-			"ARM0",
-			"ARM1",
-			"LEG0",
-			"LEG1",
-
-			// 64x64 Overlay Parts
-			"HEADWEAR",
-			"JACKET",
-			"SLEEVE0",
-			"SLEEVE1",
-			"WAIST",
-			"PANTS0",
-			"PANTS1",
-
-			// Armor Parts
-			"BODYARMOR",
-			"ARMARMOR0",
-			"ARMARMOR1",
-			"BELT",
-			"LEGGING0",
-			"LEGGING1",
-			"SOCK0",
-			"SOCK1",
-			"BOOT0",
-			"BOOT1"
-		};
-
-		private static readonly string[] ValidModelOffsetTypes = new string[]
-		{
-			// Body Offsets
-			"HEAD",
-			"BODY",
-			"ARM0",
-			"ARM1",
-			"LEG0",
-			"LEG1",
-
-			// Armor Offsets
-			"HELMET",
-			"CHEST", "BODYARMOR",
-			"SHOULDER0", "ARMARMOR0",
-			"SHOULDER1", "ARMARMOR0",
-			"BELT",
-			"LEGGING0",
-			"LEGGING1",
-			"SOCK0", "BOOT0",
-			"SOCK1", "BOOT1",
-
-			"TOOL0",
-			"TOOL1",
-		};
-
+		
+		/** <summary>The currently selected SkinBOX. This should always be either an element of <see cref="ModelGeneratorForm.modelBoxes"/> or null.</summary> **/
 		SkinBOX selectedBox;
-		List<SkinBOX> modelBoxes = new List<SkinBOX>();
-		List<ModelOffset> modelOffsets = new List<ModelOffset>();
+		
+		List<SkinOFFSET> modelOffsets;
 
-		private class ModelOffset {
-			public string Name;
-			public float YOffset;
+		/** <summary>A list of SkinBOXes used in the model. This is bound to <see cref="ModelGeneratorForm.skinBoxList"/>, a <see cref="DataGridView"/>.</summary> **/
+		BindingList<SkinBOX> modelBoxes;
 
-			public ModelOffset(string name, float yOffset) {
-				Name = name;
-				YOffset = yOffset;
-			}
-			public (string, string) ToProperty() {
-				string value = $"{Name} Y {YOffset}";
-				return ("OFFSET", value.Replace(',', '.'));
-			}
-		}
-
+		/** <summary>Prevents the form's controls from updating the current SkinBOX.</summary> **/
+		private bool noUpdate;
+		
 		public ModelGeneratorForm(PckAsset asset) {
+			modelOffsets = new List<SkinOFFSET>();
+			modelBoxes = new BindingList<SkinBOX>();
+			modelBoxes.AllowNew = true;
+			modelBoxes.AllowEdit = true;
+			modelBoxes.AllowRemove = true;
+			modelBoxes.RaiseListChangedEvents = true;
 			InitializeComponent();
-			_asset = asset;
+			pckAsset = asset;
 			if(asset.Size > 0) {
 				using(var ms = new MemoryStream(asset.Data)) {
 					bitmap = new Bitmap(Image.FromStream(ms));
-					uvPictureBox.Image = Image.FromStream(ms);
+					uvPictureBox.Image = bitmap;
 				}
 			}
 			comboParent.Items.Clear();
-			comboParent.Items.AddRange(ValidModelBoxTypes);
+			comboParent.Items.AddRange(Enum.GetNames(typeof(BOXType)));
 			LoadData(asset);
 		}
 
-		private static readonly Regex sWhitespace = new Regex(@"\s+");
+		private void formLoaded(object sender, EventArgs e) {
+			GLInit();
+			PopulateGLBoxes();
+			modelBoxes.AddingNew += new AddingNewEventHandler(addingSkinBox);
+			modelBoxes.ListChanged += new ListChangedEventHandler(changeSkinBox);
+			skinBoxList.DataSource = modelBoxes;
+			skinBoxList.SelectionChanged += changeSelection;
+			skinBoxList.ClearSelection();
+			refreshValues();
+		}
+
+		private void refreshValues() {
+			noUpdate = true;
+			bool exists = selectedBox != null;
+			changeColorToolStripMenuItem.Visible = exists;
+			SizeXUpDown.Enabled = exists;
+			SizeYUpDown.Enabled = exists;
+			SizeZUpDown.Enabled = exists;
+			PosXUpDown.Enabled = exists;
+			PosYUpDown.Enabled = exists;
+			PosZUpDown.Enabled = exists;
+			UVXUpDown.Enabled = exists;
+			UVYUpDown.Enabled = exists;
+			comboParent.Enabled = exists;
+			if(exists) {
+				comboParent.Text = selectedBox.Type.ToString();
+				PosXUpDown.Value = (decimal)selectedBox.Pos.X;
+				PosYUpDown.Value = (decimal)selectedBox.Pos.Y;
+				PosZUpDown.Value = (decimal)selectedBox.Pos.Z;
+				SizeXUpDown.Value = (decimal)selectedBox.Size.X;
+				SizeYUpDown.Value = (decimal)selectedBox.Size.Y;
+				SizeZUpDown.Value = (decimal)selectedBox.Size.Z;
+				UVXUpDown.Value = (decimal)selectedBox.UV.X;
+				UVYUpDown.Value = (decimal)selectedBox.UV.Y;
+				Rerender();
+			}
+			noUpdate = false;
+		}
+
+		private void summonContextMenu(object sender, MouseEventArgs e) {
+			if(e.Button == MouseButtons.Right) {
+				var hit = skinBoxList.HitTest(e.X, e.Y);
+				skinBoxList.ClearSelection();
+				if(hit.RowIndex != -1) {
+					skinBoxList.Rows[hit.RowIndex].Selected = true;
+				}
+				changeSelection(sender, EventArgs.Empty);
+				boxContextMenu.Show(this, new Point(e.X, e.Y));
+			}
+		}
+
+		private void addingSkinBox(object sender, AddingNewEventArgs e) {
+			e.NewObject = SkinBOX.Empty;
+		}
+
+		private void addSkinBox(object sender, EventArgs e) {
+			modelBoxes.AddNew();
+		}
+
+		private void removeSkinBox(object sender, EventArgs e) {
+			if(selectedBox != null) {
+				modelBoxes.Remove(selectedBox);
+			}
+		}
+
+		private void cloneSkinBox(object sender, EventArgs e) {
+			if(selectedBox != null) {
+				modelBoxes.Insert(modelBoxes.IndexOf(selectedBox)+1, selectedBox);
+			}
+		}
+
+		private void changeSkinBox(object sender, ListChangedEventArgs e) {
+			switch(e.ListChangedType) {
+				case ListChangedType.ItemDeleted:
+					break;
+				case ListChangedType.ItemChanged:
+					break;
+			}
+		}
+
+		private void formChangeSkinBox(object sender, EventArgs e) {
+			if(selectedBox != null && !noUpdate) {
+				selectedBox.Type =
+					(BOXType)Enum.Parse(typeof(BOXType), (string)comboParent.SelectedItem);
+				selectedBox.U = (float)UVXUpDown.Value;
+				selectedBox.V = (float)UVYUpDown.Value;
+				selectedBox.PosX = (float)PosXUpDown.Value;
+				selectedBox.PosY = (float)PosYUpDown.Value;
+				selectedBox.PosZ = (float)PosZUpDown.Value;
+				selectedBox.SizeX = (float)SizeXUpDown.Value;
+				selectedBox.SizeY = (float)SizeYUpDown.Value;
+				selectedBox.SizeZ = (float)SizeZUpDown.Value;
+			}
+		}
+
+		private void changeSelection(object sender, EventArgs e) {
+			selectedBox = null;
+			var cells = skinBoxList.SelectedCells;
+			if(cells.Count > 0) {
+				selectedBox = cells[0].OwningRow.DataBoundItem as SkinBOX;
+				refreshValues();
+			}
+		}
+
 		public static string ReplaceWhitespace(string input, string replacement) {
 			return sWhitespace.Replace(input, replacement);
 		}
 
 		private void LoadData(PckAsset asset) {
-			comboParent.Enabled = asset.GetMultipleProperties("BOX").All(kv => {
-				var box = SkinBOX.FromString(kv.Value);
-				if(ValidModelBoxTypes.Contains(box.Type)) {
-					modelBoxes.Add(box);
-					return true;
+			foreach(var kv in asset.GetMultipleProperties("BOX")) {
+				try {
+					modelBoxes.Add(SkinBOX.FromString(kv.Value));
+				} catch(ArgumentException) {
+					// do nothing and don't add it
 				}
-				return false;
-			});
-			asset.GetMultipleProperties("OFFSET").All(kv => {
+			}
+			foreach(var kv in asset.GetMultipleProperties("OFFSET")) {
+				// Was the .All() really necessary if you're not gonna use
+				// the return value?
 				string[] offset = ReplaceWhitespace(kv.Value, ",").TrimEnd('\n', '\r', ' ').Split(',');
-				if(offset.Length < 3)
-					return false;
-				string name = offset[0];
-				if(offset[1] != "Y")
-					return false;
-				float value = float.Parse(offset[2]);
-				if(ValidModelOffsetTypes.Contains(name)) {
-					modelOffsets.Add(new ModelOffset(name, value));
-					return true;
+				if(offset.Length >= 3 && offset[1] == "Y") {
+					string name = offset[0];
+					float value = float.Parse(offset[2]);
+					if(Enum.IsDefined(typeof(OFFSETType), name)) {
+						modelOffsets.Add(
+							new SkinOFFSET((OFFSETType)Enum.Parse(typeof(OFFSETType), name),
+						value));
+					}
 				}
-				return false;
-			});
-
-			_ANIM = asset.GetProperty("ANIM", SkinANIM.FromString);
-			UpdateListView();
-			Rerender();
+			}
+			skinAnim = asset.GetProperty("ANIM", SkinANIM.FromString);
 		}
 
-		//Rename model part/item
-		private void renameSkinBox(object sender, EventArgs e) {
-			listViewBoxes.SelectedItems[0].BeginEdit();
-		}
-
+		// TODO: deprecate this (the GL renderer will pick up on any changes immediately)
 		private void Rerender([CallerMemberName] string caller = default!) {
 			Debug.WriteLine($"Call from {caller}", category: nameof(Rerender));
 			if(generateTextureCheckBox.Checked)
@@ -170,7 +216,6 @@ namespace PckStudio.Forms {
 		// TODO: line drawing in OpenGL for armor & guidelines, floor grid
 		private Timer glTimer;
 		private GLShader shader;
-		private Bitmap bitmap;
 		private GLTexture skin;
 		private GLHumanoidModel model;
 		private GLCamera camera;
@@ -276,7 +321,7 @@ void main(){
 			Matrix4 projection = Matrix4.CreatePerspectiveFieldOfView(
 				MathHelper.DegreesToRadians(45.0f),
 				(float)mainView.Width / (float)mainView.Height,
-				0.1f, 100.0f
+				0.1f, 1000.0f
 			);
 			// Use texture
 			skin.Use();
@@ -297,7 +342,9 @@ void main(){
 		}
 
 		#endregion
-
+		
+		// TODO: deprecate this and use a second GLControl
+		// to visualize UV mapping
 		private void GenerateUVTextureMap() {
 			Random rng = new Random();
 			using(Graphics graphics = Graphics.FromImage(uvPictureBox.Image)) {
@@ -322,7 +369,7 @@ void main(){
 			uvPictureBox.Invalidate();
 		}
 
-		// TODO: call this and PopulateGLBoxes when the user edits
+		// TODO: is this necessary?
 		private void EmptyGLBoxes() {
 			if(model != null) {
 				for(int i = model.Boxes.Count-1; i >= 0; i--) {
@@ -335,6 +382,7 @@ void main(){
 
 		// This also converts 4J's BOX format to our custom OpenGL format
 		// TODO: model hiding based on the ANIM property
+		// TODO: synchronize our BindingList<SkinBOX> with GLHumanoidModel's List<GLBox>
 		private void PopulateGLBoxes() {
 			if(model != null) {
 				for(int i = modelBoxes.Count-1; i >= 0; i--) {
@@ -344,25 +392,25 @@ void main(){
 					// starts at the top left back corner.
 					SkinBOX skinBox = modelBoxes[i];
 					GLBox glBox = new GLBox(model.Skin);
-					glBox.Size = new Vector3(skinBox.Size.X, skinBox.Size.Y, skinBox.Size.Z);
-					glBox.Offset = new Vector2(skinBox.UV.X, skinBox.UV.Y);
+					glBox.Size = new Vector3(skinBox.SizeX, skinBox.SizeY, skinBox.SizeZ);
+					glBox.Offset = new Vector2(skinBox.U, skinBox.V);
 					switch(skinBox.Type) {
-						case "HEAD":
+						case BOXType.HEAD:
 							glBox.Parent = model.Head;
 							break;
-						case "BODY":
+						case BOXType.BODY:
 							glBox.Parent = model.Body;
 							break;
-						case "ARM0":
+						case BOXType.ARM0:
 							glBox.Parent = model.LeftArm;
 							break;
-						case "ARM1":
+						case BOXType.ARM1:
 							glBox.Parent = model.RightArm;
 							break;
-						case "LEG0":
+						case BOXType.LEG0:
 							glBox.Parent = model.LeftLeg;
 							break;
-						case "LEG1":
+						case BOXType.LEG1:
 							glBox.Parent = model.RightLeg;
 							break;
 					}
@@ -370,21 +418,21 @@ void main(){
 					if(glBox.Parent != null) {
 						// There seems to be a really, really
 						// weird case where the Head has it correct like this:
-						if(skinBox.Type == "HEAD") {
+						if(skinBox.Type == BOXType.HEAD) {
 							// ...where we move the box to the bottom corner.
 							glBox.Transform.Position = new Vector3(
 								0,
 								-glBox.Parent.Size.Y/2.0f,
 								0
 							);
-						} else if(skinBox.Type == "ARM0") {
+						} else if(skinBox.Type == BOXType.ARM0) {
 							// For arms, towards shoulder????
 							glBox.Transform.Position = new Vector3(
 								(glBox.Parent.Size.X/2.0f - 1.0f),
 								glBox.Parent.Size.Y/2.0f - 2.0f,
 								0
 							);
-						} else if(skinBox.Type == "ARM1") {
+						} else if(skinBox.Type == BOXType.ARM1) {
 							// For arms, towards shoulder????
 							glBox.Transform.Position = new Vector3(
 								-(glBox.Parent.Size.X/2.0f - 1.0f),
@@ -408,133 +456,20 @@ void main(){
 					// apply 4J's position on top of it
 					// 4J's Y and Z seem to be negative compared to ours?
 					glBox.Transform.Position += new Vector3(
-						skinBox.Pos.X,
-						-skinBox.Pos.Y,
-						-skinBox.Pos.Z
+						skinBox.PosX,
+						-skinBox.PosY,
+						-skinBox.PosZ
 					);
 					model.Boxes.Add(glBox);
 				}
 			}
 		}
 
-		private void formLoaded(object sender, EventArgs e) {
-			//if (Screen.PrimaryScreen.Bounds.Height >= 780 && Screen.PrimaryScreen.Bounds.Width >= 1080)
-			//    return;
-			//
-			//Rerender();
-			GLInit();
-			PopulateGLBoxes();
-		}
-
-		private void createSkinBox(object sender, EventArgs e) {
-			modelBoxes.Add(SkinBOX.Empty);
-			UpdateListView();
-			Rerender();
-		}
-
-		//Changes Item Model Class
-		private void parentChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.Type = comboParent.Text;
-				importButton.Enabled = true;
-				exportButton.Enabled = true;
-				SizeXUpDown.Enabled = true;
-				SizeYUpDown.Enabled = true;
-				SizeZUpDown.Enabled = true;
-				PosXUpDown.Enabled = true;
-				PosYUpDown.Enabled = true;
-				PosZUpDown.Enabled = true;
-				UVXUpDown.Enabled = true;
-				UVYUpDown.Enabled = true;
-			}
-			Rerender();
-		}
-
-		private void xSizeChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.Size.X = (float)SizeXUpDown.Value;
-			}
-			UpdateListView();
-			Rerender();
-		}
-
-		private void ySizeChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.Size.Y = (float)SizeYUpDown.Value;
-			}
-			UpdateListView();
-			Rerender();
-		}
-
-		private void zSizeChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.Size.Z = (float)SizeZUpDown.Value;
-			}
-			UpdateListView();
-			Rerender();
-		}
-
-		private void xPosChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.Pos.X = (float)PosXUpDown.Value;
-			}
-			UpdateListView();
-			Rerender();
-		}
-
-
-		private void yPosChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.Pos.Y = (float)PosYUpDown.Value;
-			}
-			UpdateListView();
-			Rerender();
-		}
-
-		private void zPosChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.Pos.Z = (float)PosZUpDown.Value;
-			}
-			UpdateListView();
-			Rerender();
-		}
-
-
-		//Sets Texture X-Offset
-		private void uCoordChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.UV.X = (int)UVXUpDown.Value;
-			}
-			UpdateListView();
-			Rerender();
-		}
-
-
-		//Sets texture Y-Offset
-		private void vCoordChanged(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				part.UV.Y = (int)UVYUpDown.Value;
-			}
-			UpdateListView();
-			Rerender();
-		}
-
-
 		//Export Current Skin Texture
 		private void exportSkinTexture(object sender, EventArgs e) {
 			// Not all skins are 64x64.
-			Bitmap bitmap = new Bitmap(uvPictureBox.Image);
 			using SaveFileDialog saveFileDialog = new SaveFileDialog();
-			saveFileDialog.Filter = "PNG Image Files | *.png";
+			saveFileDialog.Filter = "Portable Network Graphics | *.png";
 			if(saveFileDialog.ShowDialog(this) == DialogResult.OK) {
 				bitmap.Save(saveFileDialog.FileName, ImageFormat.Png);
 			}
@@ -544,22 +479,18 @@ void main(){
 		//Imports Skin Texture
 		private void importSkinTexture(object sender, EventArgs e) {
 			OpenFileDialog openFileDialog = new OpenFileDialog();
-			openFileDialog.Filter = "PNG Image Files | *.png";
+			openFileDialog.Filter = "Portable Network Graphics | *.png";
 			openFileDialog.Title = "Select Skin Texture";
-
-			if(openFileDialog.ShowDialog(this) == DialogResult.OK) // skins can only be a 1:1 ratio (base 64x64) or a 2:1 ratio (base 64x32)
-			{
-				using(var img = Image.FromFile(openFileDialog.FileName)) {
-					if((img.Width == img.Height || img.Height == img.Width / 2)) {
-						generateTextureCheckBox.Checked = false;
-						using(Graphics graphics = Graphics.FromImage(uvPictureBox.Image)) {
-							graphics.ApplyConfig(_graphicsConfig);
-							graphics.DrawImage(img, 0, 0, img.Width, img.Height);
-						}
-						uvPictureBox.Invalidate();
+			// skins can only be a 1:1 ratio (base 64x64) or a 2:1 ratio (base 64x32)
+			if(openFileDialog.ShowDialog(this) == DialogResult.OK) {
+				using(Image img = Image.FromFile(openFileDialog.FileName)) {
+					if(img.Width == img.Height || img.Height == img.Width / 2) {
+						// Just the check is fine. It really didn't need to do all of the other stuff.
+						bitmap = new Bitmap(img);
+						uvPictureBox.Image = bitmap;
 						Rerender();
 					} else {
-						MessageBox.Show(this, "Not a valid skin file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show(this, "This is not a skin file. Are you sure this is a 64x64 or 64x32 image?", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 				}
 			}
@@ -568,16 +499,9 @@ void main(){
 		// Creates Model Data and Finalizes
 		private void finished(object sender, EventArgs e) {
 			foreach(SkinBOX part in modelBoxes) {
-				_asset.AddProperty("BOX", part);
+				pckAsset.AddProperty("BOX", part);
 			}
-
-			//Bitmap bitmap2 = new Bitmap(64, 64);
-			//using (Graphics graphics = Graphics.FromImage(bitmap2))
-			//{
-			//    graphics.ApplyConfig(_graphicsConfig);
-			//    graphics.DrawImage(uvPictureBox.Image, 0, 0, 64, 64);
-			//}
-			_previewImage = new Bitmap(mainView.Width, mainView.Height);
+			previewImage = new Bitmap(mainView.Width, mainView.Height);
 			Close();
 		}
 
@@ -596,7 +520,7 @@ void main(){
 		private void bodyOffsetChanged(object sender, EventArgs e) {
 			Rerender();
 		}
-		
+
 		//Re-renders tool with updated x-offset
 		private void toolOffsetChanged(object sender, EventArgs e) {
 			Rerender();
@@ -630,117 +554,11 @@ void main(){
 			modelBoxes.Add(SkinBOX.FromString("ARM1 -1 -2 -2 4 12 4 40 16 0 1 0"));
 			modelBoxes.Add(SkinBOX.FromString("LEG0 -2 0 -2 4 12 4 0 16 0 0 0"));
 			modelBoxes.Add(SkinBOX.FromString("LEG1 -2 0 -2 4 12 4 0 16 0 1 0"));
-			comboParent.Enabled = true;
-			UpdateListView();
 			Rerender();
 		}
 
-		private void UpdateListView() {
-			listViewBoxes.Items.Clear();
-			foreach(SkinBOX part in modelBoxes) {
-				ListViewItem listViewItem = new ListViewItem(part.Type);
-				listViewItem.Tag = part;
-				listViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(listViewItem, part.Pos.X.ToString()));
-				listViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(listViewItem, part.Pos.Y.ToString()));
-				listViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(listViewItem, part.Pos.Z.ToString()));
-				listViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(listViewItem, part.Size.X.ToString()));
-				listViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(listViewItem, part.Size.Y.ToString()));
-				listViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(listViewItem, part.Size.Z.ToString()));
-				listViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(listViewItem, part.UV.X.ToString()));
-				listViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(listViewItem, part.UV.Y.ToString()));
-				listViewBoxes.Items.Add(listViewItem);
-			}
-		}
-
-		private void cloneSkinBox(object sender, EventArgs e) {
-			try {
-				ListViewItem listViewItem = new ListViewItem();
-				ListViewItem selected = listViewBoxes.SelectedItems[0];
-				listViewItem.Text = selected.Text;
-				listViewItem.Tag = selected.Tag;
-				int num = 0;
-				foreach(ListViewItem.ListViewSubItem subItem in selected.SubItems) {
-					if(num > 0)
-						listViewItem.SubItems.Add(subItem.Text);
-					++num;
-				}
-				listViewBoxes.Items.Add(listViewItem);
-			} catch(Exception ex) {
-				Console.WriteLine(ex.Message);
-				MessageBox.Show(this, "Please Select a Part");
-			}
-		}
-
-		private void deleteSkinBox(object sender, EventArgs e) {
-			if(listViewBoxes.SelectedItems[0] == null)
-				return;
-			listViewBoxes.SelectedItems[0].Remove();
-			Rerender();
-		}
-
-		private void changeSkinBoxDisplayColor(object sender, EventArgs e) {
-			ColorDialog colorDialog = new ColorDialog();
-			if(colorDialog.ShowDialog(this) == DialogResult.OK)
-				listViewBoxes.SelectedItems[0].ForeColor = colorDialog.Color;
-			Rerender();
-		}
-
-		private void skinBoxSelected(object sender, EventArgs e) {
-			selectedBox = null;
-			if(
-				listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0] != null &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				selectedBox = part;
-			}
-			refreshValues();
-			Rerender();
-		}
-		private void refreshValues() {
-			bool exists = selectedBox != null;
-			changeColorToolStripMenuItem.Visible = exists;
-			SizeXUpDown.Enabled = exists;
-			SizeYUpDown.Enabled = exists;
-			SizeZUpDown.Enabled = exists;
-			PosXUpDown.Enabled = exists;
-			PosYUpDown.Enabled = exists;
-			PosZUpDown.Enabled = exists;
-			UVXUpDown.Enabled = exists;
-			UVYUpDown.Enabled = exists;
-			comboParent.Enabled = exists;
-			if(exists) {
-				comboParent.Text = selectedBox.Type;
-				PosXUpDown.Value = (decimal)selectedBox.Pos.X;
-				PosYUpDown.Value = (decimal)selectedBox.Pos.Y;
-				PosZUpDown.Value = (decimal)selectedBox.Pos.Z;
-				SizeXUpDown.Value = (decimal)selectedBox.Size.X;
-				SizeYUpDown.Value = (decimal)selectedBox.Size.Y;
-				SizeZUpDown.Value = (decimal)selectedBox.Size.Z;
-				UVXUpDown.Value = (decimal)selectedBox.UV.X;
-				UVYUpDown.Value = (decimal)selectedBox.UV.Y;
-				Rerender();
-			}
-		}
-
-		//currently scrapped
 		private void formClosing(object sender, FormClosingEventArgs e) {
 			GLDeinit(sender, e);
-			/*
-			if (MessageBox.Show("You done here?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-			{
-				e.Cancel = true;
-				return;
-			}
-			e.Cancel = false;*/
-		}
-
-		private void listViewKeyDown(object sender, KeyEventArgs e) {
-			if(e.KeyCode == Keys.Delete && listViewBoxes.SelectedItems.Count != 0 &&
-				listViewBoxes.SelectedItems[0].Tag is SkinBOX part) {
-				if(modelBoxes.Remove(part))
-					listViewBoxes.SelectedItems[0].Remove();
-				Rerender();
-			}
 		}
 
 		private void toggleAnimationChanged(object sender, EventArgs e) {

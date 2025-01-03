@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using PckStudio.Internal;
+using System;
+using System.Windows.Forms;
 
 namespace PckStudio.Forms.Editor
 {
@@ -30,31 +32,31 @@ namespace PckStudio.Forms.Editor
 		/// </summary>
 		private void InitializeComponent()
 		{
-			Label parentLabel;
-			Label positionLabel;
-			Label sizeLabel;
-			Label uvLabel;
-			Label inflationLabel;
+			System.Windows.Forms.Label parentLabel;
+			System.Windows.Forms.Label positionLabel;
+			System.Windows.Forms.Label sizeLabel;
+			System.Windows.Forms.Label uvLabel;
+			System.Windows.Forms.Label inflationLabel;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoxEditor));
-			this.closeButton = new Button();
-			this.parentComboBox = new ComboBox();
-			this.PosXUpDown = new NumericUpDown();
-			this.PosYUpDown = new NumericUpDown();
-			this.PosZUpDown = new NumericUpDown();
-			this.SizeZUpDown = new NumericUpDown();
-			this.SizeYUpDown = new NumericUpDown();
-			this.SizeXUpDown = new NumericUpDown();
-			this.uvYUpDown = new NumericUpDown();
-			this.uvXUpDown = new NumericUpDown();
-			this.armorCheckBox = new CheckBox();
-			this.mirrorCheckBox = new CheckBox();
-			this.scaleUpDown = new NumericUpDown();
-			this.layout = new TableLayoutPanel();
-			parentLabel = new Label();
-			positionLabel = new Label();
-			sizeLabel = new Label();
-			uvLabel = new Label();
-			inflationLabel = new Label();
+			this.closeButton = new System.Windows.Forms.Button();
+			this.parentComboBox = new System.Windows.Forms.ComboBox();
+			this.PosXUpDown = new System.Windows.Forms.NumericUpDown();
+			this.PosYUpDown = new System.Windows.Forms.NumericUpDown();
+			this.PosZUpDown = new System.Windows.Forms.NumericUpDown();
+			this.SizeZUpDown = new System.Windows.Forms.NumericUpDown();
+			this.SizeYUpDown = new System.Windows.Forms.NumericUpDown();
+			this.SizeXUpDown = new System.Windows.Forms.NumericUpDown();
+			this.uvYUpDown = new System.Windows.Forms.NumericUpDown();
+			this.uvXUpDown = new System.Windows.Forms.NumericUpDown();
+			this.armorCheckBox = new System.Windows.Forms.CheckBox();
+			this.mirrorCheckBox = new System.Windows.Forms.CheckBox();
+			this.scaleUpDown = new System.Windows.Forms.NumericUpDown();
+			this.layout = new System.Windows.Forms.TableLayoutPanel();
+			parentLabel = new System.Windows.Forms.Label();
+			positionLabel = new System.Windows.Forms.Label();
+			sizeLabel = new System.Windows.Forms.Label();
+			uvLabel = new System.Windows.Forms.Label();
+			inflationLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.PosXUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosYUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosZUpDown)).BeginInit();
@@ -70,7 +72,7 @@ namespace PckStudio.Forms.Editor
 			// parentLabel
 			// 
 			parentLabel.AutoSize = true;
-			parentLabel.Dock = DockStyle.Fill;
+			parentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
 			parentLabel.Location = new System.Drawing.Point(419, 0);
 			parentLabel.Name = "parentLabel";
 			parentLabel.Size = new System.Drawing.Size(38, 24);
@@ -81,7 +83,7 @@ namespace PckStudio.Forms.Editor
 			// positionLabel
 			// 
 			positionLabel.AutoSize = true;
-			positionLabel.Dock = DockStyle.Fill;
+			positionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
 			positionLabel.Location = new System.Drawing.Point(3, 0);
 			positionLabel.Name = "positionLabel";
 			positionLabel.Size = new System.Drawing.Size(44, 24);
@@ -92,7 +94,7 @@ namespace PckStudio.Forms.Editor
 			// sizeLabel
 			// 
 			sizeLabel.AutoSize = true;
-			sizeLabel.Dock = DockStyle.Fill;
+			sizeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
 			sizeLabel.Location = new System.Drawing.Point(3, 24);
 			sizeLabel.Name = "sizeLabel";
 			sizeLabel.Size = new System.Drawing.Size(44, 24);
@@ -103,7 +105,7 @@ namespace PckStudio.Forms.Editor
 			// uvLabel
 			// 
 			uvLabel.AutoSize = true;
-			uvLabel.Dock = DockStyle.Fill;
+			uvLabel.Dock = System.Windows.Forms.DockStyle.Fill;
 			uvLabel.Location = new System.Drawing.Point(3, 48);
 			uvLabel.Name = "uvLabel";
 			uvLabel.Size = new System.Drawing.Size(44, 24);
@@ -114,7 +116,7 @@ namespace PckStudio.Forms.Editor
 			// inflationLabel
 			// 
 			inflationLabel.AutoSize = true;
-			inflationLabel.Dock = DockStyle.Fill;
+			inflationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
 			inflationLabel.Location = new System.Drawing.Point(3, 72);
 			inflationLabel.Name = "inflationLabel";
 			inflationLabel.Size = new System.Drawing.Size(44, 24);
@@ -124,7 +126,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// closeButton
 			// 
-			this.closeButton.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.layout.SetColumnSpan(this.closeButton, 2);
 			this.closeButton.Location = new System.Drawing.Point(175, 99);
 			this.closeButton.Name = "closeButton";
@@ -135,7 +137,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// parentComboBox
 			// 
-			this.parentComboBox.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.parentComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.parentComboBox.FormattingEnabled = true;
 			this.parentComboBox.ItemHeight = 13;
 			this.parentComboBox.Items.AddRange(new object[] {
@@ -149,19 +151,19 @@ namespace PckStudio.Forms.Editor
             "JACKET",
             "SLEEVE0",
             "SLEEVE1",
+            "WAIST",
             "PANTS0",
             "PANTS1",
-            "WAIST",
+            "BODYARMOR",
+            "ARMARMOR0",
+            "ARMARMOR1",
+            "BELT",
             "LEGGING0",
             "LEGGING1",
             "SOCK0",
             "SOCK1",
             "BOOT0",
-            "BOOT1",
-            "ARMARMOR1",
-            "ARMARMOR0",
-            "BODYARMOR",
-            "BELT"});
+            "BOOT1"});
 			this.parentComboBox.Location = new System.Drawing.Point(463, 3);
 			this.parentComboBox.Name = "parentComboBox";
 			this.parentComboBox.Size = new System.Drawing.Size(118, 21);
@@ -169,7 +171,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// PosXUpDown
 			// 
-			this.PosXUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.PosXUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.PosXUpDown.DecimalPlaces = 3;
 			this.PosXUpDown.Increment = new decimal(new int[] {
             1,
@@ -193,7 +195,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// PosYUpDown
 			// 
-			this.PosYUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.PosYUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.PosYUpDown.DecimalPlaces = 3;
 			this.PosYUpDown.Increment = new decimal(new int[] {
             1,
@@ -217,7 +219,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// PosZUpDown
 			// 
-			this.PosZUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.PosZUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.PosZUpDown.DecimalPlaces = 3;
 			this.PosZUpDown.Increment = new decimal(new int[] {
             1,
@@ -241,7 +243,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// SizeZUpDown
 			// 
-			this.SizeZUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.SizeZUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.SizeZUpDown.DecimalPlaces = 3;
 			this.SizeZUpDown.Increment = new decimal(new int[] {
             1,
@@ -260,7 +262,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// SizeYUpDown
 			// 
-			this.SizeYUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.SizeYUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.SizeYUpDown.DecimalPlaces = 3;
 			this.SizeYUpDown.Increment = new decimal(new int[] {
             1,
@@ -279,7 +281,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// SizeXUpDown
 			// 
-			this.SizeXUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.SizeXUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.SizeXUpDown.DecimalPlaces = 3;
 			this.SizeXUpDown.Increment = new decimal(new int[] {
             1,
@@ -298,7 +300,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// uvYUpDown
 			// 
-			this.uvYUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.uvYUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.uvYUpDown.DecimalPlaces = 3;
 			this.uvYUpDown.Increment = new decimal(new int[] {
             1,
@@ -322,7 +324,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// uvXUpDown
 			// 
-			this.uvXUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.uvXUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.uvXUpDown.DecimalPlaces = 3;
 			this.uvXUpDown.Increment = new decimal(new int[] {
             1,
@@ -346,7 +348,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// armorCheckBox
 			// 
-			this.armorCheckBox.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.armorCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.armorCheckBox.AutoSize = true;
 			this.layout.SetColumnSpan(this.armorCheckBox, 2);
 			this.armorCheckBox.Location = new System.Drawing.Point(419, 27);
@@ -357,7 +359,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// mirrorCheckBox
 			// 
-			this.mirrorCheckBox.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.mirrorCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.mirrorCheckBox.AutoSize = true;
 			this.layout.SetColumnSpan(this.mirrorCheckBox, 2);
 			this.mirrorCheckBox.Location = new System.Drawing.Point(419, 51);
@@ -368,7 +370,7 @@ namespace PckStudio.Forms.Editor
 			// 
 			// scaleUpDown
 			// 
-			this.scaleUpDown.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.scaleUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.scaleUpDown.DecimalPlaces = 3;
 			this.scaleUpDown.Increment = new decimal(new int[] {
             1,
@@ -388,12 +390,12 @@ namespace PckStudio.Forms.Editor
 			// layout
 			// 
 			this.layout.ColumnCount = 6;
-			this.layout.ColumnStyles.Add(new ColumnStyle());
-			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.layout.ColumnStyles.Add(new ColumnStyle());
-			this.layout.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
 			this.layout.Controls.Add(positionLabel, 0, 0);
 			this.layout.Controls.Add(this.mirrorCheckBox, 4, 2);
 			this.layout.Controls.Add(this.parentComboBox, 5, 0);
@@ -412,22 +414,22 @@ namespace PckStudio.Forms.Editor
 			this.layout.Controls.Add(this.SizeXUpDown, 1, 1);
 			this.layout.Controls.Add(this.PosXUpDown, 1, 0);
 			this.layout.Controls.Add(this.closeButton, 2, 4);
-			this.layout.Dock = DockStyle.Fill;
+			this.layout.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.layout.Location = new System.Drawing.Point(0, 0);
 			this.layout.Name = "layout";
 			this.layout.RowCount = 5;
-			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-			this.layout.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+			this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
 			this.layout.Size = new System.Drawing.Size(584, 124);
 			this.layout.TabIndex = 33;
 			// 
 			// BoxEditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = AutoScaleMode.Font;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(584, 124);
 			this.Controls.Add(this.layout);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -436,9 +438,9 @@ namespace PckStudio.Forms.Editor
 			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(600, 160);
 			this.Name = "BoxEditor";
-			this.StartPosition = FormStartPosition.CenterParent;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "BOX Editor";
-			this.FormClosing += new FormClosingEventHandler(this.BoxEditor_FormClosing);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BoxEditor_FormClosing);
 			((System.ComponentModel.ISupportInitialize)(this.PosXUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosYUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosZUpDown)).EndInit();

@@ -4,8 +4,8 @@ using System;
 
 namespace PckStudio.Renderer {
 	internal class GLBox : IGLThing, IDisposable {
-		private bool disposedValue;
 
+		private bool disposedValue;
 		private int vao;
 		private int vbo;
 		private int ebo;
@@ -113,27 +113,27 @@ namespace PckStudio.Renderer {
 			if(mirror) {
 				uvs = new float[48] {
 					// Front
-					zSize+xSize,             zSize+ySize,
+					zSize+xSize,                zSize+ySize,
 					zSize,                      zSize+ySize,
 					zSize,                      zSize,
 					zSize+xSize,                zSize,
 					// Back
-					zSize+xSize+zSize+xSize, zSize+ySize,
+					zSize+xSize+zSize+xSize,    zSize+ySize,
 					zSize+xSize+zSize,          zSize+ySize,
 					zSize+xSize+zSize,          zSize,
 					zSize+xSize+zSize+xSize,    zSize,
 					// Left (swapped with right)
-					zSize+xSize+zSize,           zSize+ySize,
+					zSize+xSize+zSize,          zSize+ySize,
 					zSize+xSize,                zSize+ySize,
 					zSize+xSize,                zSize,
 					zSize+xSize+zSize,          zSize,
 					// Right (swapped with left)
-					zSize,                       zSize+ySize,
+					zSize,                      zSize+ySize,
 					0.0f,                       zSize+ySize,
 					0.0f,                       zSize,
 					zSize,                      zSize,
 					// Up
-					zSize+xSize,             zSize,
+					zSize+xSize,                zSize,
 					zSize,                      zSize,
 					zSize,                      0.0f,
 					zSize+xSize,                0.0f,

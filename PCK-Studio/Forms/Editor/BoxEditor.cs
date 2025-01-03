@@ -14,9 +14,9 @@ namespace PckStudio.Forms.Editor {
 		public BoxEditor(SkinBOX box, bool hasInflation) {
 			InitializeComponent();
 
-			if(string.IsNullOrEmpty(box.Type) || !parentComboBox.Items.Contains(box.Type)) {
-				throw new Exception("Failed to parse BOX value");
-			}
+			//if(string.IsNullOrEmpty(box.Type) || !parentComboBox.Items.Contains(box.Type)) {
+			//	throw new Exception("Failed to parse BOX value");
+			//}
 
 			closeButton.Visible = !Settings.Default.AutoSaveChanges;
 
@@ -31,7 +31,7 @@ namespace PckStudio.Forms.Editor {
 			SizeZUpDown.Value = (decimal)box.Size.Z;
 			uvXUpDown.Value = (decimal)box.UV.X;
 			uvYUpDown.Value = (decimal)box.UV.Y;
-			armorCheckBox.Checked = box.HideWithArmor;
+			armorCheckBox.Checked = box.ArmorFlag;
 			mirrorCheckBox.Checked = box.Mirror;
 			scaleUpDown.Value = (decimal)box.Scale;
 		}

@@ -56,36 +56,27 @@ namespace PckStudio.Forms {
 			this.SizeXUpDown = new System.Windows.Forms.NumericUpDown();
 			this.SizeYUpDown = new System.Windows.Forms.NumericUpDown();
 			this.SizeZUpDown = new System.Windows.Forms.NumericUpDown();
-			this.UVXUpDown = new System.Windows.Forms.NumericUpDown();
 			this.UVYUpDown = new System.Windows.Forms.NumericUpDown();
 			this.PosZUpDown = new System.Windows.Forms.NumericUpDown();
 			this.PosYUpDown = new System.Windows.Forms.NumericUpDown();
 			this.PosXUpDown = new System.Windows.Forms.NumericUpDown();
-			this.Part = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.X = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.Y = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.Z = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this._Width = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this._Height = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.Length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.U = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.V = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.listViewBoxes = new System.Windows.Forms.ListView();
 			this.positionGroup = new System.Windows.Forms.GroupBox();
-			this.positionGroupLayout = new System.Windows.Forms.TableLayoutPanel();
 			this.sizeGroup = new System.Windows.Forms.GroupBox();
-			this.sizeGroupLayout = new System.Windows.Forms.TableLayoutPanel();
 			this.uvGroup = new System.Windows.Forms.GroupBox();
-			this.uvGroupLayout = new System.Windows.Forms.TableLayoutPanel();
-			this.optionsLayout = new System.Windows.Forms.FlowLayoutPanel();
+			this.toggleAnimationCheckBox = new System.Windows.Forms.CheckBox();
 			this.layout = new System.Windows.Forms.TableLayoutPanel();
 			this.texturePreviewGroup = new System.Windows.Forms.GroupBox();
 			this.texturePreviewLayout = new System.Windows.Forms.TableLayoutPanel();
-			this.uvPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
 			this.mainView = new OpenTK.GLControl();
 			this.parentGroup = new System.Windows.Forms.GroupBox();
 			this.optionsGroup = new System.Windows.Forms.GroupBox();
-			this.toggleAnimationCheckBox = new System.Windows.Forms.CheckBox();
+			this.skinBoxList = new System.Windows.Forms.DataGridView();
+			this.uvPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
+			this.sizeGroupLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.uvGroupLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.UVXUpDown = new System.Windows.Forms.NumericUpDown();
+			this.positionGroupLayout = new System.Windows.Forms.TableLayoutPanel();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.boxContextMenu.SuspendLayout();
 			this.offsetGroup.SuspendLayout();
 			this.tabOffsets.SuspendLayout();
@@ -94,24 +85,25 @@ namespace PckStudio.Forms {
 			((System.ComponentModel.ISupportInitialize)(this.SizeXUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.SizeYUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.SizeZUpDown)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.UVXUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.UVYUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosZUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosYUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosXUpDown)).BeginInit();
 			this.positionGroup.SuspendLayout();
-			this.positionGroupLayout.SuspendLayout();
 			this.sizeGroup.SuspendLayout();
-			this.sizeGroupLayout.SuspendLayout();
 			this.uvGroup.SuspendLayout();
-			this.uvGroupLayout.SuspendLayout();
-			this.optionsLayout.SuspendLayout();
 			this.layout.SuspendLayout();
 			this.texturePreviewGroup.SuspendLayout();
 			this.texturePreviewLayout.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.uvPictureBox)).BeginInit();
 			this.parentGroup.SuspendLayout();
 			this.optionsGroup.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.skinBoxList)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.uvPictureBox)).BeginInit();
+			this.sizeGroupLayout.SuspendLayout();
+			this.uvGroupLayout.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.UVXUpDown)).BeginInit();
+			this.positionGroupLayout.SuspendLayout();
+			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// boxContextMenu
@@ -129,7 +121,7 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
 			this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-			this.createToolStripMenuItem.Click += new System.EventHandler(this.createSkinBox);
+			this.createToolStripMenuItem.Click += new System.EventHandler(this.addSkinBox);
 			// 
 			// cloneToolStripMenuItem
 			// 
@@ -141,13 +133,12 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteSkinBox);
+			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.removeSkinBox);
 			// 
 			// changeColorToolStripMenuItem
 			// 
 			resources.ApplyResources(this.changeColorToolStripMenuItem, "changeColorToolStripMenuItem");
 			this.changeColorToolStripMenuItem.Name = "changeColorToolStripMenuItem";
-			this.changeColorToolStripMenuItem.Click += new System.EventHandler(this.changeSkinBoxDisplayColor);
 			// 
 			// buttonDone
 			// 
@@ -158,8 +149,8 @@ namespace PckStudio.Forms {
 			// 
 			// offsetGroup
 			// 
-			resources.ApplyResources(this.offsetGroup, "offsetGroup");
 			this.offsetGroup.Controls.Add(this.tabOffsets);
+			resources.ApplyResources(this.offsetGroup, "offsetGroup");
 			this.offsetGroup.Name = "offsetGroup";
 			this.offsetGroup.TabStop = false;
 			// 
@@ -173,11 +164,13 @@ namespace PckStudio.Forms {
 			// 
 			// tabArmor
 			// 
+			this.tabArmor.BackColor = System.Drawing.Color.Transparent;
 			resources.ApplyResources(this.tabArmor, "tabArmor");
 			this.tabArmor.Name = "tabArmor";
 			// 
 			// tabBody
 			// 
+			this.tabBody.BackColor = System.Drawing.SystemColors.Control;
 			this.tabBody.Controls.Add(this.bodyLayout);
 			resources.ApplyResources(this.tabBody, "tabBody");
 			this.tabBody.Name = "tabBody";
@@ -185,6 +178,7 @@ namespace PckStudio.Forms {
 			// bodyLayout
 			// 
 			resources.ApplyResources(this.bodyLayout, "bodyLayout");
+			this.bodyLayout.BackColor = System.Drawing.Color.Transparent;
 			this.bodyLayout.Controls.Add(this.offsetArms, 1, 3);
 			this.bodyLayout.Controls.Add(this.armsLabel, 0, 3);
 			this.bodyLayout.Controls.Add(this.offsetBody, 1, 1);
@@ -251,7 +245,7 @@ namespace PckStudio.Forms {
             resources.GetString("comboParent.Items4"),
             resources.GetString("comboParent.Items5")});
 			this.comboParent.Name = "comboParent";
-			this.comboParent.SelectedValueChanged += new System.EventHandler(this.parentChanged);
+			this.comboParent.SelectedIndexChanged += new System.EventHandler(this.formChangeSkinBox);
 			// 
 			// exportButton
 			// 
@@ -289,34 +283,23 @@ namespace PckStudio.Forms {
 			// SizeXUpDown
 			// 
 			resources.ApplyResources(this.SizeXUpDown, "SizeXUpDown");
-			this.SizeXUpDown.DecimalPlaces = 1;
+			this.SizeXUpDown.DecimalPlaces = 2;
 			this.SizeXUpDown.Name = "SizeXUpDown";
-			this.SizeXUpDown.ValueChanged += new System.EventHandler(this.xSizeChanged);
+			this.SizeXUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
 			// 
 			// SizeYUpDown
 			// 
 			resources.ApplyResources(this.SizeYUpDown, "SizeYUpDown");
-			this.SizeYUpDown.DecimalPlaces = 1;
+			this.SizeYUpDown.DecimalPlaces = 2;
 			this.SizeYUpDown.Name = "SizeYUpDown";
-			this.SizeYUpDown.ValueChanged += new System.EventHandler(this.ySizeChanged);
+			this.SizeYUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
 			// 
 			// SizeZUpDown
 			// 
 			resources.ApplyResources(this.SizeZUpDown, "SizeZUpDown");
-			this.SizeZUpDown.DecimalPlaces = 1;
+			this.SizeZUpDown.DecimalPlaces = 2;
 			this.SizeZUpDown.Name = "SizeZUpDown";
-			this.SizeZUpDown.ValueChanged += new System.EventHandler(this.zSizeChanged);
-			// 
-			// UVXUpDown
-			// 
-			resources.ApplyResources(this.UVXUpDown, "UVXUpDown");
-			this.UVXUpDown.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-			this.UVXUpDown.Name = "UVXUpDown";
-			this.UVXUpDown.ValueChanged += new System.EventHandler(this.uCoordChanged);
+			this.SizeZUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
 			// 
 			// UVYUpDown
 			// 
@@ -327,105 +310,43 @@ namespace PckStudio.Forms {
             0,
             -2147483648});
 			this.UVYUpDown.Name = "UVYUpDown";
-			this.UVYUpDown.ValueChanged += new System.EventHandler(this.vCoordChanged);
+			this.UVYUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
 			// 
 			// PosZUpDown
 			// 
 			resources.ApplyResources(this.PosZUpDown, "PosZUpDown");
-			this.PosZUpDown.DecimalPlaces = 1;
+			this.PosZUpDown.DecimalPlaces = 2;
 			this.PosZUpDown.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
 			this.PosZUpDown.Name = "PosZUpDown";
-			this.PosZUpDown.ValueChanged += new System.EventHandler(this.zPosChanged);
+			this.PosZUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
 			// 
 			// PosYUpDown
 			// 
 			resources.ApplyResources(this.PosYUpDown, "PosYUpDown");
-			this.PosYUpDown.DecimalPlaces = 1;
+			this.PosYUpDown.DecimalPlaces = 2;
 			this.PosYUpDown.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
 			this.PosYUpDown.Name = "PosYUpDown";
-			this.PosYUpDown.ValueChanged += new System.EventHandler(this.yPosChanged);
+			this.PosYUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
 			// 
 			// PosXUpDown
 			// 
 			resources.ApplyResources(this.PosXUpDown, "PosXUpDown");
-			this.PosXUpDown.DecimalPlaces = 1;
+			this.PosXUpDown.DecimalPlaces = 2;
 			this.PosXUpDown.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
 			this.PosXUpDown.Name = "PosXUpDown";
-			this.PosXUpDown.ValueChanged += new System.EventHandler(this.xPosChanged);
-			// 
-			// Part
-			// 
-			resources.ApplyResources(this.Part, "Part");
-			// 
-			// X
-			// 
-			resources.ApplyResources(this.X, "X");
-			// 
-			// Y
-			// 
-			resources.ApplyResources(this.Y, "Y");
-			// 
-			// Z
-			// 
-			resources.ApplyResources(this.Z, "Z");
-			// 
-			// _Width
-			// 
-			resources.ApplyResources(this._Width, "_Width");
-			// 
-			// _Height
-			// 
-			resources.ApplyResources(this._Height, "_Height");
-			// 
-			// Length
-			// 
-			resources.ApplyResources(this.Length, "Length");
-			// 
-			// U
-			// 
-			resources.ApplyResources(this.U, "U");
-			// 
-			// V
-			// 
-			resources.ApplyResources(this.V, "V");
-			// 
-			// listViewBoxes
-			// 
-			resources.ApplyResources(this.listViewBoxes, "listViewBoxes");
-			this.listViewBoxes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.listViewBoxes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Part,
-            this.X,
-            this.Y,
-            this.Z,
-            this._Width,
-            this._Height,
-            this.Length,
-            this.U,
-            this.V});
-			this.listViewBoxes.ContextMenuStrip = this.boxContextMenu;
-			this.listViewBoxes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-			this.listViewBoxes.HideSelection = false;
-			this.listViewBoxes.LabelEdit = true;
-			this.listViewBoxes.MultiSelect = false;
-			this.listViewBoxes.Name = "listViewBoxes";
-			this.layout.SetRowSpan(this.listViewBoxes, 3);
-			this.listViewBoxes.UseCompatibleStateImageBehavior = false;
-			this.listViewBoxes.View = System.Windows.Forms.View.Details;
-			this.listViewBoxes.SelectedIndexChanged += new System.EventHandler(this.skinBoxSelected);
-			this.listViewBoxes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewKeyDown);
+			this.PosXUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
 			// 
 			// positionGroup
 			// 
@@ -434,28 +355,12 @@ namespace PckStudio.Forms {
 			this.positionGroup.Name = "positionGroup";
 			this.positionGroup.TabStop = false;
 			// 
-			// positionGroupLayout
-			// 
-			resources.ApplyResources(this.positionGroupLayout, "positionGroupLayout");
-			this.positionGroupLayout.Controls.Add(this.PosXUpDown, 0, 0);
-			this.positionGroupLayout.Controls.Add(this.PosYUpDown, 0, 1);
-			this.positionGroupLayout.Controls.Add(this.PosZUpDown, 0, 1);
-			this.positionGroupLayout.Name = "positionGroupLayout";
-			// 
 			// sizeGroup
 			// 
 			resources.ApplyResources(this.sizeGroup, "sizeGroup");
 			this.sizeGroup.Controls.Add(this.sizeGroupLayout);
 			this.sizeGroup.Name = "sizeGroup";
 			this.sizeGroup.TabStop = false;
-			// 
-			// sizeGroupLayout
-			// 
-			resources.ApplyResources(this.sizeGroupLayout, "sizeGroupLayout");
-			this.sizeGroupLayout.Controls.Add(this.SizeZUpDown, 0, 0);
-			this.sizeGroupLayout.Controls.Add(this.SizeYUpDown, 0, 1);
-			this.sizeGroupLayout.Controls.Add(this.SizeXUpDown, 0, 2);
-			this.sizeGroupLayout.Name = "sizeGroupLayout";
 			// 
 			// uvGroup
 			// 
@@ -464,21 +369,14 @@ namespace PckStudio.Forms {
 			this.uvGroup.Name = "uvGroup";
 			this.uvGroup.TabStop = false;
 			// 
-			// uvGroupLayout
+			// toggleAnimationCheckBox
 			// 
-			resources.ApplyResources(this.uvGroupLayout, "uvGroupLayout");
-			this.uvGroupLayout.Controls.Add(this.UVYUpDown, 0, 0);
-			this.uvGroupLayout.Controls.Add(this.UVXUpDown, 0, 0);
-			this.uvGroupLayout.Name = "uvGroupLayout";
-			// 
-			// optionsLayout
-			// 
-			resources.ApplyResources(this.optionsLayout, "optionsLayout");
-			this.optionsLayout.Controls.Add(this.generateTextureCheckBox);
-			this.optionsLayout.Controls.Add(this.showGuidelinesCheckBox);
-			this.optionsLayout.Controls.Add(this.showArmorCheckBox);
-			this.optionsLayout.Controls.Add(this.toggleAnimationCheckBox);
-			this.optionsLayout.Name = "optionsLayout";
+			resources.ApplyResources(this.toggleAnimationCheckBox, "toggleAnimationCheckBox");
+			this.toggleAnimationCheckBox.Checked = true;
+			this.toggleAnimationCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.toggleAnimationCheckBox.Name = "toggleAnimationCheckBox";
+			this.toggleAnimationCheckBox.UseVisualStyleBackColor = true;
+			this.toggleAnimationCheckBox.CheckedChanged += new System.EventHandler(this.toggleAnimationChanged);
 			// 
 			// layout
 			// 
@@ -486,7 +384,6 @@ namespace PckStudio.Forms {
 			this.layout.Controls.Add(this.texturePreviewGroup, 2, 0);
 			this.layout.Controls.Add(this.buttonTemplate, 0, 5);
 			this.layout.Controls.Add(this.buttonDone, 2, 5);
-			this.layout.Controls.Add(this.listViewBoxes, 0, 0);
 			this.layout.Controls.Add(this.mainView, 1, 0);
 			this.layout.Controls.Add(this.offsetGroup, 2, 4);
 			this.layout.Controls.Add(this.uvGroup, 2, 1);
@@ -494,12 +391,13 @@ namespace PckStudio.Forms {
 			this.layout.Controls.Add(this.sizeGroup, 2, 2);
 			this.layout.Controls.Add(this.parentGroup, 0, 3);
 			this.layout.Controls.Add(this.optionsGroup, 0, 4);
+			this.layout.Controls.Add(this.skinBoxList, 0, 0);
 			this.layout.Name = "layout";
 			// 
 			// texturePreviewGroup
 			// 
-			resources.ApplyResources(this.texturePreviewGroup, "texturePreviewGroup");
 			this.texturePreviewGroup.Controls.Add(this.texturePreviewLayout);
+			resources.ApplyResources(this.texturePreviewGroup, "texturePreviewGroup");
 			this.texturePreviewGroup.Name = "texturePreviewGroup";
 			this.texturePreviewGroup.TabStop = false;
 			// 
@@ -510,15 +408,6 @@ namespace PckStudio.Forms {
 			this.texturePreviewLayout.Controls.Add(this.exportButton, 1, 1);
 			this.texturePreviewLayout.Controls.Add(this.uvPictureBox, 0, 0);
 			this.texturePreviewLayout.Name = "texturePreviewLayout";
-			// 
-			// uvPictureBox
-			// 
-			this.uvPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.texturePreviewLayout.SetColumnSpan(this.uvPictureBox, 2);
-			resources.ApplyResources(this.uvPictureBox, "uvPictureBox");
-			this.uvPictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
-			this.uvPictureBox.Name = "uvPictureBox";
-			this.uvPictureBox.TabStop = false;
 			// 
 			// mainView
 			// 
@@ -544,19 +433,71 @@ namespace PckStudio.Forms {
 			// 
 			// optionsGroup
 			// 
+			this.optionsGroup.Controls.Add(this.tableLayoutPanel1);
 			resources.ApplyResources(this.optionsGroup, "optionsGroup");
-			this.optionsGroup.Controls.Add(this.optionsLayout);
 			this.optionsGroup.Name = "optionsGroup";
 			this.optionsGroup.TabStop = false;
 			// 
-			// toggleAnimationCheckBox
+			// skinBoxList
 			// 
-			resources.ApplyResources(this.toggleAnimationCheckBox, "toggleAnimationCheckBox");
-			this.toggleAnimationCheckBox.Checked = true;
-			this.toggleAnimationCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.toggleAnimationCheckBox.Name = "toggleAnimationCheckBox";
-			this.toggleAnimationCheckBox.UseVisualStyleBackColor = true;
-			this.toggleAnimationCheckBox.CheckedChanged += new System.EventHandler(this.toggleAnimationChanged);
+			this.skinBoxList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+			this.skinBoxList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			resources.ApplyResources(this.skinBoxList, "skinBoxList");
+			this.skinBoxList.Name = "skinBoxList";
+			this.layout.SetRowSpan(this.skinBoxList, 3);
+			this.skinBoxList.MouseUp += new System.Windows.Forms.MouseEventHandler(this.summonContextMenu);
+			// 
+			// uvPictureBox
+			// 
+			this.uvPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.texturePreviewLayout.SetColumnSpan(this.uvPictureBox, 2);
+			resources.ApplyResources(this.uvPictureBox, "uvPictureBox");
+			this.uvPictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+			this.uvPictureBox.Name = "uvPictureBox";
+			this.uvPictureBox.TabStop = false;
+			// 
+			// sizeGroupLayout
+			// 
+			resources.ApplyResources(this.sizeGroupLayout, "sizeGroupLayout");
+			this.sizeGroupLayout.Controls.Add(this.SizeXUpDown, 0, 0);
+			this.sizeGroupLayout.Controls.Add(this.SizeYUpDown, 0, 1);
+			this.sizeGroupLayout.Controls.Add(this.SizeZUpDown, 0, 2);
+			this.sizeGroupLayout.Name = "sizeGroupLayout";
+			// 
+			// uvGroupLayout
+			// 
+			resources.ApplyResources(this.uvGroupLayout, "uvGroupLayout");
+			this.uvGroupLayout.Controls.Add(this.UVXUpDown, 0, 0);
+			this.uvGroupLayout.Controls.Add(this.UVYUpDown, 1, 0);
+			this.uvGroupLayout.Name = "uvGroupLayout";
+			// 
+			// UVXUpDown
+			// 
+			resources.ApplyResources(this.UVXUpDown, "UVXUpDown");
+			this.UVXUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+			this.UVXUpDown.Name = "UVXUpDown";
+			this.UVXUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			// 
+			// positionGroupLayout
+			// 
+			resources.ApplyResources(this.positionGroupLayout, "positionGroupLayout");
+			this.positionGroupLayout.Controls.Add(this.PosZUpDown, 0, 2);
+			this.positionGroupLayout.Controls.Add(this.PosYUpDown, 0, 1);
+			this.positionGroupLayout.Controls.Add(this.PosXUpDown, 0, 0);
+			this.positionGroupLayout.Name = "positionGroupLayout";
+			// 
+			// tableLayoutPanel1
+			// 
+			resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+			this.tableLayoutPanel1.Controls.Add(this.generateTextureCheckBox, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.toggleAnimationCheckBox, 0, 3);
+			this.tableLayoutPanel1.Controls.Add(this.showGuidelinesCheckBox, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.showArmorCheckBox, 0, 2);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			// 
 			// ModelGeneratorForm
 			// 
@@ -570,32 +511,37 @@ namespace PckStudio.Forms {
 			this.offsetGroup.ResumeLayout(false);
 			this.tabOffsets.ResumeLayout(false);
 			this.tabBody.ResumeLayout(false);
+			this.tabBody.PerformLayout();
 			this.bodyLayout.ResumeLayout(false);
 			this.bodyLayout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.SizeXUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.SizeYUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.SizeZUpDown)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.UVXUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.UVYUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosZUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosYUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PosXUpDown)).EndInit();
 			this.positionGroup.ResumeLayout(false);
-			this.positionGroupLayout.ResumeLayout(false);
+			this.positionGroup.PerformLayout();
 			this.sizeGroup.ResumeLayout(false);
-			this.sizeGroupLayout.ResumeLayout(false);
+			this.sizeGroup.PerformLayout();
 			this.uvGroup.ResumeLayout(false);
-			this.uvGroupLayout.ResumeLayout(false);
-			this.optionsLayout.ResumeLayout(false);
-			this.optionsLayout.PerformLayout();
+			this.uvGroup.PerformLayout();
 			this.layout.ResumeLayout(false);
 			this.layout.PerformLayout();
 			this.texturePreviewGroup.ResumeLayout(false);
 			this.texturePreviewLayout.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.uvPictureBox)).EndInit();
 			this.parentGroup.ResumeLayout(false);
 			this.optionsGroup.ResumeLayout(false);
 			this.optionsGroup.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.skinBoxList)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.uvPictureBox)).EndInit();
+			this.sizeGroupLayout.ResumeLayout(false);
+			this.uvGroupLayout.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.UVXUpDown)).EndInit();
+			this.positionGroupLayout.ResumeLayout(false);
+			this.tableLayoutPanel1.ResumeLayout(false);
+			this.tableLayoutPanel1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -631,28 +577,13 @@ namespace PckStudio.Forms {
 		private NumericUpDown SizeXUpDown;
 		private NumericUpDown SizeYUpDown;
 		private NumericUpDown SizeZUpDown;
-		private NumericUpDown UVXUpDown;
 		private NumericUpDown UVYUpDown;
 		private NumericUpDown PosZUpDown;
 		private NumericUpDown PosYUpDown;
 		private NumericUpDown PosXUpDown;
-		private ColumnHeader Part;
-		private ColumnHeader X;
-		private ColumnHeader Y;
-		private ColumnHeader Z;
-		private ColumnHeader _Width;
-		private ColumnHeader _Height;
-		private ColumnHeader Length;
-		private ColumnHeader U;
-		private ColumnHeader V;
-		private ListView listViewBoxes;
 		private GroupBox positionGroup;
-		private TableLayoutPanel positionGroupLayout;
 		private GroupBox sizeGroup;
-		private TableLayoutPanel sizeGroupLayout;
 		private GroupBox uvGroup;
-		private TableLayoutPanel uvGroupLayout;
-		private FlowLayoutPanel optionsLayout;
 		private TableLayoutPanel texturePreviewLayout;
 		private TableLayoutPanel layout;
 		private GroupBox texturePreviewGroup;
@@ -660,5 +591,11 @@ namespace PckStudio.Forms {
 		private GroupBox optionsGroup;
 		private OpenTK.GLControl mainView;
 		private CheckBox toggleAnimationCheckBox;
+		private DataGridView skinBoxList;
+		private TableLayoutPanel sizeGroupLayout;
+		private TableLayoutPanel uvGroupLayout;
+		private TableLayoutPanel positionGroupLayout;
+		private NumericUpDown UVXUpDown;
+		private TableLayoutPanel tableLayoutPanel1;
 	}
 }

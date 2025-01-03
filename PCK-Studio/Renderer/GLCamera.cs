@@ -8,6 +8,9 @@ namespace PckStudio.Renderer {
 				return position;
 			}
 		}
+
+		private static readonly float zoomFactor = 4.0f;
+
 		private Vector3 position;
 		private Vector3 target;
 
@@ -27,19 +30,20 @@ namespace PckStudio.Renderer {
 			lastPoint = nowPoint;
 		}
 
-		// TODO: find a better way to pan without gimbal locking (?)
+		// TODO: find a better way to pan
 		public void Pan(Vector2 newPos) {
 			if(panning == true) {
 				nowPoint = newPos;
 				Vector2 delta = (nowPoint - lastPoint);
-				Matrix4 pan =
-					Matrix4.CreateRotationY(MathHelper.DegreesToRadians(-delta.X))
-					*
-					Matrix4.CreateRotationX(MathHelper.DegreesToRadians(-delta.Y));
-				Vector4 newCamera = new Vector4(position - target);
-				newCamera.W = 1.0f;
-				newCamera *= pan;
-				position = newCamera.Xyz + target;
+				Vector3 normal = (position - target);
+				float length = normal.Length;
+				normal.Normalize();
+				Vector3 right = Vector3.Cross(Vector3.UnitY, normal);
+				Vector3 up = Vector3.Cross(normal, right);
+				normal += ((right * -delta.X) + (up * delta.Y))/50.0f;
+				normal.Normalize();
+				normal *= length;
+				position = target + normal;
 				lastPoint = nowPoint;
 			}
 		}
@@ -50,7 +54,7 @@ namespace PckStudio.Renderer {
 
 		public void Zoom(float by) {
 			Vector3 direction = (position - target).Normalized();
-			position -= direction * Math.Sign(by);
+			position -= direction * Math.Sign(by) * zoomFactor;
 		}
 
 		public Matrix4 GetMatrix() {

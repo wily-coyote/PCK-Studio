@@ -103,36 +103,15 @@ namespace PckStudio.Renderer {
 			if(Animate) {
 				double time = _time * 10.0f;
 				// anda anda anda pica pica pica
-				body.Transform.Position = new Vector3(
-					0.0f,
-					(float)Math.Abs(Math.Sin(time * 0.6662f)) * 5.0f - 24.0f + 20.0f,
-					0.0f
-				);
-				head.Transform.Rotation = new Vector3(
-					(float)Math.Sin(time*0.23f) * 1.0f,
-					(float)Math.Sin(time*0.1f) * 0.8f,
-					0.0f
-				);
-				leftleg.Transform.Rotation = new Vector3(
-					(float)Math.Sin(time*0.6662f)*1.4f,
-					0.0f,
-					0.0f
-				);
-				rightleg.Transform.Rotation = new Vector3(
-					(float)Math.Sin(time*0.6662f+Math.PI)*1.4f,
-					0.0f,
-					0.0f
-				);
-				rightarm.Transform.Rotation = new Vector3(
-					(float)Math.Sin(time*0.6662f)*2.0f,
-					0.0f,
-					-((float)Math.Sin(time*0.2819f) - 1.0f) * 1.0f
-				);
-				leftarm.Transform.Rotation = new Vector3(
-					(float)Math.Sin(time*0.6662f+Math.PI)*2.0f,
-					0.0f,
-					-((float)Math.Sin(time*0.2312f) + 1.0f) * 1.0f
-				);
+				body.Transform.Position.Y		= (float)Math.Abs(Math.Sin(time * 0.6662f)) * 5.0f - 24.0f + 20.0f;
+				head.Transform.Rotation.X		= (float)Math.Sin(time*0.23f) * 1.0f;
+				head.Transform.Rotation.Y		= (float)Math.Sin(time*0.1f) * 0.8f;
+				leftleg.Transform.Rotation.X	= (float)Math.Sin(time*0.6662f)*1.4f;
+				rightleg.Transform.Rotation.X	= (float)Math.Sin(time*0.6662f+Math.PI)*1.4f;
+				rightarm.Transform.Rotation.X	= (float)Math.Sin(time*0.6662f)*2.0f;
+				rightarm.Transform.Rotation.Z	= -((float)Math.Sin(time*0.2819f) - 1.0f) * 1.0f;
+				leftarm.Transform.Rotation.X	= (float)Math.Sin(time*0.6662f+Math.PI)*2.0f;
+				leftarm.Transform.Rotation.Z	= -((float)Math.Sin(time*0.2312f) + 1.0f) * 1.0f;
 			} else {
 				body.Transform.Position = Vector3.Zero;
 				head.Transform.Rotation = Vector3.Zero;
@@ -144,15 +123,16 @@ namespace PckStudio.Renderer {
 		}
 
 		public void Render(GLShader shader, Vector3 camera) {
-			List<GLBox> objects = new List<GLBox>();
-			objects.Add(body);
-			objects.Add(head);
-			objects.Add(leftleg);
-			objects.Add(rightleg);
-			objects.Add(leftarm);
-			objects.Add(rightarm);
-			objects.Add(hat);
-			objects.AddRange(Boxes);
+			List<GLBox> objects = [
+				body,
+				head,
+				leftleg,
+				rightleg,
+				leftarm,
+				rightarm,
+				hat,
+				..Boxes,
+			];
 			objects.Sort((a, b) => {
 				return (int)(b.DistanceFromCamera(camera) - a.DistanceFromCamera(camera));
 			});
