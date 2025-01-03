@@ -299,15 +299,15 @@ namespace PckStudio.Internal {
 		/** <summary>Calculates a hash code based on this SkinBOX's values.</summary> **/
 		public override int GetHashCode() {
 			return
-				type.GetHashCode() %
-				posX.GetHashCode() %
-				posY.GetHashCode() %
-				posZ.GetHashCode() %
-				sizeX.GetHashCode() %
-				sizeY.GetHashCode() %
-				sizeZ.GetHashCode() %
-				u.GetHashCode() %
-				v.GetHashCode();
+				24 * type.GetHashCode() +
+				24 * posX.GetHashCode() +
+				24 * posY.GetHashCode() +
+				24 * posZ.GetHashCode() +
+				24 * sizeX.GetHashCode() +
+				24 * sizeY.GetHashCode() +
+				24 * sizeZ.GetHashCode() +
+				24 * u.GetHashCode() +
+				24 * v.GetHashCode();
 		}
 
 		/** <summary>Checks if this SkinBOX is equivalent to another.</summary> **/

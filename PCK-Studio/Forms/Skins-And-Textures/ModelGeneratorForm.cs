@@ -23,16 +23,16 @@ namespace PckStudio.Forms {
 		// TODO: This and ReplaceWhiteSpace should be in an util class instead of just being here.
 		private static readonly Regex sWhitespace = new Regex(@"\s+");
 
-		/** <summary>The skin texture used for the model. Used in GL rendering.</summary> **/
+		/** <summary>The .NET image used for the model. Used in GL rendering.</summary> **/
 		private Bitmap bitmap;
 
 		private Image previewImage;
 		public Image PreviewImage => previewImage;
 
-		/** <summary>The PckAsset this form is editing a model for.</summary> **/
+		/** <summary>The <see cref="PckAsset"/> this form is editing a model for.</summary> **/
 		private PckAsset pckAsset;
 
-		/** <summary>The ANIM property associated with this model, taken from <see cref="ModelGeneratorForm.pckAsset"/>.</summary> **/
+		/** <summary>The <see cref="SkinANIM"/> property associated with this model, taken from <see cref="pckAsset"/>.</summary> **/
 		private SkinANIM skinAnim;
 
 		private static GraphicsConfig _graphicsConfig = new GraphicsConfig() {
@@ -40,12 +40,12 @@ namespace PckStudio.Forms {
 			PixelOffsetMode = PixelOffsetMode.HighQuality,
 		};
 		
-		/** <summary>The currently selected SkinBOX. This should always be either an element of <see cref="ModelGeneratorForm.modelBoxes"/> or null.</summary> **/
+		/** <summary>The currently selected SkinBOX. This should always be either an element of <see cref="modelBoxes"/> or null.</summary> **/
 		SkinBOX selectedBox;
 		
 		List<SkinOFFSET> modelOffsets;
 
-		/** <summary>A list of SkinBOXes used in the model. This is bound to <see cref="ModelGeneratorForm.skinBoxList"/>, a <see cref="DataGridView"/>.</summary> **/
+		/** <summary>A list of <see cref="SkinBOX"/>es used in the model. This is bound to <see cref="skinBoxList"/>, a <see cref="DataGridView"/>.</summary> **/
 		BindingList<SkinBOX> modelBoxes;
 
 		/** <summary>Prevents the form's controls from updating the current SkinBOX.</summary> **/
@@ -68,14 +68,13 @@ namespace PckStudio.Forms {
 			}
 			comboParent.Items.Clear();
 			comboParent.Items.AddRange(Enum.GetNames(typeof(BOXType)));
-			LoadData(asset);
 		}
 
 		private void formLoaded(object sender, EventArgs e) {
 			GLInit();
-			PopulateGLBoxes();
 			modelBoxes.AddingNew += new AddingNewEventHandler(addingSkinBox);
 			modelBoxes.ListChanged += new ListChangedEventHandler(changeSkinBox);
+			LoadData(pckAsset);
 			skinBoxList.DataSource = modelBoxes;
 			skinBoxList.SelectionChanged += changeSelection;
 			skinBoxList.ClearSelection();
@@ -95,6 +94,9 @@ namespace PckStudio.Forms {
 			UVXUpDown.Enabled = exists;
 			UVYUpDown.Enabled = exists;
 			comboParent.Enabled = exists;
+			cloneToolStripMenuItem.Enabled = exists;
+			deleteToolStripMenuItem.Enabled = exists;
+			changeColorToolStripMenuItem.Enabled = exists;
 			if(exists) {
 				comboParent.Text = selectedBox.Type.ToString();
 				PosXUpDown.Value = (decimal)selectedBox.Pos.X;
@@ -145,8 +147,15 @@ namespace PckStudio.Forms {
 		private void changeSkinBox(object sender, ListChangedEventArgs e) {
 			switch(e.ListChangedType) {
 				case ListChangedType.ItemDeleted:
+					model.Boxes.RemoveAt(e.NewIndex);
 					break;
 				case ListChangedType.ItemChanged:
+					RecalculateGLBox(modelBoxes[e.NewIndex], model.Boxes[e.NewIndex]);
+					break;
+				case ListChangedType.ItemAdded:
+					SkinBOX skinBox = modelBoxes[e.NewIndex];
+					GLBox glBox = CreateGLBox(skinBox);
+					model.Boxes.Insert(e.NewIndex, glBox);
 					break;
 			}
 		}
@@ -379,90 +388,16 @@ void main(){
 				}
 			}
 		}
-
-		// This also converts 4J's BOX format to our custom OpenGL format
-		// TODO: model hiding based on the ANIM property
-		// TODO: synchronize our BindingList<SkinBOX> with GLHumanoidModel's List<GLBox>
-		private void PopulateGLBoxes() {
-			if(model != null) {
-				for(int i = modelBoxes.Count-1; i >= 0; i--) {
-					// GLBox (our Box)
-					// starts at the center.
-					// SkinBOX (4J's Box)
-					// starts at the top left back corner.
-					SkinBOX skinBox = modelBoxes[i];
-					GLBox glBox = new GLBox(model.Skin);
-					glBox.Size = new Vector3(skinBox.SizeX, skinBox.SizeY, skinBox.SizeZ);
-					glBox.Offset = new Vector2(skinBox.U, skinBox.V);
-					switch(skinBox.Type) {
-						case BOXType.HEAD:
-							glBox.Parent = model.Head;
-							break;
-						case BOXType.BODY:
-							glBox.Parent = model.Body;
-							break;
-						case BOXType.ARM0:
-							glBox.Parent = model.LeftArm;
-							break;
-						case BOXType.ARM1:
-							glBox.Parent = model.RightArm;
-							break;
-						case BOXType.LEG0:
-							glBox.Parent = model.LeftLeg;
-							break;
-						case BOXType.LEG1:
-							glBox.Parent = model.RightLeg;
-							break;
-					}
-					// move to the bottom, something corner
-					if(glBox.Parent != null) {
-						// There seems to be a really, really
-						// weird case where the Head has it correct like this:
-						if(skinBox.Type == BOXType.HEAD) {
-							// ...where we move the box to the bottom corner.
-							glBox.Transform.Position = new Vector3(
-								0,
-								-glBox.Parent.Size.Y/2.0f,
-								0
-							);
-						} else if(skinBox.Type == BOXType.ARM0) {
-							// For arms, towards shoulder????
-							glBox.Transform.Position = new Vector3(
-								(glBox.Parent.Size.X/2.0f - 1.0f),
-								glBox.Parent.Size.Y/2.0f - 2.0f,
-								0
-							);
-						} else if(skinBox.Type == BOXType.ARM1) {
-							// For arms, towards shoulder????
-							glBox.Transform.Position = new Vector3(
-								-(glBox.Parent.Size.X/2.0f - 1.0f),
-								glBox.Parent.Size.Y/2.0f - 2.0f,
-								0
-							);
-						} else {
-							// Anywhere else, it's the top corner?
-							glBox.Transform.Position = new Vector3(
-								0,
-								glBox.Parent.Size.Y/2.0f,
-								0
-							);
-						}
-					}
-					glBox.Transform.Position += new Vector3(
-						glBox.Size.X/2.0f,
-						-glBox.Size.Y/2.0f,
-						-glBox.Size.Z/2.0f
-					);
-					// apply 4J's position on top of it
-					// 4J's Y and Z seem to be negative compared to ours?
-					glBox.Transform.Position += new Vector3(
-						skinBox.PosX,
-						-skinBox.PosY,
-						-skinBox.PosZ
-					);
-					model.Boxes.Add(glBox);
-				}
-			}
+		
+		/** <summary>Converts a SkinBOX to a GLBox. If the GLBox evaluates to null, a new GLBox is created.</summary> **/
+		private GLBox RecalculateGLBox(SkinBOX skinBox, GLBox glBox) {
+			if(glBox == null)
+				glBox = new GLBox(model.Skin);
+			return glBox.UpdateFromSkinBox(model, skinBox);
+		}
+		
+		private GLBox CreateGLBox(SkinBOX skinBox) {
+			return GLBox.FromSkinBox(skin, model, skinBox);
 		}
 
 		//Export Current Skin Texture
@@ -474,7 +409,6 @@ void main(){
 				bitmap.Save(saveFileDialog.FileName, ImageFormat.Png);
 			}
 		}
-
 
 		//Imports Skin Texture
 		private void importSkinTexture(object sender, EventArgs e) {
@@ -514,7 +448,6 @@ void main(){
 		private void headOffsetChanged(object sender, EventArgs e) {
 			Rerender();
 		}
-
 
 		//Re-renders body with updated x-offset
 		private void bodyOffsetChanged(object sender, EventArgs e) {

@@ -1,6 +1,7 @@
 ﻿using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 using System;
+using PckStudio.Internal;
 
 namespace PckStudio.Renderer {
 	internal class GLBox : IGLThing, IDisposable {
@@ -97,6 +98,94 @@ namespace PckStudio.Renderer {
 
 		public GLBox(GLTexture texture, Vector3 size) : this(texture) {
 			Resize(size, 0.0f, false);
+		}
+
+		public static GLBox FromSkinBox(GLTexture texture, GLHumanoidModel model, SkinBOX skinBox) {
+			GLBox glBox = new GLBox(texture);
+			glBox.UpdateFromSkinBox(model, skinBox);
+			return glBox;
+		}
+
+		public GLBox UpdateFromSkinBox(GLHumanoidModel model, SkinBOX skinBox) {
+			// This also converts 4J's BOX format to our custom OpenGL format.
+			// GLBox (our Box)
+			// starts at the center.
+			// SkinBOX (4J's Box)
+			// starts at the top left back corner.
+			this.Size = new Vector3(skinBox.SizeX, skinBox.SizeY, skinBox.SizeZ);
+			this.Offset = new Vector2(skinBox.U, skinBox.V);
+			this.Mirror = skinBox.Mirror;
+			switch(skinBox.Type) {
+				case BOXType.HEAD:
+					this.Parent = model.Head;
+					break;
+				case BOXType.BODY:
+					this.Parent = model.Body;
+					break;
+				case BOXType.ARM0:
+					this.Parent = model.LeftArm;
+					break;
+				case BOXType.ARM1:
+					this.Parent = model.RightArm;
+					break;
+				case BOXType.LEG0:
+					this.Parent = model.LeftLeg;
+					break;
+				case BOXType.LEG1:
+					this.Parent = model.RightLeg;
+					break;
+			}
+			if(this.Parent != null) {
+				// Weird math that calculates
+				// parent origin
+				if(skinBox.Type == BOXType.HEAD) {
+					// center bottom center corner
+					this.Transform.Position = new Vector3(
+						0,
+						-this.Parent.Size.Y/2.0f,
+						0
+					);
+				} else if(skinBox.Type == BOXType.ARM0) {
+					// For arms, towards shoulder????
+					// right top (shoulder) center
+					this.Transform.Position = new Vector3(
+						(this.Parent.Size.X/2.0f - 1.0f),
+						this.Parent.Size.Y/2.0f - 2.0f,
+						0
+					);
+				} else if(skinBox.Type == BOXType.ARM1) {
+					// For arms, towards shoulder????
+					// left top (shoulder) center
+					this.Transform.Position = new Vector3(
+						-(this.Parent.Size.X/2.0f - 1.0f),
+						this.Parent.Size.Y/2.0f - 2.0f,
+						0
+					);
+				} else {
+					// default, center top center
+					// also used in legs
+					this.Transform.Position = new Vector3(
+						0,
+						this.Parent.Size.Y/2.0f,
+						0
+					);
+				}
+			}
+			// apply the offset so that it matches the
+			// left top front corner of our cube
+			this.Transform.Position += new Vector3(
+				this.Size.X/2.0f,
+				-this.Size.Y/2.0f,
+				-this.Size.Z/2.0f
+			);
+			// apply 4J's position on top of it
+			// 4J's +Y and +Z are negative to what OpenGL's +Y and +Z would be
+			this.Transform.Position += new Vector3(
+				skinBox.PosX,
+				-skinBox.PosY,
+				-skinBox.PosZ
+			);
+			return this;
 		}
 
 		public void Resize(Vector3 newSize, float newPadding, bool newMirror) {
