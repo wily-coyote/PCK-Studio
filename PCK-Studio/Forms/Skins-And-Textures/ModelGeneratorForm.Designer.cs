@@ -185,6 +185,7 @@ namespace PckStudio.Forms {
 			this.tabOffsets.Controls.Add(this.tabArmor);
 			this.tabOffsets.Controls.Add(this.tabBody);
 			resources.ApplyResources(this.tabOffsets, "tabOffsets");
+			this.helpProvider.SetHelpString(this.tabOffsets, resources.GetString("tabOffsets.HelpString"));
 			this.tabOffsets.Name = "tabOffsets";
 			this.tabOffsets.SelectedIndex = 0;
 			this.helpProvider.SetShowHelp(this.tabOffsets, ((bool)(resources.GetObject("tabOffsets.ShowHelp"))));
@@ -332,6 +333,7 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.SizeXUpDown, "SizeXUpDown");
 			this.SizeXUpDown.DecimalPlaces = 2;
+			this.helpProvider.SetHelpString(this.SizeXUpDown, resources.GetString("SizeXUpDown.HelpString"));
 			this.SizeXUpDown.Name = "SizeXUpDown";
 			this.helpProvider.SetShowHelp(this.SizeXUpDown, ((bool)(resources.GetObject("SizeXUpDown.ShowHelp"))));
 			this.SizeXUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
@@ -340,6 +342,7 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.SizeYUpDown, "SizeYUpDown");
 			this.SizeYUpDown.DecimalPlaces = 2;
+			this.helpProvider.SetHelpString(this.SizeYUpDown, resources.GetString("SizeYUpDown.HelpString"));
 			this.SizeYUpDown.Name = "SizeYUpDown";
 			this.helpProvider.SetShowHelp(this.SizeYUpDown, ((bool)(resources.GetObject("SizeYUpDown.ShowHelp"))));
 			this.SizeYUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
@@ -348,6 +351,7 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.SizeZUpDown, "SizeZUpDown");
 			this.SizeZUpDown.DecimalPlaces = 2;
+			this.helpProvider.SetHelpString(this.SizeZUpDown, resources.GetString("SizeZUpDown.HelpString"));
 			this.SizeZUpDown.Name = "SizeZUpDown";
 			this.helpProvider.SetShowHelp(this.SizeZUpDown, ((bool)(resources.GetObject("SizeZUpDown.ShowHelp"))));
 			this.SizeZUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
@@ -355,6 +359,7 @@ namespace PckStudio.Forms {
 			// UVYUpDown
 			// 
 			resources.ApplyResources(this.UVYUpDown, "UVYUpDown");
+			this.helpProvider.SetHelpString(this.UVYUpDown, resources.GetString("UVYUpDown.HelpString"));
 			this.UVYUpDown.Minimum = new decimal(new int[] {
             100,
             0,
@@ -368,6 +373,7 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.PosZUpDown, "PosZUpDown");
 			this.PosZUpDown.DecimalPlaces = 2;
+			this.helpProvider.SetHelpString(this.PosZUpDown, resources.GetString("PosZUpDown.HelpString"));
 			this.PosZUpDown.Minimum = new decimal(new int[] {
             100,
             0,
@@ -381,6 +387,7 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.PosYUpDown, "PosYUpDown");
 			this.PosYUpDown.DecimalPlaces = 2;
+			this.helpProvider.SetHelpString(this.PosYUpDown, resources.GetString("PosYUpDown.HelpString"));
 			this.PosYUpDown.Minimum = new decimal(new int[] {
             100,
             0,
@@ -394,6 +401,7 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.PosXUpDown, "PosXUpDown");
 			this.PosXUpDown.DecimalPlaces = 2;
+			this.helpProvider.SetHelpString(this.PosXUpDown, resources.GetString("PosXUpDown.HelpString"));
 			this.PosXUpDown.Minimum = new decimal(new int[] {
             100,
             0,
@@ -459,6 +467,7 @@ namespace PckStudio.Forms {
 			// UVXUpDown
 			// 
 			resources.ApplyResources(this.UVXUpDown, "UVXUpDown");
+			this.helpProvider.SetHelpString(this.UVXUpDown, resources.GetString("UVXUpDown.HelpString"));
 			this.UVXUpDown.Minimum = new decimal(new int[] {
             100,
             0,

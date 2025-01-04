@@ -246,6 +246,399 @@
   <data name="&gt;&gt;buttonDone.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="tabArmor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabArmor.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabArmor.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabArmor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 134</value>
+  </data>
+  <data name="tabArmor.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabArmor.Text" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="&gt;&gt;tabArmor.Name" xml:space="preserve">
+    <value>tabArmor</value>
+  </data>
+  <data name="&gt;&gt;tabArmor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabArmor.Parent" xml:space="preserve">
+    <value>tabOffsets</value>
+  </data>
+  <data name="&gt;&gt;tabArmor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bodyLayout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bodyLayout.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="offsetArms.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="offsetArms.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 81</value>
+  </data>
+  <data name="offsetArms.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="offsetArms.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="offsetArms.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="offsetArms.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;offsetArms.Name" xml:space="preserve">
+    <value>offsetArms</value>
+  </data>
+  <data name="&gt;&gt;offsetArms.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;offsetArms.Parent" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;offsetArms.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="armsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="armsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="armsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="armsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 84</value>
+  </data>
+  <data name="armsLabel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="armsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="armsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="armsLabel.Text" xml:space="preserve">
+    <value>ARMS</value>
+  </data>
+  <data name="armsLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;armsLabel.Name" xml:space="preserve">
+    <value>armsLabel</value>
+  </data>
+  <data name="&gt;&gt;armsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;armsLabel.Parent" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;armsLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="offsetBody.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="offsetBody.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 29</value>
+  </data>
+  <data name="offsetBody.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="offsetBody.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="offsetBody.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="offsetBody.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;offsetBody.Name" xml:space="preserve">
+    <value>offsetBody</value>
+  </data>
+  <data name="&gt;&gt;offsetBody.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;offsetBody.Parent" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;offsetBody.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="offsetLegs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="offsetLegs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 55</value>
+  </data>
+  <data name="offsetLegs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="offsetLegs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="offsetLegs.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="offsetLegs.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;offsetLegs.Name" xml:space="preserve">
+    <value>offsetLegs</value>
+  </data>
+  <data name="&gt;&gt;offsetLegs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;offsetLegs.Parent" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;offsetLegs.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="headLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="headLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="headLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="headLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 6</value>
+  </data>
+  <data name="headLabel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="headLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="headLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="headLabel.Text" xml:space="preserve">
+    <value>HEAD</value>
+  </data>
+  <data name="headLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;headLabel.Name" xml:space="preserve">
+    <value>headLabel</value>
+  </data>
+  <data name="&gt;&gt;headLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headLabel.Parent" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;headLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="legsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="legsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="legsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="legsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 58</value>
+  </data>
+  <data name="legsLabel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="legsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="legsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="legsLabel.Text" xml:space="preserve">
+    <value>LEGS</value>
+  </data>
+  <data name="legsLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;legsLabel.Name" xml:space="preserve">
+    <value>legsLabel</value>
+  </data>
+  <data name="&gt;&gt;legsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;legsLabel.Parent" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;legsLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="offsetHead.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="offsetHead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 3</value>
+  </data>
+  <data name="offsetHead.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="offsetHead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="offsetHead.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="offsetHead.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;offsetHead.Name" xml:space="preserve">
+    <value>offsetHead</value>
+  </data>
+  <data name="&gt;&gt;offsetHead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;offsetHead.Parent" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;offsetHead.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="bodylabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="bodylabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bodylabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bodylabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 32</value>
+  </data>
+  <data name="bodylabel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bodylabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="bodylabel.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="bodylabel.Text" xml:space="preserve">
+    <value>BODY</value>
+  </data>
+  <data name="bodylabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;bodylabel.Name" xml:space="preserve">
+    <value>bodylabel</value>
+  </data>
+  <data name="&gt;&gt;bodylabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bodylabel.Parent" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;bodylabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="bodyLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="bodyLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="bodyLayout.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="bodyLayout.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bodyLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 126</value>
+  </data>
+  <data name="bodyLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>146</value>
+  </data>
+  <data name="&gt;&gt;bodyLayout.Name" xml:space="preserve">
+    <value>bodyLayout</value>
+  </data>
+  <data name="&gt;&gt;bodyLayout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bodyLayout.Parent" xml:space="preserve">
+    <value>tabBody</value>
+  </data>
+  <data name="&gt;&gt;bodyLayout.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bodyLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="offsetArms" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="armsLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="offsetBody" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="offsetLegs" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="headLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="legsLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="offsetHead" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="bodylabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabBody.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabBody.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabBody.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabBody.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 132</value>
+  </data>
+  <data name="tabBody.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabBody.Text" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="&gt;&gt;tabBody.Name" xml:space="preserve">
+    <value>tabBody</value>
+  </data>
+  <data name="&gt;&gt;tabBody.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabBody.Parent" xml:space="preserve">
+    <value>tabOffsets</value>
+  </data>
+  <data name="&gt;&gt;tabBody.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabOffsets.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabOffsets.HelpString" xml:space="preserve">
+    <value>This currently does not do anything.</value>
+  </data>
+  <data name="tabOffsets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="tabOffsets.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabOffsets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 160</value>
+  </data>
+  <data name="tabOffsets.TabIndex" type="System.Int32, mscorlib">
+    <value>144</value>
+  </data>
   <data name="&gt;&gt;tabOffsets.Name" xml:space="preserve">
     <value>tabOffsets</value>
   </data>
@@ -290,543 +683,6 @@
   </data>
   <data name="&gt;&gt;offsetGroup.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabArmor.Name" xml:space="preserve">
-    <value>tabArmor</value>
-  </data>
-  <data name="&gt;&gt;tabArmor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabArmor.Parent" xml:space="preserve">
-    <value>tabOffsets</value>
-  </data>
-  <data name="&gt;&gt;tabArmor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabBody.Name" xml:space="preserve">
-    <value>tabBody</value>
-  </data>
-  <data name="&gt;&gt;tabBody.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabBody.Parent" xml:space="preserve">
-    <value>tabOffsets</value>
-  </data>
-  <data name="&gt;&gt;tabBody.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabOffsets.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabOffsets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="tabOffsets.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tabOffsets.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 160</value>
-  </data>
-  <data name="tabOffsets.TabIndex" type="System.Int32, mscorlib">
-    <value>144</value>
-  </data>
-  <data name="&gt;&gt;tabOffsets.Name" xml:space="preserve">
-    <value>tabOffsets</value>
-  </data>
-  <data name="&gt;&gt;tabOffsets.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabOffsets.Parent" xml:space="preserve">
-    <value>offsetGroup</value>
-  </data>
-  <data name="&gt;&gt;tabOffsets.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabArmor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabArmor.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabArmor.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tabArmor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 134</value>
-  </data>
-  <data name="tabArmor.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabArmor.Text" xml:space="preserve">
-    <value>Armor</value>
-  </data>
-  <data name="&gt;&gt;tabArmor.Name" xml:space="preserve">
-    <value>tabArmor</value>
-  </data>
-  <data name="&gt;&gt;tabArmor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabArmor.Parent" xml:space="preserve">
-    <value>tabOffsets</value>
-  </data>
-  <data name="&gt;&gt;tabArmor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;bodyLayout.Name" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;bodyLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bodyLayout.Parent" xml:space="preserve">
-    <value>tabBody</value>
-  </data>
-  <data name="&gt;&gt;bodyLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="bodyLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="offsetArms" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="armsLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="offsetBody" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="offsetLegs" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="headLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="legsLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="offsetHead" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="bodylabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabBody.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabBody.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tabBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 136</value>
-  </data>
-  <data name="tabBody.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabBody.Text" xml:space="preserve">
-    <value>Body</value>
-  </data>
-  <data name="&gt;&gt;tabBody.Name" xml:space="preserve">
-    <value>tabBody</value>
-  </data>
-  <data name="&gt;&gt;tabBody.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabBody.Parent" xml:space="preserve">
-    <value>tabOffsets</value>
-  </data>
-  <data name="&gt;&gt;tabBody.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="bodyLayout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="bodyLayout.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;offsetArms.Name" xml:space="preserve">
-    <value>offsetArms</value>
-  </data>
-  <data name="&gt;&gt;offsetArms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;offsetArms.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;offsetArms.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;armsLabel.Name" xml:space="preserve">
-    <value>armsLabel</value>
-  </data>
-  <data name="&gt;&gt;armsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;armsLabel.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;armsLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;offsetBody.Name" xml:space="preserve">
-    <value>offsetBody</value>
-  </data>
-  <data name="&gt;&gt;offsetBody.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;offsetBody.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;offsetBody.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;offsetLegs.Name" xml:space="preserve">
-    <value>offsetLegs</value>
-  </data>
-  <data name="&gt;&gt;offsetLegs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;offsetLegs.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;offsetLegs.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;headLabel.Name" xml:space="preserve">
-    <value>headLabel</value>
-  </data>
-  <data name="&gt;&gt;headLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;headLabel.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;headLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;legsLabel.Name" xml:space="preserve">
-    <value>legsLabel</value>
-  </data>
-  <data name="&gt;&gt;legsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;legsLabel.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;legsLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;offsetHead.Name" xml:space="preserve">
-    <value>offsetHead</value>
-  </data>
-  <data name="&gt;&gt;offsetHead.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;offsetHead.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;offsetHead.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;bodylabel.Name" xml:space="preserve">
-    <value>bodylabel</value>
-  </data>
-  <data name="&gt;&gt;bodylabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bodylabel.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;bodylabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="bodyLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="bodyLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="bodyLayout.RowCount" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="bodyLayout.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="bodyLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 130</value>
-  </data>
-  <data name="bodyLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>146</value>
-  </data>
-  <data name="&gt;&gt;bodyLayout.Name" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;bodyLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bodyLayout.Parent" xml:space="preserve">
-    <value>tabBody</value>
-  </data>
-  <data name="&gt;&gt;bodyLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="bodyLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="offsetArms" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="armsLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="offsetBody" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="offsetLegs" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="headLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="legsLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="offsetHead" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="bodylabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="offsetArms.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="offsetArms.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 81</value>
-  </data>
-  <data name="offsetArms.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="offsetArms.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="offsetArms.TabIndex" type="System.Int32, mscorlib">
-    <value>85</value>
-  </data>
-  <data name="offsetArms.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;offsetArms.Name" xml:space="preserve">
-    <value>offsetArms</value>
-  </data>
-  <data name="&gt;&gt;offsetArms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;offsetArms.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;offsetArms.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="armsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="armsLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="armsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="armsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 84</value>
-  </data>
-  <data name="armsLabel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="armsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="armsLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="armsLabel.Text" xml:space="preserve">
-    <value>ARMS</value>
-  </data>
-  <data name="armsLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;armsLabel.Name" xml:space="preserve">
-    <value>armsLabel</value>
-  </data>
-  <data name="&gt;&gt;armsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;armsLabel.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;armsLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="offsetBody.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="offsetBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 29</value>
-  </data>
-  <data name="offsetBody.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="offsetBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="offsetBody.TabIndex" type="System.Int32, mscorlib">
-    <value>83</value>
-  </data>
-  <data name="offsetBody.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;offsetBody.Name" xml:space="preserve">
-    <value>offsetBody</value>
-  </data>
-  <data name="&gt;&gt;offsetBody.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;offsetBody.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;offsetBody.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="offsetLegs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="offsetLegs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 55</value>
-  </data>
-  <data name="offsetLegs.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="offsetLegs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="offsetLegs.TabIndex" type="System.Int32, mscorlib">
-    <value>84</value>
-  </data>
-  <data name="offsetLegs.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;offsetLegs.Name" xml:space="preserve">
-    <value>offsetLegs</value>
-  </data>
-  <data name="&gt;&gt;offsetLegs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;offsetLegs.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;offsetLegs.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="headLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="headLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="headLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="headLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 6</value>
-  </data>
-  <data name="headLabel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="headLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="headLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="headLabel.Text" xml:space="preserve">
-    <value>HEAD</value>
-  </data>
-  <data name="headLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;headLabel.Name" xml:space="preserve">
-    <value>headLabel</value>
-  </data>
-  <data name="&gt;&gt;headLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;headLabel.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;headLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="legsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="legsLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="legsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="legsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 58</value>
-  </data>
-  <data name="legsLabel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="legsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="legsLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>89</value>
-  </data>
-  <data name="legsLabel.Text" xml:space="preserve">
-    <value>LEGS</value>
-  </data>
-  <data name="legsLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;legsLabel.Name" xml:space="preserve">
-    <value>legsLabel</value>
-  </data>
-  <data name="&gt;&gt;legsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;legsLabel.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;legsLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="offsetHead.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="offsetHead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 3</value>
-  </data>
-  <data name="offsetHead.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="offsetHead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="offsetHead.TabIndex" type="System.Int32, mscorlib">
-    <value>86</value>
-  </data>
-  <data name="offsetHead.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;offsetHead.Name" xml:space="preserve">
-    <value>offsetHead</value>
-  </data>
-  <data name="&gt;&gt;offsetHead.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;offsetHead.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;offsetHead.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="bodylabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="bodylabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="bodylabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="bodylabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 32</value>
-  </data>
-  <data name="bodylabel.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="bodylabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="bodylabel.TabIndex" type="System.Int32, mscorlib">
-    <value>88</value>
-  </data>
-  <data name="bodylabel.Text" xml:space="preserve">
-    <value>BODY</value>
-  </data>
-  <data name="bodylabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;bodylabel.Name" xml:space="preserve">
-    <value>bodylabel</value>
-  </data>
-  <data name="&gt;&gt;bodylabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bodylabel.Parent" xml:space="preserve">
-    <value>bodyLayout</value>
-  </data>
-  <data name="&gt;&gt;bodylabel.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="comboParent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -1107,6 +963,9 @@
   <data name="SizeXUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="SizeXUpDown.HelpString" xml:space="preserve">
+    <value>The X size of the BOX.</value>
+  </data>
   <data name="SizeXUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -1136,6 +995,9 @@
   </data>
   <data name="SizeYUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
+  </data>
+  <data name="SizeYUpDown.HelpString" xml:space="preserve">
+    <value>The Y size of the BOX.</value>
   </data>
   <data name="SizeYUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 29</value>
@@ -1167,6 +1029,9 @@
   <data name="SizeZUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="SizeZUpDown.HelpString" xml:space="preserve">
+    <value>The Z size of the BOX.</value>
+  </data>
   <data name="SizeZUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 55</value>
   </data>
@@ -1197,6 +1062,9 @@
   <data name="UVYUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="UVYUpDown.HelpString" xml:space="preserve">
+    <value>The Y texture coordinate of the BOX. This is based on the top left corner of the bounding box.</value>
+  </data>
   <data name="UVYUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 3</value>
   </data>
@@ -1223,6 +1091,9 @@
   </data>
   <data name="PosZUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
+  </data>
+  <data name="PosZUpDown.HelpString" xml:space="preserve">
+    <value>The Z location of the BOX based on its parent.</value>
   </data>
   <data name="PosZUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 55</value>
@@ -1254,6 +1125,9 @@
   <data name="PosYUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="PosYUpDown.HelpString" xml:space="preserve">
+    <value>The Y location of the BOX based on its parent.</value>
+  </data>
   <data name="PosYUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 29</value>
   </data>
@@ -1284,6 +1158,9 @@
   <data name="PosXUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="PosXUpDown.HelpString" xml:space="preserve">
+    <value>The X location of the BOX based on its parent.</value>
+  </data>
   <data name="PosXUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -1313,6 +1190,30 @@
   </data>
   <data name="positionGroup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="positionGroupLayout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="positionGroupLayout.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="positionGroupLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="positionGroupLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="positionGroupLayout.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="positionGroupLayout.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="positionGroupLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 78</value>
+  </data>
+  <data name="positionGroupLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>161</value>
   </data>
   <data name="&gt;&gt;positionGroupLayout.Name" xml:space="preserve">
     <value>positionGroupLayout</value>
@@ -1362,47 +1263,32 @@
   <data name="&gt;&gt;positionGroup.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="positionGroupLayout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="positionGroupLayout.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="positionGroupLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="positionGroupLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="positionGroupLayout.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="positionGroupLayout.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="positionGroupLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 78</value>
-  </data>
-  <data name="positionGroupLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>161</value>
-  </data>
-  <data name="&gt;&gt;positionGroupLayout.Name" xml:space="preserve">
-    <value>positionGroupLayout</value>
-  </data>
-  <data name="&gt;&gt;positionGroupLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;positionGroupLayout.Parent" xml:space="preserve">
-    <value>positionGroup</value>
-  </data>
-  <data name="&gt;&gt;positionGroupLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="positionGroupLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="PosZUpDown" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PosYUpDown" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PosXUpDown" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="sizeGroup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="sizeGroupLayout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sizeGroupLayout.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="sizeGroupLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="sizeGroupLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="sizeGroupLayout.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="sizeGroupLayout.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sizeGroupLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 78</value>
+  </data>
+  <data name="sizeGroupLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>161</value>
   </data>
   <data name="&gt;&gt;sizeGroupLayout.Name" xml:space="preserve">
     <value>sizeGroupLayout</value>
@@ -1452,47 +1338,62 @@
   <data name="&gt;&gt;sizeGroup.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="sizeGroupLayout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="sizeGroupLayout.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="sizeGroupLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="sizeGroupLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="sizeGroupLayout.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="sizeGroupLayout.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="sizeGroupLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 78</value>
-  </data>
-  <data name="sizeGroupLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>161</value>
-  </data>
-  <data name="&gt;&gt;sizeGroupLayout.Name" xml:space="preserve">
-    <value>sizeGroupLayout</value>
-  </data>
-  <data name="&gt;&gt;sizeGroupLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sizeGroupLayout.Parent" xml:space="preserve">
-    <value>sizeGroup</value>
-  </data>
-  <data name="&gt;&gt;sizeGroupLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="sizeGroupLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="SizeXUpDown" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="SizeYUpDown" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="SizeZUpDown" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,20" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="uvGroup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="uvGroupLayout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uvGroupLayout.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="UVXUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="UVXUpDown.HelpString" xml:space="preserve">
+    <value>The X texture coordinate of the BOX. This is based on the top left corner of the bounding box.</value>
+  </data>
+  <data name="UVXUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="UVXUpDown.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UVXUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="UVXUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>156</value>
+  </data>
+  <data name="&gt;&gt;UVXUpDown.Name" xml:space="preserve">
+    <value>UVXUpDown</value>
+  </data>
+  <data name="&gt;&gt;UVXUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UVXUpDown.Parent" xml:space="preserve">
+    <value>uvGroupLayout</value>
+  </data>
+  <data name="&gt;&gt;UVXUpDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="uvGroupLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="uvGroupLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="uvGroupLayout.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="uvGroupLayout.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uvGroupLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 26</value>
+  </data>
+  <data name="uvGroupLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>158</value>
   </data>
   <data name="&gt;&gt;uvGroupLayout.Name" xml:space="preserve">
     <value>uvGroupLayout</value>
@@ -1542,84 +1443,6 @@
   <data name="&gt;&gt;uvGroup.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="uvGroupLayout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="uvGroupLayout.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;UVXUpDown.Name" xml:space="preserve">
-    <value>UVXUpDown</value>
-  </data>
-  <data name="&gt;&gt;UVXUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UVXUpDown.Parent" xml:space="preserve">
-    <value>uvGroupLayout</value>
-  </data>
-  <data name="&gt;&gt;UVXUpDown.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="uvGroupLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="uvGroupLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="uvGroupLayout.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="uvGroupLayout.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="uvGroupLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 26</value>
-  </data>
-  <data name="uvGroupLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>158</value>
-  </data>
-  <data name="&gt;&gt;uvGroupLayout.Name" xml:space="preserve">
-    <value>uvGroupLayout</value>
-  </data>
-  <data name="&gt;&gt;uvGroupLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uvGroupLayout.Parent" xml:space="preserve">
-    <value>uvGroup</value>
-  </data>
-  <data name="&gt;&gt;uvGroupLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="uvGroupLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="UVXUpDown" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="UVYUpDown" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="UVXUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="UVXUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="UVXUpDown.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UVXUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="UVXUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>156</value>
-  </data>
-  <data name="&gt;&gt;UVXUpDown.Name" xml:space="preserve">
-    <value>UVXUpDown</value>
-  </data>
-  <data name="&gt;&gt;UVXUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UVXUpDown.Parent" xml:space="preserve">
-    <value>uvGroupLayout</value>
-  </data>
-  <data name="&gt;&gt;UVXUpDown.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="toggleAnimationCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
@@ -1662,98 +1485,29 @@
   <data name="rightLayout.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;texturePreviewGroup.Name" xml:space="preserve">
-    <value>texturePreviewGroup</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewGroup.Parent" xml:space="preserve">
-    <value>rightLayout</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewGroup.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rightLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rightLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="rightLayout.RowCount" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="rightLayout.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rightLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 656</value>
-  </data>
-  <data name="rightLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>166</value>
-  </data>
-  <data name="&gt;&gt;rightLayout.Name" xml:space="preserve">
-    <value>rightLayout</value>
-  </data>
-  <data name="&gt;&gt;rightLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rightLayout.Parent" xml:space="preserve">
-    <value>layout2.Panel2</value>
-  </data>
-  <data name="&gt;&gt;rightLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rightLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="texturePreviewGroup" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonDone" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="offsetGroup" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="uvGroup" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="positionGroup" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sizeGroup" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,19.9988" /&gt;&lt;Rows Styles="Percent,50,AutoSize,0,AutoSize,0,AutoSize,0,Percent,50,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewLayout.Name" xml:space="preserve">
-    <value>texturePreviewLayout</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewLayout.Parent" xml:space="preserve">
-    <value>texturePreviewGroup</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="texturePreviewLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="importButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="exportButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="uvPictureBox" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="texturePreviewGroup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="texturePreviewGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="texturePreviewGroup.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="texturePreviewGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 179</value>
-  </data>
-  <data name="texturePreviewGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>167</value>
-  </data>
-  <data name="texturePreviewGroup.Text" xml:space="preserve">
-    <value>Texture mapping preview</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewGroup.Name" xml:space="preserve">
-    <value>texturePreviewGroup</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewGroup.Parent" xml:space="preserve">
-    <value>rightLayout</value>
-  </data>
-  <data name="&gt;&gt;texturePreviewGroup.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="texturePreviewLayout.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="uvPictureBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="uvPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="uvPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="uvPictureBox.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uvPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 127</value>
+  </data>
+  <data name="uvPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="uvPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>112</value>
   </data>
   <data name="&gt;&gt;uvPictureBox.Name" xml:space="preserve">
     <value>uvPictureBox</value>
@@ -1800,38 +1554,68 @@
   <data name="texturePreviewLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="importButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="exportButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="uvPictureBox" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="uvPictureBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="texturePreviewGroup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="uvPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="uvPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="texturePreviewGroup.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="uvPictureBox.ShowHelp" type="System.Boolean, mscorlib">
+  <data name="texturePreviewGroup.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="uvPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 127</value>
+  <data name="texturePreviewGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 179</value>
   </data>
-  <data name="uvPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="texturePreviewGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
   </data>
-  <data name="uvPictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>112</value>
+  <data name="texturePreviewGroup.Text" xml:space="preserve">
+    <value>Texture mapping preview</value>
   </data>
-  <data name="&gt;&gt;uvPictureBox.Name" xml:space="preserve">
-    <value>uvPictureBox</value>
+  <data name="&gt;&gt;texturePreviewGroup.Name" xml:space="preserve">
+    <value>texturePreviewGroup</value>
   </data>
-  <data name="&gt;&gt;uvPictureBox.Type" xml:space="preserve">
-    <value>PckStudio.ToolboxItems.InterpolationPictureBox, PCK-Studio, Version=7.0.0.2, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;texturePreviewGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;uvPictureBox.Parent" xml:space="preserve">
-    <value>texturePreviewLayout</value>
+  <data name="&gt;&gt;texturePreviewGroup.Parent" xml:space="preserve">
+    <value>rightLayout</value>
   </data>
-  <data name="&gt;&gt;uvPictureBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;texturePreviewGroup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rightLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rightLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="rightLayout.RowCount" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="rightLayout.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rightLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 656</value>
+  </data>
+  <data name="rightLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
+  <data name="&gt;&gt;rightLayout.Name" xml:space="preserve">
+    <value>rightLayout</value>
+  </data>
+  <data name="&gt;&gt;rightLayout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rightLayout.Parent" xml:space="preserve">
+    <value>layout2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;rightLayout.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rightLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="texturePreviewGroup" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonDone" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="offsetGroup" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="uvGroup" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="positionGroup" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="sizeGroup" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,19.9988" /&gt;&lt;Rows Styles="Percent,50,AutoSize,0,AutoSize,0,AutoSize,0,Percent,50,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="mainView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1866,125 +1650,11 @@
   <data name="partGroup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;partLayout.Name" xml:space="preserve">
-    <value>partLayout</value>
-  </data>
-  <data name="&gt;&gt;partLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;partLayout.Parent" xml:space="preserve">
-    <value>partGroup</value>
-  </data>
-  <data name="&gt;&gt;partLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="partLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="comboParent" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="mirrorCheckBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="armorCheckBox" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="InflateUpDown" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="partGroup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="partGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 389</value>
-  </data>
-  <data name="partGroup.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="partGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 118</value>
-  </data>
-  <data name="partGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>168</value>
-  </data>
-  <data name="partGroup.Text" xml:space="preserve">
-    <value>Part</value>
-  </data>
-  <data name="&gt;&gt;partGroup.Name" xml:space="preserve">
-    <value>partGroup</value>
-  </data>
-  <data name="&gt;&gt;partGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;partGroup.Parent" xml:space="preserve">
-    <value>leftLayout</value>
-  </data>
-  <data name="&gt;&gt;partGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="partLayout.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="partLayout.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;mirrorCheckBox.Name" xml:space="preserve">
-    <value>mirrorCheckBox</value>
-  </data>
-  <data name="&gt;&gt;mirrorCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mirrorCheckBox.Parent" xml:space="preserve">
-    <value>partLayout</value>
-  </data>
-  <data name="&gt;&gt;mirrorCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;armorCheckBox.Name" xml:space="preserve">
-    <value>armorCheckBox</value>
-  </data>
-  <data name="&gt;&gt;armorCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;armorCheckBox.Parent" xml:space="preserve">
-    <value>partLayout</value>
-  </data>
-  <data name="&gt;&gt;armorCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;InflateUpDown.Name" xml:space="preserve">
-    <value>InflateUpDown</value>
-  </data>
-  <data name="&gt;&gt;InflateUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InflateUpDown.Parent" xml:space="preserve">
-    <value>partLayout</value>
-  </data>
-  <data name="&gt;&gt;InflateUpDown.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="partLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="partLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="partLayout.RowCount" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="partLayout.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="partLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 99</value>
-  </data>
-  <data name="partLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>135</value>
-  </data>
-  <data name="&gt;&gt;partLayout.Name" xml:space="preserve">
-    <value>partLayout</value>
-  </data>
-  <data name="&gt;&gt;partLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;partLayout.Parent" xml:space="preserve">
-    <value>partGroup</value>
-  </data>
-  <data name="&gt;&gt;partLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="partLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="comboParent" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="mirrorCheckBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="armorCheckBox" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="InflateUpDown" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="mirrorCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -2097,8 +1767,95 @@
   <data name="&gt;&gt;InflateUpDown.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="partLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="partLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="partLayout.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="partLayout.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="partLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 99</value>
+  </data>
+  <data name="partLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>135</value>
+  </data>
+  <data name="&gt;&gt;partLayout.Name" xml:space="preserve">
+    <value>partLayout</value>
+  </data>
+  <data name="&gt;&gt;partLayout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;partLayout.Parent" xml:space="preserve">
+    <value>partGroup</value>
+  </data>
+  <data name="&gt;&gt;partLayout.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="partLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="comboParent" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="mirrorCheckBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="armorCheckBox" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="InflateUpDown" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="partGroup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="partGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 389</value>
+  </data>
+  <data name="partGroup.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="partGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 118</value>
+  </data>
+  <data name="partGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="partGroup.Text" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="&gt;&gt;partGroup.Name" xml:space="preserve">
+    <value>partGroup</value>
+  </data>
+  <data name="&gt;&gt;partGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;partGroup.Parent" xml:space="preserve">
+    <value>leftLayout</value>
+  </data>
+  <data name="&gt;&gt;partGroup.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="optionsGroup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="optionsLayout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optionsLayout.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="optionsLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="optionsLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="optionsLayout.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="optionsLayout.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optionsLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 92</value>
+  </data>
+  <data name="optionsLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>151</value>
   </data>
   <data name="&gt;&gt;optionsLayout.Name" xml:space="preserve">
     <value>optionsLayout</value>
@@ -2144,45 +1901,6 @@
   </data>
   <data name="&gt;&gt;optionsGroup.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="optionsLayout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optionsLayout.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="optionsLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="optionsLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="optionsLayout.RowCount" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="optionsLayout.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optionsLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 92</value>
-  </data>
-  <data name="optionsLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>151</value>
-  </data>
-  <data name="&gt;&gt;optionsLayout.Name" xml:space="preserve">
-    <value>optionsLayout</value>
-  </data>
-  <data name="&gt;&gt;optionsLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optionsLayout.Parent" xml:space="preserve">
-    <value>optionsGroup</value>
-  </data>
-  <data name="&gt;&gt;optionsLayout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="optionsLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="generateTextureCheckBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="toggleAnimationCheckBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="showGuidelinesCheckBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="showArmorCheckBox" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="skinBoxList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2373,6 +2091,42 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>162, 17</value>
   </metadata>
+  <data name="loadTemplateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="loadTemplateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Load Template</value>
+  </data>
+  <data name="finishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="finishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="cancelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="cancelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2399,42 +2153,6 @@
   </data>
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="loadTemplateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="loadTemplateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Load Template</value>
-  </data>
-  <data name="finishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="finishToolStripMenuItem.Text" xml:space="preserve">
-    <value>Finish</value>
-  </data>
-  <data name="cancelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="cancelToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
-  </data>
-  <data name="editToolStripMenuItem.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
