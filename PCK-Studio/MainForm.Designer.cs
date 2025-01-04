@@ -142,7 +142,6 @@ namespace PckStudio
 			this.changelogRichText = new System.Windows.Forms.RichTextBox();
 			this.pckOpen = new System.Windows.Forms.PictureBox();
 			this.editorTab = new System.Windows.Forms.TabPage();
-			this.editorLayout = new System.Windows.Forms.TableLayoutPanel();
 			this.treeViewMain = new System.Windows.Forms.TreeView();
 			this.imageList = new System.Windows.Forms.ImageList(this.components);
 			this.previewPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
@@ -154,6 +153,8 @@ namespace PckStudio
 			this.buttonEdit = new System.Windows.Forms.Button();
 			this.entryDataTextBox = new System.Windows.Forms.TextBox();
 			this.layout = new System.Windows.Forms.Panel();
+			this.editorLayout = new System.Windows.Forms.SplitContainer();
+			this.editorRightSide = new System.Windows.Forms.SplitContainer();
 			toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -166,12 +167,19 @@ namespace PckStudio
 			this.openLayout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pckOpen)).BeginInit();
 			this.editorTab.SuspendLayout();
-			this.editorLayout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).BeginInit();
 			this.propTabControl.SuspendLayout();
 			this.metaTab.SuspendLayout();
 			this.propLayout.SuspendLayout();
 			this.layout.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.editorLayout)).BeginInit();
+			this.editorLayout.Panel1.SuspendLayout();
+			this.editorLayout.Panel2.SuspendLayout();
+			this.editorLayout.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.editorRightSide)).BeginInit();
+			this.editorRightSide.Panel1.SuspendLayout();
+			this.editorRightSide.Panel2.SuspendLayout();
+			this.editorRightSide.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// toolStripSeparator2
@@ -949,25 +957,16 @@ namespace PckStudio
 			this.editorTab.Controls.Add(this.editorLayout);
 			this.editorTab.Name = "editorTab";
 			// 
-			// editorLayout
-			// 
-			resources.ApplyResources(this.editorLayout, "editorLayout");
-			this.editorLayout.Controls.Add(this.treeViewMain, 0, 0);
-			this.editorLayout.Controls.Add(this.previewPictureBox, 1, 0);
-			this.editorLayout.Controls.Add(this.propTabControl, 0, 1);
-			this.editorLayout.Name = "editorLayout";
-			// 
 			// treeViewMain
 			// 
 			this.treeViewMain.AllowDrop = true;
-			resources.ApplyResources(this.treeViewMain, "treeViewMain");
 			this.treeViewMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.treeViewMain.ContextMenuStrip = this.contextMenuPCKEntries;
+			resources.ApplyResources(this.treeViewMain, "treeViewMain");
 			this.treeViewMain.ImageList = this.imageList;
 			this.treeViewMain.LabelEdit = true;
 			this.treeViewMain.Name = "treeViewMain";
 			this.treeViewMain.PathSeparator = "/";
-			this.editorLayout.SetRowSpan(this.treeViewMain, 2);
 			this.treeViewMain.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeViewMain_BeforeLabelEdit);
 			this.treeViewMain.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeViewMain_ItemDrag);
 			this.treeViewMain.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewMain_AfterSelect);
@@ -986,16 +985,16 @@ namespace PckStudio
 			// 
 			// previewPictureBox
 			// 
-			resources.ApplyResources(this.previewPictureBox, "previewPictureBox");
 			this.previewPictureBox.BackColor = System.Drawing.Color.Transparent;
+			resources.ApplyResources(this.previewPictureBox, "previewPictureBox");
 			this.previewPictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
 			this.previewPictureBox.Name = "previewPictureBox";
 			this.previewPictureBox.TabStop = false;
 			// 
 			// propTabControl
 			// 
-			resources.ApplyResources(this.propTabControl, "propTabControl");
 			this.propTabControl.Controls.Add(this.metaTab);
+			resources.ApplyResources(this.propTabControl, "propTabControl");
 			this.propTabControl.Name = "propTabControl";
 			this.propTabControl.SelectedIndex = 0;
 			// 
@@ -1048,6 +1047,34 @@ namespace PckStudio
 			resources.ApplyResources(this.layout, "layout");
 			this.layout.Name = "layout";
 			// 
+			// editorLayout
+			// 
+			this.editorLayout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			resources.ApplyResources(this.editorLayout, "editorLayout");
+			this.editorLayout.Name = "editorLayout";
+			// 
+			// editorLayout.Panel1
+			// 
+			this.editorLayout.Panel1.Controls.Add(this.treeViewMain);
+			// 
+			// editorLayout.Panel2
+			// 
+			this.editorLayout.Panel2.Controls.Add(this.editorRightSide);
+			// 
+			// editorRightSide
+			// 
+			this.editorRightSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			resources.ApplyResources(this.editorRightSide, "editorRightSide");
+			this.editorRightSide.Name = "editorRightSide";
+			// 
+			// editorRightSide.Panel1
+			// 
+			this.editorRightSide.Panel1.Controls.Add(this.previewPictureBox);
+			// 
+			// editorRightSide.Panel2
+			// 
+			this.editorRightSide.Panel2.Controls.Add(this.propTabControl);
+			// 
 			// MainForm
 			// 
 			resources.ApplyResources(this, "$this");
@@ -1071,13 +1098,20 @@ namespace PckStudio
 			this.openLayout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pckOpen)).EndInit();
 			this.editorTab.ResumeLayout(false);
-			this.editorLayout.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).EndInit();
 			this.propTabControl.ResumeLayout(false);
 			this.metaTab.ResumeLayout(false);
 			this.propLayout.ResumeLayout(false);
 			this.propLayout.PerformLayout();
 			this.layout.ResumeLayout(false);
+			this.editorLayout.Panel1.ResumeLayout(false);
+			this.editorLayout.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.editorLayout)).EndInit();
+			this.editorLayout.ResumeLayout(false);
+			this.editorRightSide.Panel1.ResumeLayout(false);
+			this.editorRightSide.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.editorRightSide)).EndInit();
+			this.editorRightSide.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1199,10 +1233,11 @@ namespace PckStudio
 		private ToolStripStatusLabel currentFileTypeLabel;
 		private ToolStripStatusLabel imageSizeLabel;
 		private ToolStripStatusLabel fileCountLabel;
-		private TableLayoutPanel editorLayout;
 		private TableLayoutPanel propLayout;
 		private Button buttonEdit;
 		private Panel layout;
+		private SplitContainer editorLayout;
+		private SplitContainer editorRightSide;
 	}
 }
 

@@ -14,11 +14,15 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PckStudio.Forms {
 	public partial class ModelGeneratorForm : Form {
+
+		[DllImport("user32.dll")]
+		private static extern uint SendMessage(IntPtr hWnd, uint Msg, uint wParam, uint lParam);
 
 		// TODO: This and ReplaceWhiteSpace should be in an util class instead of just being here.
 		private static readonly Regex sWhitespace = new Regex(@"\s+");
@@ -35,11 +39,6 @@ namespace PckStudio.Forms {
 		/** <summary>The <see cref="SkinANIM"/> property associated with this model, taken from <see cref="pckAsset"/>.</summary> **/
 		private SkinANIM skinAnim;
 
-		private static GraphicsConfig _graphicsConfig = new GraphicsConfig() {
-			InterpolationMode = InterpolationMode.NearestNeighbor,
-			PixelOffsetMode = PixelOffsetMode.HighQuality,
-		};
-		
 		/** <summary>The currently selected SkinBOX. This should always be either an element of <see cref="modelBoxes"/> or null.</summary> **/
 		SkinBOX selectedBox;
 		
@@ -94,6 +93,9 @@ namespace PckStudio.Forms {
 			UVXUpDown.Enabled = exists;
 			UVYUpDown.Enabled = exists;
 			comboParent.Enabled = exists;
+			armorCheckBox.Enabled = exists;
+			mirrorCheckBox.Enabled = exists;
+			InflateUpDown.Enabled = exists;
 			cloneToolStripMenuItem.Enabled = exists;
 			deleteToolStripMenuItem.Enabled = exists;
 			changeColorToolStripMenuItem.Enabled = exists;
@@ -107,7 +109,9 @@ namespace PckStudio.Forms {
 				SizeZUpDown.Value = (decimal)selectedBox.Size.Z;
 				UVXUpDown.Value = (decimal)selectedBox.UV.X;
 				UVYUpDown.Value = (decimal)selectedBox.UV.Y;
-				Rerender();
+				armorCheckBox.Checked = selectedBox.ArmorFlag;
+				mirrorCheckBox.Checked = selectedBox.Mirror;
+				InflateUpDown.Value = (decimal)selectedBox.Scale;
 			}
 			noUpdate = false;
 		}
@@ -172,6 +176,9 @@ namespace PckStudio.Forms {
 				selectedBox.SizeX = (float)SizeXUpDown.Value;
 				selectedBox.SizeY = (float)SizeYUpDown.Value;
 				selectedBox.SizeZ = (float)SizeZUpDown.Value;
+				selectedBox.ArmorFlag = armorCheckBox.Checked;
+				selectedBox.Mirror = mirrorCheckBox.Checked;
+				selectedBox.Scale = (float)InflateUpDown.Value;
 			}
 		}
 
@@ -211,13 +218,6 @@ namespace PckStudio.Forms {
 				}
 			}
 			skinAnim = asset.GetProperty("ANIM", SkinANIM.FromString);
-		}
-
-		// TODO: deprecate this (the GL renderer will pick up on any changes immediately)
-		private void Rerender([CallerMemberName] string caller = default!) {
-			Debug.WriteLine($"Call from {caller}", category: nameof(Rerender));
-			if(generateTextureCheckBox.Checked)
-				GenerateUVTextureMap();
 		}
 
 		#region GL rendering using OpenTK
@@ -352,43 +352,6 @@ void main(){
 
 		#endregion
 		
-		// TODO: deprecate this and use a second GLControl
-		// to visualize UV mapping
-		private void GenerateUVTextureMap() {
-			Random rng = new Random();
-			using(Graphics graphics = Graphics.FromImage(uvPictureBox.Image)) {
-				graphics.ApplyConfig(_graphicsConfig);
-				foreach(SkinBOX part in modelBoxes) {
-					float width = part.Size.X * 2;
-					float height = part.Size.Y * 2;
-					float length = part.Size.Z * 2;
-					float u = part.UV.X * 2;
-					float v = part.UV.Y * 2;
-					int argb = rng.Next(-16777216, -1); // 0xFF000000 - 0xFFFFFFFF
-					var color = Color.FromArgb(argb);
-					Brush brush = new SolidBrush(color);
-					graphics.FillRectangle(brush, u + length, v, width, length);
-					graphics.FillRectangle(brush, u + length + width, v, width, length);
-					graphics.FillRectangle(brush, u, length + v, length, height);
-					graphics.FillRectangle(brush, u + length, v + length, width, height);
-					graphics.FillRectangle(brush, u + length + width, v + length, width, height);
-					graphics.FillRectangle(brush, u + length + width * 2, v + length, length, height);
-				}
-			}
-			uvPictureBox.Invalidate();
-		}
-
-		// TODO: is this necessary?
-		private void EmptyGLBoxes() {
-			if(model != null) {
-				for(int i = model.Boxes.Count-1; i >= 0; i--) {
-					GLBox box = model.Boxes[i];
-					box.Dispose();
-					model.Boxes.RemoveAt(i);
-				}
-			}
-		}
-		
 		/** <summary>Converts a SkinBOX to a GLBox. If the GLBox evaluates to null, a new GLBox is created.</summary> **/
 		private GLBox RecalculateGLBox(SkinBOX skinBox, GLBox glBox) {
 			if(glBox == null)
@@ -422,7 +385,6 @@ void main(){
 						// Just the check is fine. It really didn't need to do all of the other stuff.
 						bitmap = new Bitmap(img);
 						uvPictureBox.Image = bitmap;
-						Rerender();
 					} else {
 						MessageBox.Show(this, "This is not a skin file. Are you sure this is a 64x64 or 64x32 image?", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
@@ -439,46 +401,6 @@ void main(){
 			Close();
 		}
 
-		// Renders model after texture change
-		private void textureChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders head with updated x-offset
-		private void headOffsetChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders body with updated x-offset
-		private void bodyOffsetChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders tool with updated x-offset
-		private void toolOffsetChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders helmet with updated x-offset
-		private void helmetOffsetChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders pants with updated x-offset
-		private void pantsOffsetChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders leggings with updated x-offset
-		private void leggingsOffsetChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
-		//Re-renders boots with updated x-offset
-		private void bootsOffsetChanged(object sender, EventArgs e) {
-			Rerender();
-		}
-
 		//Loads in model template(Steve)
 		private void generateTemplate(object sender, EventArgs e) {
 			modelBoxes.Add(SkinBOX.FromString("HEAD -4 -8 -4 8 8 8 0 0 0 0 0"));
@@ -487,7 +409,6 @@ void main(){
 			modelBoxes.Add(SkinBOX.FromString("ARM1 -1 -2 -2 4 12 4 40 16 0 1 0"));
 			modelBoxes.Add(SkinBOX.FromString("LEG0 -2 0 -2 4 12 4 0 16 0 0 0"));
 			modelBoxes.Add(SkinBOX.FromString("LEG1 -2 0 -2 4 12 4 0 16 0 1 0"));
-			Rerender();
 		}
 
 		private void formClosing(object sender, FormClosingEventArgs e) {
@@ -496,6 +417,15 @@ void main(){
 
 		private void toggleAnimationChanged(object sender, EventArgs e) {
 			model.Animate = toggleAnimationCheckBox.Checked;
+		}
+
+		private void doHelp(object sender, EventArgs e) {
+			// WM_SYSCOMMAND SC_CONTEXTHELP
+			SendMessage(this.Handle, 0x0112, 0xf180, 0x0);
+		}
+
+		private void cancel(object sender, EventArgs e) {
+			Close();
 		}
 	}
 }

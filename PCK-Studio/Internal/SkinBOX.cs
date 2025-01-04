@@ -21,7 +21,7 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 
 namespace PckStudio.Internal {
-	/** <summary>Valid type values used in SkinBOX to define hierarchy.</summary> **/
+	/** <summary>Valid type values used in <see cref="SkinBOX"/> to define hierarchy.</summary> **/
 	public enum BOXType {
 		// Base 64x32 Parts
 		HEAD,
@@ -53,7 +53,7 @@ namespace PckStudio.Internal {
 
 	/** <summary>Defines 3D geometry for custom skins.</summary> **/
 	public class SkinBOX : ICloneable, IEquatable<SkinBOX>, INotifyPropertyChanged {
-		/** <summary>Default SkinBOX object that represents the head.</summary> **/
+		/** <summary>Default <see cref="SkinBOX"/> object that represents the head.</summary> **/
 		public static readonly SkinBOX Empty = new SkinBOX(BOXType.HEAD, new Vector3(-4, -8, -4), new Vector3(8), Vector2.Zero);
 
 		/** <summary>Fired whenever a property changes.</summary> **/
@@ -77,7 +77,7 @@ namespace PckStudio.Internal {
 		private float scale;
 
 		/**
-		 * <summary>The parent element that this SkinBOX is part of.</summary>
+		 * <summary>The parent element that this <see cref="SkinBOX"/> is part of.</summary>
 		 **/
 		public BOXType Type {
 			get { return type; }
@@ -85,7 +85,7 @@ namespace PckStudio.Internal {
 		}
 
 		/**
-		 * <summary>The location of the SkinBOX relative to the parent <see cref="SkinBOX.Type"/>. In pixels.</summary>
+		 * <summary>The location of the <see cref="SkinBOX.Type"/> relative to the parent <see cref="SkinBOX.Type"/>. In pixels.</summary>
 		 **/
 		[Browsable(false)]
 		public Vector3 Pos {

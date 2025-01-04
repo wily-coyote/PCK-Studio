@@ -3659,14 +3659,14 @@
   <data name="editorTab.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="editorLayout.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
-    <value>Single</value>
+  <data name="editorLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="editorLayout.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="editorLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="treeViewMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="treeViewMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="treeViewMain.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3681,7 +3681,7 @@
     <value>32, 32</value>
   </data>
   <data name="treeViewMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 1</value>
+    <value>0, 0</value>
   </data>
   <data name="treeViewMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3690,7 +3690,7 @@
     <value>0</value>
   </data>
   <data name="treeViewMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>343, 542</value>
+    <value>296, 540</value>
   </data>
   <data name="treeViewMain.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -3702,25 +3702,46 @@
     <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;treeViewMain.Parent" xml:space="preserve">
-    <value>editorLayout</value>
+    <value>editorLayout.Panel1</value>
   </data>
   <data name="&gt;&gt;treeViewMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="previewPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="&gt;&gt;editorLayout.Panel1.Name" xml:space="preserve">
+    <value>editorLayout.Panel1</value>
+  </data>
+  <data name="&gt;&gt;editorLayout.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editorLayout.Panel1.Parent" xml:space="preserve">
+    <value>editorLayout</value>
+  </data>
+  <data name="&gt;&gt;editorLayout.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="editorRightSide.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="editorRightSide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="editorRightSide.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
   </data>
   <data name="previewPictureBox.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="previewPictureBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="previewPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="previewPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 4</value>
+    <value>0, 0</value>
   </data>
   <data name="previewPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>682, 264</value>
+    <value>726, 296</value>
   </data>
   <data name="previewPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -3735,13 +3756,22 @@
     <value>PckStudio.ToolboxItems.InterpolationPictureBox, PCK-Studio, Version=7.0.0.2, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;previewPictureBox.Parent" xml:space="preserve">
-    <value>editorLayout</value>
+    <value>editorRightSide.Panel1</value>
   </data>
   <data name="&gt;&gt;previewPictureBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <data name="propTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="&gt;&gt;editorRightSide.Panel1.Name" xml:space="preserve">
+    <value>editorRightSide.Panel1</value>
+  </data>
+  <data name="&gt;&gt;editorRightSide.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editorRightSide.Panel1.Parent" xml:space="preserve">
+    <value>editorRightSide</value>
+  </data>
+  <data name="&gt;&gt;editorRightSide.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="propLayout.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3756,7 +3786,7 @@
     <value>3, 3</value>
   </data>
   <data name="treeMeta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 227</value>
+    <value>350, 198</value>
   </data>
   <data name="treeMeta.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3780,10 +3810,10 @@
     <value>False</value>
   </data>
   <data name="entryTypeTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 3</value>
+    <value>359, 3</value>
   </data>
   <data name="entryTypeTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 20</value>
+    <value>350, 20</value>
   </data>
   <data name="entryTypeTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -3807,10 +3837,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 186</value>
+    <value>359, 157</value>
   </data>
   <data name="buttonEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 44</value>
+    <value>350, 44</value>
   </data>
   <data name="buttonEdit.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -3840,10 +3870,10 @@
     <value>False</value>
   </data>
   <data name="entryDataTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 29</value>
+    <value>359, 29</value>
   </data>
   <data name="entryDataTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 20</value>
+    <value>350, 20</value>
   </data>
   <data name="entryDataTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -3870,7 +3900,7 @@
     <value>4</value>
   </data>
   <data name="propLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 233</value>
+    <value>712, 204</value>
   </data>
   <data name="propLayout.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -3897,7 +3927,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="metaTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 239</value>
+    <value>718, 210</value>
   </data>
   <data name="metaTab.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3917,11 +3947,14 @@
   <data name="&gt;&gt;metaTab.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="propTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="propTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 275</value>
+    <value>0, 0</value>
   </data>
   <data name="propTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>682, 265</value>
+    <value>726, 236</value>
   </data>
   <data name="propTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -3933,40 +3966,76 @@
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;propTabControl.Parent" xml:space="preserve">
-    <value>editorLayout</value>
+    <value>editorRightSide.Panel2</value>
   </data>
   <data name="&gt;&gt;propTabControl.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
-  <data name="editorLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;editorRightSide.Panel2.Name" xml:space="preserve">
+    <value>editorRightSide.Panel2</value>
   </data>
-  <data name="editorLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="&gt;&gt;editorRightSide.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="editorLayout.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;editorRightSide.Panel2.Parent" xml:space="preserve">
+    <value>editorRightSide</value>
+  </data>
+  <data name="&gt;&gt;editorRightSide.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="editorRightSide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>730, 544</value>
+  </data>
+  <data name="editorRightSide.SplitterDistance" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="editorRightSide.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;editorRightSide.Name" xml:space="preserve">
+    <value>editorRightSide</value>
+  </data>
+  <data name="&gt;&gt;editorRightSide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editorRightSide.Parent" xml:space="preserve">
+    <value>editorLayout.Panel2</value>
+  </data>
+  <data name="&gt;&gt;editorRightSide.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;editorLayout.Panel2.Name" xml:space="preserve">
+    <value>editorLayout.Panel2</value>
+  </data>
+  <data name="&gt;&gt;editorLayout.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editorLayout.Panel2.Parent" xml:space="preserve">
+    <value>editorLayout</value>
+  </data>
+  <data name="&gt;&gt;editorLayout.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="editorLayout.Size" type="System.Drawing.Size, System.Drawing">
     <value>1034, 544</value>
   </data>
+  <data name="editorLayout.SplitterDistance" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
   <data name="editorLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>22</value>
   </data>
   <data name="&gt;&gt;editorLayout.Name" xml:space="preserve">
     <value>editorLayout</value>
   </data>
   <data name="&gt;&gt;editorLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;editorLayout.Parent" xml:space="preserve">
     <value>editorTab</value>
   </data>
   <data name="&gt;&gt;editorLayout.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="editorLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="treeViewMain" Row="0" RowSpan="2" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="previewPictureBox" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="propTabControl" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,66.66666" /&gt;&lt;Rows Styles="Percent,50,Percent,50,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="editorTab.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
