@@ -37,15 +37,10 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PckStudio {
 	public partial class MainForm : Form {
-		[DllImport("user32.dll")]
-		private static extern int SetForegroundWindow(IntPtr hwnd);
-
 		private PckManager PckManager = null;
 		string saveLocation;
 
@@ -1091,7 +1086,7 @@ namespace PckStudio {
 		}
 
 		public void FocusMe() {
-			SetForegroundWindow(this.Handle);
+			Utilities.SetForegroundWindow(this.Handle);
 		}
 
 		private void treeViewMain_DragEnter(object sender, DragEventArgs e) {

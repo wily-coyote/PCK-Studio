@@ -21,11 +21,7 @@ using System.Windows.Forms;
 namespace PckStudio.Forms {
 	public partial class ModelGeneratorForm : Form {
 
-		[DllImport("user32.dll")]
-		private static extern uint SendMessage(IntPtr hWnd, uint Msg, uint wParam, uint lParam);
-
 		// TODO: This and ReplaceWhiteSpace should be in an util class instead of just being here.
-		private static readonly Regex sWhitespace = new Regex(@"\s+");
 
 		/** <summary>The .NET image used for the model. Used in GL rendering.</summary> **/
 		private Bitmap bitmap;
@@ -191,10 +187,6 @@ namespace PckStudio.Forms {
 			}
 		}
 
-		public static string ReplaceWhitespace(string input, string replacement) {
-			return sWhitespace.Replace(input, replacement);
-		}
-
 		private void LoadData(PckAsset asset) {
 			foreach(var kv in asset.GetMultipleProperties("BOX")) {
 				try {
@@ -206,7 +198,7 @@ namespace PckStudio.Forms {
 			foreach(var kv in asset.GetMultipleProperties("OFFSET")) {
 				// Was the .All() really necessary if you're not gonna use
 				// the return value?
-				string[] offset = ReplaceWhitespace(kv.Value, ",").TrimEnd('\n', '\r', ' ').Split(',');
+				string[] offset = Utilities.ReplaceWhitespace(kv.Value, ",").TrimEnd('\n', '\r', ' ').Split(',');
 				if(offset.Length >= 3 && offset[1] == "Y") {
 					string name = offset[0];
 					float value = float.Parse(offset[2]);
@@ -421,7 +413,7 @@ void main(){
 
 		private void doHelp(object sender, EventArgs e) {
 			// WM_SYSCOMMAND SC_CONTEXTHELP
-			SendMessage(this.Handle, 0x0112, 0xf180, 0x0);
+			Utilities.SendMessage(this.Handle, 0x0112, 0xf180, 0x0);
 		}
 
 		private void cancel(object sender, EventArgs e) {
