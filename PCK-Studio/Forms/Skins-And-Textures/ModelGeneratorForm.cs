@@ -73,6 +73,7 @@ namespace PckStudio.Forms {
 			skinBoxList.DataSource = modelBoxes;
 			skinBoxList.SelectionChanged += changeSelection;
 			skinBoxList.ClearSelection();
+			applyFlags();
 			refreshValues();
 		}
 
@@ -110,6 +111,26 @@ namespace PckStudio.Forms {
 				InflateUpDown.Value = (decimal)selectedBox.Scale;
 			}
 			noUpdate = false;
+		}
+
+		private void applyFlags() {
+			if(skinAnim != null) {
+				model.Head.Visible =		!skinAnim.GetFlag(SkinAnimFlag.HEAD_DISABLED);
+				model.Body.Visible =		!skinAnim.GetFlag(SkinAnimFlag.BODY_DISABLED);
+				model.LeftArm.Visible =		!skinAnim.GetFlag(SkinAnimFlag.LEFT_ARM_DISABLED);
+				model.RightArm.Visible =	!skinAnim.GetFlag(SkinAnimFlag.RIGHT_ARM_DISABLED);
+				model.LeftLeg.Visible =		!skinAnim.GetFlag(SkinAnimFlag.LEFT_LEG_DISABLED);
+				model.RightLeg.Visible =	!skinAnim.GetFlag(SkinAnimFlag.RIGHT_LEG_DISABLED);
+				model.Hat.Visible =			!skinAnim.GetFlag(SkinAnimFlag.HEAD_OVERLAY_DISABLED);
+			} else {
+				model.Head.Visible = true;
+				model.Body.Visible = true;
+				model.LeftArm.Visible = true;
+				model.RightArm.Visible = true;
+				model.LeftLeg.Visible = true;
+				model.RightLeg.Visible = true;
+				model.Hat.Visible = true;
+			}
 		}
 
 		private void summonContextMenu(object sender, MouseEventArgs e) {
@@ -386,6 +407,7 @@ void main(){
 
 		// Creates Model Data and Finalizes
 		private void finished(object sender, EventArgs e) {
+			pckAsset.RemoveProperties("BOX");
 			foreach(SkinBOX part in modelBoxes) {
 				pckAsset.AddProperty("BOX", part);
 			}

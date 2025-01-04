@@ -60,6 +60,8 @@ namespace PckStudio.Internal {
 		public static bool operator !=(SkinANIM @this, SkinANIM other) => !@this.Equals(other);
 
 		public bool Equals(SkinANIM other) {
+			if(other is null)
+				return this is null;
 			return _flags.Data == other._flags.Data;
 		}
 

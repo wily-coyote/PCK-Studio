@@ -17,13 +17,10 @@ namespace PckStudio.Renderer {
 		 **/
 		public Vector3 Pivot;
 
-		public bool Visible;
-
 		public GLTransform() {
 			Position = Vector3.Zero;
 			Rotation = Vector3.Zero;
 			Pivot = Vector3.Zero;
-			Visible = true;
 		}
 	}
 }

@@ -82,6 +82,19 @@ namespace PckStudio.Renderer {
 			}
 		}
 		private Vector2 offset;
+		
+		/**
+		 * <summary>Whether or not the box should be drawn.</summary>
+		 **/
+		public bool Visible {
+			get {
+				return visible;
+			}
+			set {
+				visible = value;
+			}
+		}
+		private bool visible;
 
 		public GLTransform Transform;
 		public GLBox Parent;
@@ -90,6 +103,7 @@ namespace PckStudio.Renderer {
 			this.color = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
 			this.texture = texture;
 			this.Transform = new GLTransform();
+			this.visible = true;
 			// Create OpenGL objects
 			vao = GL.GenVertexArray();
 			vbo = GL.GenBuffer();
@@ -377,7 +391,7 @@ namespace PckStudio.Renderer {
 		}
 
 		public void Render() {
-			if(Transform.Visible) {
+			if(visible == true) {
 				GL.BindVertexArray(vao);
 				// not opentk nor learnopengl told me to do this.
 				// stackoverflow told me to do this and it works.
