@@ -62,6 +62,7 @@ namespace PckStudio.Forms {
 			}
 			comboParent.Items.Clear();
 			comboParent.Items.AddRange(Enum.GetNames(typeof(BOXType)));
+			DialogResult = DialogResult.None;
 		}
 
 		/** <summary>Called when the form loads. Put external data-related stuff here.</summary> **/
@@ -81,7 +82,6 @@ namespace PckStudio.Forms {
 		private void RefreshForm() {
 			noUpdate = true;
 			bool exists = selectedBox != null;
-			changeColorToolStripMenuItem.Visible = exists;
 			SizeXUpDown.Enabled = exists;
 			SizeYUpDown.Enabled = exists;
 			SizeZUpDown.Enabled = exists;
@@ -96,7 +96,6 @@ namespace PckStudio.Forms {
 			InflateUpDown.Enabled = exists;
 			cloneToolStripMenuItem.Enabled = exists;
 			deleteToolStripMenuItem.Enabled = exists;
-			changeColorToolStripMenuItem.Enabled = exists;
 			selectBox.Visible = exists;
 			if(exists) {
 				comboParent.Text = selectedBox.Type.ToString();
@@ -440,6 +439,7 @@ namespace PckStudio.Forms {
 				pckAsset.AddProperty("BOX", part);
 			}
 			previewImage = new Bitmap(mainView.Width, mainView.Height);
+			DialogResult = DialogResult.OK;
 			Close();
 		}
 

@@ -31,7 +31,6 @@ namespace PckStudio.Forms {
 			this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.buttonDone = new System.Windows.Forms.Button();
 			this.offsetGroup = new System.Windows.Forms.GroupBox();
 			this.tabOffsets = new System.Windows.Forms.TabControl();
@@ -157,11 +156,6 @@ namespace PckStudio.Forms {
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
 			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxRemoved);
 			// 
-			// changeColorToolStripMenuItem
-			// 
-			resources.ApplyResources(this.changeColorToolStripMenuItem, "changeColorToolStripMenuItem");
-			this.changeColorToolStripMenuItem.Name = "changeColorToolStripMenuItem";
-			// 
 			// buttonDone
 			// 
 			resources.ApplyResources(this.buttonDone, "buttonDone");
@@ -274,12 +268,12 @@ namespace PckStudio.Forms {
 			this.comboParent.FormattingEnabled = true;
 			this.helpProvider.SetHelpString(this.comboParent, resources.GetString("comboParent.HelpString"));
 			this.comboParent.Items.AddRange(new object[] {
-				resources.GetString("comboParent.Items"),
-				resources.GetString("comboParent.Items1"),
-				resources.GetString("comboParent.Items2"),
-				resources.GetString("comboParent.Items3"),
-				resources.GetString("comboParent.Items4"),
-				resources.GetString("comboParent.Items5")});
+            resources.GetString("comboParent.Items"),
+            resources.GetString("comboParent.Items1"),
+            resources.GetString("comboParent.Items2"),
+            resources.GetString("comboParent.Items3"),
+            resources.GetString("comboParent.Items4"),
+            resources.GetString("comboParent.Items5")});
 			this.comboParent.Name = "comboParent";
 			this.helpProvider.SetShowHelp(this.comboParent, ((bool)(resources.GetObject("comboParent.ShowHelp"))));
 			this.comboParent.SelectedIndexChanged += new System.EventHandler(this.FormChangeSkinBox);
@@ -361,10 +355,10 @@ namespace PckStudio.Forms {
 			resources.ApplyResources(this.UVYUpDown, "UVYUpDown");
 			this.helpProvider.SetHelpString(this.UVYUpDown, resources.GetString("UVYUpDown.HelpString"));
 			this.UVYUpDown.Minimum = new decimal(new int[] {
-				100,
-				0,
-				0,
-				-2147483648});
+            100,
+            0,
+            0,
+            -2147483648});
 			this.UVYUpDown.Name = "UVYUpDown";
 			this.helpProvider.SetShowHelp(this.UVYUpDown, ((bool)(resources.GetObject("UVYUpDown.ShowHelp"))));
 			this.UVYUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
@@ -375,10 +369,10 @@ namespace PckStudio.Forms {
 			this.PosZUpDown.DecimalPlaces = 2;
 			this.helpProvider.SetHelpString(this.PosZUpDown, resources.GetString("PosZUpDown.HelpString"));
 			this.PosZUpDown.Minimum = new decimal(new int[] {
-				100,
-				0,
-				0,
-				-2147483648});
+            100,
+            0,
+            0,
+            -2147483648});
 			this.PosZUpDown.Name = "PosZUpDown";
 			this.helpProvider.SetShowHelp(this.PosZUpDown, ((bool)(resources.GetObject("PosZUpDown.ShowHelp"))));
 			this.PosZUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
@@ -389,10 +383,10 @@ namespace PckStudio.Forms {
 			this.PosYUpDown.DecimalPlaces = 2;
 			this.helpProvider.SetHelpString(this.PosYUpDown, resources.GetString("PosYUpDown.HelpString"));
 			this.PosYUpDown.Minimum = new decimal(new int[] {
-				100,
-				0,
-				0,
-				-2147483648});
+            100,
+            0,
+            0,
+            -2147483648});
 			this.PosYUpDown.Name = "PosYUpDown";
 			this.helpProvider.SetShowHelp(this.PosYUpDown, ((bool)(resources.GetObject("PosYUpDown.ShowHelp"))));
 			this.PosYUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
@@ -403,10 +397,10 @@ namespace PckStudio.Forms {
 			this.PosXUpDown.DecimalPlaces = 2;
 			this.helpProvider.SetHelpString(this.PosXUpDown, resources.GetString("PosXUpDown.HelpString"));
 			this.PosXUpDown.Minimum = new decimal(new int[] {
-				100,
-				0,
-				0,
-				-2147483648});
+            100,
+            0,
+            0,
+            -2147483648});
 			this.PosXUpDown.Name = "PosXUpDown";
 			this.helpProvider.SetShowHelp(this.PosXUpDown, ((bool)(resources.GetObject("PosXUpDown.ShowHelp"))));
 			this.PosXUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
@@ -469,10 +463,10 @@ namespace PckStudio.Forms {
 			resources.ApplyResources(this.UVXUpDown, "UVXUpDown");
 			this.helpProvider.SetHelpString(this.UVXUpDown, resources.GetString("UVXUpDown.HelpString"));
 			this.UVXUpDown.Minimum = new decimal(new int[] {
-				100,
-				0,
-				0,
-				-2147483648});
+            100,
+            0,
+            0,
+            -2147483648});
 			this.UVXUpDown.Name = "UVXUpDown";
 			this.helpProvider.SetShowHelp(this.UVXUpDown, ((bool)(resources.GetObject("UVXUpDown.ShowHelp"))));
 			this.UVXUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
@@ -663,9 +657,9 @@ namespace PckStudio.Forms {
 			// menuStrip
 			// 
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-				this.fileToolStripMenuItem,
-				this.editToolStripMenuItem,
-				this.helpToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.helpToolStripMenuItem});
 			resources.ApplyResources(this.menuStrip, "menuStrip");
 			this.menuStrip.Name = "menuStrip";
 			this.helpProvider.SetShowHelp(this.menuStrip, ((bool)(resources.GetObject("menuStrip.ShowHelp"))));
@@ -673,9 +667,9 @@ namespace PckStudio.Forms {
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-				this.loadTemplateToolStripMenuItem,
-				this.finishToolStripMenuItem,
-				this.cancelToolStripMenuItem});
+            this.loadTemplateToolStripMenuItem,
+            this.finishToolStripMenuItem,
+            this.cancelToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
 			// 
@@ -695,14 +689,14 @@ namespace PckStudio.Forms {
 			// 
 			this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
 			resources.ApplyResources(this.cancelToolStripMenuItem, "cancelToolStripMenuItem");
+			this.cancelToolStripMenuItem.Click += new System.EventHandler(this.CancelModel);
 			// 
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-				this.createToolStripMenuItem,
-				this.cloneToolStripMenuItem,
-				this.deleteToolStripMenuItem,
-				this.changeColorToolStripMenuItem});
+            this.createToolStripMenuItem,
+            this.cloneToolStripMenuItem,
+            this.deleteToolStripMenuItem});
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
 			// 
@@ -783,7 +777,6 @@ namespace PckStudio.Forms {
 		private ToolStripMenuItem createToolStripMenuItem;
 		private ToolStripMenuItem cloneToolStripMenuItem;
 		private ToolStripMenuItem deleteToolStripMenuItem;
-		private ToolStripMenuItem changeColorToolStripMenuItem;
 		private Button buttonDone;
 		private PckStudio.ToolboxItems.InterpolationPictureBox uvPictureBox;
 		private Button importButton;

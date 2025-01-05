@@ -146,7 +146,7 @@
 </value>
   </data>
   <data name="createToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="createToolStripMenuItem.Text" xml:space="preserve">
     <value>Create</value>
@@ -167,7 +167,7 @@
 </value>
   </data>
   <data name="cloneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="cloneToolStripMenuItem.Text" xml:space="preserve">
     <value>Clone</value>
@@ -182,29 +182,10 @@
 </value>
   </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
-  </data>
-  <data name="changeColorToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAAFhSURBVFhH7ZY/
-        S8RAEMXHW23zDexFkNSSTyDYijZyYq2V4BWBmPZaK7/B1fZiK1iIrRxod4r/Gq38N+7L7B5LyFllVuF8
-        8Mhm55HfZJZAaBq1Zs2yjKx5C+7OiLF223EEYM+CeVaMJlxJXdt1ONZRJuBH/mHo1sPfDY2iwcO39naj
-        35CUkibBo4z+H/6n4EcdetSGzwHQ79BLHf5q6EYbvgTAmaFhHQ67zy2TaPvaAdy+5XUTHMexSHTpsq1r
-        APinoftJcFv/ctnWdW7Nb4ZOf4CrnTsezHmenywkCSbwEBMOcVmWlYuiGIVNRIHDvoGwCe2fiwrsHTYA
-        p2nqayri7mrKe5vLT7jiPoRnWcaJnYBE2xcPj3ev+OKAvQf99Tvs16wi7m1lY3Bo1CSiq0Y4jJpEdNUI
-        h1GTiK4EWGsEx4KaRPQkYO9fgzvw4f7KM/adVVVBxg24e+eOdTSF4GkQ0TdijaTdIsIqEQAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
-  <data name="changeColorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
-  </data>
-  <data name="changeColorToolStripMenuItem.Text" xml:space="preserve">
-    <value>Change Color</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonDone.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -2092,19 +2073,19 @@
     <value>162, 17</value>
   </metadata>
   <data name="loadTemplateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="loadTemplateToolStripMenuItem.Text" xml:space="preserve">
     <value>Load Template</value>
   </data>
   <data name="finishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="finishToolStripMenuItem.Text" xml:space="preserve">
     <value>Finish</value>
   </data>
   <data name="cancelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="cancelToolStripMenuItem.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -4697,12 +4678,6 @@
     <value>deleteToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;deleteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;changeColorToolStripMenuItem.Name" xml:space="preserve">
-    <value>changeColorToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;changeColorToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
