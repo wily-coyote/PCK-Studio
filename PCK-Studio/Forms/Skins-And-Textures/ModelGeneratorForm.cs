@@ -21,8 +21,6 @@ using System.Windows.Forms;
 namespace PckStudio.Forms {
 	public partial class ModelGeneratorForm : Form {
 
-		// TODO: This and ReplaceWhiteSpace should be in an util class instead of just being here.
-
 		/** <summary>The .NET image used for the model. Used in GL rendering.</summary> **/
 		private Bitmap bitmap;
 
@@ -36,12 +34,12 @@ namespace PckStudio.Forms {
 		private SkinANIM skinAnim;
 
 		/** <summary>The currently selected SkinBOX. This should always be either an element of <see cref="modelBoxes"/> or null.</summary> **/
-		SkinBOX selectedBox;
+		private SkinBOX selectedBox;
 		
-		List<SkinOFFSET> modelOffsets;
+		private List<SkinOFFSET> modelOffsets;
 
 		/** <summary>A list of <see cref="SkinBOX"/>es used in the model. This is bound to <see cref="skinBoxList"/>, a <see cref="DataGridView"/>.</summary> **/
-		BindingList<SkinBOX> modelBoxes;
+		private BindingList<SkinBOX> modelBoxes;
 
 		/** <summary>Prevents the form's controls from updating the current SkinBOX.</summary> **/
 		private bool noUpdate;
@@ -65,19 +63,19 @@ namespace PckStudio.Forms {
 			comboParent.Items.AddRange(Enum.GetNames(typeof(BOXType)));
 		}
 
-		private void formLoaded(object sender, EventArgs e) {
+		private void FormLoaded(object sender, EventArgs e) {
 			GLInit();
-			modelBoxes.AddingNew += new AddingNewEventHandler(addingSkinBox);
-			modelBoxes.ListChanged += new ListChangedEventHandler(changeSkinBox);
+			modelBoxes.AddingNew += new AddingNewEventHandler(SkinBoxAdding);
+			modelBoxes.ListChanged += new ListChangedEventHandler(SkinBoxChanged);
 			LoadData(pckAsset);
 			skinBoxList.DataSource = modelBoxes;
-			skinBoxList.SelectionChanged += changeSelection;
+			skinBoxList.SelectionChanged += SelectionChanged;
 			skinBoxList.ClearSelection();
-			applyFlags();
-			refreshValues();
+			ApplyAnimFlags();
+			RefreshForm();
 		}
 
-		private void refreshValues() {
+		private void RefreshForm() {
 			noUpdate = true;
 			bool exists = selectedBox != null;
 			changeColorToolStripMenuItem.Visible = exists;
@@ -113,15 +111,31 @@ namespace PckStudio.Forms {
 			noUpdate = false;
 		}
 
-		private void applyFlags() {
+		private void ApplyAnimFlags() {
 			if(skinAnim != null) {
+				// base
 				model.Head.Visible =		!skinAnim.GetFlag(SkinAnimFlag.HEAD_DISABLED);
 				model.Body.Visible =		!skinAnim.GetFlag(SkinAnimFlag.BODY_DISABLED);
 				model.LeftArm.Visible =		!skinAnim.GetFlag(SkinAnimFlag.LEFT_ARM_DISABLED);
 				model.RightArm.Visible =	!skinAnim.GetFlag(SkinAnimFlag.RIGHT_ARM_DISABLED);
 				model.LeftLeg.Visible =		!skinAnim.GetFlag(SkinAnimFlag.LEFT_LEG_DISABLED);
 				model.RightLeg.Visible =	!skinAnim.GetFlag(SkinAnimFlag.RIGHT_LEG_DISABLED);
-				model.Hat.Visible =			!skinAnim.GetFlag(SkinAnimFlag.HEAD_OVERLAY_DISABLED);
+				model.Hat.Visible =		!skinAnim.GetFlag(SkinAnimFlag.HEAD_OVERLAY_DISABLED);
+				// layers
+				model.LaterModel =		skinAnim.GetFlag(SkinAnimFlag.RESOLUTION_64x64);
+				if(model.LaterModel){
+					model.Jacket.Visible =		!skinAnim.GetFlag(SkinAnimFlag.BODY_OVERLAY_DISABLED);
+					model.LeftSleeve.Visible =	!skinAnim.GetFlag(SkinAnimFlag.LEFT_ARM_OVERLAY_DISABLED);
+					model.RightSleeve.Visible =	!skinAnim.GetFlag(SkinAnimFlag.RIGHT_ARM_OVERLAY_DISABLED);
+					model.LeftPant.Visible =	!skinAnim.GetFlag(SkinAnimFlag.LEFT_LEG_OVERLAY_DISABLED);
+					model.RightPant.Visible =	!skinAnim.GetFlag(SkinAnimFlag.RIGHT_LEG_OVERLAY_DISABLED);
+				} else {
+					model.Jacket.Visible = false;
+					model.LeftSleeve.Visible = false;
+					model.RightSleeve.Visible = false;
+					model.LeftPant.Visible = false;
+					model.RightPant.Visible = false;
+				}
 			} else {
 				model.Head.Visible = true;
 				model.Body.Visible = true;
@@ -130,42 +144,43 @@ namespace PckStudio.Forms {
 				model.LeftLeg.Visible = true;
 				model.RightLeg.Visible = true;
 				model.Hat.Visible = true;
+				model.LaterModel = false;
 			}
 		}
 
-		private void summonContextMenu(object sender, MouseEventArgs e) {
+		private void ShowContextMenu(object sender, MouseEventArgs e) {
 			if(e.Button == MouseButtons.Right) {
 				var hit = skinBoxList.HitTest(e.X, e.Y);
 				skinBoxList.ClearSelection();
 				if(hit.RowIndex != -1) {
 					skinBoxList.Rows[hit.RowIndex].Selected = true;
 				}
-				changeSelection(sender, EventArgs.Empty);
+				SelectionChanged(sender, EventArgs.Empty);
 				boxContextMenu.Show(this, new Point(e.X, e.Y));
 			}
 		}
 
-		private void addingSkinBox(object sender, AddingNewEventArgs e) {
+		private void SkinBoxAdding(object sender, AddingNewEventArgs e) {
 			e.NewObject = SkinBOX.Empty;
 		}
 
-		private void addSkinBox(object sender, EventArgs e) {
+		private void SkinBoxAdded(object sender, EventArgs e) {
 			modelBoxes.AddNew();
 		}
 
-		private void removeSkinBox(object sender, EventArgs e) {
+		private void SkinBoxRemoved(object sender, EventArgs e) {
 			if(selectedBox != null) {
 				modelBoxes.Remove(selectedBox);
 			}
 		}
 
-		private void cloneSkinBox(object sender, EventArgs e) {
+		private void SkinBoxCloned(object sender, EventArgs e) {
 			if(selectedBox != null) {
 				modelBoxes.Insert(modelBoxes.IndexOf(selectedBox)+1, (SkinBOX)selectedBox.Clone());
 			}
 		}
 
-		private void changeSkinBox(object sender, ListChangedEventArgs e) {
+		private void SkinBoxChanged(object sender, ListChangedEventArgs e) {
 			switch(e.ListChangedType) {
 				case ListChangedType.ItemDeleted:
 					model.Boxes.RemoveAt(e.NewIndex);
@@ -181,7 +196,7 @@ namespace PckStudio.Forms {
 			}
 		}
 
-		private void formChangeSkinBox(object sender, EventArgs e) {
+		private void FormChangeSkinBox(object sender, EventArgs e) {
 			if(selectedBox != null && !noUpdate) {
 				selectedBox.Type =
 					(BOXType)Enum.Parse(typeof(BOXType), (string)comboParent.SelectedItem);
@@ -199,12 +214,12 @@ namespace PckStudio.Forms {
 			}
 		}
 
-		private void changeSelection(object sender, EventArgs e) {
+		private void SelectionChanged(object sender, EventArgs e) {
 			selectedBox = null;
 			var cells = skinBoxList.SelectedCells;
 			if(cells.Count > 0) {
 				selectedBox = cells[0].OwningRow.DataBoundItem as SkinBOX;
-				refreshValues();
+				RefreshForm();
 			}
 		}
 
@@ -235,7 +250,7 @@ namespace PckStudio.Forms {
 
 		#region GL rendering using OpenTK
 
-		// TODO: line drawing in OpenGL for armor & guidelines, floor grid
+		// TODO: line drawing in OpenGL for armor & guidelines, floor grid, current selection
 		private Timer glTimer;
 		private GLShader shader;
 		private GLTexture skin;
@@ -377,7 +392,7 @@ void main(){
 		}
 
 		//Export Current Skin Texture
-		private void exportSkinTexture(object sender, EventArgs e) {
+		private void ExportImage(object sender, EventArgs e) {
 			// Not all skins are 64x64.
 			using SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "Portable Network Graphics | *.png";
@@ -387,7 +402,7 @@ void main(){
 		}
 
 		//Imports Skin Texture
-		private void importSkinTexture(object sender, EventArgs e) {
+		private void ImportImage(object sender, EventArgs e) {
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.Filter = "Portable Network Graphics | *.png";
 			openFileDialog.Title = "Select Skin Texture";
@@ -406,7 +421,7 @@ void main(){
 		}
 
 		// Creates Model Data and Finalizes
-		private void finished(object sender, EventArgs e) {
+		private void FinishModel(object sender, EventArgs e) {
 			pckAsset.RemoveProperties("BOX");
 			foreach(SkinBOX part in modelBoxes) {
 				pckAsset.AddProperty("BOX", part);
@@ -416,7 +431,7 @@ void main(){
 		}
 
 		//Loads in model template(Steve)
-		private void generateTemplate(object sender, EventArgs e) {
+		private void GenerateTemplate(object sender, EventArgs e) {
 			modelBoxes.Add(SkinBOX.FromString("HEAD -4 -8 -4 8 8 8 0 0 0 0 0"));
 			modelBoxes.Add(SkinBOX.FromString("BODY -4 0 -2 8 12 4 16 16 0 0 0"));
 			modelBoxes.Add(SkinBOX.FromString("ARM0 -3 -2 -2 4 12 4 40 16 0 0 0"));
@@ -425,20 +440,20 @@ void main(){
 			modelBoxes.Add(SkinBOX.FromString("LEG1 -2 0 -2 4 12 4 0 16 0 1 0"));
 		}
 
-		private void formClosing(object sender, FormClosingEventArgs e) {
+		private void Exiting(object sender, FormClosingEventArgs e) {
 			GLDeinit(sender, e);
 		}
 
-		private void toggleAnimationChanged(object sender, EventArgs e) {
+		private void AnimationToggled(object sender, EventArgs e) {
 			model.Animate = toggleAnimationCheckBox.Checked;
 		}
 
-		private void doHelp(object sender, EventArgs e) {
+		private void DoContextHelp(object sender, EventArgs e) {
 			// WM_SYSCOMMAND SC_CONTEXTHELP
 			Utilities.SendMessage(this.Handle, 0x0112, 0xf180, 0x0);
 		}
 
-		private void cancel(object sender, EventArgs e) {
+		private void CancelModel(object sender, EventArgs e) {
 			Close();
 		}
 	}

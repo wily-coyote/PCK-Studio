@@ -216,67 +216,67 @@ namespace PckStudio.Renderer {
 			if(mirror) {
 				uvs = new float[48] {
 					// Front
-					zSize+xSize,                zSize+ySize,
-					zSize,                      zSize+ySize,
-					zSize,                      zSize,
-					zSize+xSize,                zSize,
+					zSize+xSize,				zSize+ySize,
+					zSize,						zSize+ySize,
+					zSize,						zSize,
+					zSize+xSize,				zSize,
 					// Back
-					zSize+xSize+zSize+xSize,    zSize+ySize,
-					zSize+xSize+zSize,          zSize+ySize,
-					zSize+xSize+zSize,          zSize,
-					zSize+xSize+zSize+xSize,    zSize,
+					zSize+xSize+zSize+xSize,	zSize+ySize,
+					zSize+xSize+zSize,			zSize+ySize,
+					zSize+xSize+zSize,			zSize,
+					zSize+xSize+zSize+xSize,	zSize,
 					// Left (swapped with right)
-					zSize+xSize+zSize,          zSize+ySize,
-					zSize+xSize,                zSize+ySize,
-					zSize+xSize,                zSize,
-					zSize+xSize+zSize,          zSize,
+					zSize+xSize+zSize,			zSize+ySize,
+					zSize+xSize,				zSize+ySize,
+					zSize+xSize,				zSize,
+					zSize+xSize+zSize,			zSize,
 					// Right (swapped with left)
-					zSize,                      zSize+ySize,
-					0.0f,                       zSize+ySize,
-					0.0f,                       zSize,
-					zSize,                      zSize,
+					zSize,						zSize+ySize,
+					0.0f,						zSize+ySize,
+					0.0f,						zSize,
+					zSize,						zSize,
 					// Up
-					zSize+xSize,                zSize,
-					zSize,                      zSize,
-					zSize,                      0.0f,
-					zSize+xSize,                0.0f,
+					zSize+xSize,				zSize,
+					zSize,						zSize,
+					zSize,						0.0f,
+					zSize+xSize,				0.0f,
 					// Down
-					zSize+xSize+xSize,           0.0f,
-					zSize+xSize,                0.0f,
-					zSize+xSize,                zSize,
-					zSize+xSize+xSize,          zSize,
+					zSize+xSize+xSize,			 0.0f,
+					zSize+xSize,				0.0f,
+					zSize+xSize,				zSize,
+					zSize+xSize+xSize,			zSize,
 				};
 			} else {
 				uvs = new float[48] {
-					zSize,                      zSize+ySize,
-					zSize+xSize,                zSize+ySize,
-					zSize+xSize,                zSize,
-					zSize,                      zSize,
+					zSize,						zSize+ySize,
+					zSize+xSize,				zSize+ySize,
+					zSize+xSize,				zSize,
+					zSize,						zSize,
 					// Back
-					zSize+xSize+zSize,          zSize+ySize,
-					zSize+xSize+zSize+xSize,    zSize+ySize,
-					zSize+xSize+zSize+xSize,    zSize,
-					zSize+xSize+zSize,          zSize,
+					zSize+xSize+zSize,			zSize+ySize,
+					zSize+xSize+zSize+xSize,	zSize+ySize,
+					zSize+xSize+zSize+xSize,	zSize,
+					zSize+xSize+zSize,			zSize,
 					// Left
-					0.0f,                       zSize+ySize,
-					zSize,                      zSize+ySize,
-					zSize,                      zSize,
-					0.0f,                       zSize,
+					0.0f,						zSize+ySize,
+					zSize,						zSize+ySize,
+					zSize,						zSize,
+					0.0f,						zSize,
 					// Right
-					zSize+xSize,                zSize+ySize,
-					zSize+xSize+zSize,          zSize+ySize,
-					zSize+xSize+zSize,          zSize,
-					zSize+xSize,                zSize,
+					zSize+xSize,				zSize+ySize,
+					zSize+xSize+zSize,			zSize+ySize,
+					zSize+xSize+zSize,			zSize,
+					zSize+xSize,				zSize,
 					// Up
-					zSize,                      zSize,
-					zSize+xSize,                zSize,
-					zSize+xSize,                0.0f,
-					zSize,                      0.0f,
+					zSize,						zSize,
+					zSize+xSize,				zSize,
+					zSize+xSize,				0.0f,
+					zSize,						0.0f,
 					// Down
-					zSize+xSize,                0.0f,
-					zSize+xSize+xSize,          0.0f,
-					zSize+xSize+xSize,          zSize,
-					zSize+xSize,                zSize,
+					zSize+xSize,				0.0f,
+					zSize+xSize+xSize,			0.0f,
+					zSize+xSize+xSize,			zSize,
+					zSize+xSize,				zSize,
 				};
 			}
 			vertices = new float[192] {
@@ -284,59 +284,59 @@ namespace PckStudio.Renderer {
 				// Counterclockwise from bottom left
 				// Front
 				// EBO would be 0, 1, 2,	 0, 2, 3
-				-xSizePadded,    -ySizePadded,   zSizePadded,    0.0f,   0.0f,   0.0f,   0.0f,   1.0f,
-				xSizePadded,    -ySizePadded,   zSizePadded,    0.0f,   0.0f,   0.0f,   0.0f,   1.0f,
-				xSizePadded,    ySizePadded,    zSizePadded,    0.0f,   0.0f,   0.0f,   0.0f,   1.0f,
-				-xSizePadded,   ySizePadded,    zSizePadded,    0.0f,   0.0f,   0.0f,   0.0f,   1.0f,
+				-xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	1.0f,
+				xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	1.0f,
+				xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	1.0f,
+				-xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	1.0f,
 				// Back
-				xSizePadded,   -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   0.0f,   0.0f,   -1.0f,
-				-xSizePadded,   -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   0.0f,   0.0f,   -1.0f,
-				-xSizePadded,   ySizePadded,    -zSizePadded,   0.0f,   0.0f,   0.0f,   0.0f,   -1.0f,
-				xSizePadded,    ySizePadded,    -zSizePadded,   0.0f,   0.0f,   0.0f,   0.0f,   -1.0f,
+				xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	-1.0f,
+				-xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	-1.0f,
+				-xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	-1.0f,
+				xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	0.0f,	-1.0f,
 				// Left
-				-xSizePadded,    -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   -1.0f,  0.0f,   0.0f,
-				-xSizePadded,   -ySizePadded,   zSizePadded,    0.0f,   0.0f,   -1.0f,  0.0f,   0.0f,
-				-xSizePadded,   ySizePadded,    zSizePadded,    0.0f,   0.0f,   -1.0f,  0.0f,   0.0f,
-				-xSizePadded,   ySizePadded,    -zSizePadded,   0.0f,   0.0f,   -1.0f,  0.0f,   0.0f,
+				-xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	-1.0f,	0.0f,	0.0f,
+				-xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	-1.0f,	0.0f,	0.0f,
+				-xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	-1.0f,	0.0f,	0.0f,
+				-xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	-1.0f,	0.0f,	0.0f,
 				// Right
-				xSizePadded,   -ySizePadded,   zSizePadded,    0.0f,   0.0f,   1.0f,   0.0f,   0.0f,
-				xSizePadded,    -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   1.0f,   0.0f,   0.0f,
-				xSizePadded,    ySizePadded,    -zSizePadded,   0.0f,   0.0f,   1.0f,   0.0f,   0.0f,
-				xSizePadded,    ySizePadded,    zSizePadded,    0.0f,   0.0f,   1.0f,   0.0f,   0.0f,
+				xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	1.0f,	0.0f,	0.0f,
+				xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	1.0f,	0.0f,	0.0f,
+				xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	1.0f,	0.0f,	0.0f,
+				xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	1.0f,	0.0f,	0.0f,
 				// Up
-				-xSizePadded,    ySizePadded,    zSizePadded,    0.0f,   0.0f,   0.0f,   1.0f,   0.0f,
-				xSizePadded,    ySizePadded,    zSizePadded,    0.0f,   0.0f,   0.0f,   1.0f,   0.0f,
-				xSizePadded,    ySizePadded,    -zSizePadded,   0.0f,   0.0f,   0.0f,   1.0f,   0.0f,
-				-xSizePadded,   ySizePadded,    -zSizePadded,   0.0f,   0.0f,   0.0f,   1.0f,   0.0f,
+				-xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	1.0f,	0.0f,
+				xSizePadded,	ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	1.0f,	0.0f,
+				xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	1.0f,	0.0f,
+				-xSizePadded,	ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	1.0f,	0.0f,
 				// Down
-				-xSizePadded,    -ySizePadded,   zSizePadded,    0.0f,   0.0f,   0.0f,   -1.0f,  0.0f,
-				xSizePadded,    -ySizePadded,   zSizePadded,    0.0f,   0.0f,   0.0f,   -1.0f,  0.0f,
-				xSizePadded,    -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   0.0f,   -1.0f,  0.0f,
-				-xSizePadded,   -ySizePadded,   -zSizePadded,   0.0f,   0.0f,   0.0f,   -1.0f,  0.0f,
+				-xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	-1.0f,	0.0f,
+				xSizePadded,	-ySizePadded,	zSizePadded,	0.0f,	0.0f,	0.0f,	-1.0f,	0.0f,
+				xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	-1.0f,	0.0f,
+				-xSizePadded,	-ySizePadded,	-zSizePadded,	0.0f,	0.0f,	0.0f,	-1.0f,	0.0f,
 			};
 			for(int i = 0; i < 24; i++) {
-				vertices[3+(i*8)]   = uvs[i*2];
+				vertices[3+(i*8)]	= uvs[i*2];
 				vertices[3+(i*8)+1] = uvs[(i*2)+1];
 			}
 			indices = new uint[36] {
 				// front
-				0,   1,  2,
-				0,  2,  3,
+				0,	1,	2,
+				0,	2,	3,
 				// back
-				4,   5,  6,
-				4,  6,  7,
+				4,	5,	6,
+				4,	6,	7,
 				// left
-				8,   9,  10,
-				8,  10, 11,
+				8,	9,	10,
+				8,	10,	11,
 				// right
-				12,   13, 14,
-				12, 14, 15,
+				12,	13,	14,
+				12,	14,	15,
 				// up
-				16,   17, 18,
-				16, 18, 19,
+				16,	17,	18,
+				16,	18,	19,
 				// down
-				20,   21, 22,
-				20, 22, 23,
+				20,	21,	22,
+				20,	22,	23,
 			};
 			// Box is different from Plane
 			// because it uses GL_TRIANGLES
@@ -380,14 +380,16 @@ namespace PckStudio.Renderer {
 		}
 
 		public void SetShader(GLShader shader) {
-			Matrix4 model = GetMatrix();
-			// Use texture
-			texture.Use();
-			// Use shader
-			shader.SetVec4("mixColor", color);
-			shader.SetMat4("model", model);
-			shader.SetVec2("textureSize", texture.Size);
-			shader.SetVec2("uvOffset", offset); // where that plane is in the skin
+			if(visible == true) {
+				Matrix4 model = GetMatrix();
+				// Use texture
+				texture.Use();
+				// Use shader
+				shader.SetVec4("mixColor", color);
+				shader.SetMat4("model", model);
+				shader.SetVec2("textureSize", texture.Size);
+				shader.SetVec2("uvOffset", offset); // where that plane is in the skin
+			}
 		}
 
 		public void Render() {

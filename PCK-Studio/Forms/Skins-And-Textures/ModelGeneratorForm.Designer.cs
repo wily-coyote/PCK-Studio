@@ -143,19 +143,19 @@ namespace PckStudio.Forms {
 			// 
 			resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
 			this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-			this.createToolStripMenuItem.Click += new System.EventHandler(this.addSkinBox);
+			this.createToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxAdded);
 			// 
 			// cloneToolStripMenuItem
 			// 
 			resources.ApplyResources(this.cloneToolStripMenuItem, "cloneToolStripMenuItem");
 			this.cloneToolStripMenuItem.Name = "cloneToolStripMenuItem";
-			this.cloneToolStripMenuItem.Click += new System.EventHandler(this.cloneSkinBox);
+			this.cloneToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxCloned);
 			// 
 			// deleteToolStripMenuItem
 			// 
 			resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.removeSkinBox);
+			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxRemoved);
 			// 
 			// changeColorToolStripMenuItem
 			// 
@@ -169,7 +169,7 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.buttonDone, resources.GetString("buttonDone.HelpString"));
 			this.buttonDone.Name = "buttonDone";
 			this.helpProvider.SetShowHelp(this.buttonDone, ((bool)(resources.GetObject("buttonDone.ShowHelp"))));
-			this.buttonDone.Click += new System.EventHandler(this.finished);
+			this.buttonDone.Click += new System.EventHandler(this.FinishModel);
 			// 
 			// offsetGroup
 			// 
@@ -274,15 +274,15 @@ namespace PckStudio.Forms {
 			this.comboParent.FormattingEnabled = true;
 			this.helpProvider.SetHelpString(this.comboParent, resources.GetString("comboParent.HelpString"));
 			this.comboParent.Items.AddRange(new object[] {
-            resources.GetString("comboParent.Items"),
-            resources.GetString("comboParent.Items1"),
-            resources.GetString("comboParent.Items2"),
-            resources.GetString("comboParent.Items3"),
-            resources.GetString("comboParent.Items4"),
-            resources.GetString("comboParent.Items5")});
+				resources.GetString("comboParent.Items"),
+				resources.GetString("comboParent.Items1"),
+				resources.GetString("comboParent.Items2"),
+				resources.GetString("comboParent.Items3"),
+				resources.GetString("comboParent.Items4"),
+				resources.GetString("comboParent.Items5")});
 			this.comboParent.Name = "comboParent";
 			this.helpProvider.SetShowHelp(this.comboParent, ((bool)(resources.GetObject("comboParent.ShowHelp"))));
-			this.comboParent.SelectedIndexChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.comboParent.SelectedIndexChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// exportButton
 			// 
@@ -290,7 +290,7 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.exportButton, resources.GetString("exportButton.HelpString"));
 			this.exportButton.Name = "exportButton";
 			this.helpProvider.SetShowHelp(this.exportButton, ((bool)(resources.GetObject("exportButton.ShowHelp"))));
-			this.exportButton.Click += new System.EventHandler(this.exportSkinTexture);
+			this.exportButton.Click += new System.EventHandler(this.ExportImage);
 			// 
 			// importButton
 			// 
@@ -298,7 +298,7 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.importButton, resources.GetString("importButton.HelpString"));
 			this.importButton.Name = "importButton";
 			this.helpProvider.SetShowHelp(this.importButton, ((bool)(resources.GetObject("importButton.ShowHelp"))));
-			this.importButton.Click += new System.EventHandler(this.importSkinTexture);
+			this.importButton.Click += new System.EventHandler(this.ImportImage);
 			// 
 			// buttonTemplate
 			// 
@@ -306,7 +306,7 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.buttonTemplate, resources.GetString("buttonTemplate.HelpString"));
 			this.buttonTemplate.Name = "buttonTemplate";
 			this.helpProvider.SetShowHelp(this.buttonTemplate, ((bool)(resources.GetObject("buttonTemplate.ShowHelp"))));
-			this.buttonTemplate.Click += new System.EventHandler(this.generateTemplate);
+			this.buttonTemplate.Click += new System.EventHandler(this.GenerateTemplate);
 			// 
 			// generateTextureCheckBox
 			// 
@@ -336,7 +336,7 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.SizeXUpDown, resources.GetString("SizeXUpDown.HelpString"));
 			this.SizeXUpDown.Name = "SizeXUpDown";
 			this.helpProvider.SetShowHelp(this.SizeXUpDown, ((bool)(resources.GetObject("SizeXUpDown.ShowHelp"))));
-			this.SizeXUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.SizeXUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// SizeYUpDown
 			// 
@@ -345,7 +345,7 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.SizeYUpDown, resources.GetString("SizeYUpDown.HelpString"));
 			this.SizeYUpDown.Name = "SizeYUpDown";
 			this.helpProvider.SetShowHelp(this.SizeYUpDown, ((bool)(resources.GetObject("SizeYUpDown.ShowHelp"))));
-			this.SizeYUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.SizeYUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// SizeZUpDown
 			// 
@@ -354,20 +354,20 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.SizeZUpDown, resources.GetString("SizeZUpDown.HelpString"));
 			this.SizeZUpDown.Name = "SizeZUpDown";
 			this.helpProvider.SetShowHelp(this.SizeZUpDown, ((bool)(resources.GetObject("SizeZUpDown.ShowHelp"))));
-			this.SizeZUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.SizeZUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// UVYUpDown
 			// 
 			resources.ApplyResources(this.UVYUpDown, "UVYUpDown");
 			this.helpProvider.SetHelpString(this.UVYUpDown, resources.GetString("UVYUpDown.HelpString"));
 			this.UVYUpDown.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
+				100,
+				0,
+				0,
+				-2147483648});
 			this.UVYUpDown.Name = "UVYUpDown";
 			this.helpProvider.SetShowHelp(this.UVYUpDown, ((bool)(resources.GetObject("UVYUpDown.ShowHelp"))));
-			this.UVYUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.UVYUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// PosZUpDown
 			// 
@@ -375,13 +375,13 @@ namespace PckStudio.Forms {
 			this.PosZUpDown.DecimalPlaces = 2;
 			this.helpProvider.SetHelpString(this.PosZUpDown, resources.GetString("PosZUpDown.HelpString"));
 			this.PosZUpDown.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
+				100,
+				0,
+				0,
+				-2147483648});
 			this.PosZUpDown.Name = "PosZUpDown";
 			this.helpProvider.SetShowHelp(this.PosZUpDown, ((bool)(resources.GetObject("PosZUpDown.ShowHelp"))));
-			this.PosZUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.PosZUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// PosYUpDown
 			// 
@@ -389,13 +389,13 @@ namespace PckStudio.Forms {
 			this.PosYUpDown.DecimalPlaces = 2;
 			this.helpProvider.SetHelpString(this.PosYUpDown, resources.GetString("PosYUpDown.HelpString"));
 			this.PosYUpDown.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
+				100,
+				0,
+				0,
+				-2147483648});
 			this.PosYUpDown.Name = "PosYUpDown";
 			this.helpProvider.SetShowHelp(this.PosYUpDown, ((bool)(resources.GetObject("PosYUpDown.ShowHelp"))));
-			this.PosYUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.PosYUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// PosXUpDown
 			// 
@@ -403,13 +403,13 @@ namespace PckStudio.Forms {
 			this.PosXUpDown.DecimalPlaces = 2;
 			this.helpProvider.SetHelpString(this.PosXUpDown, resources.GetString("PosXUpDown.HelpString"));
 			this.PosXUpDown.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
+				100,
+				0,
+				0,
+				-2147483648});
 			this.PosXUpDown.Name = "PosXUpDown";
 			this.helpProvider.SetShowHelp(this.PosXUpDown, ((bool)(resources.GetObject("PosXUpDown.ShowHelp"))));
-			this.PosXUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.PosXUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// positionGroup
 			// 
@@ -469,13 +469,13 @@ namespace PckStudio.Forms {
 			resources.ApplyResources(this.UVXUpDown, "UVXUpDown");
 			this.helpProvider.SetHelpString(this.UVXUpDown, resources.GetString("UVXUpDown.HelpString"));
 			this.UVXUpDown.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
+				100,
+				0,
+				0,
+				-2147483648});
 			this.UVXUpDown.Name = "UVXUpDown";
 			this.helpProvider.SetShowHelp(this.UVXUpDown, ((bool)(resources.GetObject("UVXUpDown.ShowHelp"))));
-			this.UVXUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.UVXUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// toggleAnimationCheckBox
 			// 
@@ -486,7 +486,7 @@ namespace PckStudio.Forms {
 			this.toggleAnimationCheckBox.Name = "toggleAnimationCheckBox";
 			this.helpProvider.SetShowHelp(this.toggleAnimationCheckBox, ((bool)(resources.GetObject("toggleAnimationCheckBox.ShowHelp"))));
 			this.toggleAnimationCheckBox.UseVisualStyleBackColor = true;
-			this.toggleAnimationCheckBox.CheckedChanged += new System.EventHandler(this.toggleAnimationChanged);
+			this.toggleAnimationCheckBox.CheckedChanged += new System.EventHandler(this.AnimationToggled);
 			// 
 			// rightLayout
 			// 
@@ -568,7 +568,7 @@ namespace PckStudio.Forms {
 			this.mirrorCheckBox.Name = "mirrorCheckBox";
 			this.helpProvider.SetShowHelp(this.mirrorCheckBox, ((bool)(resources.GetObject("mirrorCheckBox.ShowHelp"))));
 			this.mirrorCheckBox.UseVisualStyleBackColor = true;
-			this.mirrorCheckBox.CheckedChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.mirrorCheckBox.CheckedChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// armorCheckBox
 			// 
@@ -577,7 +577,7 @@ namespace PckStudio.Forms {
 			this.armorCheckBox.Name = "armorCheckBox";
 			this.helpProvider.SetShowHelp(this.armorCheckBox, ((bool)(resources.GetObject("armorCheckBox.ShowHelp"))));
 			this.armorCheckBox.UseVisualStyleBackColor = true;
-			this.armorCheckBox.CheckedChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.armorCheckBox.CheckedChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// InflateUpDown
 			// 
@@ -586,7 +586,7 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.InflateUpDown, resources.GetString("InflateUpDown.HelpString"));
 			this.InflateUpDown.Name = "InflateUpDown";
 			this.helpProvider.SetShowHelp(this.InflateUpDown, ((bool)(resources.GetObject("InflateUpDown.ShowHelp"))));
-			this.InflateUpDown.ValueChanged += new System.EventHandler(this.formChangeSkinBox);
+			this.InflateUpDown.ValueChanged += new System.EventHandler(this.FormChangeSkinBox);
 			// 
 			// optionsGroup
 			// 
@@ -614,7 +614,7 @@ namespace PckStudio.Forms {
 			this.helpProvider.SetHelpString(this.skinBoxList, resources.GetString("skinBoxList.HelpString"));
 			this.skinBoxList.Name = "skinBoxList";
 			this.helpProvider.SetShowHelp(this.skinBoxList, ((bool)(resources.GetObject("skinBoxList.ShowHelp"))));
-			this.skinBoxList.MouseUp += new System.Windows.Forms.MouseEventHandler(this.summonContextMenu);
+			this.skinBoxList.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ShowContextMenu);
 			// 
 			// layout
 			// 
@@ -663,9 +663,9 @@ namespace PckStudio.Forms {
 			// menuStrip
 			// 
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
+				this.fileToolStripMenuItem,
+				this.editToolStripMenuItem,
+				this.helpToolStripMenuItem});
 			resources.ApplyResources(this.menuStrip, "menuStrip");
 			this.menuStrip.Name = "menuStrip";
 			this.helpProvider.SetShowHelp(this.menuStrip, ((bool)(resources.GetObject("menuStrip.ShowHelp"))));
@@ -673,9 +673,9 @@ namespace PckStudio.Forms {
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadTemplateToolStripMenuItem,
-            this.finishToolStripMenuItem,
-            this.cancelToolStripMenuItem});
+				this.loadTemplateToolStripMenuItem,
+				this.finishToolStripMenuItem,
+				this.cancelToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
 			// 
@@ -683,13 +683,13 @@ namespace PckStudio.Forms {
 			// 
 			this.loadTemplateToolStripMenuItem.Name = "loadTemplateToolStripMenuItem";
 			resources.ApplyResources(this.loadTemplateToolStripMenuItem, "loadTemplateToolStripMenuItem");
-			this.loadTemplateToolStripMenuItem.Click += new System.EventHandler(this.generateTemplate);
+			this.loadTemplateToolStripMenuItem.Click += new System.EventHandler(this.GenerateTemplate);
 			// 
 			// finishToolStripMenuItem
 			// 
 			this.finishToolStripMenuItem.Name = "finishToolStripMenuItem";
 			resources.ApplyResources(this.finishToolStripMenuItem, "finishToolStripMenuItem");
-			this.finishToolStripMenuItem.Click += new System.EventHandler(this.finished);
+			this.finishToolStripMenuItem.Click += new System.EventHandler(this.FinishModel);
 			// 
 			// cancelToolStripMenuItem
 			// 
@@ -699,10 +699,10 @@ namespace PckStudio.Forms {
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createToolStripMenuItem,
-            this.cloneToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.changeColorToolStripMenuItem});
+				this.createToolStripMenuItem,
+				this.cloneToolStripMenuItem,
+				this.deleteToolStripMenuItem,
+				this.changeColorToolStripMenuItem});
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
 			// 
@@ -710,7 +710,7 @@ namespace PckStudio.Forms {
 			// 
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-			this.helpToolStripMenuItem.Click += new System.EventHandler(this.doHelp);
+			this.helpToolStripMenuItem.Click += new System.EventHandler(this.DoContextHelp);
 			// 
 			// ModelGeneratorForm
 			// 
@@ -721,8 +721,8 @@ namespace PckStudio.Forms {
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "ModelGeneratorForm";
 			this.helpProvider.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosing);
-			this.Load += new System.EventHandler(this.formLoaded);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
+			this.Load += new System.EventHandler(this.FormLoaded);
 			this.offsetGroup.ResumeLayout(false);
 			this.tabOffsets.ResumeLayout(false);
 			this.tabBody.ResumeLayout(false);
