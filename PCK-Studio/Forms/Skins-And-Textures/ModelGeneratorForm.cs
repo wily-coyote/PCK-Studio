@@ -97,6 +97,7 @@ namespace PckStudio.Forms {
 			cloneToolStripMenuItem.Enabled = exists;
 			deleteToolStripMenuItem.Enabled = exists;
 			changeColorToolStripMenuItem.Enabled = exists;
+			selectBox.Visible = exists;
 			if(exists) {
 				comboParent.Text = selectedBox.Type.ToString();
 				PosXUpDown.Value = (decimal)selectedBox.Pos.X;
@@ -110,6 +111,7 @@ namespace PckStudio.Forms {
 				armorCheckBox.Checked = selectedBox.ArmorFlag;
 				mirrorCheckBox.Checked = selectedBox.Mirror;
 				InflateUpDown.Value = (decimal)selectedBox.Scale;
+				selectBox.UpdateFromSkinBox(model, selectedBox);
 			}
 			noUpdate = false;
 		}
@@ -197,6 +199,8 @@ namespace PckStudio.Forms {
 					break;
 				case ListChangedType.ItemChanged:
 					RecalculateGLBox(modelBoxes[e.NewIndex], model.Boxes[e.NewIndex]);
+					if(selectedBox != null)
+						selectBox.UpdateFromSkinBox(model, selectedBox);
 					break;
 				case ListChangedType.ItemAdded:
 					SkinBOX skinBox = modelBoxes[e.NewIndex];
@@ -265,7 +269,8 @@ namespace PckStudio.Forms {
 
 		// TODO: line drawing in OpenGL for armor & guidelines, floor grid, current selection
 		private Timer glTimer;
-		private GLShader shader;
+		private GLShader boxShader;
+		private GLShader wireShader;
 		private GLTexture skin;
 		private GLHumanoidModel model;
 		// TODO: this is where the selection box goes
@@ -275,6 +280,7 @@ namespace PckStudio.Forms {
 		// and also find out a way to render it in
 		// wireframe
 		private GLCamera camera;
+		private GLWireBox selectBox;
 		private double time;
 
 		/** <summary>Initializes the 3D OpenTK view.</summary> **/
@@ -295,9 +301,12 @@ namespace PckStudio.Forms {
 
 			// Object creation
 			skin = new GLTexture(bitmap);
-			shader = GLShaderSources.BoxShader();
+			boxShader = GLShaderSources.BoxShader();
+			wireShader = GLShaderSources.WireShader();
 			camera = new GLCamera(new Vector3(0.0f, 0.0f, 24.0f), new Vector3(0.0f, 0.0f, 0.0f));
 			model = new GLHumanoidModel(skin);
+			selectBox = new GLWireBox();
+			selectBox.Color = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
 		}
 
 		/** <summary>Changes the viewport when the form is resized.</summary> **/
@@ -354,11 +363,18 @@ namespace PckStudio.Forms {
 			);
 			// Use texture
 			skin.Use();
-			// Setup shader
-			shader.Use();
-			shader.SetMat4("view", camera.GetMatrix());
-			shader.SetMat4("projection", projection);
-			model.Render(shader, camera.Position);
+			// Setup boxShader
+			boxShader.Use();
+			boxShader.SetMat4("view", camera.GetMatrix());
+			boxShader.SetMat4("projection", projection);
+			model.Render(boxShader, camera.Position);
+			// Clear depth for z-agnostic elements
+			GL.Clear(ClearBufferMask.DepthBufferBit);
+			wireShader.Use();
+			wireShader.SetMat4("view", camera.GetMatrix());
+			wireShader.SetMat4("projection", projection);
+			selectBox.SetShader(wireShader);
+			selectBox.Render();
 			// Display output
 			mainView.SwapBuffers();
 		}
@@ -369,7 +385,9 @@ namespace PckStudio.Forms {
 			mainView.Paint -= GLPaint;
 			glTimer.Stop();
 			model.Dispose();
-			shader.Dispose();
+			boxShader.Dispose();
+			wireShader.Dispose();
+			selectBox.Dispose();
 		}
 
 		#endregion

@@ -7,16 +7,16 @@ namespace PckStudio.Renderer {
 	internal class GLBox : IGLThing, IDisposable {
 
 		private bool disposedValue;
-		private int vao;
-		private int vbo;
-		private int ebo;
-		private float[] vertices;
-		private uint[] indices;
+		protected int vao;
+		protected int vbo;
+		protected int ebo;
+		protected float[] vertices;
+		protected uint[] indices;
 
 		/**
 		 * <summary>Texture this is using</summary>
 		 **/
-		private GLTexture texture;
+		protected GLTexture texture;
 
 		/**
 		 * <summary>The size of the GLBox (affects UVs).</summary>
@@ -29,7 +29,7 @@ namespace PckStudio.Renderer {
 				Resize(value, padding, mirror);
 			}
 		}
-		private Vector3 size;
+		protected Vector3 size;
 
 		/**
 		 * <summary>Multiply this box by this color</summary>
@@ -42,7 +42,7 @@ namespace PckStudio.Renderer {
 				color = value;
 			}
 		}
-		private Vector4 color;
+		protected Vector4 color;
 
 		/**
 		 * <summary>Adds this amount of pixels to all sides.</summary>
@@ -55,7 +55,7 @@ namespace PckStudio.Renderer {
 				Resize(size, value, mirror);
 			}
 		}
-		private float padding;
+		protected float padding;
 
 		/**
 		 * <summary>Flips the texture in the X axis.</summary>
@@ -68,7 +68,7 @@ namespace PckStudio.Renderer {
 				Resize(size, padding, value);
 			}
 		}
-		private bool mirror;
+		protected bool mirror;
 
 		/**
 		 * <summary>The UV offset of the GLBox, based on the top left corner of the bounding box</summary>
@@ -81,7 +81,7 @@ namespace PckStudio.Renderer {
 				offset = value;
 			}
 		}
-		private Vector2 offset;
+		protected Vector2 offset;
 		
 		/**
 		 * <summary>Whether or not the box should be drawn.</summary>
@@ -94,7 +94,7 @@ namespace PckStudio.Renderer {
 				visible = value;
 			}
 		}
-		private bool visible;
+		protected bool visible;
 
 		public GLTransform Transform;
 		public GLBox Parent;
@@ -108,6 +108,26 @@ namespace PckStudio.Renderer {
 			vao = GL.GenVertexArray();
 			vbo = GL.GenBuffer();
 			ebo = GL.GenBuffer();
+			indices = new uint[36] {
+				// front
+				0,	1,	2,
+				0,	2,	3,
+				// back
+				4,	5,	6,
+				4,	6,	7,
+				// left
+				8,	9,	10,
+				8,	10,	11,
+				// right
+				12,	13,	14,
+				12,	14,	15,
+				// up
+				16,	17,	18,
+				16,	18,	19,
+				// down
+				20,	21,	22,
+				20,	22,	23,
+			};
 		}
 
 		public GLBox(GLTexture texture, Vector3 size) : this(texture) {
@@ -318,26 +338,6 @@ namespace PckStudio.Renderer {
 				vertices[3+(i*8)]	= uvs[i*2];
 				vertices[3+(i*8)+1] = uvs[(i*2)+1];
 			}
-			indices = new uint[36] {
-				// front
-				0,	1,	2,
-				0,	2,	3,
-				// back
-				4,	5,	6,
-				4,	6,	7,
-				// left
-				8,	9,	10,
-				8,	10,	11,
-				// right
-				12,	13,	14,
-				12,	14,	15,
-				// up
-				16,	17,	18,
-				16,	18,	19,
-				// down
-				20,	21,	22,
-				20,	22,	23,
-			};
 			// Box is different from Plane
 			// because it uses GL_TRIANGLES
 			// instead of GL_TRIANGLE_STRIP
@@ -383,11 +383,13 @@ namespace PckStudio.Renderer {
 			if(visible == true) {
 				Matrix4 model = GetMatrix();
 				// Use texture
-				texture.Use();
+				if(texture != null)
+					texture.Use();
 				// Use shader
 				shader.SetVec4("mixColor", color);
 				shader.SetMat4("model", model);
-				shader.SetVec2("textureSize", texture.Size);
+				if(texture != null)
+					shader.SetVec2("textureSize", texture.Size);
 				shader.SetVec2("uvOffset", offset); // where that plane is in the skin
 			}
 		}

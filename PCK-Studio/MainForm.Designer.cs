@@ -94,8 +94,10 @@ namespace PckStudio
 			this.importExtractedSkinsFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addTextureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.importPropertyDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.as3DSTextureFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exportPropertyDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.setFileTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.skinToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.capeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -155,8 +157,7 @@ namespace PckStudio
 			this.buttonEdit = new System.Windows.Forms.Button();
 			this.entryDataTextBox = new System.Windows.Forms.TextBox();
 			this.layout = new System.Windows.Forms.Panel();
-			this.exportPropertyDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.importPropertyDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.propertyCountLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -495,6 +496,7 @@ namespace PckStudio
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileCountLabel,
             this.currentFileTypeLabel,
+            this.propertyCountLabel,
             this.imageSizeLabel});
 			resources.ApplyResources(this.statusStrip, "statusStrip");
 			this.statusStrip.Name = "statusStrip";
@@ -645,6 +647,12 @@ namespace PckStudio
 			resources.ApplyResources(this.addFileToolStripMenuItem, "addFileToolStripMenuItem");
 			this.addFileToolStripMenuItem.Click += new System.EventHandler(this.addFileToolStripMenuItem_Click);
 			// 
+			// importPropertyDumpToolStripMenuItem
+			// 
+			this.importPropertyDumpToolStripMenuItem.Name = "importPropertyDumpToolStripMenuItem";
+			resources.ApplyResources(this.importPropertyDumpToolStripMenuItem, "importPropertyDumpToolStripMenuItem");
+			this.importPropertyDumpToolStripMenuItem.Click += new System.EventHandler(this.importPropDump);
+			// 
 			// exportToolStripMenuItem
 			// 
 			this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -658,6 +666,12 @@ namespace PckStudio
 			this.as3DSTextureFileToolStripMenuItem.Name = "as3DSTextureFileToolStripMenuItem";
 			resources.ApplyResources(this.as3DSTextureFileToolStripMenuItem, "as3DSTextureFileToolStripMenuItem");
 			this.as3DSTextureFileToolStripMenuItem.Click += new System.EventHandler(this.as3DSTextureFileToolStripMenuItem_Click);
+			// 
+			// exportPropertyDumpToolStripMenuItem
+			// 
+			this.exportPropertyDumpToolStripMenuItem.Name = "exportPropertyDumpToolStripMenuItem";
+			resources.ApplyResources(this.exportPropertyDumpToolStripMenuItem, "exportPropertyDumpToolStripMenuItem");
+			this.exportPropertyDumpToolStripMenuItem.Click += new System.EventHandler(this.exportPropDump);
 			// 
 			// setFileTypeToolStripMenuItem
 			// 
@@ -1079,17 +1093,12 @@ namespace PckStudio
 			resources.ApplyResources(this.layout, "layout");
 			this.layout.Name = "layout";
 			// 
-			// exportPropertyDumpToolStripMenuItem
+			// propertyCountLabel
 			// 
-			this.exportPropertyDumpToolStripMenuItem.Name = "exportPropertyDumpToolStripMenuItem";
-			resources.ApplyResources(this.exportPropertyDumpToolStripMenuItem, "exportPropertyDumpToolStripMenuItem");
-			this.exportPropertyDumpToolStripMenuItem.Click += new System.EventHandler(this.exportPropDump);
-			// 
-			// importPropertyDumpToolStripMenuItem
-			// 
-			this.importPropertyDumpToolStripMenuItem.Name = "importPropertyDumpToolStripMenuItem";
-			resources.ApplyResources(this.importPropertyDumpToolStripMenuItem, "importPropertyDumpToolStripMenuItem");
-			this.importPropertyDumpToolStripMenuItem.Click += new System.EventHandler(this.importPropDump);
+			this.propertyCountLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+			this.propertyCountLabel.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
+			this.propertyCountLabel.Name = "propertyCountLabel";
+			resources.ApplyResources(this.propertyCountLabel, "propertyCountLabel");
 			// 
 			// MainForm
 			// 
@@ -1256,6 +1265,7 @@ namespace PckStudio
 		private SplitContainer editorRightSide;
 		private ToolStripMenuItem exportPropertyDumpToolStripMenuItem;
 		private ToolStripMenuItem importPropertyDumpToolStripMenuItem;
+		private ToolStripStatusLabel propertyCountLabel;
 	}
 }
 

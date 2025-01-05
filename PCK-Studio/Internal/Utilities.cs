@@ -23,5 +23,18 @@ namespace PckStudio.Internal {
 		public static string ReplaceWhitespace(string input, string replacement) {
 			return sWhitespace.Replace(input, replacement);
 		}
+
+		/** <summary>Returns the last component of a path. Useful for getting filenames without their path.</summary> **/
+		public static string Basename(string filepath) {
+			return filepath.Substring(filepath.LastIndexOf('\\')+1);
+		}
+		
+		/** <summary>Returns a human-readable string for a count of objects.</summary> **/
+		public static string Pluralize(int count, string singular, string plural) {
+			if(count == 1)
+				return String.Format(singular, count);
+			else
+				return String.Format(plural, count);
+		}
 	}
 }
