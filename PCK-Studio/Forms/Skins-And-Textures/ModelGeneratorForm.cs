@@ -19,8 +19,8 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PckStudio.Forms {
+	/** <summary>A form that allows editing of BOX properties with a 3D view, used for custom skin models.</summary> **/
 	public partial class ModelGeneratorForm : Form {
-
 		/** <summary>The .NET image used for the model. Used in GL rendering.</summary> **/
 		private Bitmap bitmap;
 
@@ -44,6 +44,7 @@ namespace PckStudio.Forms {
 		/** <summary>Prevents the form's controls from updating the current SkinBOX.</summary> **/
 		private bool noUpdate;
 		
+		/** <summary>Creates a model editor form with <paramref name="asset"/>. For devs, put internal data-related stuff here.</summary> **/
 		public ModelGeneratorForm(PckAsset asset) {
 			modelOffsets = new List<SkinOFFSET>();
 			modelBoxes = new BindingList<SkinBOX>();
@@ -63,6 +64,7 @@ namespace PckStudio.Forms {
 			comboParent.Items.AddRange(Enum.GetNames(typeof(BOXType)));
 		}
 
+		/** <summary>Called when the form loads. Put external data-related stuff here.</summary> **/
 		private void FormLoaded(object sender, EventArgs e) {
 			GLInit();
 			modelBoxes.AddingNew += new AddingNewEventHandler(SkinBoxAdding);
@@ -75,6 +77,7 @@ namespace PckStudio.Forms {
 			RefreshForm();
 		}
 
+		/** <summary>Changes model depending on SkinAnim flags.</summary> **/
 		private void RefreshForm() {
 			noUpdate = true;
 			bool exists = selectedBox != null;
@@ -111,6 +114,7 @@ namespace PckStudio.Forms {
 			noUpdate = false;
 		}
 
+		/** <summary>Changes model depending on SkinAnim flags.</summary> **/
 		private void ApplyAnimFlags() {
 			if(skinAnim != null) {
 				// base
@@ -148,6 +152,7 @@ namespace PckStudio.Forms {
 			}
 		}
 
+		/** <summary>Supposed to show up when right clicking on the DataGridView.</summary> **/
 		private void ShowContextMenu(object sender, MouseEventArgs e) {
 			if(e.Button == MouseButtons.Right) {
 				var hit = skinBoxList.HitTest(e.X, e.Y);
@@ -160,26 +165,31 @@ namespace PckStudio.Forms {
 			}
 		}
 
+		/** <summary>Adds a new SkinBOX to the end of the list.</summary> **/
 		private void SkinBoxAdding(object sender, AddingNewEventArgs e) {
 			e.NewObject = SkinBOX.Empty;
 		}
 
+		/** <summary>Adds a new SkinBOX to the end of the list.</summary> **/
 		private void SkinBoxAdded(object sender, EventArgs e) {
 			modelBoxes.AddNew();
 		}
 
+		/** <summary>Removes the currently selected SkinBOX.</summary> **/
 		private void SkinBoxRemoved(object sender, EventArgs e) {
 			if(selectedBox != null) {
 				modelBoxes.Remove(selectedBox);
 			}
 		}
 
+		/** <summary>Creates a copy of the currently selected SkinBOX and places it immediately after the latter.</summary> **/
 		private void SkinBoxCloned(object sender, EventArgs e) {
 			if(selectedBox != null) {
 				modelBoxes.Insert(modelBoxes.IndexOf(selectedBox)+1, (SkinBOX)selectedBox.Clone());
 			}
 		}
 
+		/** <summary>Called when the SkinBOX list is interacted with.</summary> **/
 		private void SkinBoxChanged(object sender, ListChangedEventArgs e) {
 			switch(e.ListChangedType) {
 				case ListChangedType.ItemDeleted:
@@ -196,6 +206,7 @@ namespace PckStudio.Forms {
 			}
 		}
 
+		/** <summary>Called when the form's controls change: used to change the current SkinBOX accordingly.</summary> **/
 		private void FormChangeSkinBox(object sender, EventArgs e) {
 			if(selectedBox != null && !noUpdate) {
 				selectedBox.Type =
@@ -213,7 +224,8 @@ namespace PckStudio.Forms {
 				selectedBox.Scale = (float)InflateUpDown.Value;
 			}
 		}
-
+		
+		/** <summary>Called when the DataGridView changes selection.</summary> **/
 		private void SelectionChanged(object sender, EventArgs e) {
 			selectedBox = null;
 			var cells = skinBoxList.SelectedCells;
@@ -223,6 +235,7 @@ namespace PckStudio.Forms {
 			}
 		}
 
+		/** <summary>Loads <paramref name="asset"/>'s data into the form. Data includes BOX properties, OFFSET properties and ANIM properties.</summary> **/
 		private void LoadData(PckAsset asset) {
 			foreach(var kv in asset.GetMultipleProperties("BOX")) {
 				try {
@@ -255,45 +268,16 @@ namespace PckStudio.Forms {
 		private GLShader shader;
 		private GLTexture skin;
 		private GLHumanoidModel model;
+		// TODO: this is where the selection box goes
+		// also, let the texture for GLBox be nullable
+		// and make it render above everything else by clearing
+		// the depth bit after rendering everything
+		// and also find out a way to render it in
+		// wireframe
 		private GLCamera camera;
 		private double time;
 
-		private string vertShader = @"#version 330 core
-layout (location = 0) in vec3 aPosition;
-layout (location = 1) in vec2 aTexCoord;
-layout (location = 2) in vec3 aNormal;
-
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
-
-uniform vec2 textureSize;
-uniform vec2 uvOffset;
-
-out vec2 TexCoord;
-out vec3 Normal;
-
-void main(){
-	gl_Position = projection * view * model * vec4(aPosition, 1.0);
-	TexCoord = (aTexCoord + uvOffset) / textureSize;
-	Normal = ( ( model * vec4(aPosition + aNormal, 1.0) ) - ( model * vec4(aPosition, 1.0) ) ).xyz;
-}";
-		private string fragShader = @"#version 330 core
-out vec4 FragColor;
-in vec2 TexCoord;
-in vec3 Normal;
-uniform vec4 mixColor;
-uniform sampler2D skinTexture;
-vec3 lightDir = normalize(vec3(1.0, 1.0, 1.0));
-vec3 ambientColor = vec3(0.25, 0.25, 0.25);
-
-void main(){
-	vec4 color = texture(skinTexture, TexCoord);
-	if(color.a <= 0.0)
-		discard;
-	FragColor = color * vec4(ambientColor * dot(normalize(Normal), lightDir) + (vec3(1.0)-ambientColor), 1.0);
-}";
-
+		/** <summary>Initializes the 3D OpenTK view.</summary> **/
 		private void GLInit() {
 			mainView.Resize += GLResized;
 			mainView.Paint += GLPaint;
@@ -311,39 +295,47 @@ void main(){
 
 			// Object creation
 			skin = new GLTexture(bitmap);
-			shader = new GLShader(vertShader, fragShader);
+			shader = GLShaderSources.BoxShader();
 			camera = new GLCamera(new Vector3(0.0f, 0.0f, 24.0f), new Vector3(0.0f, 0.0f, 0.0f));
 			model = new GLHumanoidModel(skin);
 		}
 
+		/** <summary>Changes the viewport when the form is resized.</summary> **/
 		private void GLResized(object sender, EventArgs e) {
 			GL.Viewport(0, 0, mainView.Width, mainView.Height);
 		}
 
+		/** <summary>Run when the form receives WM_PAINT.</summary> **/
 		private void GLPaint(object sender, EventArgs e) {
 			GLRender(sender, e);
 		}
 
+		/** <summary>This is so scroll wheel events work.</summary> **/
 		private void GLEnableZoom(object sender, EventArgs e) {
 			mainView.Focus();
 		}
 
+		/** <summary>Zooms in and out depending on the mouse wheel.</summary> **/
 		private void GLZoom(object sender, MouseEventArgs e) {
 			camera.Zoom(e.Delta);
 		}
 
+		/** <summary>Begins panning upon mouse down.</summary> **/
 		private void GLStartPanning(object sender, MouseEventArgs e) {
 			camera.StartPanning(new Vector2(e.X, e.Y));
 		}
 
+		/** <summary>Pans when moving the mouse.</summary> **/
 		private void GLPan(object sender, MouseEventArgs e) {
 			camera.Pan(new Vector2(e.X, e.Y));
 		}
 
+		/** <summary>Stops panning on mouse release.</summary> **/
 		private void GLStopPanning(object sender, MouseEventArgs e) {
 			camera.StopPanning();
 		}
 
+		/** <summary>Render the 3D view on the form. This should happen every 1/60th of a second.</summary> **/
 		private void GLRender(object sender, EventArgs e) {
 			// Context and clear
 			mainView.MakeCurrent();
@@ -370,6 +362,8 @@ void main(){
 			// Display output
 			mainView.SwapBuffers();
 		}
+
+		/** <summary>Cleans up OpenTK objects, stops the animation timer and detaches rendering events.</summary> **/
 		private void GLDeinit(object sender, EventArgs e) {
 			mainView.Resize -= GLResized;
 			mainView.Paint -= GLPaint;
@@ -380,18 +374,19 @@ void main(){
 
 		#endregion
 		
-		/** <summary>Converts a SkinBOX to a GLBox. If the GLBox evaluates to null, a new GLBox is created.</summary> **/
+		/** <summary>Recalculates position values for a given <see cref="SkinBOX"/> and <see cref="GLBox"/>. If the GLBox evaluates to null, a new GLBox is created.</summary> **/
 		private GLBox RecalculateGLBox(SkinBOX skinBox, GLBox glBox) {
 			if(glBox == null)
 				glBox = new GLBox(model.Skin);
 			return glBox.UpdateFromSkinBox(model, skinBox);
 		}
 		
+		/** <summary>Wrapper function around <see cref="GLBox.FromSkinBox"/>.</summary> **/
 		private GLBox CreateGLBox(SkinBOX skinBox) {
 			return GLBox.FromSkinBox(skin, model, skinBox);
 		}
 
-		//Export Current Skin Texture
+		/** <summary>Exports the skin texture.</summary> **/
 		private void ExportImage(object sender, EventArgs e) {
 			// Not all skins are 64x64.
 			using SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -401,7 +396,7 @@ void main(){
 			}
 		}
 
-		//Imports Skin Texture
+		/** <summary>Imports the skin texture.</summary> **/
 		private void ImportImage(object sender, EventArgs e) {
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.Filter = "Portable Network Graphics | *.png";
@@ -420,7 +415,7 @@ void main(){
 			}
 		}
 
-		// Creates Model Data and Finalizes
+		/** <summary>Creates the BOX property data for <see cref="pckAsset"/> and closes the form.</summary> **/
 		private void FinishModel(object sender, EventArgs e) {
 			pckAsset.RemoveProperties("BOX");
 			foreach(SkinBOX part in modelBoxes) {
@@ -430,7 +425,7 @@ void main(){
 			Close();
 		}
 
-		//Loads in model template(Steve)
+		/** <summary>Generates <see cref="SkinBOX"/>es based on the default Steve skin.</summary> **/
 		private void GenerateTemplate(object sender, EventArgs e) {
 			modelBoxes.Add(SkinBOX.FromString("HEAD -4 -8 -4 8 8 8 0 0 0 0 0"));
 			modelBoxes.Add(SkinBOX.FromString("BODY -4 0 -2 8 12 4 16 16 0 0 0"));
@@ -440,19 +435,23 @@ void main(){
 			modelBoxes.Add(SkinBOX.FromString("LEG1 -2 0 -2 4 12 4 0 16 0 1 0"));
 		}
 
+		/** <summary>Runs when the form closes. Used to clean up OpenTK.</summary> **/
 		private void Exiting(object sender, FormClosingEventArgs e) {
 			GLDeinit(sender, e);
 		}
-
+		
+		/** <summary>Toggles animation on the model.</summary> **/
 		private void AnimationToggled(object sender, EventArgs e) {
 			model.Animate = toggleAnimationCheckBox.Checked;
 		}
 
+		/** <summary>Turns on "What's This?" mode from Win32.</summary> **/
 		private void DoContextHelp(object sender, EventArgs e) {
 			// WM_SYSCOMMAND SC_CONTEXTHELP
 			Utilities.SendMessage(this.Handle, 0x0112, 0xf180, 0x0);
 		}
-
+		
+		/** <summary>Closes the form without creating any property data for the asset.</summary> **/
 		private void CancelModel(object sender, EventArgs e) {
 			Close();
 		}

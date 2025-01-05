@@ -183,6 +183,7 @@
     <Compile Include="Renderer\GLHumanoidModel.cs" />
     <Compile Include="Renderer\GLPlane.cs" />
     <Compile Include="Renderer\GLShader.cs" />
+    <Compile Include="Renderer\GLShaderSources.cs" />
     <Compile Include="Renderer\GLTexture.cs" />
     <Compile Include="Renderer\GLTransform.cs" />
     <Compile Include="Renderer\IGLThing.cs" />
