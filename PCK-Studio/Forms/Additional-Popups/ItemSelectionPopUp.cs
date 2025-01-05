@@ -30,5 +30,9 @@ namespace PckStudio.Forms.Additional_Popups {
 			DialogResult = DialogResult.Cancel;
 			Close();
 		}
+
+		private void ItemSelectionPopUp_Load(object sender, EventArgs e) {
+
+		}
 	}
 }

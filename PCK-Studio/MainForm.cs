@@ -2134,5 +2134,79 @@ namespace PckStudio {
 			if(e.Node is not null)
 				treeViewMain.SelectedNode = e.Node;
 		}
+
+		private void exportPropDump(object sender, EventArgs e) {
+			if(treeViewMain.SelectedNode.TryGetTagData(out PckAsset asset)) {
+				SaveFileDialog saveFileDialog = new SaveFileDialog();
+				saveFileDialog.Filter = "Tab Separated Values|*.tsv";
+				saveFileDialog.DefaultExt = ".tsv";
+				if(saveFileDialog.ShowDialog(this) == DialogResult.OK) {
+					using(StreamWriter writer = File.CreateText(saveFileDialog.FileName)) {
+						int count = 0;
+						foreach(var prop in asset.GetProperties()) {
+							writer.WriteLine(prop.Key+"\t"+prop.Value);
+							count++;
+						}
+						MessageBox.Show(
+							this,
+							String.Format("I exported {0} properties.", count),
+							"Export property dump",
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Information
+						);
+					}
+				}
+			}
+		}
+
+		private void importPropDump(object sender, EventArgs e) {
+			if(treeViewMain.SelectedNode.TryGetTagData(out PckAsset asset)) {
+				OpenFileDialog fileDlg = new OpenFileDialog();
+				fileDlg.Filter = "Tab Separated Values|*.tsv";
+				fileDlg.DefaultExt = ".tsv";
+				if(fileDlg.ShowDialog(this) == DialogResult.OK) {
+					DialogResult shouldOverwrite = MessageBox.Show(
+						this,
+						"Do you want me to overwrite the current properties?\n" +
+						"If you click No, I'll append the properties.\n" +
+						"If you click Cancel, I won't do anything.",
+						"Import property dump",
+						MessageBoxButtons.YesNoCancel,
+						MessageBoxIcon.Question
+					);
+					if(shouldOverwrite != DialogResult.Cancel) {
+						if(shouldOverwrite == DialogResult.Yes)
+							asset.ClearProperties();
+						using(StreamReader reader = File.OpenText(fileDlg.FileName)) {
+							int imported = 0;
+							int total = 0;
+							string line;
+							while(true){
+								line = reader.ReadLine();
+								if(line != null) {
+									if (line.Length > 0){
+										string[] fields = line.Split("\t".ToCharArray(), 2, StringSplitOptions.None);
+										if(fields.Length >= 2) {
+											asset.AddProperty(fields[0], fields[1]);
+											imported++;
+										}
+										total++;
+									}
+								} else {
+									break;
+								}
+							}
+							MessageBox.Show(
+								this,
+								String.Format("I imported {0} props out of {1}.", imported, total),
+								"Import property dump",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Information
+							);
+						}
+					}
+				}
+			}
+		}
 	}
 }

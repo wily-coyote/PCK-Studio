@@ -161,7 +161,7 @@ namespace PckStudio.Forms {
 
 		private void cloneSkinBox(object sender, EventArgs e) {
 			if(selectedBox != null) {
-				modelBoxes.Insert(modelBoxes.IndexOf(selectedBox)+1, selectedBox);
+				modelBoxes.Insert(modelBoxes.IndexOf(selectedBox)+1, (SkinBOX)selectedBox.Clone());
 			}
 		}
 

@@ -77,7 +77,7 @@ namespace PckStudio.Forms.Additional_Popups {
 			capeLabel.Visible = true;
 			buttonDone.Enabled = true;
 			buttonAnimGen.Enabled = true;
-			labelSelectTexture.Visible = false;
+			skinLabel.Visible = false;
 		}
 
 		private void DrawModel() {
@@ -253,7 +253,7 @@ namespace PckStudio.Forms.Additional_Popups {
 			if(generate.ShowDialog() == DialogResult.OK) {
 				displayBox.Image = generate.PreviewImage;
 				buttonDone.Enabled = true;
-				labelSelectTexture.Visible = false;
+				skinLabel.Visible = false;
 				if(skinType != eSkinType._64x64 && skinType != eSkinType._64x64HD) {
 					buttonSkin.Location = new Point(buttonSkin.Location.X - skinPictureBox.Width, buttonSkin.Location.Y);
 					skinType = eSkinType._64x64;

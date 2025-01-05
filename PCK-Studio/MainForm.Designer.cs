@@ -142,8 +142,10 @@ namespace PckStudio
 			this.changelogRichText = new System.Windows.Forms.RichTextBox();
 			this.pckOpen = new System.Windows.Forms.PictureBox();
 			this.editorTab = new System.Windows.Forms.TabPage();
+			this.editorLayout = new System.Windows.Forms.SplitContainer();
 			this.treeViewMain = new System.Windows.Forms.TreeView();
 			this.imageList = new System.Windows.Forms.ImageList(this.components);
+			this.editorRightSide = new System.Windows.Forms.SplitContainer();
 			this.previewPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
 			this.propTabControl = new System.Windows.Forms.TabControl();
 			this.metaTab = new System.Windows.Forms.TabPage();
@@ -153,8 +155,8 @@ namespace PckStudio
 			this.buttonEdit = new System.Windows.Forms.Button();
 			this.entryDataTextBox = new System.Windows.Forms.TextBox();
 			this.layout = new System.Windows.Forms.Panel();
-			this.editorLayout = new System.Windows.Forms.SplitContainer();
-			this.editorRightSide = new System.Windows.Forms.SplitContainer();
+			this.exportPropertyDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.importPropertyDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -167,11 +169,6 @@ namespace PckStudio
 			this.openLayout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pckOpen)).BeginInit();
 			this.editorTab.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).BeginInit();
-			this.propTabControl.SuspendLayout();
-			this.metaTab.SuspendLayout();
-			this.propLayout.SuspendLayout();
-			this.layout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.editorLayout)).BeginInit();
 			this.editorLayout.Panel1.SuspendLayout();
 			this.editorLayout.Panel2.SuspendLayout();
@@ -180,6 +177,11 @@ namespace PckStudio
 			this.editorRightSide.Panel1.SuspendLayout();
 			this.editorRightSide.Panel2.SuspendLayout();
 			this.editorRightSide.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).BeginInit();
+			this.propTabControl.SuspendLayout();
+			this.metaTab.SuspendLayout();
+			this.propLayout.SuspendLayout();
+			this.layout.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// toolStripSeparator2
@@ -612,7 +614,8 @@ namespace PckStudio
             this.importSkinToolStripMenuItem,
             this.importExtractedSkinsFolderToolStripMenuItem,
             this.addTextureToolStripMenuItem,
-            this.addFileToolStripMenuItem});
+            this.addFileToolStripMenuItem,
+            this.importPropertyDumpToolStripMenuItem});
 			resources.ApplyResources(this.importSkinsToolStripMenuItem, "importSkinsToolStripMenuItem");
 			this.importSkinsToolStripMenuItem.Name = "importSkinsToolStripMenuItem";
 			// 
@@ -645,7 +648,8 @@ namespace PckStudio
 			// exportToolStripMenuItem
 			// 
 			this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.as3DSTextureFileToolStripMenuItem});
+            this.as3DSTextureFileToolStripMenuItem,
+            this.exportPropertyDumpToolStripMenuItem});
 			this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
 			resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
 			// 
@@ -957,6 +961,20 @@ namespace PckStudio
 			this.editorTab.Controls.Add(this.editorLayout);
 			this.editorTab.Name = "editorTab";
 			// 
+			// editorLayout
+			// 
+			this.editorLayout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			resources.ApplyResources(this.editorLayout, "editorLayout");
+			this.editorLayout.Name = "editorLayout";
+			// 
+			// editorLayout.Panel1
+			// 
+			this.editorLayout.Panel1.Controls.Add(this.treeViewMain);
+			// 
+			// editorLayout.Panel2
+			// 
+			this.editorLayout.Panel2.Controls.Add(this.editorRightSide);
+			// 
 			// treeViewMain
 			// 
 			this.treeViewMain.AllowDrop = true;
@@ -982,6 +1000,20 @@ namespace PckStudio
 			this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
 			resources.ApplyResources(this.imageList, "imageList");
 			this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+			// 
+			// editorRightSide
+			// 
+			this.editorRightSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			resources.ApplyResources(this.editorRightSide, "editorRightSide");
+			this.editorRightSide.Name = "editorRightSide";
+			// 
+			// editorRightSide.Panel1
+			// 
+			this.editorRightSide.Panel1.Controls.Add(this.previewPictureBox);
+			// 
+			// editorRightSide.Panel2
+			// 
+			this.editorRightSide.Panel2.Controls.Add(this.propTabControl);
 			// 
 			// previewPictureBox
 			// 
@@ -1047,33 +1079,17 @@ namespace PckStudio
 			resources.ApplyResources(this.layout, "layout");
 			this.layout.Name = "layout";
 			// 
-			// editorLayout
+			// exportPropertyDumpToolStripMenuItem
 			// 
-			this.editorLayout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			resources.ApplyResources(this.editorLayout, "editorLayout");
-			this.editorLayout.Name = "editorLayout";
+			this.exportPropertyDumpToolStripMenuItem.Name = "exportPropertyDumpToolStripMenuItem";
+			resources.ApplyResources(this.exportPropertyDumpToolStripMenuItem, "exportPropertyDumpToolStripMenuItem");
+			this.exportPropertyDumpToolStripMenuItem.Click += new System.EventHandler(this.exportPropDump);
 			// 
-			// editorLayout.Panel1
+			// importPropertyDumpToolStripMenuItem
 			// 
-			this.editorLayout.Panel1.Controls.Add(this.treeViewMain);
-			// 
-			// editorLayout.Panel2
-			// 
-			this.editorLayout.Panel2.Controls.Add(this.editorRightSide);
-			// 
-			// editorRightSide
-			// 
-			this.editorRightSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			resources.ApplyResources(this.editorRightSide, "editorRightSide");
-			this.editorRightSide.Name = "editorRightSide";
-			// 
-			// editorRightSide.Panel1
-			// 
-			this.editorRightSide.Panel1.Controls.Add(this.previewPictureBox);
-			// 
-			// editorRightSide.Panel2
-			// 
-			this.editorRightSide.Panel2.Controls.Add(this.propTabControl);
+			this.importPropertyDumpToolStripMenuItem.Name = "importPropertyDumpToolStripMenuItem";
+			resources.ApplyResources(this.importPropertyDumpToolStripMenuItem, "importPropertyDumpToolStripMenuItem");
+			this.importPropertyDumpToolStripMenuItem.Click += new System.EventHandler(this.importPropDump);
 			// 
 			// MainForm
 			// 
@@ -1098,12 +1114,6 @@ namespace PckStudio
 			this.openLayout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pckOpen)).EndInit();
 			this.editorTab.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).EndInit();
-			this.propTabControl.ResumeLayout(false);
-			this.metaTab.ResumeLayout(false);
-			this.propLayout.ResumeLayout(false);
-			this.propLayout.PerformLayout();
-			this.layout.ResumeLayout(false);
 			this.editorLayout.Panel1.ResumeLayout(false);
 			this.editorLayout.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.editorLayout)).EndInit();
@@ -1112,6 +1122,12 @@ namespace PckStudio
 			this.editorRightSide.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.editorRightSide)).EndInit();
 			this.editorRightSide.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).EndInit();
+			this.propTabControl.ResumeLayout(false);
+			this.metaTab.ResumeLayout(false);
+			this.propLayout.ResumeLayout(false);
+			this.propLayout.PerformLayout();
+			this.layout.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1238,6 +1254,8 @@ namespace PckStudio
 		private Panel layout;
 		private SplitContainer editorLayout;
 		private SplitContainer editorRightSide;
+		private ToolStripMenuItem exportPropertyDumpToolStripMenuItem;
+		private ToolStripMenuItem importPropertyDumpToolStripMenuItem;
 	}
 }
 

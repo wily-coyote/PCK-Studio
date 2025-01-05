@@ -31,11 +31,11 @@ namespace PckStudio.Forms.Additional_Popups
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemSelectionPopUp));
-			this.itemsLabel = new Label();
-			this.okBtn = new Button();
-			this.cancelButton = new Button();
-			this.ComboBox = new ComboBox();
-			this.layout = new TableLayoutPanel();
+			this.itemsLabel = new System.Windows.Forms.Label();
+			this.okBtn = new System.Windows.Forms.Button();
+			this.cancelButton = new System.Windows.Forms.Button();
+			this.ComboBox = new System.Windows.Forms.ComboBox();
+			this.layout = new System.Windows.Forms.TableLayoutPanel();
 			this.layout.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -75,10 +75,11 @@ namespace PckStudio.Forms.Additional_Popups
 			// ItemSelectionPopUp
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = AutoScaleMode.Font;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
-			this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.Name = "ItemSelectionPopUp";
+			this.Load += new System.EventHandler(this.ItemSelectionPopUp_Load);
 			this.layout.ResumeLayout(false);
 			this.layout.PerformLayout();
 			this.ResumeLayout(false);
