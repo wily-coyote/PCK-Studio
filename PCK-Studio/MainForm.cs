@@ -1837,7 +1837,7 @@ namespace PckStudio {
 		}
 
 		private void tabControl_Selecting(object sender, TabControlCancelEventArgs e) {
-			e.Cancel = !isSelectingTab;
+			e.Cancel = (currentPCK == null) && !isSelectingTab;
 		}
 
 		private void as3DSTextureFileToolStripMenuItem_Click(object sender, EventArgs e) {

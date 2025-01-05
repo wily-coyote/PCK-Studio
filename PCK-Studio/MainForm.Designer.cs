@@ -78,6 +78,7 @@ namespace PckStudio
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.fileCountLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.currentFileTypeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.propertyCountLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.imageSizeLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.contextMenuPCKEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,7 +158,6 @@ namespace PckStudio
 			this.buttonEdit = new System.Windows.Forms.Button();
 			this.entryDataTextBox = new System.Windows.Forms.TextBox();
 			this.layout = new System.Windows.Forms.Panel();
-			this.propertyCountLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -512,6 +512,13 @@ namespace PckStudio
 			this.currentFileTypeLabel.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
 			this.currentFileTypeLabel.Name = "currentFileTypeLabel";
 			resources.ApplyResources(this.currentFileTypeLabel, "currentFileTypeLabel");
+			// 
+			// propertyCountLabel
+			// 
+			this.propertyCountLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+			this.propertyCountLabel.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
+			this.propertyCountLabel.Name = "propertyCountLabel";
+			resources.ApplyResources(this.propertyCountLabel, "propertyCountLabel");
 			// 
 			// imageSizeLabel
 			// 
@@ -1092,13 +1099,6 @@ namespace PckStudio
 			this.layout.Controls.Add(this.tabControl);
 			resources.ApplyResources(this.layout, "layout");
 			this.layout.Name = "layout";
-			// 
-			// propertyCountLabel
-			// 
-			this.propertyCountLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-			this.propertyCountLabel.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
-			this.propertyCountLabel.Name = "propertyCountLabel";
-			resources.ApplyResources(this.propertyCountLabel, "propertyCountLabel");
 			// 
 			// MainForm
 			// 
