@@ -47,12 +47,19 @@ namespace PckStudio {
 		PckFile currentPCK = null;
 
 		string currentFilename = "";
-
-		bool _modified = false;
-		bool wasModified {
-			get => _modified;
+		string CurrentFilename {
+			get => currentFilename;
 			set {
-				_modified = value;
+				currentFilename = value;
+				updateTitle();
+			}
+		}
+
+		bool modified = false;
+		bool Modified {
+			get => modified;
+			set {
+				modified = value;
 				updateTitle();
 			}
 		}
@@ -63,13 +70,13 @@ namespace PckStudio {
 		readonly Dictionary<PckAssetType, Action<PckAsset>> pckFileTypeHandler;
 
 		private void updateTitle() {
-			if(String.IsNullOrEmpty(currentFilename)) {
+			if(String.IsNullOrEmpty(CurrentFilename)) {
 				Text = $"{Application.ProductName} {ApplicationScope.CurrentVersion}";
 			} else {
 				Text = $"{Application.ProductName} {ApplicationScope.CurrentVersion} - ";
-				if(wasModified)
+				if(Modified)
 					Text += "*";
-				Text += currentFilename;
+				Text += CurrentFilename;
 			}
 		}
 
@@ -153,7 +160,7 @@ namespace PckStudio {
 				MessageBox.Show(this, string.Format("Failed to load {0}", Path.GetFileName(filepath)), "Error");
 				return;
 			}
-			currentFilename = Utilities.Basename(filepath);
+			CurrentFilename = Utilities.Basename(filepath);
 			CheckForPasswordAndRemove();
 			LoadEditorTab();
 		}
@@ -285,9 +292,9 @@ namespace PckStudio {
 			fileCountLabel.Visible = true;
 			fileCountLabel.Text = Utilities.Pluralize(currentPCK.AssetCount, "{0} file", "{0} files");
 			if(isTemplateFile)
-				currentFilename = "Untitled";
+				CurrentFilename = "Untitled";
 			else
-				currentFilename = Path.GetFileName(saveLocation);
+				CurrentFilename = Path.GetFileName(saveLocation);
 			treeViewMain.Enabled = treeMeta.Enabled = true;
 			closeToolStripMenuItem.Visible = true;
 			fullBoxSupportToolStripMenuItem.Checked = currentPCK.HasVerionString;
@@ -306,7 +313,7 @@ namespace PckStudio {
 			tabControl.SelectTab(0);
 			isSelectingTab = false;
 			currentPCK = null;
-			wasModified = false;
+			Modified = false;
 			isTemplateFile = false;
 			saveLocation = string.Empty;
 			previewPictureBox.Image = Resources.NoImageFound;
@@ -323,7 +330,7 @@ namespace PckStudio {
 			propertyCountLabel.Visible = false;
 			currentFileTypeLabel.Visible = false;
 			imageSizeLabel.Visible = false;
-			currentFilename = "";
+			CurrentFilename = "";
 		}
 
 		/// <summary>
@@ -422,7 +429,7 @@ namespace PckStudio {
 
 					AnimationEditor animationEditor = new AnimationEditor(animation, displayname, internalName.ToLower().EqualsAny(specialTileNames));
 					if(animationEditor.ShowDialog(this) == DialogResult.OK) {
-						wasModified = true;
+						Modified = true;
 						asset.SetSerializedData(animationEditor.Result, AnimationSerializer.DefaultSerializer);
 						BuildMainTreeView();
 					}
@@ -442,7 +449,7 @@ namespace PckStudio {
 					if(viewer.ShowDialog(this) == DialogResult.OK) {
 						Image texture = viewer.FinalTexture;
 						asset.SetTexture(texture);
-						wasModified = true;
+						Modified = true;
 						BuildMainTreeView();
 					}
 					break;
@@ -475,14 +482,14 @@ namespace PckStudio {
 			using GameRuleFileEditor grfEditor = new GameRuleFileEditor(grf);
 			if(grfEditor.ShowDialog(this) == DialogResult.OK) {
 				asset.SetData(new GameRuleFileWriter(grfEditor.Result));
-				wasModified = true;
+				Modified = true;
 			}
 		}
 
 		private void HandleAudioFile(PckAsset asset) {
 			try {
 				AudioEditor audioEditor = new AudioEditor(asset, littleEndianCheckBox.Checked);
-				wasModified = audioEditor.ShowDialog(this) == DialogResult.OK;
+				Modified = audioEditor.ShowDialog(this) == DialogResult.OK;
 			} catch(OverflowException) {
 				MessageBox.Show(this, $"Failed to open {asset.Filename}\n" +
 					"Try converting the file by using the \"Misc. Functions/Set PCK Endianness\" tool and try again.",
@@ -495,12 +502,12 @@ namespace PckStudio {
 
 		private void HandleLocalisationFile(PckAsset asset) {
 			using LOCEditor locedit = new LOCEditor(asset);
-			wasModified = locedit.ShowDialog(this) == DialogResult.OK;
+			Modified = locedit.ShowDialog(this) == DialogResult.OK;
 		}
 
 		private void HandleColourFile(PckAsset asset) {
 			using COLEditor diag = new COLEditor(asset);
-			wasModified = diag.ShowDialog(this) == DialogResult.OK;
+			Modified = diag.ShowDialog(this) == DialogResult.OK;
 		}
 
 		public void HandleSkinFile(PckAsset asset) {
@@ -508,7 +515,7 @@ namespace PckStudio {
 				using ModelGeneratorForm generate = new ModelGeneratorForm(asset);
 				if(generate.ShowDialog(this) == DialogResult.OK) {
 					entryDataTextBox.Text = entryTypeTextBox.Text = string.Empty;
-					wasModified = true;
+					Modified = true;
 					ReloadMetaTreeView();
 				}
 				return;
@@ -525,12 +532,12 @@ namespace PckStudio {
 
 		public void HandleBehavioursFile(PckAsset asset) {
 			using BehaviourEditor edit = new BehaviourEditor(asset);
-			wasModified = edit.ShowDialog(this) == DialogResult.OK;
+			Modified = edit.ShowDialog(this) == DialogResult.OK;
 		}
 
 		public void HandleMaterialFile(PckAsset asset) {
 			using MaterialsEditor edit = new MaterialsEditor(asset);
-			wasModified = edit.ShowDialog(this) == DialogResult.OK;
+			Modified = edit.ShowDialog(this) == DialogResult.OK;
 		}
 
 		private void treeViewMain_AfterSelect(object sender, TreeViewEventArgs e) {
@@ -701,7 +708,7 @@ namespace PckStudio {
 				Save(saveFileDialog.FileName);
 				saveLocation = saveFileDialog.FileName;
 				SaveToRecentFiles(saveFileDialog.FileName);
-				currentFilename = Path.GetFileName(saveLocation);
+				CurrentFilename = Path.GetFileName(saveLocation);
 				isTemplateFile = false;
 			}
 		}
@@ -709,7 +716,7 @@ namespace PckStudio {
 		private void Save(string filePath) {
 			var writer = new PckFileWriter(currentPCK, littleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian);
 			writer.WriteToFile(filePath);
-			wasModified = false;
+			Modified = false;
 			MessageBox.Show(this, "Saved Pck file", "File Saved");
 		}
 
@@ -736,7 +743,7 @@ namespace PckStudio {
 					string newFileExt = Path.GetExtension(ofd.FileName);
 					asset.SetData(File.ReadAllBytes(ofd.FileName));
 					asset.Filename = asset.Filename.Replace(fileExt, newFileExt);
-					wasModified = true;
+					Modified = true;
 					BuildMainTreeView();
 				}
 				return;
@@ -783,14 +790,14 @@ namespace PckStudio {
 			if(node.TryGetTagData(out PckAsset asset)) {
 				if(!BeforeFileRemove(asset) && currentPCK.RemoveAsset(asset)) {
 					node.Remove();
-					wasModified = true;
+					Modified = true;
 				}
 			} else if(MessageBox.Show(this, "Are you sure want to delete this folder? All contents will be deleted", "Warning",
 				  MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
 				string pckFolderDir = node.FullPath;
 				currentPCK.RemoveAll(file => file.Filename.StartsWith(pckFolderDir) && !BeforeFileRemove(file));
 				node.Remove();
-				wasModified = true;
+				Modified = true;
 			}
 		}
 
@@ -822,7 +829,7 @@ namespace PckStudio {
 						}
 					}
 				}
-				wasModified = true;
+				Modified = true;
 				BuildMainTreeView();
 			}
 		}
@@ -870,7 +877,7 @@ namespace PckStudio {
 				}
 
 				TrySetLocFile(locFile);
-				wasModified = true;
+				Modified = true;
 				BuildMainTreeView();
 			}
 		}
@@ -919,7 +926,7 @@ namespace PckStudio {
 
 			using AnimationEditor animationEditor = new AnimationEditor(Animation.CreateEmpty(), diag.SelectedTile.DisplayName, diag.SelectedTile.InternalName.EqualsAny("clock", "compass"));
 			if(animationEditor.ShowDialog() == DialogResult.OK) {
-				wasModified = true;
+				Modified = true;
 				PckAsset asset = currentPCK.CreateNewAsset(animationFilepath, PckAssetType.TextureFile);
 				asset.SetSerializedData(animationEditor.Result, AnimationSerializer.DefaultSerializer);
 				BuildMainTreeView();
@@ -955,7 +962,7 @@ namespace PckStudio {
 								if(diag.ShowDialog(this) == DialogResult.OK) {
 									asset.SetProperty(asset.GetPropertyIndex(property), new KeyValuePair<string, string>("ANIM", diag.ResultAnim.ToString()));
 									ReloadMetaTreeView();
-									wasModified = true;
+									Modified = true;
 								}
 								return;
 							} catch(Exception ex) {
@@ -971,7 +978,7 @@ namespace PckStudio {
 								if(diag.ShowDialog(this) == DialogResult.OK) {
 									asset.SetProperty(asset.GetPropertyIndex(property), new KeyValuePair<string, string>("BOX", diag.Result.ToString()));
 									ReloadMetaTreeView();
-									wasModified = true;
+									Modified = true;
 								}
 								return;
 							} catch(Exception ex) {
@@ -990,7 +997,7 @@ namespace PckStudio {
 						if(addProperty.ShowDialog(this) == DialogResult.OK) {
 							asset.SetProperty(asset.GetPropertyIndex(property), addProperty.Property);
 							ReloadMetaTreeView();
-							wasModified = true;
+							Modified = true;
 						}
 					}
 				}
@@ -1035,7 +1042,7 @@ namespace PckStudio {
 
 					currentPCK.InsertAsset(node.Index + 1, newFile);
 					BuildMainTreeView();
-					wasModified = true;
+					Modified = true;
 				}
 			}
 		}
@@ -1045,7 +1052,7 @@ namespace PckStudio {
 				treeViewMain.SelectedNode is TreeNode main && main.Tag is PckAsset asset &&
 				asset.RemoveProperty(property)) {
 				treeMeta.SelectedNode.Remove();
-				wasModified = true;
+				Modified = true;
 			}
 		}
 
@@ -1066,7 +1073,7 @@ namespace PckStudio {
 				if(addProperty.ShowDialog(this) == DialogResult.OK) {
 					asset.AddProperty(addProperty.Property);
 					ReloadMetaTreeView();
-					wasModified = true;
+					Modified = true;
 				}
 			}
 		}
@@ -1180,7 +1187,7 @@ namespace PckStudio {
 					: targetNode.FullPath, Path.GetFileName(draggedAsset.Filename));
 				Debug.WriteLine("New filepath: " + newFilePath);
 				draggedAsset.Filename = newFilePath;
-				wasModified = true;
+				Modified = true;
 				BuildMainTreeView();
 				return;
 			} else {
@@ -1190,7 +1197,7 @@ namespace PckStudio {
 				foreach(PckAsset pckFile in pckFiles) {
 					pckFile.Filename = Path.Combine(newPath, pckFile.Filename.Substring(oldPath.Length + 1)).Replace('\\', '/');
 				}
-				wasModified = true;
+				Modified = true;
 				BuildMainTreeView();
 			}
 		}
@@ -1264,7 +1271,7 @@ namespace PckStudio {
 			Trace.TraceInformation("[{0}] Imported {1} file(s).", nameof(ImportFiles), addedCount);
 			Trace.TraceInformation("[{0}] Skipped {1} file(s).", nameof(ImportFiles), skippedFiles);
 			if(addedCount > 0) {
-				wasModified = true;
+				Modified = true;
 				BuildMainTreeView();
 			}
 		}
@@ -1367,7 +1374,7 @@ namespace PckStudio {
 
 		private void MarkTemplateFile() {
 			isTemplateFile = true;
-			wasModified = true;
+			Modified = true;
 			saveLocation = string.Empty;
 		}
 
@@ -1375,7 +1382,7 @@ namespace PckStudio {
 			using AdvancedOptions advanced = new AdvancedOptions(currentPCK);
 			advanced.IsLittleEndian = littleEndianCheckBox.Checked;
 			if(advanced.ShowDialog(this) == DialogResult.OK) {
-				wasModified = true;
+				Modified = true;
 				BuildMainTreeView();
 			}
 		}
@@ -1501,7 +1508,7 @@ namespace PckStudio {
 					}
 				}
 				BuildMainTreeView();
-				wasModified = true;
+				Modified = true;
 			}
 		}
 
@@ -1534,7 +1541,7 @@ namespace PckStudio {
 						importSkinAsset.RemoveProperty("DISPLAYNAMEID");
 						importSkinAsset.RemoveProperty("THEMENAMEID");
 						BuildMainTreeView();
-						wasModified = true;
+						Modified = true;
 					}
 				}
 			}
@@ -1623,7 +1630,7 @@ namespace PckStudio {
 
 		private void CheckSaveState() {
 			if(currentPCK is not null &&
-				wasModified &&
+				Modified &&
 				MessageBox.Show(this, "Save PCK?", "Unsaved PCK", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.Yes) {
 				if(isTemplateFile || string.IsNullOrEmpty(saveLocation)) {
 					SaveTemplate();
@@ -1756,7 +1763,7 @@ namespace PckStudio {
 					}
 					PckAsset asset = currentPCK.CreateNewAsset(renamePrompt.NewText, PckAssetType.TextureFile, () => File.ReadAllBytes(fileDialog.FileName));
 					BuildMainTreeView();
-					wasModified = true;
+					Modified = true;
 				}
 			}
 		}
@@ -1853,7 +1860,7 @@ namespace PckStudio {
 				if(input.ShowDialog(this) == DialogResult.OK) {
 					asset.DeserializeProperties(input.TextOutput);
 					ReloadMetaTreeView();
-					wasModified = true;
+					Modified = true;
 				}
 			}
 		}
@@ -1866,7 +1873,7 @@ namespace PckStudio {
 						asset.SetProperty(asset.GetPropertyIndex(p), new KeyValuePair<string, string>(p.Key, p.Value.Replace(',', '.')));
 				}
 				ReloadMetaTreeView();
-				wasModified = true;
+				Modified = true;
 			}
 		}
 
@@ -1890,7 +1897,7 @@ namespace PckStudio {
 						asset.ClearProperties();
 						asset.DeserializeProperties(input.TextOutput);
 						ReloadMetaTreeView();
-						wasModified = true;
+						Modified = true;
 					}
 				}
 			}
@@ -1913,7 +1920,7 @@ namespace PckStudio {
 					PckAsset asset = currentPCK.CreateNewAsset(diag.Filepath, diag.Filetype, () => File.ReadAllBytes(ofd.FileName));
 
 					BuildMainTreeView();
-					wasModified = true;
+					Modified = true;
 				}
 			}
 			return;
@@ -1994,7 +2001,7 @@ namespace PckStudio {
 				if(diag.ShowDialog(this) == DialogResult.OK) {
 					asset.AddProperty("BOX", diag.Result);
 					ReloadMetaTreeView();
-					wasModified = true;
+					Modified = true;
 				}
 				return;
 			}
@@ -2006,7 +2013,7 @@ namespace PckStudio {
 				if(diag.ShowDialog(this) == DialogResult.OK) {
 					asset.AddProperty("ANIM", diag.ResultAnim);
 					ReloadMetaTreeView();
-					wasModified = true;
+					Modified = true;
 				}
 				return;
 			}
@@ -2033,7 +2040,7 @@ namespace PckStudio {
 						? new PckAudioFileWriter((PckAudioFile)pck, endianness)
 						: new PckFileWriter((PckFile)pck, endianness);
 					asset.SetData(writer);
-					wasModified = true;
+					Modified = true;
 					MessageBox.Show($"\"{asset.Filename}\" successfully converted to {(endianness == OMI.Endianness.LittleEndian ? "little" : "big")} endian.", "Converted PCK file");
 				}
 			} catch(OverflowException) {
@@ -2082,7 +2089,7 @@ namespace PckStudio {
 					}
 
 					asset.SetData(new ModelFileWriter(container, version));
-					wasModified = true;
+					Modified = true;
 					MessageBox.Show(
 						this,
 						$"\"{asset.Filename}\" successfully converted to Version {version + 1} format.",
