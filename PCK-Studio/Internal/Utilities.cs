@@ -36,5 +36,11 @@ namespace PckStudio.Internal {
 			else
 				return String.Format(plural, count);
 		}
+		
+		/** <summary>Turns on "What's This?" mode from Win32.</summary> **/
+		public static void DoContextHelp(IntPtr hWnd) {
+			// WM_SYSCOMMAND SC_CONTEXTHELP
+			SendMessage(hWnd, 0x0112, 0xf180, 0x0);
+		}
 	}
 }

@@ -465,8 +465,7 @@ namespace PckStudio.Forms {
 
 		/** <summary>Turns on "What's This?" mode from Win32.</summary> **/
 		private void DoContextHelp(object sender, EventArgs e) {
-			// WM_SYSCOMMAND SC_CONTEXTHELP
-			Utilities.SendMessage(this.Handle, 0x0112, 0xf180, 0x0);
+			Utilities.DoContextHelp(this.Handle);
 		}
 		
 		/** <summary>Closes the form without creating any property data for the asset.</summary> **/
