@@ -38,6 +38,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Media;
 
 namespace PckStudio {
 	public partial class MainForm : Form {
@@ -157,7 +158,7 @@ namespace PckStudio {
 			treeViewMain.Nodes.Clear();
 			currentPCK = OpenPck(filepath);
 			if(currentPCK == null) {
-				MessageBox.Show(this, string.Format("Failed to load {0}", Path.GetFileName(filepath)), "Error");
+				MessageBox.Show(this, string.Format("Failed to load {0}", Path.GetFileName(filepath)), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			CurrentFilename = Utilities.Basename(filepath);
@@ -493,7 +494,7 @@ namespace PckStudio {
 			} catch(OverflowException) {
 				MessageBox.Show(this, $"Failed to open {asset.Filename}\n" +
 					"Try converting the file by using the \"Misc. Functions/Set PCK Endianness\" tool and try again.",
-					"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			} catch(Exception ex) {
 				MessageBox.Show($"Failed to open {asset.Filename}\n" + ex.Message,
 					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -527,7 +528,7 @@ namespace PckStudio {
 		}
 
 		public void HandleModelsFile(PckAsset asset) {
-			MessageBox.Show(this, "Models.bin support has not been implemented. You can use the Spark Editor for the time being to edit these files.", "Not implemented yet.");
+			MessageBox.Show(this, "Models.bin support has not been implemented. You can use the Spark Editor for the time being to edit these files.", "Not implemented yet.", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 		}
 
 		public void HandleBehavioursFile(PckAsset asset) {
@@ -668,17 +669,17 @@ namespace PckStudio {
 
 		private void extractToolStripMenuItem_Click(object sender, EventArgs e) {
 			TreeNode node = treeViewMain.SelectedNode;
-
 			if(node == null) {
-				MessageBox.Show(this, "The selected node was null. Please select a node and try again.", "Node not extracted");
-
+				MessageBox.Show(this,
+					"The selected node was null. Please select a node and try again.",
+					"Node not extracted",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
 				return;
 			}
-
 			if(node.Tag == null) {
 				OpenFolderDialog dialog = new OpenFolderDialog();
 				dialog.Title = @"Select destination folder";
-
 				if(dialog.ShowDialog(Handle) == true)
 					extractFolder(dialog.ResultPath);
 			} else if(node.TryGetTagData(out PckAsset asset)) {
@@ -688,16 +689,21 @@ namespace PckStudio {
 				if(exFile.ShowDialog(this) != DialogResult.OK ||
 					// Makes sure chosen directory isn't null or whitespace AKA makes sure its usable
 					string.IsNullOrWhiteSpace(Path.GetDirectoryName(exFile.FileName))) {
-					MessageBox.Show(this, "The chosen directory is invalid. Please choose a different one and try again.", "Node not extracted");
-
+					MessageBox.Show(this,
+						"The chosen directory is invalid. Please choose a different one and try again.",
+						"Node not extracted",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 					return;
 				}
-
 				extractFile(exFile.FileName, asset);
 			}
-
 			// Verification that file extraction path was successful
-			MessageBox.Show(this, $"\"{node.Text}\" successfully extracted");
+			MessageBox.Show(this,
+				$"\"{node.Text}\" successfully extracted",
+				"OK",
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Information);
 		}
 
 		private void SaveTemplate() {
@@ -717,7 +723,9 @@ namespace PckStudio {
 			var writer = new PckFileWriter(currentPCK, littleEndianCheckBox.Checked ? OMI.Endianness.LittleEndian : OMI.Endianness.BigEndian);
 			writer.WriteToFile(filePath);
 			Modified = false;
-			MessageBox.Show(this, "Saved Pck file", "File Saved");
+			// Don't get in the user's way when saving is complete.
+			// Instead, just tell the user with a sound cue
+			SystemSounds.Asterisk.Play();
 		}
 
 		private void replaceToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -748,7 +756,11 @@ namespace PckStudio {
 				}
 				return;
 			}
-			MessageBox.Show(this, "Can't replace a folder.");
+			MessageBox.Show(this,
+				"Can't replace a folder.",
+				"Error",
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Error);
 		}
 
 		/// <summary>
@@ -762,8 +774,11 @@ namespace PckStudio {
 			// warn the user about deleting compass.png and clock.png
 			if(asset.Type == PckAssetType.TextureFile &&
 				(asset.Filename == itemPath + "/compass.png" || asset.Filename == itemPath + "/clock.png")) {
-				if(MessageBox.Show(this, "Are you sure want to delete this file? If \"compass.png\" or \"clock.png\" are missing, your game will crash upon loading this pack.", "Warning",
-					MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+				if(MessageBox.Show(this,
+					"Are you sure want to delete this file? If \"compass.png\" or \"clock.png\" are missing, your game will crash upon loading this pack.",
+					"Warning",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.Warning) == DialogResult.No)
 					return true;
 			}
 
@@ -792,8 +807,11 @@ namespace PckStudio {
 					node.Remove();
 					Modified = true;
 				}
-			} else if(MessageBox.Show(this, "Are you sure want to delete this folder? All contents will be deleted", "Warning",
-				  MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+			} else if(MessageBox.Show(this,
+					"Are you sure want to delete this folder? All contents will be deleted",
+					"Warning",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.Warning) == DialogResult.Yes) {
 				string pckFolderDir = node.FullPath;
 				currentPCK.RemoveAll(file => file.Filename.StartsWith(pckFolderDir) && !BeforeFileRemove(file));
 				node.Remove();
@@ -806,20 +824,22 @@ namespace PckStudio {
 			if(node == null)
 				return;
 			string path = node.FullPath;
-
 			bool isFile = node.TryGetTagData(out PckAsset asset);
-
 			using TextPrompt diag = new TextPrompt(isFile ? asset.Filename : Path.GetFileName(node.FullPath));
-
 			if(diag.ShowDialog(this) == DialogResult.OK) {
 				if(isFile) {
 					if(currentPCK.Contains(diag.NewText, asset.Type)) {
-						MessageBox.Show(this, $"{diag.NewText} already exists", "File already exists");
+						MessageBox.Show(this,
+								$"{diag.NewText} already exists.",
+								"Error",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Error
+								);
 						return;
 					}
 					asset.Filename = diag.NewText;
-				} else // folders
-				  {
+				} else {
+					// folders
 					node.Text = diag.NewText;
 					foreach(TreeNode childNode in GetAllChildNodes(node.Nodes)) {
 						if(childNode.Tag is PckAsset folderAsset) {
@@ -895,11 +915,19 @@ namespace PckStudio {
 		private void audiopckToolStripMenuItem_Click(object sender, EventArgs e) {
 			if(currentPCK.Contains(PckAssetType.AudioFile)) {
 				// the chance of this happening is really really slim but just in case
-				MessageBox.Show(this, "There is already an audio file in this PCK!", "Can't create audio.pck");
+				MessageBox.Show(this,
+						"There is already an audio file in this PCK!",
+						"Can't create audio.pck",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			}
 			if(string.IsNullOrEmpty(saveLocation)) {
-				MessageBox.Show(this, "You must save your pck before creating or opening a music cues PCK file", "Can't create audio.pck");
+				MessageBox.Show(this,
+						"You must save your pck before creating or opening a music cues PCK file.",
+						"Can't create audio.pck",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			}
 
@@ -920,7 +948,11 @@ namespace PckStudio {
 			string animationFilepath = $"{ResourceLocation.GetPathFromCategory(diag.Category)}/{diag.SelectedTile.InternalName}.png";
 
 			if(currentPCK.Contains(animationFilepath, PckAssetType.TextureFile)) {
-				MessageBox.Show(this, $"{diag.SelectedTile.DisplayName} is already present.", "File already present");
+				MessageBox.Show(this,
+						$"{diag.SelectedTile.DisplayName} is already present.",
+						"Error",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			}
 
@@ -968,7 +1000,12 @@ namespace PckStudio {
 							} catch(Exception ex) {
 								Debug.WriteLine(ex.Message);
 								Trace.WriteLine("Invalid ANIM value: " + property.Value);
-								MessageBox.Show(this, "Failed to parse ANIM value, aborting to normal functionality. Please make sure the value only includes hexadecimal characters (0-9,A-F) and has no more than 8 characters.");
+								MessageBox.Show(this,
+										"Failed to parse ANIM value, aborting to normal functionality.\n" + 
+										"Please make sure the value only includes hexadecimal characters and has no more than 8 characters.",
+										"Parse error",
+										MessageBoxButtons.OK,
+										MessageBoxIcon.Error);
 							}
 							break;
 
@@ -984,7 +1021,11 @@ namespace PckStudio {
 							} catch(Exception ex) {
 								Debug.WriteLine(ex.Message);
 								Trace.WriteLine("Invalid BOX value: " + property.Value);
-								MessageBox.Show(this, "Failed to parse BOX value, aborting to normal functionality.");
+								MessageBox.Show(this,
+										"Failed to parse BOX value, aborting to normal functionality.",
+										"Parse error",
+										MessageBoxButtons.OK,
+										MessageBoxIcon.Error);
 							}
 							break;
 
@@ -1029,11 +1070,12 @@ namespace PckStudio {
 					newNode.SelectedImageIndex = node.SelectedImageIndex;
 
 					if(GetAllChildNodes(treeViewMain.Nodes).FirstOrDefault(n => n.FullPath == diag.NewText) is not null) {
-						MessageBox.Show(
-							this,
+						MessageBox.Show(this,
 							$"A file with the path \"{diag.NewText}\" already exists. " +
 							$"Please try again with a different name.",
-							"Key already exists");
+							"Key already exists",
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Error);
 						return;
 					}
 
@@ -1232,7 +1274,13 @@ namespace PckStudio {
 							continue;
 
 						int remainingFileCount = fileCount - addedCount - skippedFiles;
-						DialogResult abortFurtherImport = MessageBox.Show($"Do you wan't to abort further file imports?\n{remainingFileCount} file(s) left.", "Abort further import", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+						DialogResult abortFurtherImport = MessageBox.Show(
+								this,
+								$"Do you want to abort further file imports?\nThere are {remainingFileCount} file(s) left.",
+								"Question",
+								MessageBoxButtons.YesNo,
+								MessageBoxIcon.Question,
+								MessageBoxDefaultButton.Button2);
 						if(abortFurtherImport == DialogResult.Yes) {
 							skippedFiles += remainingFileCount;
 							break;
@@ -1248,7 +1296,12 @@ namespace PckStudio {
 						typeDuplication++;
 					lastSelectedAssetType = addFile.Filetype;
 					if(typeDuplication > 1) {
-						DialogResult useSameTypeForRest = MessageBox.Show($"Do you want to import all remaining files as {lastSelectedAssetType}?", "Import all as", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+						DialogResult useSameTypeForRest = MessageBox.Show(this,
+								$"Do you want to use the same file type \"{lastSelectedAssetType}\" for the rest of the files?",
+								"Question",
+								MessageBoxButtons.YesNo,
+								MessageBoxIcon.Question,
+								MessageBoxDefaultButton.Button1);
 						if(useSameTypeForRest == DialogResult.Yes) {
 							askForAssetType = false;
 						}
@@ -1257,7 +1310,12 @@ namespace PckStudio {
 
 				if(currentPCK.Contains(filepath, assetType)) {
 					if(askForAssetType)
-						MessageBox.Show(this, $"'{assetPath}' of type {assetType} already exists.\nSkiping file.", "File already exists", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+						MessageBox.Show(this,
+								$"'{assetPath}' of type {assetType} already exists.\nSkipping file.",
+								"File already exists",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Warning,
+								MessageBoxDefaultButton.Button1);
 					Debug.WriteLine($"'{assetPath}' of type {assetType} already exists.\nSkiping file.");
 					continue;
 				}
@@ -1428,7 +1486,11 @@ namespace PckStudio {
 		[Obsolete("Move this")]
 		public bool CreateDataFolder() {
 			if(!HasDataFolder()) {
-				DialogResult result = MessageBox.Show(this, "There is not a \"Data\" folder present in the pack folder. Would you like to create one?", "Folder missing", MessageBoxButtons.YesNo);
+				DialogResult result = MessageBox.Show(this,
+						"There is no \"Data\" folder in the pack folder. Would you like to create one?",
+						"Folder missing",
+						MessageBoxButtons.YesNo,
+						MessageBoxIcon.Question);
 				if(result == DialogResult.No)
 					return false;
 				else
@@ -1631,7 +1693,12 @@ namespace PckStudio {
 		private void CheckSaveState() {
 			if(currentPCK is not null &&
 				Modified &&
-				MessageBox.Show(this, "Save PCK?", "Unsaved PCK", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.Yes) {
+				MessageBox.Show(this,
+					"Save PCK?",
+					"Unsaved PCK",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.Warning,
+					MessageBoxDefaultButton.Button1) == DialogResult.Yes) {
 				if(isTemplateFile || string.IsNullOrEmpty(saveLocation)) {
 					SaveTemplate();
 					return;
@@ -1651,7 +1718,11 @@ namespace PckStudio {
 		private void OpenPck_DragDrop(object sender, DragEventArgs e) {
 			string[] filepaths = (string[])e.Data.GetData(DataFormats.FileDrop, false);
 			if(filepaths.Length > 1)
-				MessageBox.Show(this, "Only one pck file at a time is currently supported");
+				MessageBox.Show(this,
+						"PCK Studio can only support one PCK file at a time. Opening the first one.",
+						"PCK Studio",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Asterisk);
 			LoadPckFromFile(filepaths[0]);
 		}
 
@@ -1758,7 +1829,11 @@ namespace PckStudio {
 				renamePrompt.LabelText = "Path";
 				if(renamePrompt.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(renamePrompt.NewText)) {
 					if(currentPCK.Contains(renamePrompt.NewText, PckAssetType.TextureFile)) {
-						MessageBox.Show(this, $"'{renamePrompt.NewText}' already exists.", "Import failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						MessageBox.Show(this,
+								$"'{renamePrompt.NewText}' already exists.",
+								"Import failed",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Error);
 						return;
 					}
 					PckAsset asset = currentPCK.CreateNewAsset(renamePrompt.NewText, PckAssetType.TextureFile, () => File.ReadAllBytes(fileDialog.FileName));
@@ -1774,8 +1849,10 @@ namespace PckStudio {
 					"File path: " + asset.Filename +
 					"\nAssigned File type: " + (int)asset.Type + " (" + asset.Type + ")" +
 					"\nFile size: " + asset.Size +
-					"\nProperties count: " + asset.PropertyCount
-					, Path.GetFileName(asset.Filename) + " file info");
+					"\nProperties count: " + asset.PropertyCount,
+					Path.GetFileName(asset.Filename) + " file info",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Information);
 			}
 		}
 
@@ -1828,7 +1905,11 @@ namespace PckStudio {
 
 		private void colourscolToolStripMenuItem_Click(object sender, EventArgs e) {
 			if(currentPCK.TryGetAsset("colours.col", PckAssetType.ColourTableFile, out _)) {
-				MessageBox.Show(this, "A color table file already exists in this PCK and a new one cannot be created.", "Operation aborted");
+				MessageBox.Show(this,
+						"A color table file already exists in this PCK and a new one cannot be created.",
+						"Operation aborted",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			}
 			PckAsset newColorAsset = currentPCK.CreateNewAsset("colours.col", PckAssetType.ColourTableFile);
@@ -1879,7 +1960,11 @@ namespace PckStudio {
 
 		private void CreateSkinsPCKToolStripMenuItem1_Click(object sender, EventArgs e) {
 			if(currentPCK.TryGetAsset("Skins.pck", PckAssetType.SkinDataFile, out _)) {
-				MessageBox.Show(this, "A Skins.pck file already exists in this PCK and a new one cannot be created.", "Operation aborted");
+				MessageBox.Show(this,
+						"A Skins.pck file already exists in this PCK and a new one cannot be created.",
+						"Operation aborted",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			}
 
@@ -1914,7 +1999,11 @@ namespace PckStudio {
 				using AddFilePrompt diag = new AddFilePrompt("res/" + Path.GetFileName(ofd.FileName));
 				if(diag.ShowDialog(this) == DialogResult.OK) {
 					if(currentPCK.Contains(diag.Filepath, diag.Filetype)) {
-						MessageBox.Show(this, $"'{diag.Filepath}' of type {diag.Filetype} already exists.", "Import failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						MessageBox.Show(this,
+								$"'{diag.Filepath}' of type {diag.Filetype} already exists.",
+								"Import failed",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Error);
 						return;
 					}
 					PckAsset asset = currentPCK.CreateNewAsset(diag.Filepath, diag.Filetype, () => File.ReadAllBytes(ofd.FileName));
@@ -1928,7 +2017,11 @@ namespace PckStudio {
 
 		private void behavioursbinToolStripMenuItem_Click(object sender, EventArgs e) {
 			if(currentPCK.TryGetAsset("behaviours.bin", PckAssetType.BehavioursFile, out _)) {
-				MessageBox.Show(this, "A behaviours file already exists in this PCK and a new one cannot be created.", "Operation aborted");
+				MessageBox.Show(this,
+						"A behaviours file already exists in this PCK and a new one cannot be created.",
+						"Operation aborted",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			}
 
@@ -1938,7 +2031,11 @@ namespace PckStudio {
 
 		private void entityMaterialsbinToolStripMenuItem_Click(object sender, EventArgs e) {
 			if(currentPCK.TryGetAsset("entityMaterials.bin", PckAssetType.MaterialFile, out _)) {
-				MessageBox.Show(this, "A behaviours file already exists in this PCK and a new one cannot be created.", "Operation aborted");
+				MessageBox.Show(this,
+						"A behaviours file already exists in this PCK and a new one cannot be created.",
+						"Operation aborted",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			}
 			var materialContainer = new MaterialContainer();
@@ -2044,10 +2141,18 @@ namespace PckStudio {
 					MessageBox.Show($"\"{asset.Filename}\" successfully converted to {(endianness == OMI.Endianness.LittleEndian ? "little" : "big")} endian.", "Converted PCK file");
 				}
 			} catch(OverflowException) {
-				MessageBox.Show(this, $"File was not a valid {(endianness != OMI.Endianness.LittleEndian ? "little" : "big")} endian PCK File.", "Not a valid PCK file");
+				MessageBox.Show(this,
+						$"File was not a valid {(endianness != OMI.Endianness.LittleEndian ? "little" : "big")} endian PCK File.",
+						"Not a valid PCK file",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			} catch(Exception ex) {
-				MessageBox.Show(this, ex.Message, "Not a valid PCK file");
+				MessageBox.Show(this,
+						ex.Message,
+						"Not a valid PCK file",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
 				return;
 			}
 		}
@@ -2062,41 +2167,48 @@ namespace PckStudio {
 					ModelContainer container = asset.GetData(new ModelFileReader());
 
 					if(container.Version == version) {
-						MessageBox.Show(
-							this,
-							$"This model container is already Version {version + 1}.",
-							"Can't convert", MessageBoxButtons.OK, MessageBoxIcon.Error
+						MessageBox.Show(this,
+								$"This model container is already Version {version + 1}.",
+								"Can't convert",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Information
 						);
 						return;
 					}
 
 					if(version == 2 &&
-						MessageBox.Show(
-							this,
-							"Conversion to 1.14 models.bin format does not yet support parent declaration and may not be 100% accurate.\n" +
-							"Would you like to continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes
-						) {
+						MessageBox.Show(this,
+								"Conversion to 1.14 models.bin format does not yet support parent declaration and may not be 100% accurate.\n" +
+								"Would you like to continue?",
+								"Warning",
+								MessageBoxButtons.YesNo,
+								MessageBoxIcon.Warning) != DialogResult.Yes) {
 						return;
 					}
 
 					if(container.Version > 1 &&
-						MessageBox.Show(
-							this,
-							"Conversion from 1.14 models.bin format does not yet support parent parts and may not be 100% accurate.\n" +
-							"Would you like to continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes
-							) {
+						MessageBox.Show(this,
+								"Conversion from 1.14 models.bin format does not yet support parent parts and may not be 100% accurate.\n" +
+								"Would you like to continue?",
+								"Warning",
+								MessageBoxButtons.YesNo,
+								MessageBoxIcon.Warning) != DialogResult.Yes) {
 						return;
 					}
 
 					asset.SetData(new ModelFileWriter(container, version));
 					Modified = true;
-					MessageBox.Show(
-						this,
-						$"\"{asset.Filename}\" successfully converted to Version {version + 1} format.",
-						"Converted model container file"
-						);
+					MessageBox.Show(this,
+							$"\"{asset.Filename}\" successfully converted to Version {version + 1} format.",
+							"Converted model container file",
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Information);
 				} catch(Exception ex) {
-					MessageBox.Show(this, ex.Message, "Not a valid model container file.");
+					MessageBox.Show(this,
+							ex.Message,
+							"Not a valid model container file.",
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Error);
 					return;
 				}
 			}
