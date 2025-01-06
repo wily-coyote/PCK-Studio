@@ -28,9 +28,6 @@ namespace PckStudio.Forms {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModelGeneratorForm));
 			this.boxContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.cloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.buttonDone = new System.Windows.Forms.Button();
 			this.offsetGroup = new System.Windows.Forms.GroupBox();
 			this.tabOffsets = new System.Windows.Forms.TabControl();
@@ -70,7 +67,6 @@ namespace PckStudio.Forms {
 			this.rightLayout = new System.Windows.Forms.TableLayoutPanel();
 			this.texturePreviewGroup = new System.Windows.Forms.GroupBox();
 			this.texturePreviewLayout = new System.Windows.Forms.TableLayoutPanel();
-			this.uvPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
 			this.mainView = new OpenTK.GLControl();
 			this.partGroup = new System.Windows.Forms.GroupBox();
 			this.partLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -91,6 +87,10 @@ namespace PckStudio.Forms {
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpProvider = new System.Windows.Forms.HelpProvider();
+			this.uvPictureBox = new PckStudio.ToolboxItems.InterpolationPictureBox();
+			this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.offsetGroup.SuspendLayout();
 			this.tabOffsets.SuspendLayout();
 			this.tabBody.SuspendLayout();
@@ -112,7 +112,6 @@ namespace PckStudio.Forms {
 			this.rightLayout.SuspendLayout();
 			this.texturePreviewGroup.SuspendLayout();
 			this.texturePreviewLayout.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.uvPictureBox)).BeginInit();
 			this.partGroup.SuspendLayout();
 			this.partLayout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.InflateUpDown)).BeginInit();
@@ -129,32 +128,15 @@ namespace PckStudio.Forms {
 			this.layout2.Panel2.SuspendLayout();
 			this.layout2.SuspendLayout();
 			this.menuStrip.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.uvPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// boxContextMenu
 			// 
 			this.boxContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.boxContextMenu.Name = "contextMenuStrip1";
+			this.boxContextMenu.Name = "boxContextMenu";
 			this.helpProvider.SetShowHelp(this.boxContextMenu, ((bool)(resources.GetObject("boxContextMenu.ShowHelp"))));
 			resources.ApplyResources(this.boxContextMenu, "boxContextMenu");
-			// 
-			// createToolStripMenuItem
-			// 
-			resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
-			this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-			this.createToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxAdded);
-			// 
-			// cloneToolStripMenuItem
-			// 
-			resources.ApplyResources(this.cloneToolStripMenuItem, "cloneToolStripMenuItem");
-			this.cloneToolStripMenuItem.Name = "cloneToolStripMenuItem";
-			this.cloneToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxCloned);
-			// 
-			// deleteToolStripMenuItem
-			// 
-			resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxRemoved);
 			// 
 			// buttonDone
 			// 
@@ -511,16 +493,6 @@ namespace PckStudio.Forms {
 			this.texturePreviewLayout.Name = "texturePreviewLayout";
 			this.helpProvider.SetShowHelp(this.texturePreviewLayout, ((bool)(resources.GetObject("texturePreviewLayout.ShowHelp"))));
 			// 
-			// uvPictureBox
-			// 
-			this.uvPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.texturePreviewLayout.SetColumnSpan(this.uvPictureBox, 2);
-			resources.ApplyResources(this.uvPictureBox, "uvPictureBox");
-			this.uvPictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
-			this.uvPictureBox.Name = "uvPictureBox";
-			this.helpProvider.SetShowHelp(this.uvPictureBox, ((bool)(resources.GetObject("uvPictureBox.ShowHelp"))));
-			this.uvPictureBox.TabStop = false;
-			// 
 			// mainView
 			// 
 			this.mainView.BackColor = System.Drawing.Color.Black;
@@ -706,6 +678,36 @@ namespace PckStudio.Forms {
 			resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
 			this.helpToolStripMenuItem.Click += new System.EventHandler(this.DoContextHelp);
 			// 
+			// uvPictureBox
+			// 
+			this.uvPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.texturePreviewLayout.SetColumnSpan(this.uvPictureBox, 2);
+			resources.ApplyResources(this.uvPictureBox, "uvPictureBox");
+			this.uvPictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+			this.uvPictureBox.Name = "uvPictureBox";
+			this.helpProvider.SetShowHelp(this.uvPictureBox, ((bool)(resources.GetObject("uvPictureBox.ShowHelp"))));
+			this.uvPictureBox.TabStop = false;
+			// 
+			// createToolStripMenuItem
+			// 
+			resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
+			this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+			this.createToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxAdded);
+			// 
+			// cloneToolStripMenuItem
+			// 
+			this.cloneToolStripMenuItem.Image = global::PckStudio.Icons.CloneBox;
+			this.cloneToolStripMenuItem.Name = "cloneToolStripMenuItem";
+			resources.ApplyResources(this.cloneToolStripMenuItem, "cloneToolStripMenuItem");
+			this.cloneToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxCloned);
+			// 
+			// deleteToolStripMenuItem
+			// 
+			this.deleteToolStripMenuItem.Image = global::PckStudio.Icons.DeleteBox;
+			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+			resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
+			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.SkinBoxRemoved);
+			// 
 			// ModelGeneratorForm
 			// 
 			resources.ApplyResources(this, "$this");
@@ -744,7 +746,6 @@ namespace PckStudio.Forms {
 			this.rightLayout.PerformLayout();
 			this.texturePreviewGroup.ResumeLayout(false);
 			this.texturePreviewLayout.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.uvPictureBox)).EndInit();
 			this.partGroup.ResumeLayout(false);
 			this.partGroup.PerformLayout();
 			this.partLayout.ResumeLayout(false);
@@ -767,6 +768,7 @@ namespace PckStudio.Forms {
 			this.layout2.ResumeLayout(false);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.uvPictureBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

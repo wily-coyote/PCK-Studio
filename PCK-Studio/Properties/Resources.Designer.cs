@@ -124,7 +124,8 @@ namespace PckStudio.Properties {
         ///					&quot;Banner_Pink&quot;,
         ///					&quot;Banner_Purple&quot;,
         ///					&quot;Banner_Red&quot;,
-        ///					&quot;Ban [rest of string was truncated]&quot;;.
+        ///					&quot;Banner_Silver&quot;,
+        ///					&quot;Bann [rest of string was truncated]&quot;;.
         /// </summary>
         public static string bannerData {
             get {
@@ -216,7 +217,8 @@ namespace PckStudio.Properties {
         ///			&quot;displayName&quot;: &quot;Stone&quot;
         ///		},
         ///		{
-        ///			&quot;internalName&quot;: [rest of string was truncated]&quot;;.
+        ///			&quot;internalName&quot;: &quot;dirt&quot;,
+        ///			&quot;displayNam [rest of string was truncated]&quot;;.
         /// </summary>
         public static string blockData {
             get {
@@ -235,9 +237,8 @@ namespace PckStudio.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 7.0 (IN DEVELOPMENT)  
+        ///   Looks up a localized string similar to 7.0.0.0
         ///====================  
-        ///Some features may be completely missing or incomplete at this point in time!  
         ///
         ///-Added .3dst (3DS Texture) support  
         ///-Semi-added Sub-Pck editing  
@@ -248,7 +249,8 @@ namespace PckStudio.Properties {
         ///-Massive codebase overhaul and optimization lead by miku-666 (aka NessieHax)!!!  
         ///-Some UI redesigned by yaboiFoxx  
         ///-Improved the changelog!  
-        ///-New icons for each o [rest of string was truncated]&quot;;.
+        ///-New icons for each of the file types, with unique image icons for skin, texture, and cape files  
+        ///-Added the ability to create  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CHANGELOG {
             get {
@@ -362,7 +364,10 @@ namespace PckStudio.Properties {
         ///		},
         ///		{
         ///			&quot;internalName&quot;: &quot;boat&quot;,
-        ///			&quot;display [rest of string was truncated]&quot;;.
+        ///			&quot;displayName&quot;: &quot;Boat&quot;
+        ///		},
+        ///		{
+        ///		 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string entityBehavioursData {
             get {
@@ -400,7 +405,10 @@ namespace PckStudio.Properties {
         ///		},
         ///		{
         ///			&quot;internalName&quot;: &quot;cat&quot;,
-        ///			&quot;displayName&quot;: &quot;Cat [PS4 [rest of string was truncated]&quot;;.
+        ///			&quot;displayName&quot;: &quot;Cat [PS4 EXCLUSIVE]&quot;
+        ///		},
+        ///		{
+        ///			&quot;int [rest of string was truncated]&quot;;.
         /// </summary>
         public static string entityMaterialsData {
             get {
@@ -438,7 +446,10 @@ namespace PckStudio.Properties {
         ///		},
         ///		{
         ///			&quot;internalName&quot;: &quot;cat&quot;,
-        ///			&quot;displayName&quot;: &quot;Cat [ [rest of string was truncated]&quot;;.
+        ///			&quot;displayName&quot;: &quot;Cat [PS4 EXCLUSIVE]&quot;
+        ///		},
+        ///		{
+        ///			&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string entityModelsData {
             get {
@@ -479,7 +490,7 @@ namespace PckStudio.Properties {
         ///			}
         ///		},
         ///		{
-        ///			&quot; [rest of string was truncated]&quot;;.
+        ///			&quot;internalName&quot;: &quot;experi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string experienceOrbData {
             get {
@@ -510,7 +521,8 @@ namespace PckStudio.Properties {
         ///			&quot;colourEntry&quot;: {
         ///				&quot;defaultName&quot;: &quot;Particle_Explode&quot;,
         ///				&quot;variants&quot;: [
-        ///					 [rest of string was truncated]&quot;;.
+        ///					&quot;Particle_Explode&quot;,
+        ///		 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string explosionData {
             get {
@@ -666,9 +678,9 @@ namespace PckStudio.Properties {
         ///		{
         ///			&quot;internalName&quot;: &quot;helmetCloth&quot;,
         ///			&quot;displayName&quot;: &quot;Leather Cap&quot;,
+        ///			&quot;allowCustomColour&quot;: true,
         ///			&quot;hasColourEntry&quot;: true,
         ///			&quot;colourEntry&quot;: {
-        ///				&quot;hasCustomColour&quot;: true,
         ///				&quot;defaultName&quot;: &quot;Armour_Default_Leather_Colour&quot;,
         ///				&quot;variants&quot;: [ &quot;Armour_Default_Leather_Colour&quot; ]
         ///			}
@@ -678,7 +690,8 @@ namespace PckStudio.Properties {
         ///			&quot;displayName&quot;: &quot;Chain Helmet&quot;
         ///		},
         ///		{
-        ///			&quot;internalName&quot;: &quot; [rest of string was truncated]&quot;;.
+        ///			&quot;internalName&quot;: &quot;helmetIron&quot;,
+        ///			&quot;d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string itemData {
             get {
@@ -745,7 +758,7 @@ namespace PckStudio.Properties {
         ///			&quot;displayName&quot;: &quot;Target Point (Unused)&quot;
         ///		},
         ///		{
-        ///			 [rest of string was truncated]&quot;;.
+        ///			&quot;internalName&quot;: &quot;player_off_ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mapIconData {
             get {
@@ -799,7 +812,9 @@ namespace PckStudio.Properties {
         ///		},
         ///		{
         ///			&quot;internalName&quot;: &quot;moon_phase_5&quot;,
-        ///			&quot;displayName&quot;: [rest of string was truncated]&quot;;.
+        ///			&quot;displayName&quot;: &quot;Waxing Crescent&quot;
+        ///		},
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string moonPhaseData {
             get {
@@ -869,7 +884,7 @@ namespace PckStudio.Properties {
         ///		},
         ///		{
         ///			&quot;internalName&quot;: &quot;Bomb&quot;,
-        ///			&quot;disp [rest of string was truncated]&quot;;.
+        ///			&quot;displayName&quot;: &quot;\&quot;Target S [rest of string was truncated]&quot;;.
         /// </summary>
         public static string paintingData {
             get {
@@ -911,7 +926,7 @@ namespace PckStudio.Properties {
         ///		{
         ///			&quot;internalName&quot;: &quot;generic_1&quot;,
         ///			&quot;displayName&quot;: &quot;Generic (Stage 2)&quot;,
-        /// [rest of string was truncated]&quot;;.
+        ///			&quot;hasColourEntry&quot;: tr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string particleData {
             get {

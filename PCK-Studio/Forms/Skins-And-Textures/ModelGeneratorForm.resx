@@ -137,56 +137,6 @@
   <data name="&gt;&gt;boxContextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="createToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAABSSURBVDhP5c0x
-        DsAgDENRxt7/wmkNSpRGf0CCCZAegxNMM7MlGMp3dIU6dxhKf/QMNxRogeQC8ivw5Vn7C0heJlFA+kL5
-        jWAohxRkde4wnGftBS90axNmphIGAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="createToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="createToolStripMenuItem.Text" xml:space="preserve">
-    <value>Create</value>
-  </data>
-  <data name="cloneToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAAHbSURBVDhPYyjZ
-        5F622bt8o1fmYpvMxdY5691T5prlrnJq2BsKFM9Z6Zix1DZruX3yAovAPrX8NS4MJZs98la7de2M/I8E
-        khdZJsw3m3IwacL+hIoNPkkLDEpWumYus8tf6cTQuSc6zFZj7slckEIGBhD6/z/WUr1oq0fDvtApB1Mm
-        H0uOtFaNmaKbPM8iykaTIcpGPSs3K8JWHVlDpK1q4gLDcFv1rHXOIfbq1UGmIfZqQJWVoVYgaQSAaYCD
-        aCul3KzMynCrqZk+4baaMA0QdZjo//+KMOtIa62ScMvKEPOycPuNrXEENMBBf5ZvZZjV7CwnFFFMdXCR
-        1jj7tgTn6TleDFtaE4FaN7emIEuXh1pNzPFHFgGqmZATMCXbj2FatmdZsHFZuBWyNAJgiIA0TM31irLT
-        hApAAEQdJoJqyPMH2ri7LQaIKsIsCWrwrgizqgo1n5rjMy3He0drFEgDHMDUwQFDWYhlqL3GjBzPylCL
-        abm+wHDY1RoLtLA2xAQsD9UANHRbW+zO1miG8hCLKTk+wAiqDrOKsFGrCLWZnu01NdezIhTJbf//72iN
-        nZbjNT3Hk2FKtldFmEWEjdautpjKUMsoGw1g/EfZqQMtAWmAASB3RrbHjBxPAFdnoOpP7y1ZAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
-  <data name="cloneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="cloneToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clone</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAACESURBVDhPlY0B
-        DoAgDAP3Dj7r09WTkqGUgJfUxtrOmHFEnL0U76FBqW8PZXmk/9uONEsIb3gsNRzoL/+R5hWC759mGsbQ
-        DnzdZbhmiSvhLsM1S1wJdxmuWeJKuMtwzRJXwl2Ga5a4Eu4yXLPElXCX4Zol/WCl6YGdI62n2Zv2cSXV
-        byIunLh7mD2ySLcAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonDone.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -273,7 +223,7 @@
     <value>True</value>
   </data>
   <data name="offsetArms.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>67, 20</value>
   </data>
   <data name="offsetArms.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -342,7 +292,7 @@
     <value>True</value>
   </data>
   <data name="offsetBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>67, 20</value>
   </data>
   <data name="offsetBody.TabIndex" type="System.Int32, mscorlib">
     <value>83</value>
@@ -372,7 +322,7 @@
     <value>True</value>
   </data>
   <data name="offsetLegs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>67, 20</value>
   </data>
   <data name="offsetLegs.TabIndex" type="System.Int32, mscorlib">
     <value>84</value>
@@ -480,7 +430,7 @@
     <value>True</value>
   </data>
   <data name="offsetHead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>67, 20</value>
   </data>
   <data name="offsetHead.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -552,7 +502,7 @@
     <value>True</value>
   </data>
   <data name="bodyLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 126</value>
+    <value>145, 128</value>
   </data>
   <data name="bodyLayout.TabIndex" type="System.Int32, mscorlib">
     <value>146</value>
@@ -582,7 +532,7 @@
     <value>True</value>
   </data>
   <data name="tabBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 132</value>
+    <value>151, 134</value>
   </data>
   <data name="tabBody.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -735,7 +685,7 @@
     <value>114</value>
   </data>
   <data name="exportButton.Text" xml:space="preserve">
-    <value>EXPORT</value>
+    <value>Export</value>
   </data>
   <data name="&gt;&gt;exportButton.Name" xml:space="preserve">
     <value>exportButton</value>
@@ -771,7 +721,7 @@
     <value>128</value>
   </data>
   <data name="importButton.Text" xml:space="preserve">
-    <value>IMPORT</value>
+    <value>Import</value>
   </data>
   <data name="&gt;&gt;importButton.Name" xml:space="preserve">
     <value>importButton</value>
@@ -2073,19 +2023,19 @@
     <value>162, 17</value>
   </metadata>
   <data name="loadTemplateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="loadTemplateToolStripMenuItem.Text" xml:space="preserve">
     <value>Load Template</value>
   </data>
   <data name="finishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="finishToolStripMenuItem.Text" xml:space="preserve">
     <value>Finish</value>
   </data>
   <data name="cancelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="cancelToolStripMenuItem.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -2095,6 +2045,40 @@
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="createToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAACSUlEQVQ4T32S
+        7UtTcRTH7x/Qi8B3QgyKopAelm9CopjF6kWgNQ0hRjmXQo2RkKaTpo5QSPegs9F0hj1sInmzzIcR2CV1
+        ZplStydbsKaVZRFMjIjSvv3O1d3lNjvw5cfhnu/nnN/vXC7YtdkbGctswheTP8hvWJgVjQgHDOh2ZMCk
+        zUDlyUyYC1SbuNXi15ssU9iv/IO5erwfzAPmHAj1bYPfvQcnVKmwlWShxnBwdQh1xrwL+P0Q8x95dg6B
+        cvHecRkQVVLIZIdiYUrQ4PvnLiwigh9fe0D5VL9yBcBjVsNlzk2EfBJL2NhO4KcgQWgSypNNQLpSq10J
+        Ge3MZXfegcXZ85gZ0QIRJ0K9W8HX70wKIPns+hiEbcFFW/j2woAZYRfeTbpxt0GJ9ur1SFu3RlI8oIVN
+        4bUXxCB+71l8eHlH1u0Wg2yOh9SVaaSaaZGHs0IDrqftDF4NOPE24EFozIvpZ51Sgc+hT4BYTUvm8EQH
+        gqx+5KYFHH/5FO57jBi/VQWx7+IyrFWCeS4ck8021o26hh5fw2vhEp521+BR+zlwdI/rVh36G/MRaDNi
+        1Ff6D6wJjeVHYK/IWeo67MFzvxVPeDMCV4th1u2F9AYEaa7OQ69NC8Glw2BzEYYZbIBNVld8COrtKbhh
+        zV/uWoah1tOo1KtoS7F1EsRRmi1D6KRf+EB6KvjaoxKkofwwHrgLURVvjgZByERmS9F+5OxWwJi9RQLQ
+        OzCT2lK4L7k5GgRhkorTN6ZIgKiZvv/XHB9kSlOslc2JwXF/AdSZ9IjgMXt1AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="createToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="createToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="cloneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="cloneToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clone</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 20</value>
@@ -4662,24 +4646,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Model Generator</value>
   </data>
-  <data name="&gt;&gt;createToolStripMenuItem.Name" xml:space="preserve">
-    <value>createToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;createToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cloneToolStripMenuItem.Name" xml:space="preserve">
-    <value>cloneToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cloneToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deleteToolStripMenuItem.Name" xml:space="preserve">
-    <value>deleteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;deleteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
     <value>fileToolStripMenuItem</value>
   </data>
@@ -4721,6 +4687,24 @@
   </data>
   <data name="&gt;&gt;helpProvider.Type" xml:space="preserve">
     <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createToolStripMenuItem.Name" xml:space="preserve">
+    <value>createToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;createToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cloneToolStripMenuItem.Name" xml:space="preserve">
+    <value>cloneToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cloneToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteToolStripMenuItem.Name" xml:space="preserve">
+    <value>deleteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ModelGeneratorForm</value>

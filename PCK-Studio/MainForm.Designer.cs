@@ -58,7 +58,6 @@ namespace PckStudio
 			this.binkaWavToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.videosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.howToMakeABasicSkinPackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.howToMakeACustomSkinModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +74,7 @@ namespace PckStudio
 			this.trelloBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.fileCountLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.currentFileTypeLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -219,10 +219,10 @@ namespace PckStudio
             toolStripSeparator2,
             this.recentlyOpenToolStripMenuItem,
             toolStripSeparator4,
-            this.closeToolStripMenuItem,
-            this.packSettingsToolStripMenuItem,
             this.saveToolStripMenuItem1,
             this.saveToolStripMenuItem,
+            this.closeToolStripMenuItem,
+            this.packSettingsToolStripMenuItem,
             this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
@@ -233,8 +233,9 @@ namespace PckStudio
             this.skinPackToolStripMenuItem,
             this.texturePackToolStripMenuItem,
             this.mashUpPackToolStripMenuItem});
-			resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
+			this.newToolStripMenuItem.Image = global::PckStudio.Icons.NewDocumentHS;
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+			resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
 			// 
 			// skinPackToolStripMenuItem
 			// 
@@ -256,26 +257,28 @@ namespace PckStudio
 			// 
 			// openToolStripMenuItem
 			// 
-			resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
+			this.openToolStripMenuItem.Image = global::PckStudio.Icons.OpenFile;
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+			resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
 			// 
 			// recentlyOpenToolStripMenuItem
 			// 
-			resources.ApplyResources(this.recentlyOpenToolStripMenuItem, "recentlyOpenToolStripMenuItem");
+			this.recentlyOpenToolStripMenuItem.Image = global::PckStudio.Icons.History;
 			this.recentlyOpenToolStripMenuItem.Name = "recentlyOpenToolStripMenuItem";
+			resources.ApplyResources(this.recentlyOpenToolStripMenuItem, "recentlyOpenToolStripMenuItem");
 			// 
 			// closeToolStripMenuItem
 			// 
-			resources.ApplyResources(this.closeToolStripMenuItem, "closeToolStripMenuItem");
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+			resources.ApplyResources(this.closeToolStripMenuItem, "closeToolStripMenuItem");
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
 			// 
 			// packSettingsToolStripMenuItem
 			// 
 			this.packSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fullBoxSupportToolStripMenuItem});
-			this.packSettingsToolStripMenuItem.Image = global::PckStudio.Properties.Resources.ranch;
+			this.packSettingsToolStripMenuItem.Image = global::PckStudio.Icons.Properties;
 			this.packSettingsToolStripMenuItem.Name = "packSettingsToolStripMenuItem";
 			resources.ApplyResources(this.packSettingsToolStripMenuItem, "packSettingsToolStripMenuItem");
 			// 
@@ -289,6 +292,7 @@ namespace PckStudio
 			// saveToolStripMenuItem1
 			// 
 			resources.ApplyResources(this.saveToolStripMenuItem1, "saveToolStripMenuItem1");
+			this.saveToolStripMenuItem1.Image = global::PckStudio.Icons.saveHS;
 			this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
 			this.saveToolStripMenuItem1.Click += new System.EventHandler(this.savePCK);
 			// 
@@ -300,8 +304,8 @@ namespace PckStudio
 			// 
 			// exitToolStripMenuItem
 			// 
-			resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
 			// editToolStripMenuItem
@@ -314,6 +318,7 @@ namespace PckStudio
 			// quickChangeToolStripMenuItem
 			// 
 			resources.ApplyResources(this.quickChangeToolStripMenuItem, "quickChangeToolStripMenuItem");
+			this.quickChangeToolStripMenuItem.Image = global::PckStudio.Icons.EditInformationHS;
 			this.quickChangeToolStripMenuItem.Name = "quickChangeToolStripMenuItem";
 			this.quickChangeToolStripMenuItem.Click += new System.EventHandler(this.quickChangeToolStripMenuItem_Click);
 			// 
@@ -322,13 +327,14 @@ namespace PckStudio
 			this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openPckManagerToolStripMenuItem,
             this.convertMusicFilesToolStripMenuItem});
-			resources.ApplyResources(this.miscToolStripMenuItem, "miscToolStripMenuItem");
 			this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
+			resources.ApplyResources(this.miscToolStripMenuItem, "miscToolStripMenuItem");
 			// 
 			// openPckManagerToolStripMenuItem
 			// 
-			resources.ApplyResources(this.openPckManagerToolStripMenuItem, "openPckManagerToolStripMenuItem");
+			this.openPckManagerToolStripMenuItem.Image = global::PckStudio.Icons.Folder;
 			this.openPckManagerToolStripMenuItem.Name = "openPckManagerToolStripMenuItem";
+			resources.ApplyResources(this.openPckManagerToolStripMenuItem, "openPckManagerToolStripMenuItem");
 			this.openPckManagerToolStripMenuItem.Click += new System.EventHandler(this.openPckManagerToolStripMenuItem_Click);
 			// 
 			// convertMusicFilesToolStripMenuItem
@@ -336,6 +342,7 @@ namespace PckStudio
 			this.convertMusicFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.wavBinkaToolStripMenuItem,
             this.binkaWavToolStripMenuItem});
+			this.convertMusicFilesToolStripMenuItem.Image = global::PckStudio.Icons.AudioHS;
 			this.convertMusicFilesToolStripMenuItem.Name = "convertMusicFilesToolStripMenuItem";
 			resources.ApplyResources(this.convertMusicFilesToolStripMenuItem, "convertMusicFilesToolStripMenuItem");
 			// 
@@ -355,28 +362,23 @@ namespace PckStudio
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkForUpdatesToolStripMenuItem,
-            this.aboutToolStripMenuItem,
             toolStripSeparator1,
             this.videosToolStripMenuItem,
             this.donateToolStripMenuItem,
             this.joinDevelopmentDiscordToolStripMenuItem,
             this.trelloBoardToolStripMenuItem,
             this.toolStripSeparator3,
-            this.settingsToolStripMenuItem});
-			resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            this.settingsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+			resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
 			// 
 			// checkForUpdatesToolStripMenuItem
 			// 
-			resources.ApplyResources(this.checkForUpdatesToolStripMenuItem, "checkForUpdatesToolStripMenuItem");
+			this.checkForUpdatesToolStripMenuItem.Image = global::PckStudio.Icons.Refresh;
 			this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+			resources.ApplyResources(this.checkForUpdatesToolStripMenuItem, "checkForUpdatesToolStripMenuItem");
 			this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
-			// 
-			// aboutToolStripMenuItem
-			// 
-			resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
-			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 			// 
 			// videosToolStripMenuItem
 			// 
@@ -388,8 +390,9 @@ namespace PckStudio
             this.howToInstallPcksDirectlyToWiiUToolStripMenuItem,
             this.pckCenterReleaseToolStripMenuItem,
             this.howPCKsWorkToolStripMenuItem});
-			resources.ApplyResources(this.videosToolStripMenuItem, "videosToolStripMenuItem");
+			this.videosToolStripMenuItem.Image = global::PckStudio.Icons.Help;
 			this.videosToolStripMenuItem.Name = "videosToolStripMenuItem";
+			resources.ApplyResources(this.videosToolStripMenuItem, "videosToolStripMenuItem");
 			// 
 			// howToMakeABasicSkinPackToolStripMenuItem
 			// 
@@ -446,8 +449,9 @@ namespace PckStudio
             this.toNobledezJackToolStripMenuItem,
             this.toPhoenixARCDeveloperToolStripMenuItem,
             this.forMattNLContributorToolStripMenuItem});
-			resources.ApplyResources(this.donateToolStripMenuItem, "donateToolStripMenuItem");
+			this.donateToolStripMenuItem.Image = global::PckStudio.Icons.Web;
 			this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
+			resources.ApplyResources(this.donateToolStripMenuItem, "donateToolStripMenuItem");
 			// 
 			// toNobledezJackToolStripMenuItem
 			// 
@@ -469,13 +473,14 @@ namespace PckStudio
 			// 
 			// joinDevelopmentDiscordToolStripMenuItem
 			// 
-			resources.ApplyResources(this.joinDevelopmentDiscordToolStripMenuItem, "joinDevelopmentDiscordToolStripMenuItem");
+			this.joinDevelopmentDiscordToolStripMenuItem.Image = global::PckStudio.Icons.Web;
 			this.joinDevelopmentDiscordToolStripMenuItem.Name = "joinDevelopmentDiscordToolStripMenuItem";
+			resources.ApplyResources(this.joinDevelopmentDiscordToolStripMenuItem, "joinDevelopmentDiscordToolStripMenuItem");
 			this.joinDevelopmentDiscordToolStripMenuItem.Click += new System.EventHandler(this.joinDevelopmentDiscordToolStripMenuItem_Click);
 			// 
 			// trelloBoardToolStripMenuItem
 			// 
-			this.trelloBoardToolStripMenuItem.Image = global::PckStudio.Properties.Resources.trello;
+			this.trelloBoardToolStripMenuItem.Image = global::PckStudio.Icons.Web;
 			this.trelloBoardToolStripMenuItem.Name = "trelloBoardToolStripMenuItem";
 			resources.ApplyResources(this.trelloBoardToolStripMenuItem, "trelloBoardToolStripMenuItem");
 			this.trelloBoardToolStripMenuItem.Click += new System.EventHandler(this.trelloBoardToolStripMenuItem_Click);
@@ -487,9 +492,16 @@ namespace PckStudio
 			// 
 			// settingsToolStripMenuItem
 			// 
-			resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+			this.settingsToolStripMenuItem.Image = global::PckStudio.Icons.Cogwheel;
 			this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+			resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
 			this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+			// 
+			// aboutToolStripMenuItem
+			// 
+			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+			resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 			// 
 			// statusStrip
 			// 
@@ -561,8 +573,9 @@ namespace PckStudio
             this.CreateSkinsPCKToolStripMenuItem1,
             this.behavioursbinToolStripMenuItem,
             this.entityMaterialsbinToolStripMenuItem});
-			resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
+			this.createToolStripMenuItem.Image = global::PckStudio.Icons.NewDocumentHS;
 			this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+			resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
 			// 
 			// folderToolStripMenuItem
 			// 
@@ -625,8 +638,9 @@ namespace PckStudio
             this.addTextureToolStripMenuItem,
             this.addFileToolStripMenuItem,
             this.importPropertyDumpToolStripMenuItem});
-			resources.ApplyResources(this.importSkinsToolStripMenuItem, "importSkinsToolStripMenuItem");
+			this.importSkinsToolStripMenuItem.Image = global::PckStudio.Icons.OpenFile;
 			this.importSkinsToolStripMenuItem.Name = "importSkinsToolStripMenuItem";
+			resources.ApplyResources(this.importSkinsToolStripMenuItem, "importSkinsToolStripMenuItem");
 			// 
 			// importSkinToolStripMenuItem
 			// 
@@ -665,6 +679,7 @@ namespace PckStudio
 			this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.as3DSTextureFileToolStripMenuItem,
             this.exportPropertyDumpToolStripMenuItem});
+			this.exportToolStripMenuItem.Image = global::PckStudio.Icons.saveHS;
 			this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
 			resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
 			// 
@@ -695,66 +710,79 @@ namespace PckStudio
             this.modelsFileBINToolStripMenuItem,
             this.behavioursFileBINToolStripMenuItem,
             this.entityMaterialsFileBINToolStripMenuItem});
+			this.setFileTypeToolStripMenuItem.Image = global::PckStudio.Icons.Edit;
 			this.setFileTypeToolStripMenuItem.Name = "setFileTypeToolStripMenuItem";
 			resources.ApplyResources(this.setFileTypeToolStripMenuItem, "setFileTypeToolStripMenuItem");
 			// 
 			// skinToolStripMenuItem1
 			// 
+			this.skinToolStripMenuItem1.Image = global::PckStudio.Icons.InsertPictureHS;
 			this.skinToolStripMenuItem1.Name = "skinToolStripMenuItem1";
 			resources.ApplyResources(this.skinToolStripMenuItem1, "skinToolStripMenuItem1");
 			// 
 			// capeToolStripMenuItem
 			// 
+			this.capeToolStripMenuItem.Image = global::PckStudio.Icons.InsertPictureHS;
 			this.capeToolStripMenuItem.Name = "capeToolStripMenuItem";
 			resources.ApplyResources(this.capeToolStripMenuItem, "capeToolStripMenuItem");
 			// 
 			// textureToolStripMenuItem
 			// 
+			this.textureToolStripMenuItem.Image = global::PckStudio.Icons.InsertPictureHS;
 			this.textureToolStripMenuItem.Name = "textureToolStripMenuItem";
 			resources.ApplyResources(this.textureToolStripMenuItem, "textureToolStripMenuItem");
 			// 
 			// languagesFileLOCToolStripMenuItem
 			// 
+			this.languagesFileLOCToolStripMenuItem.Image = global::PckStudio.Icons.TableHS;
 			this.languagesFileLOCToolStripMenuItem.Name = "languagesFileLOCToolStripMenuItem";
 			resources.ApplyResources(this.languagesFileLOCToolStripMenuItem, "languagesFileLOCToolStripMenuItem");
 			// 
 			// gameRulesFileGRFToolStripMenuItem
 			// 
+			this.gameRulesFileGRFToolStripMenuItem.Image = global::PckStudio.Icons.TableHS;
 			this.gameRulesFileGRFToolStripMenuItem.Name = "gameRulesFileGRFToolStripMenuItem";
 			resources.ApplyResources(this.gameRulesFileGRFToolStripMenuItem, "gameRulesFileGRFToolStripMenuItem");
 			// 
 			// audioPCKFileToolStripMenuItem
 			// 
+			this.audioPCKFileToolStripMenuItem.Image = global::PckStudio.Icons.AudioHS;
 			this.audioPCKFileToolStripMenuItem.Name = "audioPCKFileToolStripMenuItem";
 			resources.ApplyResources(this.audioPCKFileToolStripMenuItem, "audioPCKFileToolStripMenuItem");
 			// 
 			// coloursCOLFileToolStripMenuItem
 			// 
+			this.coloursCOLFileToolStripMenuItem.Image = global::PckStudio.Icons.ColorHS;
 			this.coloursCOLFileToolStripMenuItem.Name = "coloursCOLFileToolStripMenuItem";
 			resources.ApplyResources(this.coloursCOLFileToolStripMenuItem, "coloursCOLFileToolStripMenuItem");
 			// 
 			// gameRulesHeaderGRHToolStripMenuItem
 			// 
+			this.gameRulesHeaderGRHToolStripMenuItem.Image = global::PckStudio.Icons.TableHS;
 			this.gameRulesHeaderGRHToolStripMenuItem.Name = "gameRulesHeaderGRHToolStripMenuItem";
 			resources.ApplyResources(this.gameRulesHeaderGRHToolStripMenuItem, "gameRulesHeaderGRHToolStripMenuItem");
 			// 
 			// skinsPCKToolStripMenuItem
 			// 
+			this.skinsPCKToolStripMenuItem.Image = global::PckStudio.Icons.Folder;
 			this.skinsPCKToolStripMenuItem.Name = "skinsPCKToolStripMenuItem";
 			resources.ApplyResources(this.skinsPCKToolStripMenuItem, "skinsPCKToolStripMenuItem");
 			// 
 			// modelsFileBINToolStripMenuItem
 			// 
+			this.modelsFileBINToolStripMenuItem.Image = global::PckStudio.Icons.DocumentBlank;
 			this.modelsFileBINToolStripMenuItem.Name = "modelsFileBINToolStripMenuItem";
 			resources.ApplyResources(this.modelsFileBINToolStripMenuItem, "modelsFileBINToolStripMenuItem");
 			// 
 			// behavioursFileBINToolStripMenuItem
 			// 
+			this.behavioursFileBINToolStripMenuItem.Image = global::PckStudio.Icons.DocumentBlank;
 			this.behavioursFileBINToolStripMenuItem.Name = "behavioursFileBINToolStripMenuItem";
 			resources.ApplyResources(this.behavioursFileBINToolStripMenuItem, "behavioursFileBINToolStripMenuItem");
 			// 
 			// entityMaterialsFileBINToolStripMenuItem
 			// 
+			this.entityMaterialsFileBINToolStripMenuItem.Image = global::PckStudio.Icons.DocumentBlank;
 			this.entityMaterialsFileBINToolStripMenuItem.Name = "entityMaterialsFileBINToolStripMenuItem";
 			resources.ApplyResources(this.entityMaterialsFileBINToolStripMenuItem, "entityMaterialsFileBINToolStripMenuItem");
 			// 
@@ -765,12 +793,14 @@ namespace PckStudio
 			// 
 			// generateMipMapTextureToolStripMenuItem1
 			// 
+			this.generateMipMapTextureToolStripMenuItem1.Image = global::PckStudio.Icons.InsertPictureHS;
 			this.generateMipMapTextureToolStripMenuItem1.Name = "generateMipMapTextureToolStripMenuItem1";
 			resources.ApplyResources(this.generateMipMapTextureToolStripMenuItem1, "generateMipMapTextureToolStripMenuItem1");
 			this.generateMipMapTextureToolStripMenuItem1.Click += new System.EventHandler(this.generateMipMapTextureToolStripMenuItem_Click);
 			// 
 			// viewFileInfoToolStripMenuItem
 			// 
+			this.viewFileInfoToolStripMenuItem.Image = global::PckStudio.Icons.DocumentText;
 			this.viewFileInfoToolStripMenuItem.Name = "viewFileInfoToolStripMenuItem";
 			resources.ApplyResources(this.viewFileInfoToolStripMenuItem, "viewFileInfoToolStripMenuItem");
 			this.viewFileInfoToolStripMenuItem.Click += new System.EventHandler(this.viewFileInfoToolStripMenuItem_Click);
@@ -835,20 +865,23 @@ namespace PckStudio
 			// 
 			// extractToolStripMenuItem
 			// 
-			resources.ApplyResources(this.extractToolStripMenuItem, "extractToolStripMenuItem");
+			this.extractToolStripMenuItem.Image = global::PckStudio.Icons.saveHS;
 			this.extractToolStripMenuItem.Name = "extractToolStripMenuItem";
+			resources.ApplyResources(this.extractToolStripMenuItem, "extractToolStripMenuItem");
 			this.extractToolStripMenuItem.Click += new System.EventHandler(this.extractToolStripMenuItem_Click);
 			// 
 			// cloneFileToolStripMenuItem
 			// 
+			this.cloneFileToolStripMenuItem.Image = global::PckStudio.Icons.CopyHS;
 			this.cloneFileToolStripMenuItem.Name = "cloneFileToolStripMenuItem";
 			resources.ApplyResources(this.cloneFileToolStripMenuItem, "cloneFileToolStripMenuItem");
 			this.cloneFileToolStripMenuItem.Click += new System.EventHandler(this.cloneFileToolStripMenuItem_Click);
 			// 
 			// renameFileToolStripMenuItem
 			// 
-			resources.ApplyResources(this.renameFileToolStripMenuItem, "renameFileToolStripMenuItem");
+			this.renameFileToolStripMenuItem.Image = global::PckStudio.Icons.RenameFolderHS;
 			this.renameFileToolStripMenuItem.Name = "renameFileToolStripMenuItem";
+			resources.ApplyResources(this.renameFileToolStripMenuItem, "renameFileToolStripMenuItem");
 			this.renameFileToolStripMenuItem.Click += new System.EventHandler(this.renameFileToolStripMenuItem_Click);
 			// 
 			// replaceToolStripMenuItem
@@ -859,8 +892,9 @@ namespace PckStudio
 			// 
 			// deleteFileToolStripMenuItem
 			// 
-			resources.ApplyResources(this.deleteFileToolStripMenuItem, "deleteFileToolStripMenuItem");
+			this.deleteFileToolStripMenuItem.Image = global::PckStudio.Icons.DeleteHS;
 			this.deleteFileToolStripMenuItem.Name = "deleteFileToolStripMenuItem";
+			resources.ApplyResources(this.deleteFileToolStripMenuItem, "deleteFileToolStripMenuItem");
 			this.deleteFileToolStripMenuItem.Click += new System.EventHandler(this.deleteFileToolStripMenuItem_Click);
 			// 
 			// contextMenuMetaTree
@@ -879,8 +913,9 @@ namespace PckStudio
             this.addEntryToolStripMenuItem1,
             this.addBOXEntryToolStripMenuItem1,
             this.addANIMEntryToolStripMenuItem1});
-			resources.ApplyResources(this.addEntryToolStripMenuItem, "addEntryToolStripMenuItem");
+			this.addEntryToolStripMenuItem.Image = global::PckStudio.Icons.Add;
 			this.addEntryToolStripMenuItem.Name = "addEntryToolStripMenuItem";
+			resources.ApplyResources(this.addEntryToolStripMenuItem, "addEntryToolStripMenuItem");
 			// 
 			// addEntryToolStripMenuItem1
 			// 
@@ -902,18 +937,21 @@ namespace PckStudio
 			// 
 			// addMultipleEntriesToolStripMenuItem1
 			// 
-			resources.ApplyResources(this.addMultipleEntriesToolStripMenuItem1, "addMultipleEntriesToolStripMenuItem1");
+			this.addMultipleEntriesToolStripMenuItem1.Image = global::PckStudio.Icons.AddMultiple;
 			this.addMultipleEntriesToolStripMenuItem1.Name = "addMultipleEntriesToolStripMenuItem1";
+			resources.ApplyResources(this.addMultipleEntriesToolStripMenuItem1, "addMultipleEntriesToolStripMenuItem1");
 			this.addMultipleEntriesToolStripMenuItem1.Click += new System.EventHandler(this.addMultipleEntriesToolStripMenuItem1_Click);
 			// 
 			// deleteEntryToolStripMenuItem
 			// 
-			resources.ApplyResources(this.deleteEntryToolStripMenuItem, "deleteEntryToolStripMenuItem");
+			this.deleteEntryToolStripMenuItem.Image = global::PckStudio.Icons.DeleteHS;
 			this.deleteEntryToolStripMenuItem.Name = "deleteEntryToolStripMenuItem";
+			resources.ApplyResources(this.deleteEntryToolStripMenuItem, "deleteEntryToolStripMenuItem");
 			this.deleteEntryToolStripMenuItem.Click += new System.EventHandler(this.deleteEntryToolStripMenuItem_Click);
 			// 
 			// editAllEntriesToolStripMenuItem
 			// 
+			this.editAllEntriesToolStripMenuItem.Image = global::PckStudio.Icons.EditInformationHS;
 			this.editAllEntriesToolStripMenuItem.Name = "editAllEntriesToolStripMenuItem";
 			resources.ApplyResources(this.editAllEntriesToolStripMenuItem, "editAllEntriesToolStripMenuItem");
 			this.editAllEntriesToolStripMenuItem.Click += new System.EventHandler(this.editAllEntriesToolStripMenuItem_Click);
@@ -967,6 +1005,7 @@ namespace PckStudio
 			// 
 			resources.ApplyResources(this.pckOpen, "pckOpen");
 			this.pckOpen.BackColor = System.Drawing.Color.Transparent;
+			this.pckOpen.Image = global::PckStudio.Properties.Resources.pckOpen;
 			this.pckOpen.Name = "pckOpen";
 			this.pckOpen.TabStop = false;
 			this.pckOpen.Click += new System.EventHandler(this.OpenPck_Click);
