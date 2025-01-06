@@ -136,6 +136,12 @@
   <data name="addDisplayIDToolStripMenuItem.Text" xml:space="preserve">
     <value>Add Display ID</value>
   </data>
+  <data name="editDisplayIDToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 22</value>
+  </data>
+  <data name="editDisplayIDToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit Display ID</value>
+  </data>
   <data name="deleteDisplayIDToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 22</value>
   </data>
@@ -3002,6 +3008,12 @@
     <value>addDisplayIDToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;addDisplayIDToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editDisplayIDToolStripMenuItem.Name" xml:space="preserve">
+    <value>editDisplayIDToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;editDisplayIDToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;deleteDisplayIDToolStripMenuItem.Name" xml:space="preserve">

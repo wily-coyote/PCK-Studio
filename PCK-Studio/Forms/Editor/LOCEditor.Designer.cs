@@ -27,26 +27,27 @@ namespace PckStudio.Forms.Editor {
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOCEditor));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			this.entryContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.addDisplayIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.deleteDisplayIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.languageContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.addLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.removeLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.rightLayout = new System.Windows.Forms.TableLayoutPanel();
-			this.buttonReplaceAll = new System.Windows.Forms.Button();
-			this.dataGridViewLocEntryData = new System.Windows.Forms.DataGridView();
-			this.Language = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.DisplayName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.textBoxReplaceAll = new System.Windows.Forms.TextBox();
-			this.treeViewLocKeys = new System.Windows.Forms.TreeView();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuStrip = new System.Windows.Forms.MenuStrip();
-			this.layout = new System.Windows.Forms.SplitContainer();
-			this.helpProvider = new System.Windows.Forms.HelpProvider();
-			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+			this.entryContextMenu = new ContextMenuStrip(this.components);
+			this.addDisplayIDToolStripMenuItem = new ToolStripMenuItem();
+			this.editDisplayIDToolStripMenuItem = new ToolStripMenuItem();
+			this.deleteDisplayIDToolStripMenuItem = new ToolStripMenuItem();
+			this.languageContextMenu = new ContextMenuStrip(this.components);
+			this.addLanguageToolStripMenuItem = new ToolStripMenuItem();
+			this.removeLanguageToolStripMenuItem = new ToolStripMenuItem();
+			this.rightLayout = new TableLayoutPanel();
+			this.buttonReplaceAll = new Button();
+			this.dataGridViewLocEntryData = new DataGridView();
+			this.Language = new DataGridViewTextBoxColumn();
+			this.DisplayName = new DataGridViewTextBoxColumn();
+			this.textBoxReplaceAll = new TextBox();
+			this.treeViewLocKeys = new TreeView();
+			this.fileToolStripMenuItem = new ToolStripMenuItem();
+			this.saveToolStripMenuItem = new ToolStripMenuItem();
+			this.menuStrip = new MenuStrip();
+			this.layout = new SplitContainer();
+			this.helpProvider = new HelpProvider();
+			this.helpToolStripMenuItem = new ToolStripMenuItem();
 			this.entryContextMenu.SuspendLayout();
 			this.languageContextMenu.SuspendLayout();
 			this.rightLayout.SuspendLayout();
@@ -60,47 +61,59 @@ namespace PckStudio.Forms.Editor {
 			// 
 			// entryContextMenu
 			// 
-			this.entryContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addDisplayIDToolStripMenuItem,
-            this.deleteDisplayIDToolStripMenuItem});
+			this.entryContextMenu.Items.AddRange(new ToolStripItem[] {
+				this.addDisplayIDToolStripMenuItem,
+				this.editDisplayIDToolStripMenuItem,
+				this.deleteDisplayIDToolStripMenuItem});
 			this.entryContextMenu.Name = "contextMenuStrip1";
 			resources.ApplyResources(this.entryContextMenu, "entryContextMenu");
 			// 
 			// addDisplayIDToolStripMenuItem
 			// 
+			this.addDisplayIDToolStripMenuItem.Image = global::PckStudio.Icons.Add;
 			this.addDisplayIDToolStripMenuItem.Name = "addDisplayIDToolStripMenuItem";
 			resources.ApplyResources(this.addDisplayIDToolStripMenuItem, "addDisplayIDToolStripMenuItem");
 			this.addDisplayIDToolStripMenuItem.Click += new System.EventHandler(this.KeyAdded);
 			// 
+			// editDisplayIDToolStripMenuItem
+			// 
+			this.editDisplayIDToolStripMenuItem.Image = global::PckStudio.Icons.Edit;
+			this.editDisplayIDToolStripMenuItem.Name = "editDisplayIDToolStripMenuItem";
+			resources.ApplyResources(this.editDisplayIDToolStripMenuItem, "editDisplayIDToolStripMenuItem");
+			this.editDisplayIDToolStripMenuItem.Click += new System.EventHandler(this.KeyEdited);
+			// 
 			// deleteDisplayIDToolStripMenuItem
 			// 
+			this.deleteDisplayIDToolStripMenuItem.Image = global::PckStudio.Icons.DeleteHS;
 			this.deleteDisplayIDToolStripMenuItem.Name = "deleteDisplayIDToolStripMenuItem";
 			resources.ApplyResources(this.deleteDisplayIDToolStripMenuItem, "deleteDisplayIDToolStripMenuItem");
 			this.deleteDisplayIDToolStripMenuItem.Click += new System.EventHandler(this.KeyDeleted);
 			// 
 			// languageContextMenu
 			// 
-			this.languageContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addLanguageToolStripMenuItem,
-            this.removeLanguageToolStripMenuItem});
+			this.languageContextMenu.Items.AddRange(new ToolStripItem[] {
+				this.addLanguageToolStripMenuItem,
+				this.removeLanguageToolStripMenuItem});
 			this.languageContextMenu.Name = "GridContextMenu";
 			resources.ApplyResources(this.languageContextMenu, "languageContextMenu");
 			// 
 			// addLanguageToolStripMenuItem
 			// 
+			this.addLanguageToolStripMenuItem.Image = global::PckStudio.Icons.Add;
 			this.addLanguageToolStripMenuItem.Name = "addLanguageToolStripMenuItem";
 			resources.ApplyResources(this.addLanguageToolStripMenuItem, "addLanguageToolStripMenuItem");
 			this.addLanguageToolStripMenuItem.Click += new System.EventHandler(this.LanguageAdded);
 			// 
 			// removeLanguageToolStripMenuItem
 			// 
+			this.removeLanguageToolStripMenuItem.Image = global::PckStudio.Icons.DeleteHS;
 			this.removeLanguageToolStripMenuItem.Name = "removeLanguageToolStripMenuItem";
 			resources.ApplyResources(this.removeLanguageToolStripMenuItem, "removeLanguageToolStripMenuItem");
 			this.removeLanguageToolStripMenuItem.Click += new System.EventHandler(this.LanguageRemoved);
 			// 
 			// rightLayout
 			// 
-			this.rightLayout.AccessibleRole = System.Windows.Forms.AccessibleRole.Table;
+			this.rightLayout.AccessibleRole = AccessibleRole.Table;
 			resources.ApplyResources(this.rightLayout, "rightLayout");
 			this.rightLayout.Controls.Add(this.buttonReplaceAll, 1, 0);
 			this.rightLayout.Controls.Add(this.dataGridViewLocEntryData, 0, 1);
@@ -121,22 +134,22 @@ namespace PckStudio.Forms.Editor {
 			this.dataGridViewLocEntryData.AllowUserToDeleteRows = false;
 			this.dataGridViewLocEntryData.AllowUserToResizeColumns = false;
 			resources.ApplyResources(this.dataGridViewLocEntryData, "dataGridViewLocEntryData");
-			this.dataGridViewLocEntryData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dataGridViewLocEntryData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
 			this.dataGridViewLocEntryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.dataGridViewLocEntryData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-			this.dataGridViewLocEntryData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Language,
-            this.DisplayName});
+			this.dataGridViewLocEntryData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+			this.dataGridViewLocEntryData.Columns.AddRange(new DataGridViewColumn[] {
+				this.Language,
+				this.DisplayName});
 			this.rightLayout.SetColumnSpan(this.dataGridViewLocEntryData, 2);
 			this.dataGridViewLocEntryData.ContextMenuStrip = this.languageContextMenu;
 			this.helpProvider.SetHelpString(this.dataGridViewLocEntryData, resources.GetString("dataGridViewLocEntryData.HelpString"));
 			this.dataGridViewLocEntryData.Name = "dataGridViewLocEntryData";
 			this.dataGridViewLocEntryData.RowHeadersVisible = false;
 			this.helpProvider.SetShowHelp(this.dataGridViewLocEntryData, ((bool)(resources.GetObject("dataGridViewLocEntryData.ShowHelp"))));
-			this.dataGridViewLocEntryData.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ValueEdited);
-			this.dataGridViewLocEntryData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseTouchedAtLanguage);
+			this.dataGridViewLocEntryData.CellEndEdit += new DataGridViewCellEventHandler(this.ValueEdited);
+			this.dataGridViewLocEntryData.MouseDown += new MouseEventHandler(this.MouseTouchedAtLanguage);
 			// 
 			// Language
 			// 
@@ -162,37 +175,39 @@ namespace PckStudio.Forms.Editor {
 			this.treeViewLocKeys.ContextMenuStrip = this.entryContextMenu;
 			resources.ApplyResources(this.treeViewLocKeys, "treeViewLocKeys");
 			this.helpProvider.SetHelpString(this.treeViewLocKeys, resources.GetString("treeViewLocKeys.HelpString"));
-			this.treeViewLocKeys.LabelEdit = true;
+			this.treeViewLocKeys.LabelEdit = false;
 			this.treeViewLocKeys.Name = "treeViewLocKeys";
 			this.helpProvider.SetShowHelp(this.treeViewLocKeys, ((bool)(resources.GetObject("treeViewLocKeys.ShowHelp"))));
-			this.treeViewLocKeys.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.AfterEdit);
-			this.treeViewLocKeys.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyboardTouched);
-			this.treeViewLocKeys.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseTouchedAtKey);
+			this.treeViewLocKeys.AfterSelect += new TreeViewEventHandler(this.KeySelected);
+			this.treeViewLocKeys.AfterLabelEdit += new NodeLabelEditEventHandler(this.AfterEdit);
+			this.treeViewLocKeys.KeyDown += new KeyEventHandler(this.KeyboardTouched);
+			this.treeViewLocKeys.MouseDown += new MouseEventHandler(this.MouseTouchedAtKey);
 			// 
 			// fileToolStripMenuItem
 			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem});
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+				this.saveToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
 			// 
 			// saveToolStripMenuItem
 			// 
+			this.saveToolStripMenuItem.Image = global::PckStudio.Icons.saveHS;
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
 			resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
 			this.saveToolStripMenuItem.Click += new System.EventHandler(this.Save);
 			// 
 			// menuStrip
 			// 
-			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+			this.menuStrip.Items.AddRange(new ToolStripItem[] {
+				this.fileToolStripMenuItem,
+				this.helpToolStripMenuItem});
 			resources.ApplyResources(this.menuStrip, "menuStrip");
 			this.menuStrip.Name = "menuStrip";
 			// 
 			// layout
 			// 
-			this.layout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.layout.BorderStyle = BorderStyle.Fixed3D;
 			resources.ApplyResources(this.layout, "layout");
 			this.layout.Name = "layout";
 			// 
@@ -213,11 +228,11 @@ namespace PckStudio.Forms.Editor {
 			// LOCEditor
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = AutoScaleMode.Font;
 			this.Controls.Add(this.layout);
 			this.Controls.Add(this.menuStrip);
 			this.Name = "LOCEditor";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
+			this.FormClosing += new FormClosingEventHandler(this.Exiting);
 			this.Load += new System.EventHandler(this.Loaded);
 			this.entryContextMenu.ResumeLayout(false);
 			this.languageContextMenu.ResumeLayout(false);
@@ -241,6 +256,7 @@ namespace PckStudio.Forms.Editor {
 		private DataGridView dataGridViewLocEntryData;
 		private ContextMenuStrip entryContextMenu;
 		private ToolStripMenuItem addDisplayIDToolStripMenuItem;
+		private ToolStripMenuItem editDisplayIDToolStripMenuItem;
 		private ToolStripMenuItem deleteDisplayIDToolStripMenuItem;
 		private TextBox textBoxReplaceAll;
 		private TableLayoutPanel rightLayout;

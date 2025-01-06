@@ -17,6 +17,7 @@ namespace PckStudio.Forms.Editor {
 		PckAsset pckAsset;
 		TreeNode node;
 		string lang;
+		bool editing;
 
 		public LOCEditor(PckAsset asset) {
 			InitializeComponent();
@@ -28,6 +29,11 @@ namespace PckStudio.Forms.Editor {
 		private void Loaded(object sender, EventArgs e) {
 			foreach(string locKey in locFile.LocKeys.Keys)
 				treeViewLocKeys.Nodes.Add(locKey);
+		}
+
+		private void KeySelected(object sender, TreeViewEventArgs e){
+			node = e.Node;
+			ReloadTranslationTable();
 		}
 		
 		private void MouseTouchedAtKey(object sender, MouseEventArgs e) {
@@ -56,8 +62,13 @@ namespace PckStudio.Forms.Editor {
 		}
 		
 		private void KeyEdited(object sender, EventArgs e) {
-			if(!node.IsEditing) {
-				node.BeginEdit();
+			if(node != null){
+				treeViewLocKeys.LabelEdit = true;
+				if(!node.IsEditing) {
+					node.BeginEdit();
+				}
+			} else {
+				SystemSounds.Exclamation.Play();
 			}
 		}
 
@@ -139,6 +150,7 @@ namespace PckStudio.Forms.Editor {
 		}
 
 		private void AfterEdit(object sender, NodeLabelEditEventArgs e) {
+			bool flag = false;
 			if(e.Label != null) {
 				if(e.Label.Length > 0) {
 					// This API makes zero sense.
@@ -160,8 +172,10 @@ namespace PckStudio.Forms.Editor {
 					e.CancelEdit = true;
 					SystemSounds.Exclamation.Play();
 					e.Node.BeginEdit();
+					flag = true;
 				}
 			}
+			treeViewLocKeys.LabelEdit = flag;
 		}
 
 		private void LanguageRemoved(object sender, EventArgs e) {

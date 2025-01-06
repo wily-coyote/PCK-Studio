@@ -124,11 +124,17 @@
   <data name="addDisplayIDToolStripMenuItem.Text" xml:space="preserve">
     <value>ディスプレイIDを追加</value>
   </data>
+  <data name="editDisplayIDToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="editDisplayIDToolStripMenuItem.Text" xml:space="preserve">
+    <value>ディスプレイIDを変更</value>
+  </data>
   <data name="deleteDisplayIDToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 22</value>
   </data>
   <data name="deleteDisplayIDToolStripMenuItem.Text" xml:space="preserve">
-    <value>表示IDを削除</value>
+    <value>ディスプレイIDを削除</value>
   </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 48</value>

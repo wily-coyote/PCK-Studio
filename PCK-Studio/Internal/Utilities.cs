@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 
 namespace PckStudio.Internal {
 	/** <summary>General-purpose function class.</summary> **/
@@ -18,6 +19,7 @@ namespace PckStudio.Internal {
 		public static extern int SetForegroundWindow(IntPtr hwnd);
 		
 		private static readonly Regex sWhitespace = new Regex(@"\s+");
+		private static RNGCryptoServiceProvider random = new RNGCryptoServiceProvider();
 		
 		/** <summary>Replaces all whitespace using regular expressions.</summary> **/
 		public static string ReplaceWhitespace(string input, string replacement) {
@@ -41,6 +43,17 @@ namespace PckStudio.Internal {
 		public static void DoContextHelp(IntPtr hWnd) {
 			// WM_SYSCOMMAND SC_CONTEXTHELP
 			SendMessage(hWnd, 0x0112, 0xf180, 0x0);
+		}
+		
+		/** <summary>Generates a random number sequence of <paramref name="length"/>.</summary> **/
+		public static string RandomNumberSequence(int length) {
+			byte[] seq = new byte[length];
+			random.GetBytes(seq);
+			for(int i=0; i < length; i++){
+				// '0'
+				seq[i] = (byte)(0x30 + (seq[i] % 10));
+			}
+			return Encoding.ASCII.GetString(seq);
 		}
 	}
 }

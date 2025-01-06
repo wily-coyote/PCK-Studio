@@ -132,10 +132,17 @@ namespace PckStudio.Forms.Additional_Popups {
 			contextMenuCape.Show(this, buttonCape.Location.X + 2, buttonCape.Location.Y + buttonCape.Size.Height);
 		}
 
+		/** <summary>Creates a .NET Drawing Image without locking the original file.</summary> **/
+		private Image OpenImage(string path){
+			using(MemoryStream ms = new MemoryStream(File.ReadAllBytes(path))){
+				return Image.FromStream(ms);
+			}
+		}
+
 		private void replaceToolStripMenuItem_Click(object sender, EventArgs e) {
 			OpenFileDialog ofd = new OpenFileDialog();
 			if(ofd.ShowDialog() == DialogResult.OK) {
-				CheckImage(Image.FromFile(ofd.FileName));
+				CheckImage(OpenImage(ofd.FileName));
 			}
 		}
 
@@ -164,7 +171,7 @@ namespace PckStudio.Forms.Additional_Popups {
 						textSkinName.Text = Path.GetFileNameWithoutExtension(ofd.FileName);
 						return;
 					}
-					CheckImage(Image.FromFile(ofd.FileName));
+					CheckImage(OpenImage(ofd.FileName));
 				}
 			}
 		}
@@ -186,12 +193,12 @@ namespace PckStudio.Forms.Additional_Popups {
 				ofd.Filter = "Cape File|*.png";
 				ofd.Title = "Select a PNG File";
 				if(ofd.ShowDialog() == DialogResult.OK) {
-					var img = Image.FromFile(ofd.FileName);
+					var img = OpenImage(ofd.FileName);
 					if(img.RawFormat != ImageFormat.Png && img.Width != img.Height * 2) {
 						MessageBox.Show(this, "Not a Valid Cape File");
 						return;
 					}
-					capePictureBox.Image = Image.FromFile(ofd.FileName);
+					capePictureBox.Image = OpenImage(ofd.FileName);
 					_cape ??= new PckAsset("dlccapeXYXYXYXY", PckAssetType.CapeFile);
 					_cape.SetData(File.ReadAllBytes(ofd.FileName));
 					contextMenuCape.Items[0].Text = "Replace";
@@ -263,8 +270,7 @@ namespace PckStudio.Forms.Additional_Popups {
 
 		private void radioButtonAuto_CheckedChanged(object sender, EventArgs e) {
 			if(radioButtonAuto.Checked) {
-				int num = rng.Next(100000, 99999999);
-				textSkinID.Text = num.ToString();
+				textSkinID.Text = Utilities.RandomNumberSequence(8);
 				textSkinID.Enabled = false;
 			}
 		}
