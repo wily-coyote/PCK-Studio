@@ -2049,7 +2049,7 @@
   <data name="createToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAACSUlEQVQ4T32S
+        vwAADr8BOAVTJAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAACSUlEQVQ4T32S
         7UtTcRTH7x/Qi8B3QgyKopAelm9CopjF6kWgNQ0hRjmXQo2RkKaTpo5QSPegs9F0hj1sInmzzIcR2CV1
         ZplStydbsKaVZRFMjIjSvv3O1d3lNjvw5cfhnu/nnN/vXC7YtdkbGctswheTP8hvWJgVjQgHDOh2ZMCk
         zUDlyUyYC1SbuNXi15ssU9iv/IO5erwfzAPmHAj1bYPfvQcnVKmwlWShxnBwdQh1xrwL+P0Q8x95dg6B
@@ -2063,19 +2063,19 @@
 </value>
   </data>
   <data name="createToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="createToolStripMenuItem.Text" xml:space="preserve">
     <value>Create</value>
   </data>
   <data name="cloneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="cloneToolStripMenuItem.Text" xml:space="preserve">
     <value>Clone</value>
   </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete</value>

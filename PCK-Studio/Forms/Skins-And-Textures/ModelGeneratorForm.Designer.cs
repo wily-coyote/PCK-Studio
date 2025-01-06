@@ -133,10 +133,10 @@ namespace PckStudio.Forms {
 			// 
 			// boxContextMenu
 			// 
-			this.boxContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.boxContextMenu.Name = "boxContextMenu";
 			this.helpProvider.SetShowHelp(this.boxContextMenu, ((bool)(resources.GetObject("boxContextMenu.ShowHelp"))));
 			resources.ApplyResources(this.boxContextMenu, "boxContextMenu");
+			this.boxContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.EditContextOpening);
 			// 
 			// buttonDone
 			// 
@@ -671,6 +671,7 @@ namespace PckStudio.Forms {
             this.deleteToolStripMenuItem});
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
+			this.editToolStripMenuItem.DropDownOpening += new System.EventHandler(this.EditMenuOpening);
 			// 
 			// helpToolStripMenuItem
 			// 

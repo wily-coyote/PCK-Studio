@@ -93,6 +93,16 @@ namespace PckStudio {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Box {
+            get {
+                object obj = ResourceManager.GetObject("Box", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CloneBox {
             get {
                 object obj = ResourceManager.GetObject("CloneBox", resourceCulture);
@@ -273,6 +283,16 @@ namespace PckStudio {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PropertySheetSingle {
+            get {
+                object obj = ResourceManager.GetObject("PropertySheetSingle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Refresh {
             get {
                 object obj = ResourceManager.GetObject("Refresh", resourceCulture);
@@ -286,6 +306,16 @@ namespace PckStudio {
         internal static System.Drawing.Bitmap RenameFolderHS {
             get {
                 object obj = ResourceManager.GetObject("RenameFolderHS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Replace {
+            get {
+                object obj = ResourceManager.GetObject("Replace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

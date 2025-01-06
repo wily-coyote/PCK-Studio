@@ -140,19 +140,19 @@
     <value>17, 17</value>
   </metadata>
   <data name="skinPackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="skinPackToolStripMenuItem.Text" xml:space="preserve">
     <value>Skin Pack</value>
   </data>
   <data name="texturePackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="texturePackToolStripMenuItem.Text" xml:space="preserve">
     <value>Texture Pack</value>
   </data>
   <data name="mashUpPackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="mashUpPackToolStripMenuItem.Text" xml:space="preserve">
     <value>Mash-Up Pack</value>
@@ -824,16 +824,6 @@
   <data name="renameFileToolStripMenuItem.Text" xml:space="preserve">
     <value>Rename</value>
   </data>
-  <data name="replaceToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAAC/SURBVDhPlVHB
-        DQMhDEOIfwfoOuzFoPxhAd5c6/SMAgq0tRQFmdgXfA5IKUkBMcbHPxyJCxVCkK7rm+EwaK1dQO9dClzO
-        WfpOTM7hy1oMGNvY4pucxNY2p6cAWzFw2oZuMmiJweGeHM634UdLg50YwD05vQ2fYoaoDTEMrJyIfw3R
-        4qYQWUZgg6OwlDJyMH8LcwF2T8FZ5kYQb4Lde/9Et8S6Dy1z0LUGi7VpWGvl3Lw2V98ZrtwIUYktwwPn
-        3AtE5NqX8pp0ZQAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="replaceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 22</value>
   </data>
@@ -859,19 +849,19 @@
     <value>298, 17</value>
   </metadata>
   <data name="addEntryToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="addEntryToolStripMenuItem1.Text" xml:space="preserve">
     <value>Add Entry</value>
   </data>
   <data name="addBOXEntryToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="addBOXEntryToolStripMenuItem1.Text" xml:space="preserve">
     <value>Add BOX Entry</value>
   </data>
   <data name="addANIMEntryToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="addANIMEntryToolStripMenuItem1.Text" xml:space="preserve">
     <value>Add ANIM Entry</value>
@@ -901,7 +891,7 @@
     <value>Edit All Entries</value>
   </data>
   <data name="contextMenuMetaTree.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 92</value>
+    <value>182, 114</value>
   </data>
   <data name="&gt;&gt;contextMenuMetaTree.Name" xml:space="preserve">
     <value>contextMenuMetaTree</value>
@@ -4153,6 +4143,18 @@
   <data name="&gt;&gt;recentlyOpenToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;saveToolStripMenuItem1.Name" xml:space="preserve">
+    <value>saveToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;saveToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveToolStripMenuItem.Name" xml:space="preserve">
+    <value>saveToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;saveToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;closeToolStripMenuItem.Name" xml:space="preserve">
     <value>closeToolStripMenuItem</value>
   </data>
@@ -4169,18 +4171,6 @@
     <value>fullBoxSupportToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;fullBoxSupportToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveToolStripMenuItem1.Name" xml:space="preserve">
-    <value>saveToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;saveToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveToolStripMenuItem.Name" xml:space="preserve">
-    <value>saveToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;saveToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">

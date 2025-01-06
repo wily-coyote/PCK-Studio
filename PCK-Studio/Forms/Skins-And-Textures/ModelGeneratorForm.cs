@@ -472,5 +472,25 @@ namespace PckStudio.Forms {
 		private void CancelModel(object sender, EventArgs e) {
 			Close();
 		}
+
+		private void EditMenuOpening(object sender, EventArgs e) {
+			var menuItem = sender as ToolStripMenuItem;
+			if (menuItem != null) {
+				menuItem.DropDownItems.AddRange(new ToolStripItem[] {
+            createToolStripMenuItem,
+            cloneToolStripMenuItem,
+            deleteToolStripMenuItem});
+			}
+		}
+
+		private void EditContextOpening(object sender, CancelEventArgs e) {
+			var menuItem = sender as ContextMenuStrip;
+			if (menuItem != null) {
+				menuItem.Items.AddRange(new ToolStripItem[] {
+            createToolStripMenuItem,
+            cloneToolStripMenuItem,
+            deleteToolStripMenuItem});
+			}
+		}
 	}
 }
