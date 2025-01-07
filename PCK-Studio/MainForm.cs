@@ -47,7 +47,9 @@ namespace PckStudio {
 
 		PckFile currentPCK = null;
 
+		/** <summary>Don't use this to change the current filename. Use CurrentFilename instead.</summary> **/
 		string currentFilename = "";
+		/** <summary>Changes the current filename. This also changes the form title.</summary> **/
 		string CurrentFilename {
 			get => currentFilename;
 			set {
@@ -55,8 +57,10 @@ namespace PckStudio {
 				updateTitle();
 			}
 		}
-
+		
+		/** <summary>Don't use this to change the modified state. Use Modified instead.</summary> **/
 		bool modified = false;
+		/** <summary>Changes the current modified state. This also changes the form title.</summary> **/
 		bool Modified {
 			get => modified;
 			set {
@@ -2331,6 +2335,7 @@ namespace PckStudio {
 								MessageBoxIcon.Information
 							);
 							BuildMainTreeView();
+							Modified = true;
 						}
 					}
 				}
