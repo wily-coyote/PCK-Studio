@@ -8,6 +8,7 @@
 - Raw property import/export to TSV
 - Redesigned UI without Metro Framework
 - Removed Discord RPC
+- [Blockbench support with an external plugin](https://github.com/wily-coyote/pckstudiomod_io)
 
 ## To build
 Open the solution file in Visual Studio, or run MSBuild.
