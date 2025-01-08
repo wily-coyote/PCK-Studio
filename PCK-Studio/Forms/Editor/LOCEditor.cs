@@ -17,7 +17,6 @@ namespace PckStudio.Forms.Editor {
 		PckAsset pckAsset;
 		TreeNode node;
 		string lang;
-		bool editing;
 
 		public LOCEditor(PckAsset asset) {
 			InitializeComponent();
